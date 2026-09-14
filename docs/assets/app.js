@@ -1,7 +1,5 @@
-// Vanilla-JS client-side filtering, reused across any page with a table of
-// data-* tagged rows plus a matching set of filter controls (currently the
-// Feature Matrix table and the dashboard's Feature Swimlane table). No
-// build step, no framework -- operates directly on the server-rendered
+// Vanilla-JS client-side filtering for the Feature Lifecycle Matrix table.
+// No build step, no framework -- operates directly on the server-rendered
 // table's data-* attributes.
 (function () {
   function setupTableFilter({ tableId, searchId, categoryId, statusId }) {
@@ -43,11 +41,5 @@
     searchId: "matrix-search",
     categoryId: "matrix-category",
     statusId: "matrix-status",
-  });
-
-  setupTableFilter({
-    tableId: "swimlane-table",
-    searchId: "swimlane-search",
-    categoryId: "swimlane-category",
   });
 })();

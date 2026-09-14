@@ -160,785 +160,93 @@
 <div class="milestones" title="Official Life Cycle page lists GA as 2026-08-27; the 3.5 release notes/press materials state 9 September 2026. Both are reproduced -- see source_conflicts.">&#9432; details</div>  </div>
 </div>
 
-<h2>Feature swimlane</h2>
+<h3>Calendar view</h3>
 <p class="section-note">
-  Every tracked feature, one lane per row, run across the versions that actually carry a recorded change &mdash; status
-  is carried forward as a continuous bar until the next change, so you can scan a row left-to-right and immediately see
-  where a feature moved between GA/TP/DP/Deprecated/Removed relative to any other feature. Full per-version detail
-  (including sourced tooltips) is on the <a href="matrix.html">Feature Matrix</a>.
+  Same release timeline, plotted against real calendar time instead of discrete version columns, so overlapping
+  support windows across versions &mdash; e.g. which versions were all in Full Support or EUS at once &mdash; are
+  visible directly. Dashed red line = today (2026-09-14).
+  1.15, 1.16, 3.3.2 have
+  no official Life Cycle GA date on their own and aren't placed on this axis (see the cards above).
 </p>
-<div class="filters">
-  <input type="text" id="swimlane-search" placeholder="Search feature or category&hellip;">
-  <select id="swimlane-category">
-    <option value="">All categories</option>
-<option value="Agents/MCP">Agents/MCP</option><option value="Agents/MCP (Developer Preview surface)">Agents/MCP (Developer Preview surface)</option><option value="Distributed Training">Distributed Training</option><option value="Evaluation">Evaluation</option><option value="Feature Store / AutoML / AutoRAG">Feature Store / AutoML / AutoRAG</option><option value="Guardrails">Guardrails</option><option value="MLOps">MLOps</option><option value="MaaS">MaaS</option><option value="Model Registry">Model Registry</option><option value="Model Serving">Model Serving</option><option value="OGX">OGX</option><option value="Platform">Platform</option>  </select>
+<div class="legend">
+  <span class="chip lifecycle-full-support">&#9632; Full Support</span>
+  <span class="chip lifecycle-eus">&#9632; Extended Update Support</span>
 </div>
-<div class="matrix-wrap swimlane-wrap">
-<table class="matrix swimlane" id="swimlane-table">
-<thead>
-<tr>
-  <th>Feature</th>
-<th>2.19</th><th>2.24</th><th>2.25</th><th>3.0</th><th>3.2</th><th>3.3</th><th>3.4</th><th>3.5</th></tr>
-</thead>
-<tbody>
-<tr data-name="AI Available Assets page" data-category="Agents/MCP" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#ai-available-assets-page"><span class="cat">Agents/MCP</span>AI Available Assets page</a></td>
-  <td colspan="5" class="swimlane-cell empty"
-      title="AI Available Assets page: not yet introduced (2.19&ndash;3.2)">
-    
-  </td>
-  <td colspan="3" class="swimlane-cell status-ga"
-      title="AI Available Assets page: GA (3.3&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Automated tool-calling evaluation-data generation for custom MCP servers" data-category="Agents/MCP" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#tool-calling-evaldata-gen"><span class="cat">Agents/MCP</span>Automated tool-calling evaluation-data generation for custom MCP servers</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Automated tool-calling evaluation-data generation for custom MCP servers: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Automated tool-calling evaluation-data generation for custom MCP servers: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="MCP Catalog support-tier labeling" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#mcp-catalog-tier-labeling"><span class="cat">Agents/MCP</span>MCP Catalog support-tier labeling</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MCP Catalog support-tier labeling: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MCP Catalog support-tier labeling: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MCP Lifecycle Operator" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#mcp-lifecycle-operator"><span class="cat">Agents/MCP</span>MCP Lifecycle Operator</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MCP Lifecycle Operator: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MCP Lifecycle Operator: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MCP gateway Operator" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#mcp-gateway-operator"><span class="cat">Agents/MCP</span>MCP gateway Operator</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MCP gateway Operator: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MCP gateway Operator: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="OGX-native agentic API surface (Tool Runtime, Responses, Conversations)" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#ogx-agentic-api-surface"><span class="cat">Agents/MCP</span>OGX-native agentic API surface (Tool Runtime, Responses, Conversations)</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OGX-native agentic API surface (Tool Runtime, Responses, Conversations): not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="OGX-native agentic API surface (Tool Runtime, Responses, Conversations): TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="OpenCode coding-agent deployment" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#opencode-agent"><span class="cat">Agents/MCP</span>OpenCode coding-agent deployment</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OpenCode coding-agent deployment: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="OpenCode coding-agent deployment: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="Validated tool-calling configuration in Model Catalog" data-category="Agents/MCP" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#validated-tool-calling-catalog"><span class="cat">Agents/MCP</span>Validated tool-calling configuration in Model Catalog</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Validated tool-calling configuration in Model Catalog: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="Validated tool-calling configuration in Model Catalog: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="Agent Catalog in AI Hub" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#agent-catalog-aihub"><span class="cat">Agents/MCP (Developer Preview surface)</span>Agent Catalog in AI Hub</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Agent Catalog in AI Hub: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Agent Catalog in AI Hub: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="CSV export for Model Catalog data" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#csv-export-model-catalog"><span class="cat">Agents/MCP (Developer Preview surface)</span>CSV export for Model Catalog data</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="CSV export for Model Catalog data: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="CSV export for Model Catalog data: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Claude Code agent starter kit" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#claude-code-starter-kit"><span class="cat">Agents/MCP (Developer Preview surface)</span>Claude Code agent starter kit</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Claude Code agent starter kit: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Claude Code agent starter kit: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="External metering integration for MaaS" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#external-metering-maas"><span class="cat">Agents/MCP (Developer Preview surface)</span>External metering integration for MaaS</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="External metering integration for MaaS: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="External metering integration for MaaS: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="External metering: per-user token usage and cost" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#external-metering-general"><span class="cat">Agents/MCP (Developer Preview surface)</span>External metering: per-user token usage and cost</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="External metering: per-user token usage and cost: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="External metering: per-user token usage and cost: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Gen AI Studio saved-agent configuration" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#genai-studio-saved-agent"><span class="cat">Agents/MCP (Developer Preview surface)</span>Gen AI Studio saved-agent configuration</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Gen AI Studio saved-agent configuration: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Gen AI Studio saved-agent configuration: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Hierarchical KV Cache Tiering" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#hierarchical-kv-cache-tiering"><span class="cat">Agents/MCP (Developer Preview surface)</span>Hierarchical KV Cache Tiering</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Hierarchical KV Cache Tiering: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Hierarchical KV Cache Tiering: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Kale JupyterLab extension" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#kale-jupyterlab-extension"><span class="cat">Agents/MCP (Developer Preview surface)</span>Kale JupyterLab extension</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Kale JupyterLab extension: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Kale JupyterLab extension: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Latency-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#latency-aware-routing-llmd"><span class="cat">Agents/MCP (Developer Preview surface)</span>Latency-aware routing for llm-d</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Latency-aware routing for llm-d: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Latency-aware routing for llm-d: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="LoRA-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#lora-aware-routing-llmd"><span class="cat">Agents/MCP (Developer Preview surface)</span>LoRA-aware routing for llm-d</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="LoRA-aware routing for llm-d: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="LoRA-aware routing for llm-d: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="MCP Catalog administrative interface" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#mcp-catalog-admin-ui"><span class="cat">Agents/MCP (Developer Preview surface)</span>MCP Catalog administrative interface</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MCP Catalog administrative interface: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="MCP Catalog administrative interface: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="MiDojo adversarial testing engine" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#midojo"><span class="cat">Agents/MCP (Developer Preview surface)</span>MiDojo adversarial testing engine</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MiDojo adversarial testing engine: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="MiDojo adversarial testing engine: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="OGX File Processors API" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#ogx-file-processors-api"><span class="cat">Agents/MCP (Developer Preview surface)</span>OGX File Processors API</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OGX File Processors API: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="OGX File Processors API: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="OGX remote::anthropic and remote::gemini providers" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#ogx-anthropic-gemini-providers"><span class="cat">Agents/MCP (Developer Preview surface)</span>OGX remote::anthropic and remote::gemini providers</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OGX remote::anthropic and remote::gemini providers: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="OGX remote::anthropic and remote::gemini providers: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="OpenClaw agent starter kit" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#openclaw-starter-kit"><span class="cat">Agents/MCP (Developer Preview surface)</span>OpenClaw agent starter kit</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OpenClaw agent starter kit: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="OpenClaw agent starter kit: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="OpenShell (secure agent sandboxing and policy enforcement)" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#openshell"><span class="cat">Agents/MCP (Developer Preview surface)</span>OpenShell (secure agent sandboxing and policy enforcement)</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="OpenShell (secure agent sandboxing and policy enforcement): not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="OpenShell (secure agent sandboxing and policy enforcement): DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="Text-mode training for multimodal models in Training Hub" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#text-mode-training-multimodal"><span class="cat">Agents/MCP (Developer Preview surface)</span>Text-mode training for multimodal models in Training Hub</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Text-mode training for multimodal models in Training Hub: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="Text-mode training for multimodal models in Training Hub: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="View running agent deployments in dashboard" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP">
-  <td class="feature-name"><a href="matrix.html#view-running-agents-dashboard"><span class="cat">Agents/MCP (Developer Preview surface)</span>View running agent deployments in dashboard</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="View running agent deployments in dashboard: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="View running agent deployments in dashboard: DP (3.5)">
-    DP
-  </td>
-</tr>
-<tr data-name="KubeRay (CodeFlare Operator successor)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed">
-  <td class="feature-name"><a href="matrix.html#kuberay"><span class="cat">Distributed Training</span>KubeRay (CodeFlare Operator successor)</a></td>
-  <td colspan="1" class="swimlane-cell empty"
-      title="KubeRay (CodeFlare Operator successor): not yet introduced (2.19)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-deprecated"
-      title="KubeRay (CodeFlare Operator successor): Deprecated (2.24&ndash;2.25)">
-    Deprecated
-  </td>
-  <td colspan="4" class="swimlane-cell status-removed"
-      title="KubeRay (CodeFlare Operator successor): Removed (3.0&ndash;3.4)">
-    Removed
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="KubeRay (CodeFlare Operator successor): GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)" data-category="Distributed Training" data-statuses="Deprecated,GA,TP">
-  <td class="feature-name"><a href="matrix.html#kubeflow-trainer-v2"><span class="cat">Distributed Training</span>Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)</a></td>
-  <td colspan="2" class="swimlane-cell empty"
-      title="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1): not yet introduced (2.19&ndash;2.24)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-deprecated"
-      title="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1): Deprecated (2.25&ndash;3.0)">
-    Deprecated
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1): TP (3.2&ndash;3.3)">
-    TP
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Kubeflow Training Operator v1 (KFTOv1)" data-category="Distributed Training" data-statuses="Deprecated">
-  <td class="feature-name"><a href="matrix.html#kubeflow-training-operator-v1"><span class="cat">Distributed Training</span>Kubeflow Training Operator v1 (KFTOv1)</a></td>
-  <td colspan="2" class="swimlane-cell empty"
-      title="Kubeflow Training Operator v1 (KFTOv1): not yet introduced (2.19&ndash;2.24)">
-    
-  </td>
-  <td colspan="6" class="swimlane-cell status-deprecated"
-      title="Kubeflow Training Operator v1 (KFTOv1): Deprecated (2.25&ndash;3.5)">
-    Deprecated
-  </td>
-</tr>
-<tr data-name="Kueue (embedded component -&gt; Red Hat build of Kueue Operator)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed">
-  <td class="feature-name"><a href="matrix.html#kueue"><span class="cat">Distributed Training</span>Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a></td>
-  <td colspan="1" class="swimlane-cell empty"
-      title="Kueue (embedded component -&gt; Red Hat build of Kueue Operator): not yet introduced (2.19)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-deprecated"
-      title="Kueue (embedded component -&gt; Red Hat build of Kueue Operator): Deprecated (2.24&ndash;2.25)">
-    Deprecated
-  </td>
-  <td colspan="4" class="swimlane-cell status-removed"
-      title="Kueue (embedded component -&gt; Red Hat build of Kueue Operator): Removed (3.0&ndash;3.4)">
-    Removed
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Kueue (embedded component -&gt; Red Hat build of Kueue Operator): GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Automated Red Teaming (powered by Garak)" data-category="Evaluation" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#automated-red-teaming"><span class="cat">Evaluation</span>Automated Red Teaming (powered by Garak)</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Automated Red Teaming (powered by Garak): not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Automated Red Teaming (powered by Garak): GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Evaluation Stack -&gt; EvalHub" data-category="Evaluation" data-statuses="GA,TP">
-  <td class="feature-name"><a href="matrix.html#evalhub"><span class="cat">Evaluation</span>Evaluation Stack -&gt; EvalHub</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Evaluation Stack -&gt; EvalHub: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="Evaluation Stack -&gt; EvalHub: TP (3.4)">
-    TP
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Evaluation Stack -&gt; EvalHub: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="AutoML" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#automl"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoML</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="AutoML: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="AutoML: TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#autorag"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoRAG</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="AutoRAG: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="AutoRAG: TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="Feature Store (Feast-based)" data-category="Feature Store / AutoML / AutoRAG" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#feature-store"><span class="cat">Feature Store / AutoML / AutoRAG</span>Feature Store (Feast-based)</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Feature Store (Feast-based): not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Feature Store (Feast-based): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="FMS-Guardrails Orchestrator (via TrustyAI)" data-category="Guardrails" data-statuses="Deprecated,GA,TP">
-  <td class="feature-name"><a href="matrix.html#fms-guardrails"><span class="cat">Guardrails</span>FMS-Guardrails Orchestrator (via TrustyAI)</a></td>
-  <td colspan="3" class="swimlane-cell status-tp"
-      title="FMS-Guardrails Orchestrator (via TrustyAI): TP (2.19&ndash;2.25)">
-    TP
-  </td>
-  <td colspan="4" class="swimlane-cell status-ga"
-      title="FMS-Guardrails Orchestrator (via TrustyAI): GA (3.0&ndash;3.4)">
-    GA
-  </td>
-  <td colspan="1" class="swimlane-cell status-deprecated"
-      title="FMS-Guardrails Orchestrator (via TrustyAI): Deprecated (3.5)">
-    Deprecated
-  </td>
-</tr>
-<tr data-name="NeMo Guardrails" data-category="Guardrails" data-statuses="GA,TP">
-  <td class="feature-name"><a href="matrix.html#nemo-guardrails"><span class="cat">Guardrails</span>NeMo Guardrails</a></td>
-  <td colspan="4" class="swimlane-cell empty"
-      title="NeMo Guardrails: not yet introduced (2.19&ndash;3.0)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="NeMo Guardrails: TP (3.2&ndash;3.3)">
-    TP
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="NeMo Guardrails: GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="NeMo Guardrails integration with MCP Gateway" data-category="Guardrails" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#nemo-mcp-gateway-integration"><span class="cat">Guardrails</span>NeMo Guardrails integration with MCP Gateway</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="NeMo Guardrails integration with MCP Gateway: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="NeMo Guardrails integration with MCP Gateway: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MLflow experiment tracking / MLOps integration" data-category="MLOps" data-statuses="DP,GA,TP">
-  <td class="feature-name"><a href="matrix.html#mlflow"><span class="cat">MLOps</span>MLflow experiment tracking / MLOps integration</a></td>
-  <td colspan="4" class="swimlane-cell empty"
-      title="MLflow experiment tracking / MLOps integration: not yet introduced (2.19&ndash;3.0)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-dp"
-      title="MLflow experiment tracking / MLOps integration: DP (3.2)">
-    DP
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MLflow experiment tracking / MLOps integration: TP (3.3)">
-    TP
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="MLflow experiment tracking / MLOps integration: GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Loki-based showback and user-scoped usage dashboards (MaaS)" data-category="MaaS" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#maas-loki-showback"><span class="cat">MaaS</span>Loki-based showback and user-scoped usage dashboards (MaaS)</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Loki-based showback and user-scoped usage dashboards (MaaS): not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="Loki-based showback and user-scoped usage dashboards (MaaS): TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MaaS deployment/routing path for Distributed Inference with llm-d" data-category="MaaS" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#maas-llmd-routing"><span class="cat">MaaS</span>MaaS deployment/routing path for Distributed Inference with llm-d</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="MaaS deployment/routing path for Distributed Inference with llm-d: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="MaaS deployment/routing path for Distributed Inference with llm-d: TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MaaS multi-tenancy with per-tenant gateway and identity isolation" data-category="MaaS" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#maas-multitenancy"><span class="cat">MaaS</span>MaaS multi-tenancy with per-tenant gateway and identity isolation</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="MaaS multi-tenancy with per-tenant gateway and identity isolation: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MaaS multi-tenancy with per-tenant gateway and identity isolation: TP (3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="MaaS-specific external OIDC user authentication" data-category="MaaS" data-statuses="GA,TP">
-  <td class="feature-name"><a href="matrix.html#maas-external-oidc"><span class="cat">MaaS</span>MaaS-specific external OIDC user authentication</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="MaaS-specific external OIDC user authentication: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="MaaS-specific external OIDC user authentication: TP (3.4)">
-    TP
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="MaaS-specific external OIDC user authentication: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Models-as-a-Service (MaaS) core: access model and token mechanism" data-category="MaaS" data-statuses="GA,TP">
-  <td class="feature-name"><a href="matrix.html#maas-core"><span class="cat">MaaS</span>Models-as-a-Service (MaaS) core: access model and token mechanism</a></td>
-  <td colspan="5" class="swimlane-cell empty"
-      title="Models-as-a-Service (MaaS) core: access model and token mechanism: not yet introduced (2.19&ndash;3.2)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="Models-as-a-Service (MaaS) core: access model and token mechanism: TP (3.3)">
-    TP
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Models-as-a-Service (MaaS) core: access model and token mechanism: GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Multi-provider API passthrough for external models (MaaS)" data-category="MaaS" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#maas-multiprovider-passthrough"><span class="cat">MaaS</span>Multi-provider API passthrough for external models (MaaS)</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Multi-provider API passthrough for external models (MaaS): not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="Multi-provider API passthrough for external models (MaaS): TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="Platform-wide direct OIDC authentication (GatewayConfig CR)" data-category="MaaS" data-statuses="Change,GA">
-  <td class="feature-name"><a href="matrix.html#platform-oidc-gateway"><span class="cat">MaaS</span>Platform-wide direct OIDC authentication (GatewayConfig CR)</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="Platform-wide direct OIDC authentication (GatewayConfig CR): not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="3" class="swimlane-cell status-change"
-      title="Platform-wide direct OIDC authentication (GatewayConfig CR): Change (3.0&ndash;3.3)">
-    Change
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Platform-wide direct OIDC authentication (GatewayConfig CR): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="vLLM model deployment directly through MaaS" data-category="MaaS" data-statuses="TP">
-  <td class="feature-name"><a href="matrix.html#maas-vllm-deployment"><span class="cat">MaaS</span>vLLM model deployment directly through MaaS</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="vLLM model deployment directly through MaaS: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="vLLM model deployment directly through MaaS: TP (3.4&ndash;3.5)">
-    TP
-  </td>
-</tr>
-<tr data-name="Automatic default group creation for model registry" data-category="Model Registry" data-statuses="Deprecated">
-  <td class="feature-name"><a href="matrix.html#model-registry-default-group-creation"><span class="cat">Model Registry</span>Automatic default group creation for model registry</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Automatic default group creation for model registry: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-deprecated"
-      title="Automatic default group creation for model registry: Deprecated (3.4&ndash;3.5)">
-    Deprecated
-  </td>
-</tr>
-<tr data-name="Model registry and model catalog" data-category="Model Registry" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#model-registry-catalog"><span class="cat">Model Registry</span>Model registry and model catalog</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="Model registry and model catalog: not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="5" class="swimlane-cell status-ga"
-      title="Model registry and model catalog: GA (3.0&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Distributed Inference with llm-d (core)" data-category="Model Serving" data-statuses="DP,GA">
-  <td class="feature-name"><a href="matrix.html#llm-d-core"><span class="cat">Model Serving</span>Distributed Inference with llm-d (core)</a></td>
-  <td colspan="2" class="swimlane-cell empty"
-      title="Distributed Inference with llm-d (core): not yet introduced (2.19&ndash;2.24)">
-    
-  </td>
-  <td colspan="4" class="swimlane-cell status-dp"
-      title="Distributed Inference with llm-d (core): DP (2.25&ndash;3.3)">
-    DP
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Distributed Inference with llm-d (core): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Distributed Inference with llm-d: priority-based flow control" data-category="Model Serving" data-statuses="GA,TP">
-  <td class="feature-name"><a href="matrix.html#flow-control-llmd"><span class="cat">Model Serving</span>Distributed Inference with llm-d: priority-based flow control</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="Distributed Inference with llm-d: priority-based flow control: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="Distributed Inference with llm-d: priority-based flow control: TP (3.4)">
-    TP
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Distributed Inference with llm-d: priority-based flow control: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="KServe Serverless deployment mode" data-category="Model Serving" data-statuses="Change,Deprecated,Removed">
-  <td class="feature-name"><a href="matrix.html#kserve-serverless"><span class="cat">Model Serving</span>KServe Serverless deployment mode</a></td>
-  <td colspan="2" class="swimlane-cell empty"
-      title="KServe Serverless deployment mode: not yet introduced (2.19&ndash;2.24)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-deprecated"
-      title="KServe Serverless deployment mode: Deprecated (2.25)">
-    Deprecated
-  </td>
-  <td colspan="4" class="swimlane-cell status-change"
-      title="KServe Serverless deployment mode: Change (3.0&ndash;3.4)">
-    Change
-  </td>
-  <td colspan="1" class="swimlane-cell status-removed"
-      title="KServe Serverless deployment mode: Removed (3.5)">
-    Removed
-  </td>
-</tr>
-<tr data-name="LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)" data-category="Model Serving" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#vllm-llminferenceservice"><span class="cat">Model Serving</span>LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="LLMInferenceService / LLMInferenceServiceConfig (llm-d-native): not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="LLMInferenceService / LLMInferenceServiceConfig (llm-d-native): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Multi-model serving platform (ModelMesh)" data-category="Model Serving" data-statuses="Change,Deprecated,Removed">
-  <td class="feature-name"><a href="matrix.html#modelmesh"><span class="cat">Model Serving</span>Multi-model serving platform (ModelMesh)</a></td>
-  <td colspan="3" class="swimlane-cell status-deprecated"
-      title="Multi-model serving platform (ModelMesh): Deprecated (2.19&ndash;2.25)">
-    Deprecated
-  </td>
-  <td colspan="4" class="swimlane-cell status-change"
-      title="Multi-model serving platform (ModelMesh): Change (3.0&ndash;3.4)">
-    Change
-  </td>
-  <td colspan="1" class="swimlane-cell status-removed"
-      title="Multi-model serving platform (ModelMesh): Removed (3.5)">
-    Removed
-  </td>
-</tr>
-<tr data-name="Red Hat AI Inference fast-release images as custom ServingRuntime" data-category="Model Serving" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#vllm-fast-release-images"><span class="cat">Model Serving</span>Red Hat AI Inference fast-release images as custom ServingRuntime</a></td>
-  <td colspan="7" class="swimlane-cell empty"
-      title="Red Hat AI Inference fast-release images as custom ServingRuntime: not yet introduced (2.19&ndash;3.4)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Red Hat AI Inference fast-release images as custom ServingRuntime: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="vLLM CPU ServingRuntime on IBM Z / Power" data-category="Model Serving" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#vllm-cpu-arch-restriction"><span class="cat">Model Serving</span>vLLM CPU ServingRuntime on IBM Z / Power</a></td>
-  <td colspan="6" class="swimlane-cell empty"
-      title="vLLM CPU ServingRuntime on IBM Z / Power: not yet introduced (2.19&ndash;3.3)">
-    
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="vLLM CPU ServingRuntime on IBM Z / Power: GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="vLLM ServingRuntime for KServe" data-category="Model Serving" data-statuses="GA">
-  <td class="feature-name"><a href="matrix.html#vllm-kserve-runtime"><span class="cat">Model Serving</span>vLLM ServingRuntime for KServe</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="vLLM ServingRuntime for KServe: not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="5" class="swimlane-cell status-ga"
-      title="vLLM ServingRuntime for KServe: GA (3.0&ndash;3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration" data-category="OGX" data-statuses="Change,GA,TP">
-  <td class="feature-name"><a href="matrix.html#ogx-core"><span class="cat">OGX</span>Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration: not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-tp"
-      title="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration: TP (3.0)">
-    TP
-  </td>
-  <td colspan="1" class="swimlane-cell status-change"
-      title="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration: Change (3.2)">
-    Change
-  </td>
-  <td colspan="2" class="swimlane-cell status-tp"
-      title="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration: TP (3.3&ndash;3.4)">
-    TP
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration: GA (3.5)">
-    GA
-  </td>
-</tr>
-<tr data-name="SQLite as Llama Stack / OGX metadata store" data-category="OGX" data-statuses="Deprecated,GA">
-  <td class="feature-name"><a href="matrix.html#ogx-sqlite-metadata-store"><span class="cat">OGX</span>SQLite as Llama Stack / OGX metadata store</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="SQLite as Llama Stack / OGX metadata store: not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="1" class="swimlane-cell status-ga"
-      title="SQLite as Llama Stack / OGX metadata store: GA (3.0)">
-    GA
-  </td>
-  <td colspan="4" class="swimlane-cell status-deprecated"
-      title="SQLite as Llama Stack / OGX metadata store: Deprecated (3.2&ndash;3.5)">
-    Deprecated
-  </td>
-</tr>
-<tr data-name="Gateway API and Red Hat Connectivity Link (RHCL)" data-category="Platform" data-statuses="Change,GA">
-  <td class="feature-name"><a href="matrix.html#gateway-api-rhcl"><span class="cat">Platform</span>Gateway API and Red Hat Connectivity Link (RHCL)</a></td>
-  <td colspan="3" class="swimlane-cell empty"
-      title="Gateway API and Red Hat Connectivity Link (RHCL): not yet introduced (2.19&ndash;2.25)">
-    
-  </td>
-  <td colspan="3" class="swimlane-cell status-change"
-      title="Gateway API and Red Hat Connectivity Link (RHCL): Change (3.0&ndash;3.3)">
-    Change
-  </td>
-  <td colspan="2" class="swimlane-cell status-ga"
-      title="Gateway API and Red Hat Connectivity Link (RHCL): GA (3.4&ndash;3.5)">
-    GA
-  </td>
-</tr>
-</tbody>
-</table>
+<div class="timeline-swimlane">
+  <div class="timeline-header-row">
+    <div class="timeline-label-spacer"></div>
+    <div class="timeline-axis">
+      <div class="timeline-tick" style="left: 2.77%">2024</div>
+      <div class="timeline-tick" style="left: 25.82%">2025</div>
+      <div class="timeline-tick" style="left: 48.8%">2026</div>
+      <div class="timeline-tick" style="left: 71.79%">2027</div>
+      <div class="timeline-tick" style="left: 94.77%">2028</div>
+    </div>
+  </div>
+  <div class="timeline-body">
+    <div class="timeline-labels">
+<div class="timeline-lane-label">2.5</div><div class="timeline-lane-label">2.7</div><div class="timeline-lane-label">2.9</div><div class="timeline-lane-label">2.11</div><div class="timeline-lane-label">2.14</div><div class="timeline-lane-label">2.16</div><div class="timeline-lane-label">2.17</div><div class="timeline-lane-label">2.18</div><div class="timeline-lane-label">2.19</div><div class="timeline-lane-label">2.22</div><div class="timeline-lane-label">2.23</div><div class="timeline-lane-label">2.24</div><div class="timeline-lane-label">2.25</div><div class="timeline-lane-label">3.0</div><div class="timeline-lane-label">3.2</div><div class="timeline-lane-label">3.3</div><div class="timeline-lane-label">3.4</div><div class="timeline-lane-label">3.5</div>    </div>
+    <div class="timeline-tracks">
+      <div class="timeline-today-line" style="left: 64.92%" title="Today (2026-09-14)"></div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:1.57%; width:6.869999999999999%" title="2.5: Full Support 2023-12-13 → 2024-03-31"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:6.36%; width:5.29%" title="2.7: Full Support 2024-02-27 → 2024-05-21"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:10.39%; width:3.3999999999999986%" title="2.9: Full Support 2024-05-01 → 2024-06-24"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:15.18%; width:10.64%" title="2.11: Full Support 2024-07-16 → 2025-01-01"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:21.03%; width:1.7699999999999996%" title="2.14: Full Support 2024-10-17 → 2024-11-14"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:24.37%; width:13.220000000000002%" title="2.16: Full Support 2024-12-09 → 2025-07-07"></div>
+        <div class="timeline-bar lifecycle-eus" style="left:37.59%; width:21.229999999999997%" title="2.16: Extended Update Support 2025-07-07 → 2026-06-09"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:28.53%; width:1.6999999999999993%" title="2.17: Full Support 2025-02-13 → 2025-03-12"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:30.23%; width:2.1999999999999993%" title="2.18: Full Support 2025-03-12 → 2025-04-16"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:32.43%; width:13.54%" title="2.19: Full Support 2025-04-16 → 2025-11-17"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:38.48%; width:13.220000000000006%" title="2.22: Full Support 2025-07-21 → 2026-02-16"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:39.99%; width:2.1999999999999957%" title="2.23: Full Support 2025-08-14 → 2025-09-18"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:43.39%; width:1.009999999999998%" title="2.24: Full Support 2025-10-07 → 2025-10-23"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:44.4%; width:13.469999999999999%" title="2.25: Full Support 2025-10-23 → 2026-05-25"></div>
+        <div class="timeline-bar lifecycle-eus" style="left:57.87%; width:21.160000000000004%" title="2.25: Extended Update Support 2026-05-25 → 2027-04-26"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:45.72%; width:3.969999999999999%" title="3.0: Full Support 2025-11-13 → 2026-01-15"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:50.13%; width:2.6400000000000006%" title="3.2: Full Support 2026-01-22 → 2026-03-05"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:52.77%; width:13.479999999999997%" title="3.3: Full Support 2026-03-05 → 2026-10-05"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:57.18%; width:11.71%" title="3.4: Full Support 2026-05-14 → 2026-11-16"></div>
+      </div>
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:63.79%; width:13.479999999999997%" title="3.5: Full Support 2026-08-27 → 2027-03-29"></div>
+        <div class="timeline-bar lifecycle-eus" style="left:77.27%; width:21.16000000000001%" title="3.5: Extended Update Support 2027-03-29 → 2028-02-28"></div>
+      </div>
+    </div>
+  </div>
 </div>
 
 <h2>What's new in 3.5</h2>
@@ -1267,7 +575,6 @@
   <div class="item-card"><h4><a href="conflicts.html">Source Conflicts</a></h4><p>Where the release notes and the Supported Configurations matrix disagree.</p></div>
   <div class="item-card"><h4><a href="versions/3.5.html">3.5 release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
 </div>
-<script src="assets/app.js"></script>
 </main>
 <footer class="site-footer">
   Built from official Red Hat OpenShift AI release notes and the live

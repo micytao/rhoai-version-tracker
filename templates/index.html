@@ -50,42 +50,47 @@
   {% endfor %}
 </div>
 
-<h2>Feature swimlane</h2>
+<h3>Calendar view</h3>
 <p class="section-note">
-  Every tracked feature, one lane per row, run across the versions that actually carry a recorded change &mdash; status
-  is carried forward as a continuous bar until the next change, so you can scan a row left-to-right and immediately see
-  where a feature moved between GA/TP/DP/Deprecated/Removed relative to any other feature. Full per-version detail
-  (including sourced tooltips) is on the <a href="matrix.html">Feature Matrix</a>.
+  Same release timeline, plotted against real calendar time instead of discrete version columns, so overlapping
+  support windows across versions &mdash; e.g. which versions were all in Full Support or EUS at once &mdash; are
+  visible directly. Dashed red line = today ({{ release_calendar.today }}).
+  {% if release_calendar.excluded %}
+  {{ release_calendar.excluded | join(', ') }} {{ 'has' if release_calendar.excluded | length == 1 else 'have' }}
+  no official Life Cycle GA date on their own and aren't placed on this axis (see the cards above).
+  {% endif %}
 </p>
-<div class="filters">
-  <input type="text" id="swimlane-search" placeholder="Search feature or category&hellip;">
-  <select id="swimlane-category">
-    <option value="">All categories</option>
-    {% for c in swimlane_categories %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
-  </select>
+<div class="legend">
+  <span class="chip lifecycle-full-support">&#9632; Full Support</span>
+  <span class="chip lifecycle-eus">&#9632; Extended Update Support</span>
 </div>
-<div class="matrix-wrap swimlane-wrap">
-<table class="matrix swimlane" id="swimlane-table">
-<thead>
-<tr>
-  <th>Feature</th>
-  {% for v in swimlane_versions %}<th>{{ v }}</th>{% endfor %}
-</tr>
-</thead>
-<tbody>
-{% for lane in swimlane_lanes %}
-<tr data-name="{{ lane.name }}" data-category="{{ lane.category }}" data-statuses="{{ lane.all_statuses | join(',') }}">
-  <td class="feature-name"><a href="matrix.html#{{ lane.feature_id }}"><span class="cat">{{ lane.category }}</span>{{ lane.name }}</a></td>
-  {% for seg in lane.segments %}
-  <td colspan="{{ seg.span }}" class="swimlane-cell {{ seg.status_class }}"
-      title="{{ lane.name }}: {{ seg.status or 'not yet introduced' }} ({{ seg.start_version }}{% if seg.end_version != seg.start_version %}&ndash;{{ seg.end_version }}{% endif %})">
-    {{ seg.status or '' }}
-  </td>
-  {% endfor %}
-</tr>
-{% endfor %}
-</tbody>
-</table>
+<div class="timeline-swimlane">
+  <div class="timeline-header-row">
+    <div class="timeline-label-spacer"></div>
+    <div class="timeline-axis">
+      {% for tick in release_calendar.ticks %}
+      <div class="timeline-tick" style="left: {{ tick.left }}%">{{ tick.label }}</div>
+      {% endfor %}
+    </div>
+  </div>
+  <div class="timeline-body">
+    <div class="timeline-labels">
+      {% for lane in release_calendar.lanes %}<div class="timeline-lane-label">{{ lane.version }}</div>{% endfor %}
+    </div>
+    <div class="timeline-tracks">
+      {% if release_calendar.today_pct is not none %}
+      <div class="timeline-today-line" style="left: {{ release_calendar.today_pct }}%" title="Today ({{ release_calendar.today }})"></div>
+      {% endif %}
+      {% for lane in release_calendar.lanes %}
+      <div class="timeline-lane-track">
+        <div class="timeline-bar lifecycle-full-support" style="left:{{ lane.fs_left }}%; width:{{ lane.fs_width }}%" title="{{ lane.version }}: {{ lane.fs_label }}"></div>
+        {% if lane.eus_width %}
+        <div class="timeline-bar lifecycle-eus" style="left:{{ lane.eus_left }}%; width:{{ lane.eus_width }}%" title="{{ lane.version }}: {{ lane.eus_label }}"></div>
+        {% endif %}
+      </div>
+      {% endfor %}
+    </div>
+  </div>
 </div>
 
 <h2>What's new in {{ latest_version }}</h2>
@@ -122,5 +127,4 @@
   <div class="item-card"><h4><a href="versions/{{ v }}.html">{{ v }} release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
   {% endfor %}
 </div>
-<script src="{{ asset_prefix }}assets/app.js"></script>
 {% endblock %}

@@ -20,7 +20,7 @@ import json
 import re
 import shutil
 import sys
-from datetime import date, datetime, timezone
+from datetime import date, datetime, timedelta, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -161,62 +161,75 @@ def compute_lifecycle_phase(version_meta: dict, today: "date | None" = None) -> 
     return {"phase": "End of Life", "phase_class": "lifecycle-eol", "until": (eus_end or fs_end).isoformat()}
 
 
-def build_swimlane_data(registry: dict, matrix_versions: list[str]) -> list[dict]:
-    """One lane per feature, run-length-encoded across `matrix_versions` so
-    consecutive versions with the same (carried-forward) status render as a
-    single continuous colored bar segment -- a Gantt/swimlane view of the
-    same timeline data the Feature Matrix shows per-cell, meant for
-    at-a-glance version-to-version comparison on the dashboard.
+def build_release_calendar(sorted_versions: list[dict], today: "date | None" = None) -> dict:
+    """Release-timeline swimlane: one lane per RHOAI minor version, plotted
+    against a real calendar-time x-axis (not discrete version columns), so
+    overlapping Full Support / Extended Update Support windows across
+    versions are visible directly -- e.g. that 2.25's EUS window overlaps
+    3.0 through 3.3's entire lifetimes.
 
-    Status is carried forward from the last recorded timeline entry until
-    the next one (a feature with no new entry at a given version hasn't
-    changed status, not disappeared); versions before a feature's first
-    recorded entry render as an empty/unintroduced segment.
+    Versions without an official Life Cycle GA date (pre-tracking RHODS 1.x
+    releases, or a micro release like 3.3.2 with no GA date of its own) are
+    excluded from this real-time placement -- they remain visible in the
+    card-grid release timeline above, which doesn't require a date to plot.
     """
-    version_index = {v: i for i, v in enumerate(matrix_versions)}
+    today = today or datetime.now(timezone.utc).date()
+    placeable = []
+    excluded = []
+    for v in sorted_versions:
+        ga = _parse_date(v.get("ga_date"))
+        fs_end = _parse_date(v.get("full_support_end"))
+        if ga and fs_end:
+            placeable.append({"version": v["version"], "ga": ga, "fs_end": fs_end,
+                               "eus_end": _parse_date(v.get("eus_end"))})
+        else:
+            excluded.append(v["version"])
+
+    if not placeable:
+        return {"lanes": [], "ticks": [], "today_pct": None, "excluded": excluded}
+
+    min_date = min(l["ga"] for l in placeable)
+    max_date = max((l["eus_end"] or l["fs_end"]) for l in placeable)
+    span_start = min_date - timedelta(days=25)
+    span_end = max_date + timedelta(days=25)
+    total_days = (span_end - span_start).days or 1
+
+    def pct(d: date) -> float:
+        return round((d - span_start).days / total_days * 100, 2)
+
     lanes = []
-    for f in registry["features"]:
-        entries_by_index = {}
-        for t in f["timeline"]:
-            idx = version_index.get(t["version"])
-            if idx is not None:
-                entries_by_index[idx] = t["status"]
-        if not entries_by_index:
-            continue
-        first_idx = min(entries_by_index.keys())
+    for l in placeable:
+        fs_left = pct(l["ga"])
+        row = {
+            "version": l["version"],
+            "fs_left": fs_left,
+            "fs_width": max(pct(l["fs_end"]) - fs_left, 0.4),
+            "fs_label": f"Full Support {l['ga'].isoformat()} \u2192 {l['fs_end'].isoformat()}",
+        }
+        if l["eus_end"]:
+            eus_left = pct(l["fs_end"])
+            row["eus_left"] = eus_left
+            row["eus_width"] = max(pct(l["eus_end"]) - eus_left, 0.4)
+            row["eus_label"] = f"Extended Update Support {l['fs_end'].isoformat()} \u2192 {l['eus_end'].isoformat()}"
+        lanes.append(row)
 
-        effective = []
-        current_status = None
-        for i in range(len(matrix_versions)):
-            if i in entries_by_index:
-                current_status = entries_by_index[i]
-            effective.append(current_status if i >= first_idx else None)
+    ticks = []
+    y = span_start.year
+    while date(y, 1, 1) <= span_end:
+        jan1 = date(y, 1, 1)
+        if jan1 >= span_start:
+            ticks.append({"left": pct(jan1), "label": str(y)})
+        y += 1
 
-        segments = []
-        i = 0
-        while i < len(effective):
-            status = effective[i]
-            j = i
-            while j + 1 < len(effective) and effective[j + 1] == status:
-                j += 1
-            segments.append({
-                "status": status,
-                "status_class": _status_class(status) if status else "empty",
-                "span": j - i + 1,
-                "start_version": matrix_versions[i],
-                "end_version": matrix_versions[j],
-            })
-            i = j + 1
+    today_pct = pct(today) if span_start <= today <= span_end else None
 
-        lanes.append({
-            "feature_id": f["feature_id"],
-            "name": f["name"],
-            "category": f["category"],
-            "all_statuses": sorted({t["status"] for t in f["timeline"]}),
-            "segments": segments,
-        })
-    lanes.sort(key=lambda l: (l["category"], l["name"]))
-    return lanes
+    return {
+        "lanes": lanes,
+        "ticks": ticks,
+        "today_pct": today_pct,
+        "today": today.isoformat(),
+        "excluded": excluded,
+    }
 
 
 def build_highlights(registry: dict, latest_version: str) -> tuple[list[dict], list[dict]]:
@@ -271,7 +284,7 @@ def main():
     latest_version = sorted_versions[-1]["version"] if sorted_versions else None
 
     matrix_versions, matrix_features, categories = build_matrix_data(registry)
-    swimlane_lanes = build_swimlane_data(registry, matrix_versions)
+    release_calendar = build_release_calendar(sorted_versions, build_today)
     highlights, red_highlights = build_highlights(registry, latest_version)
     stats = compute_stats(registry)
     version_pages = sorted(extracted_releases.keys(), key=version_sort_key)
@@ -312,9 +325,7 @@ def main():
         "versions": sorted_versions,
         "highlights": highlights,
         "red_highlights": red_highlights,
-        "swimlane_versions": matrix_versions,
-        "swimlane_lanes": swimlane_lanes,
-        "swimlane_categories": categories,
+        "release_calendar": release_calendar,
     })
 
     render("matrix.html", out_dir / "matrix.html", {

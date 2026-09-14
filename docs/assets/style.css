@@ -217,30 +217,70 @@ footer.site-footer {
 .section-note { color: var(--muted); font-size: 0.86rem; margin: -4px 0 14px; }
 .hidden-row { display: none !important; }
 
-/* Feature swimlane: same underlying timeline data as the Feature Matrix,
-   rendered as continuous run-length-encoded bars (one <td colspan> per
-   status "run") instead of one badge per column, so version-to-version
-   comparison reads as a Gantt-style strip rather than a grid of pills. */
-.swimlane-wrap { max-height: 620px; overflow-y: auto; }
-table.swimlane th, table.swimlane td { padding: 0; }
-table.swimlane th { padding: 6px 8px; }
-table.swimlane td.feature-name { padding: 6px 10px; min-width: 260px; }
-table.swimlane td.feature-name a { color: var(--ink); }
-table.swimlane td.feature-name a:hover { color: var(--link); }
-td.swimlane-cell {
-  text-align: center;
-  vertical-align: middle;
-  font-size: 0.66rem;
-  font-weight: 700;
-  letter-spacing: 0.02em;
-  padding: 7px 4px;
-  min-width: 40px;
-  border-left: 2px solid var(--bg);
+/* Release timeline calendar swimlane: one lane per version, plotted on a
+   real calendar-time x-axis (percentages computed at build time in
+   build_site.py) instead of discrete version columns, so overlapping
+   Full Support / EUS windows across versions read as a Gantt chart. */
+.timeline-swimlane {
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  padding: 14px 18px 16px;
+  margin: 14px 0 26px;
+  overflow-x: auto;
 }
-td.swimlane-cell.empty { background: var(--bg-alt); }
-td.swimlane-cell.status-ga         { background: var(--green-bg);      color: var(--green-fg); }
-td.swimlane-cell.status-tp         { background: var(--amber-bg);      color: var(--amber-fg); }
-td.swimlane-cell.status-dp         { background: var(--dp-bg);         color: var(--dp-fg); }
-td.swimlane-cell.status-deprecated { background: var(--deprecated-bg); color: var(--deprecated-fg); }
-td.swimlane-cell.status-removed    { background: var(--red-bg);        color: var(--red-fg); }
-td.swimlane-cell.status-change     { background: var(--bg-alt);        color: var(--muted); }
+.timeline-header-row { display: flex; min-width: 640px; }
+.timeline-label-spacer { width: 56px; flex: 0 0 56px; }
+.timeline-axis {
+  position: relative;
+  flex: 1;
+  height: 20px;
+  border-bottom: 1px solid var(--border);
+  margin-bottom: 6px;
+}
+.timeline-tick {
+  position: absolute;
+  top: 0;
+  transform: translateX(-50%);
+  font-size: 0.7rem;
+  color: var(--muted);
+}
+.timeline-body { display: flex; min-width: 640px; }
+.timeline-labels { width: 56px; flex: 0 0 56px; }
+.timeline-lane-label {
+  height: 24px;
+  line-height: 24px;
+  font-weight: 700;
+  font-size: 0.78rem;
+}
+.timeline-tracks { position: relative; flex: 1; }
+.timeline-lane-track {
+  position: relative;
+  height: 24px;
+  display: flex;
+  align-items: center;
+}
+.timeline-lane-track::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  right: 0;
+  top: 50%;
+  height: 1px;
+  background: var(--bg-alt);
+}
+.timeline-bar {
+  position: absolute;
+  height: 13px;
+  border-radius: 3px;
+  z-index: 1;
+}
+.timeline-bar.lifecycle-full-support { background: var(--green-fg); }
+.timeline-bar.lifecycle-eus { background: var(--eus-fg); }
+.timeline-today-line {
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  width: 0;
+  border-left: 2px dashed var(--red-fg);
+  z-index: 2;
+}
