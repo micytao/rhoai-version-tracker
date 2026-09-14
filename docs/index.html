@@ -1,0 +1,472 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Dashboard — RHOAI Version Tracker</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+    <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="matrix.html">Feature Matrix</a>
+    <a href="migration.html">Migration Checklist</a>
+    <a href="conflicts.html">Source Conflicts</a>
+<a href="versions/3.5.html">3.5</a>  </nav>
+</header>
+<main>
+<h1>Version &amp; Feature Tracker</h1>
+<p class="lede">
+  Tracks Red Hat OpenShift AI's feature lifecycle, deprecations, and upgrade paths
+  release over release &mdash; cross-checked against the live Supported Configurations
+  matrix so sellers and customers can see where the release notes and the formal
+  support matrix disagree, not just where they agree.
+</p>
+
+<div class="legend">
+  <span class="chip green">Green &mdash; GA / production supported</span>
+  <span class="chip amber">Amber &mdash; preview instability, migration caution, or an unresolved conflict</span>
+  <span class="chip red">Red &mdash; confirmed production-impacting removal or breaking change</span>
+</div>
+
+<div class="stat-cards">
+  <div class="stat-card green"><div class="num">13</div><div class="label">Green features</div></div>
+  <div class="stat-card amber"><div class="num">42</div><div class="label">Amber features</div></div>
+  <div class="stat-card red"><div class="num">5</div><div class="label">Red features</div></div>
+  <div class="stat-card"><div class="num">5</div><div class="label">Open source conflicts</div></div>
+  <div class="stat-card"><div class="num">40</div><div class="label">Deprecation-timeline entries</div></div>
+</div>
+
+<h2>Release timeline</h2>
+<p class="section-note">EA1 &rarr; EA2 &rarr; GA per version, where applicable. EUS releases shaded.</p>
+<div class="version-strip">
+  <div class="version-card ">
+    <div class="v">1.15</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">1.16</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.5</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.7</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.9</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.11</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.14</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.16</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.17</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.18</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.19</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.22</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.23</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.24</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">2.25</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">3.0</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">3.2</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">3.3</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">3.3.2</div>
+    <div class="milestones">&amp;mdash;</div>
+  </div>
+  <div class="version-card ">
+    <div class="v">3.4</div>
+    <div class="milestones">EA1 &rarr; EA2 &rarr; GA</div>
+  </div>
+  <div class="version-card eus">
+    <div class="v">3.5</div>
+    <div class="milestones">EA1 &rarr; EA2 &rarr; GA</div>
+<div class="milestones">GA 2026-09-09</div>  </div>
+</div>
+
+<h2>What's new in 3.5</h2>
+<p class="section-note">Auto-derived from every feature whose most recent timeline entry lands on 3.5.</p>
+<div class="card-grid">
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#tool-calling-evaldata-gen">Automated tool-calling evaluation-data generation for custom MCP servers</a> <span class="badge green">GA</span></h4>
+    <p>Actively explores MCP servers to generate verified question-answer-tool-call triplets for single- and multi-step tool chains, feeding standard evaluation frameworks.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#mcp-catalog-tier-labeling">MCP Catalog support-tier labeling</a> <span class="badge amber">TP</span></h4>
+    <p>Badges distinguish Red Hat Supported, Partner Supported, and Community Supported MCP server entries.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#mcp-lifecycle-operator">MCP Lifecycle Operator</a> <span class="badge amber">TP</span></h4>
+    <p>Kubernetes-native operator for deploying/managing MCP servers. Current 3.5 implementation guide: mcplifecycleoperator defaults to Removed in DataScienceCluster and must be explicitly set to Managed; mcpCatalog...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#mcp-gateway-operator">MCP gateway Operator</a> <span class="badge amber">TP</span></h4>
+    <p>Optional external dependency, installed/upgraded independently of the OpenShift AI Operator. Cluster administrators own its lifecycle; used for governed MCP management and tool-call routing.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#ogx-agentic-api-surface">OGX-native agentic API surface (Tool Runtime, Responses, Conversations)</a> <span class="badge amber">TP</span></h4>
+    <p>Mixed GA/TP/DP: Tool Runtime API and model-context-protocol tool-runtime provider are DP; Responses API is GA; Conversations API is TP. See ogx_provider_table for full per-endpoint/provider detail.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#opencode-agent">OpenCode coding-agent deployment</a> <span class="badge amber">TP</span></h4>
+    <p>Validated coding-agent pattern showing vLLM/OGX inference backends and MLflow tracing generalize to coding-specific agent workloads.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP</span>
+    <h4><a href="matrix.html#validated-tool-calling-catalog">Validated tool-calling configuration in Model Catalog</a> <span class="badge amber">TP</span></h4>
+    <p>Gated behind spec.dashboardConfig.toolCalling in OdhDashboardConfig; surfaces validated vLLM tool-calling and reasoning arguments for supported models.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#agent-catalog-aihub">Agent Catalog in AI Hub</a> <span class="badge amber">DP</span></h4>
+    <p>Gated behind agentsCatalog. Central discovery interface for starter kits built on LangGraph, CrewAI, LlamaIndex, and other frameworks.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#csv-export-model-catalog">CSV export for Model Catalog data</a> <span class="badge amber">DP</span></h4>
+    <p>Standalone Python 3.10+ CLI that paginates Model Catalog REST API data and emits RFC 4180 CSV including custom properties.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#claude-code-starter-kit">Claude Code agent starter kit</a> <span class="badge amber">DP</span></h4>
+    <p>Validated direct Anthropic, self-hosted vLLM, or vLLM-through-OGX paths; MLflow tracing; ConfigMap skill/MCP injection; restricted-v2 SCC.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#external-metering-maas">External metering integration for MaaS</a> <span class="badge amber">DP</span></h4>
+    <p>Separate MaaS-specific BBR plugins for post-inference usage webhook and pre-inference credit checking; invoice/rate calculation remains external.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#external-metering-general">External metering: per-user token usage and cost</a> <span class="badge amber">DP</span></h4>
+    <p>Inference Gateway IPP plugin plus PostgreSQL-backed metering service; balance checks, provider token extraction, CloudEvents, admin dashboard, REST API.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#genai-studio-saved-agent">Gen AI Studio saved-agent configuration</a> <span class="badge amber">DP</span></h4>
+    <p>Gated behind agentConfigManagement. Saves model, inference, prompt, RAG, and MCP configuration as reusable project-scoped agent resources.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#hierarchical-kv-cache-tiering">Hierarchical KV Cache Tiering</a> <span class="badge amber">DP</span></h4>
+    <p>Configurable cache tiers to increase effective cache size and prefix-cache reuse for concurrent long-context and multi-turn workloads.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#kale-jupyterlab-extension">Kale JupyterLab extension</a> <span class="badge amber">DP</span></h4>
+    <p>Converts annotated notebooks into AI Pipelines without KFP SDK code; pre-installed but disabled by default in standard images; requires a DSPA in the namespace.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#latency-aware-routing-llmd">Latency-aware routing for llm-d</a> <span class="badge amber">DP</span></h4>
+    <p>Uses per-request TTFT/TPOT targets to place latency-sensitive and throughput-sensitive traffic on suitable pods.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#lora-aware-routing-llmd">LoRA-aware routing for llm-d</a> <span class="badge amber">DP</span></h4>
+    <p>Routes requests to pods where the requested adapter is already loaded; falls back to standard routing when no matching pod is available.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#mcp-catalog-admin-ui">MCP Catalog administrative interface</a> <span class="badge amber">DP</span></h4>
+    <p>Administrator-only YAML add/edit/remove for MCP Catalog sources from Settings, replacing manual ConfigMap editing.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#midojo">MiDojo adversarial testing engine</a> <span class="badge amber">DP</span></h4>
+    <p>MITM agent-security testing that intercepts tool communications, injects attacks, and grades utility/security using declarative scenarios and multiple agent protocols.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#ogx-file-processors-api">OGX File Processors API</a> <span class="badge amber">DP</span></h4>
+    <p>inline::auto/docling/markitdown/pypdf and remote::docling-serve providers; some require dependency-specific custom configuration.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#ogx-anthropic-gemini-providers">OGX remote::anthropic and remote::gemini providers</a> <span class="badge amber">DP</span></h4>
+    <p>Provider-specific OGX inference integrations enabled by ANTHROPIC_API_KEY and ENABLE_GEMINI.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#openclaw-starter-kit">OpenClaw agent starter kit</a> <span class="badge amber">DP</span></h4>
+    <p>Validated Kustomize/installer deployment; self-hosted vLLM through OGX; MLflow/OpenTelemetry tracing; browser RBAC; restricted-v2 SCC.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a> <span class="badge amber">DP</span></h4>
+    <p>Helm deployment, mTLS, LLM provider setup, isolated sandboxes, controlled network egress. Experimental upstream artifacts; not supported for production.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#text-mode-training-multimodal">Text-mode training for multimodal models in Training Hub</a> <span class="badge amber">DP</span></h4>
+    <p>Text-only fine-tuning path for listed vision-language model families; full multimodal fine-tuning not supported in this release.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Agents/MCP (Developer Preview surface)</span>
+    <h4><a href="matrix.html#view-running-agents-dashboard">View running agent deployments in dashboard</a> <span class="badge amber">DP</span></h4>
+    <p>Lists OpenShell-managed Sandbox custom resources deployed manually, with per-namespace filtering.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Distributed Training</span>
+    <h4><a href="matrix.html#kuberay">KubeRay (CodeFlare Operator successor)</a> <span class="badge amber">GA</span></h4>
+    <p>KubeRay remains the successor component. Live source conflict: 3.5 release notes say the operator was upgraded to 1.6.x, while the current Supported Configurations matrix lists KubeRay 1.4.2 (GA x86_64/Arm, TP Power,...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Distributed Training</span>
+    <h4><a href="matrix.html#kubeflow-trainer-v2">Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)</a> <span class="badge green">GA</span></h4>
+    <p>Remains GA on x86_64/Arm. Training Hub fine-tuning algorithms (SFT, OSFT, LoRA, GRPO) can run on Ray clusters; universal workbench images include RLVR/GRPO dependencies; automated prompt optimization added for...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Distributed Training</span>
+    <h4><a href="matrix.html#kubeflow-training-operator-v1">Kubeflow Training Operator v1 (KFTOv1)</a> <span class="badge red">Deprecated</span></h4>
+    <p>Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Distributed Training</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a> <span class="badge green">GA</span></h4>
+    <p>New at 3.5 GA: administrators can self-manage ClusterQueues/LocalQueues via a boolean flag on the Kueue component spec, disabled by default, so the Operator skips automatic queue creation for GitOps-managed environments.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Evaluation</span>
+    <h4><a href="matrix.html#automated-red-teaming">Automated Red Teaming (powered by Garak)</a> <span class="badge green">GA</span></h4>
+    <p>Reaches GA: OpenAI Responses API endpoint support, multilingual red-teaming via LLM-based translation, multiclass judge safety evaluation, parallelized execution, disconnected/air-gapped support, runnable via EvalHub...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Evaluation</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a> <span class="badge amber">GA</span></h4>
+    <p>3.5 GA release notes state EvalHub is generally available with a documented API-versioning scheme, breaking-change policy, must-gather tooling, and full Red Hat support (SDK/CLI, EvalCard, per-tenant deployment). The...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG</span>
+    <h4><a href="matrix.html#automl">AutoML</a> <span class="badge amber">TP</span></h4>
+    <p>Remains TP. Current matrix: TP on x86_64 and IBM Power, unavailable on Arm and IBM Z. Adds model-insight curves/backtesting, experiment transparency, TP AutoGluon serving runtime; no GA promotion.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG</span>
+    <h4><a href="matrix.html#autorag">AutoRAG</a> <span class="badge amber">TP</span></h4>
+    <p>Remains TP on x86_64 in the current matrix; unavailable on Arm/Power/Z. Adds CPU-only deployment, multilingual support, structural contextualization, visual experiment-pipeline representation. EA2 release notes claim...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG</span>
+    <h4><a href="matrix.html#feature-store">Feature Store (Feast-based)</a> <span class="badge amber">GA</span></h4>
+    <p>Adds SparkApplication batch materialization engine (batch_engine.type: spark_application, feature transformations on Kubeflow-Spark-Operator-managed Spark clusters; supports enterprise RAG pipelines via batch...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Guardrails</span>
+    <h4><a href="matrix.html#fms-guardrails">FMS-Guardrails Orchestrator (via TrustyAI)</a> <span class="badge red">Deprecated</span></h4>
+    <p>Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Guardrails</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a> <span class="badge green">GA</span></h4>
+    <p>Gen AI Studio playground guardrails experience rebuilt on NeMo Guardrails (independently toggled input/output rails). Core NeMo Guardrails remains GA on x86_64 and IBM Power. Release notes announce IBM Z support, but...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Guardrails</span>
+    <h4><a href="matrix.html#nemo-mcp-gateway-integration">NeMo Guardrails integration with MCP Gateway</a> <span class="badge amber">TP</span></h4>
+    <p>Introduced 3.5 EA2, retained TP in current 3.5 docs. Enforces guardrails on agent tool calls at the MCP Gateway layer; requires the MCP Gateway Operator as an external prerequisite. Distinct from OGX model-response...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MLOps</span>
+    <h4><a href="matrix.html#mlflow">MLflow experiment tracking / MLOps integration</a> <span class="badge green">GA</span></h4>
+    <p>Scope substantially widened: embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub. Training jobs run through a pipeline or SDK are tracked by a dedicated per-project MLflow...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-loki-showback">Loki-based showback and user-scoped usage dashboards (MaaS)</a> <span class="badge amber">TP</span></h4>
+    <p>Expanded: Loki-based structured log pipeline with 30-day object-storage retention for monthly billing, plus read-only, data-isolated per-user usage dashboards.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-llmd-routing">MaaS deployment/routing path for Distributed Inference with llm-d</a> <span class="badge amber">TP</span></h4>
+    <p>Unchanged Technology Preview. Its status does not change the GA status of core llm-d or core MaaS.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-multitenancy">MaaS multi-tenancy with per-tenant gateway and identity isolation</a> <span class="badge amber">TP</span></h4>
+    <p>New in 3.5 GA. A single CR provisions a tenant namespace, per-tenant API service, and auth/rate-limit policy; gateway and identity provider are external prerequisites. Supports long-lived tenant-scoped API keys,...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-external-oidc">MaaS-specific external OIDC user authentication</a> <span class="badge green">GA</span></h4>
+    <p>TP -&gt; GA in 3.5. Administrators integrate an external OIDC identity provider, map OIDC group claims to MaaS subscriptions, and issue API keys scoped to OIDC group memberships -- without requiring OpenShift accounts.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-core">Models-as-a-Service (MaaS) core: access model and token mechanism</a> <span class="badge green">GA</span></h4>
+    <p>GA core expanded: external OIDC authentication for MaaS reaches GA (map OIDC group claims to subscriptions, issue API keys without requiring OpenShift accounts, coexists with OpenShift-group auth). OpenAI-compatible...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-multiprovider-passthrough">Multi-provider API passthrough for external models (MaaS)</a> <span class="badge amber">TP</span></h4>
+    <p>Expanded: native-provider passthrough through the MaaS gateway using Anthropic Messages API (/v1/messages) or OpenAI Responses API (/v1/responses), without format translation, preserving provider-specific features...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#platform-oidc-gateway">Platform-wide direct OIDC authentication (GatewayConfig CR)</a> <span class="badge green">GA</span></h4>
+    <p>No maturity change; unchanged platform capability. (Distinct sub-feature: MaaS-specific external OIDC user authentication moved TP-&gt;GA in 3.5 -- see maas-external-oidc.)</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">MaaS</span>
+    <h4><a href="matrix.html#maas-vllm-deployment">vLLM model deployment directly through MaaS</a> <span class="badge amber">TP</span></h4>
+    <p>Remains Technology Preview. The current OdhDashboardConfig documentation explicitly marks vLLMDeploymentOnMaaS as Technology Preview; flag defaults to false.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Registry</span>
+    <h4><a href="matrix.html#model-registry-catalog">Model registry and model catalog</a> <span class="badge green">GA</span></h4>
+    <p>Catalog enrichment: Safety and Security Insights tab (security scan results by category -- prompt injection, jailbreak resistance, harmful content generation). Cold-start load time and minimum vRAM metrics per GPU...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#llm-d-core">Distributed Inference with llm-d (core)</a> <span class="badge amber">GA</span></h4>
+    <p>GA extended to Azure Kubernetes Service (AKS) and CoreWeave Kubernetes Service (CKS); Amazon EKS added as Technology Preview (inference-aware scheduling also TP on EKS). Istio is now the supported gateway...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#flow-control-llmd">Distributed Inference with llm-d: priority-based flow control</a> <span class="badge red">GA</span></h4>
+    <p>Breaking change on promotion: TP (3.4) -&gt; GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -&gt; llm-d.ai), metrics prefix (inference_extension_ -&gt; llm_d_epp_), and saturation-detector...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#kserve-serverless">KServe Serverless deployment mode</a> <span class="badge red">Removed</span></h4>
+    <p>Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#vllm-llminferenceservice">LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)</a> <span class="badge amber">GA</span></h4>
+    <p>Maturity follows llm-d: GA on OpenShift/AKS/CKS, TP on EKS as of 3.5.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#modelmesh">Multi-model serving platform (ModelMesh)</a> <span class="badge red">Removed</span></h4>
+    <p>Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#vllm-fast-release-images">Red Hat AI Inference fast-release images as custom ServingRuntime</a> <span class="badge green">GA</span></h4>
+    <p>New in 3.5: deploy Red Hat AI Inference fast release container images as custom serving runtimes on an existing OpenShift AI installation without upgrading OpenShift AI -- access to newer vLLM versions/model support...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#vllm-cpu-arch-restriction">vLLM CPU ServingRuntime on IBM Z / Power</a> <span class="badge amber">GA</span></h4>
+    <p>Unchanged: standard mode only.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#vllm-kserve-runtime">vLLM ServingRuntime for KServe</a> <span class="badge green">GA</span></h4>
+    <p>Remains GA. Foundational vLLM GA status does not extend to every vLLM-adjacent delivery path -- see the other vllm-* feature entries.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">OGX</span>
+    <h4><a href="matrix.html#ogx-core">Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration</a> <span class="badge amber">GA</span></h4>
+    <p>Renamed to OGX at 3.5 EA1 (breaking manual migration: remove Llama Stack Operator, create new OGXServer resources; API group llamastack.io-&gt;ogx.io; v1alpha1-&gt;v1beta1; kind LlamaStackDistribution-&gt;OGXServer;...</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">OGX</span>
+    <h4><a href="matrix.html#ogx-sqlite-metadata-store">SQLite as Llama Stack / OGX metadata store</a> <span class="badge amber">Deprecated</span></h4>
+    <p>Unchanged through 3.5 GA: SQLite remains available only for local dev/testing and must be explicitly configured; PostgreSQL required for production-grade OGX deployments.</p>
+  </div>
+  <div class="item-card">
+    <span class="tag">Platform</span>
+    <h4><a href="matrix.html#gateway-api-rhcl">Gateway API and Red Hat Connectivity Link (RHCL)</a> <span class="badge amber">GA</span></h4>
+    <p>New known issue on RHCL 1.4.0/1.4.1: rate limiting silently stops working on batch gateway deployments (RHOAIENG-76586), plus an OOMKill risk from the 1.4 wasm plugin&#39;s higher compile-time memory requirement --...</p>
+  </div>
+</div>
+
+<h2>&#9888;&#65039; Breaking changes / high-risk items in 3.5</h2>
+<div class="card-grid">
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">Guardrails</span>
+    <h4><a href="matrix.html#fms-guardrails">FMS-Guardrails Orchestrator (via TrustyAI)</a> <span class="badge red">Deprecated</span></h4>
+    <p>Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. The...</p>
+  </div>
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">Distributed Training</span>
+    <h4><a href="matrix.html#kubeflow-training-operator-v1">Kubeflow Training Operator v1 (KFTOv1)</a> <span class="badge red">Deprecated</span></h4>
+    <p>Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March 2027. Migrate to Kubeflow Trainer v2...</p>
+  </div>
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#kserve-serverless">KServe Serverless deployment mode</a> <span class="badge red">Removed</span></h4>
+    <p>Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment InferenceServices ships GA (progressive traffic...</p>
+  </div>
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#modelmesh">Multi-model serving platform (ModelMesh)</a> <span class="badge red">Removed</span></h4>
+    <p>Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.</p>
+  </div>
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">Model Serving</span>
+    <h4><a href="matrix.html#flow-control-llmd">Distributed Inference with llm-d: priority-based flow control</a> <span class="badge red">GA</span></h4>
+    <p>Breaking change on promotion: TP (3.4) -&gt; GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -&gt; llm-d.ai), metrics prefix (inference_extension_ -&gt; llm_d_epp_), and saturation-detector configuration path (top-level...</p>
+  </div>
+</div>
+
+<h2>Explore</h2>
+<div class="card-grid">
+  <div class="item-card"><h4><a href="matrix.html">Feature Lifecycle Matrix</a></h4><p>Every tracked feature/component across every version, color-coded.</p></div>
+  <div class="item-card"><h4><a href="migration.html">Upgrade Path / Migration Checklist</a></h4><p>Every deprecation, removal, and breaking change in one actionable list.</p></div>
+  <div class="item-card"><h4><a href="conflicts.html">Source Conflicts</a></h4><p>Where the release notes and the Supported Configurations matrix disagree.</p></div>
+  <div class="item-card"><h4><a href="versions/3.5.html">3.5 release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
+</div>
+</main>
+<footer class="site-footer">
+  Built from official Red Hat OpenShift AI release notes and the live
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
+  Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
+</footer>
+</body>
+</html>

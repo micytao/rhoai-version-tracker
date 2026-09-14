@@ -1,0 +1,61 @@
+{% extends "base.html" %}
+{% block title %}{{ release.version }} — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Red Hat OpenShift AI {{ release.version }}</h1>
+<p class="lede">
+  Parsed from <code>{{ release.source_pdf.split('/')[-1] }}</code> on {{ release.extracted_at }}.
+  Milestones covered: {{ release.milestones_covered | join(', ') if release.milestones_covered else 'n/a' }}.
+</p>
+
+{% macro item_list(items) %}
+<div class="card-grid">
+  {% for it in items %}
+  <div class="item-card">
+    {% if it.milestone %}<span class="tag">{{ it.milestone }}</span>{% endif %}
+    <h4>{{ it.title }}</h4>
+    <p>{{ it.detail | truncate(320) }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endmacro %}
+
+<h2>New Features ({{ release.new_features | length }})</h2>
+{{ item_list(release.new_features) }}
+
+<h2>Enhancements ({{ release.enhancements | length }})</h2>
+{{ item_list(release.enhancements) }}
+
+<h2>Technology Preview ({{ release.tech_preview | length }})</h2>
+{{ item_list(release.tech_preview) }}
+
+<h2>Developer Preview ({{ release.dev_preview | length }})</h2>
+{{ item_list(release.dev_preview) }}
+
+<h2>Support Removals: Deprecated ({{ release.deprecated | length }})</h2>
+{{ item_list(release.deprecated) }}
+
+<h2>Support Removals: Removed ({{ release.removed | length }})</h2>
+{{ item_list(release.removed) }}
+
+<h2>Resolved Issues ({{ release.resolved_issues | length }})</h2>
+{% for it in release.resolved_issues %}
+<div class="issue-card">
+  <span class="issue-id">{{ it.issue_id }}</span> &middot; {{ it.chapter }}
+  <p>{{ it.detail | truncate(280) }}</p>
+</div>
+{% endfor %}
+
+<h2>Known Issues ({{ release.known_issues | length }})</h2>
+{% for it in release.known_issues %}
+<div class="issue-card {{ 'has-workaround' if it.workaround else '' }}">
+  <span class="issue-id">{{ it.issue_id }}</span> &middot; {{ it.chapter }}
+  <p>{{ it.detail | truncate(280) }}</p>
+  {% if it.workaround %}<p><strong>Workaround:</strong> {{ it.workaround | truncate(240) }}</p>{% endif %}
+</div>
+{% endfor %}
+
+{% if release.extraction_warnings %}
+<h2>Extraction notes</h2>
+<p class="section-note">{{ release.extraction_warnings | length }} items were skipped or flagged during automated parsing (older-version carry-over sections, or ambiguous title detection). Spot-check against the source PDF if precision matters for a specific item.</p>
+{% endif %}
+{% endblock %}

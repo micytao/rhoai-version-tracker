@@ -1,0 +1,62 @@
+{% extends "base.html" %}
+{% block title %}Feature Lifecycle Matrix — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Feature Lifecycle Matrix</h1>
+<p class="lede">Rows = features/components. Columns = versions. Hover a badge for the sourced detail behind it.</p>
+
+<div class="legend">
+  <span class="chip green">GA</span>
+  <span class="chip amber">TP / DP / Deprecated</span>
+  <span class="chip red">Removed / breaking</span>
+</div>
+
+<div class="filters">
+  <input type="text" id="matrix-search" placeholder="Search feature or category&hellip;">
+  <select id="matrix-category">
+    <option value="">All categories</option>
+    {% for c in categories %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+  </select>
+  <select id="matrix-status">
+    <option value="">All statuses / risk</option>
+    <optgroup label="Status">
+      <option value="GA">GA</option>
+      <option value="TP">TP</option>
+      <option value="DP">DP</option>
+      <option value="Deprecated">Deprecated</option>
+      <option value="Removed">Removed</option>
+    </optgroup>
+    <optgroup label="Risk">
+      <option value="green">Green</option>
+      <option value="amber">Amber</option>
+      <option value="red">Red</option>
+    </optgroup>
+  </select>
+</div>
+
+<div class="matrix-wrap">
+<table class="matrix">
+<thead>
+<tr>
+  <th>Feature</th>
+  <th>Current</th>
+  {% for v in matrix_versions %}<th>{{ v }}</th>{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for f in features %}
+<tr id="{{ f.feature_id }}" data-name="{{ f.name }}" data-category="{{ f.category }}" data-statuses="{{ f.all_statuses | join(',') }}" data-risk-colors="{{ f.risk_color }}">
+  <td class="feature-name"><span class="cat">{{ f.category }}</span>{{ f.name }}</td>
+  <td class="status-cell"><span class="badge {{ f.risk_color }}">{{ f.current_status }}</span></td>
+  {% for v in matrix_versions %}
+    {% set cell = f.by_version.get(v) %}
+    <td class="status-cell">
+      {% if cell %}<span class="badge {{ cell.risk_color }}" title="{{ cell.detail }}">{{ cell.status }}</span>{% else %}&mdash;{% endif %}
+    </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+<script src="{{ asset_prefix }}assets/app.js"></script>
+{% endblock %}

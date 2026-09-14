@@ -1,0 +1,2433 @@
+{
+  "schema_version": "1.0",
+  "generated_at": "2026-09-14T08:26:04.479817Z",
+  "versions": [
+    {
+      "version": "1.15",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "1.16",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.5",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.7",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.9",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.11",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.14",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.16",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.17",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.18",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.19",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.22",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.23",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.24",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "2.25",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.0",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.2",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.3",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.3.2",
+      "milestones": [],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.4",
+      "milestones": [
+        "EA1",
+        "EA2",
+        "GA"
+      ],
+      "ga_date": null,
+      "is_eus": false
+    },
+    {
+      "version": "3.5",
+      "milestones": [
+        "EA1",
+        "EA2",
+        "GA"
+      ],
+      "ga_date": "2026-09-09",
+      "is_eus": true
+    }
+  ],
+  "features": [
+    {
+      "feature_id": "maas-core",
+      "name": "Models-as-a-Service (MaaS) core: access model and token mechanism",
+      "category": "MaaS",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.3",
+          "status": "TP",
+          "detail": "Introduced as Technology Preview. Governance was tier-based: OpenShift group membership selected a single highest-priority tier controlling model access, request limits, and token quotas. Authentication used a MaaS-issued, service-account-backed token (Authorization: Bearer <token>).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Reached GA. Tiers replaced by subscriptions and dedicated CRs (MaaSSubscription, MaaSAuthPolicy, MaaSModelRef). Authentication changed to subscription-bound API keys with the sk-oai- prefix (one-hour temporary or managed with expiration/revocation). Credential/policy/storage/governance NOT backward compatible with 3.3 -- amber TP-to-GA migration break, not a red regression of an already-GA service.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "GA core expanded: external OIDC authentication for MaaS reaches GA (map OIDC group claims to subscriptions, issue API keys without requiring OpenShift accounts, coexists with OpenShift-group auth). OpenAI-compatible body-based model routing reaches GA (drop-in with openai/LangChain/LlamaIndex/OpenWebUI; legacy path-based routing still supported). Subscriptions + Authorization policy pages merge into one MaaS governance page (Settings -> MaaS governance).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "platform-oidc-gateway",
+      "name": "Platform-wide direct OIDC authentication (GatewayConfig CR)",
+      "category": "MaaS",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "Change",
+          "detail": "Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift. Custom workbench images built against oauth-proxy require rebuilding.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Direct authentication with an external OIDC provider through the Gateway API, configured via the GatewayConfig CR, reaches GA. This is a platform authentication feature, not MaaS-specific, though MaaS traffic flows through the same Gateway -- easy to conflate with MaaS-specific external OIDC, but distinct.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "No maturity change; unchanged platform capability. (Distinct sub-feature: MaaS-specific external OIDC user authentication moved TP->GA in 3.5 -- see maas-external-oidc.)",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [
+        "Gateway API direct OIDC"
+      ]
+    },
+    {
+      "feature_id": "maas-external-oidc",
+      "name": "MaaS-specific external OIDC user authentication",
+      "category": "MaaS",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Technology Preview. Distinct from the platform-wide Gateway OIDC capability.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "TP -> GA in 3.5. Administrators integrate an external OIDC identity provider, map OIDC group claims to MaaS subscriptions, and issue API keys scoped to OIDC group memberships -- without requiring OpenShift accounts.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "maas-vllm-deployment",
+      "name": "vLLM model deployment directly through MaaS",
+      "category": "MaaS",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Technology Preview vLLM deployment path through MaaS.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Remains Technology Preview. The current OdhDashboardConfig documentation explicitly marks vLLMDeploymentOnMaaS as Technology Preview; flag defaults to false.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "maas-multitenancy",
+      "name": "MaaS multi-tenancy with per-tenant gateway and identity isolation",
+      "category": "MaaS",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "New in 3.5 GA. A single CR provisions a tenant namespace, per-tenant API service, and auth/rate-limit policy; gateway and identity provider are external prerequisites. Supports long-lived tenant-scoped API keys, Bring-Your-Own-Identity-Provider, per-tenant subscriptions, and an access-grant mechanism for shared foundation models across tenants.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "maas-multiprovider-passthrough",
+      "name": "Multi-provider API passthrough for external models (MaaS)",
+      "category": "MaaS",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "TP precursor: integration for routing to external model providers such as OpenAI or Anthropic.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Expanded: native-provider passthrough through the MaaS gateway using Anthropic Messages API (/v1/messages) or OpenAI Responses API (/v1/responses), without format translation, preserving provider-specific features such as prompt caching and extended thinking.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "maas-loki-showback",
+      "name": "Loki-based showback and user-scoped usage dashboards (MaaS)",
+      "category": "MaaS",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "TP precursor: usage/showback observability dashboard.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Expanded: Loki-based structured log pipeline with 30-day object-storage retention for monthly billing, plus read-only, data-isolated per-user usage dashboards.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "maas-llmd-routing",
+      "name": "MaaS deployment/routing path for Distributed Inference with llm-d",
+      "category": "MaaS",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Preview integration.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Unchanged Technology Preview. Its status does not change the GA status of core llm-d or core MaaS.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "ogx-core",
+      "name": "Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration",
+      "category": "OGX",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "TP",
+          "detail": "Introduced as Technology Preview (distribution ~0.2.22-class). Remote inference, built-in embeddings, vector DB operations, TrustyAI safety/eval integration.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.2",
+          "status": "Change",
+          "detail": "PostgreSQL Operator became a hard requirement. Distribution 0.3.5. HA configuration and custom embeddings added as TP sub-features.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.3",
+          "status": "TP",
+          "detail": "Distribution 0.4.2. Multi-architecture Operator support became default. OpenAI-compatible citation annotations added as TP.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Llama Stack Operator remains Technology Preview in the formal 3.4 support matrix (0.9.0, TP on x86_64/Arm/Power, unavailable on IBM Z). Responses API alignment, connectors, Conversations API, and FAISS additions do not promote the operator itself to GA.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Renamed to OGX at 3.5 EA1 (breaking manual migration: remove Llama Stack Operator, create new OGXServer resources; API group llamastack.io->ogx.io; v1alpha1->v1beta1; kind LlamaStackDistribution->OGXServer; activation field spec.components.llamastackoperator.managementState->spec.components.ogx.managementState). At 3.5 GA: Supported Configurations lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, IBM Power, while the current OGX product guide labels the OpenShift AI integration Technology Preview, and individual APIs/providers range GA/TP/DP (Responses API is GA; most others TP/DP). State component, integration, and per-API/provider maturity as separate layers -- never collapse into one label.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA1",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [
+        {
+          "feature_id": "ogx-core",
+          "topic": "OGX component/operator GA vs. OpenShift AI OGX integration guide TP",
+          "claim_a_source": "Supported Configurations matrix (3.5)",
+          "claim_a_value": "OGX Operator + OGX component: GA on x86_64, Arm, IBM Power",
+          "claim_b_source": "OpenShift AI OGX product/integration guide (3.5)",
+          "claim_b_value": "OpenShift AI OGX integration: Technology Preview",
+          "note": "Component support and integration/API maturity are genuinely separate layers here, not a simple contradiction -- state both."
+        }
+      ],
+      "aliases": [
+        "Llama Stack"
+      ]
+    },
+    {
+      "feature_id": "ogx-sqlite-metadata-store",
+      "name": "SQLite as Llama Stack / OGX metadata store",
+      "category": "OGX",
+      "current_status": "Deprecated",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "GA",
+          "detail": "Default and only metadata store option (3.0-3.1).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.2",
+          "status": "Deprecated",
+          "detail": "Deprecated for production use specifically. PostgreSQL required for production-grade environments. SQLite remains permitted for local development/testing only.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "Deprecated",
+          "detail": "Unchanged through 3.5 GA: SQLite remains available only for local dev/testing and must be explicitly configured; PostgreSQL required for production-grade OGX deployments.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "fms-guardrails",
+      "name": "FMS-Guardrails Orchestrator (via TrustyAI)",
+      "category": "Guardrails",
+      "current_status": "Deprecated",
+      "risk_color": "red",
+      "timeline": [
+        {
+          "version": "2.19",
+          "status": "TP",
+          "detail": "Introduced via the TrustyAI Operator, built on IBM Research's open-source fms-guardrails-orchestrator project. Regex detector and vLLM guardrails gateway called out as TP at introduction.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.0",
+          "status": "GA",
+          "detail": "Core described by Red Hat as generally available through 3.4. The 3.4 safety guide labels FMS Guardrails as legacy and says it will be deprecated in a future release. The separate TrustyAI-to-Llama-Stack integration remains TP.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "Deprecated",
+          "detail": "Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. The trustyai_fms external-provider path continues to work with OGX.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "nemo-guardrails",
+      "name": "NeMo Guardrails",
+      "category": "Guardrails",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.2",
+          "status": "TP",
+          "detail": "Introduced as Technology Preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.3",
+          "status": "TP",
+          "detail": "Remained TP. Documentation includes a direct comparison table against FMS-Guardrails Orchestrator as parallel, competing paths.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Fully supported. Adds standalone /v1/guardrails/checks endpoint, OpenAI-compatible /v1/models/ endpoint, regex-based rails, multi-replica scaling, OpenTelemetry support, Gen AI Playground surfacing. No additional NVIDIA licensing required.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Gen AI Studio playground guardrails experience rebuilt on NeMo Guardrails (independently toggled input/output rails). Core NeMo Guardrails remains GA on x86_64 and IBM Power. Release notes announce IBM Z support, but the current Supported Configurations matrix does not list NeMo Guardrails on s390x -- treat Z support as unresolved for formal commitments.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA1",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [
+        {
+          "feature_id": "nemo-guardrails",
+          "topic": "IBM Z (s390x) support",
+          "claim_a_source": "3.5 GA release notes",
+          "claim_a_value": "Announces IBM Z (s390x) support",
+          "claim_b_source": "Supported Configurations matrix (3.5)",
+          "claim_b_value": "Does not list NeMo Guardrails as available on IBM Z",
+          "note": "Use the matrix for production support commitments until reconciled."
+        }
+      ],
+      "aliases": []
+    },
+    {
+      "feature_id": "nemo-mcp-gateway-integration",
+      "name": "NeMo Guardrails integration with MCP Gateway",
+      "category": "Guardrails",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Introduced 3.5 EA2, retained TP in current 3.5 docs. Enforces guardrails on agent tool calls at the MCP Gateway layer; requires the MCP Gateway Operator as an external prerequisite. Distinct from OGX model-response guardrails and from core NeMo Guardrails GA status.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "mlflow",
+      "name": "MLflow experiment tracking / MLOps integration",
+      "category": "MLOps",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.2",
+          "status": "DP",
+          "detail": "Introduced as Developer Preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.3",
+          "status": "TP",
+          "detail": "Promoted to Technology Preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Fully supported. MLflow Operator became a managed component in the DataScienceCluster CR. SDK pre-installed in datascience/TensorFlow/PyTorch/codeserver images. Workbenches auto-configure MLflow connectivity via the opendatahub.io/mlflow-instance annotation.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Scope substantially widened: embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub. Training jobs run through a pipeline or SDK are tracked by a dedicated per-project MLflow server -- closes the previously documented MLflow-to-Kubeflow-Trainer gap. Adds age-based trace archival to S3-compatible storage with searchable PostgreSQL metadata, EvalCard generation for EvalHub runs, a shared Gen AI Studio prompt-registry namespace, and SDG Hub MLflow-compatible agent connectors.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "evalhub",
+      "name": "Evaluation Stack -> EvalHub",
+      "category": "Evaluation",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Evaluation Stack UI: Technology Preview, guided dashboard requiring EvalHub deployed on the cluster (LM Evaluation Harness, RAGAS, Garak, GuideLLM). Underlying REST orchestration control plane: Developer Preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "3.5 GA release notes state EvalHub is generally available with a documented API-versioning scheme, breaking-change policy, must-gather tooling, and full Red Hat support (SDK/CLI, EvalCard, per-tenant deployment). The current Supported Configurations matrix instead lists EvalHub 0.3.0 as Technology Preview on x86_64, unavailable on Arm/Power/Z. This registry follows the matrix for formal support commitments and records the release-note GA statement as a source conflict. Automated Red Teaming (Garak) separately reaches GA (see automated-red-teaming). Dashboard comparison, MCP server, thresholds, and Kueue-routed scheduling remain TP.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [
+        {
+          "feature_id": "evalhub",
+          "topic": "EvalHub formal support status",
+          "claim_a_source": "3.5 GA release notes",
+          "claim_a_value": "EvalHub is generally available (GA), full Red Hat support",
+          "claim_b_source": "Supported Configurations matrix (3.5)",
+          "claim_b_value": "EvalHub 0.3.0: Technology Preview on x86_64; unavailable on Arm/IBM Power/IBM Z",
+          "note": "Matrix governs formal/contractual support classification; release-note GA statement preserved as release-history language."
+        }
+      ],
+      "aliases": [
+        "Evaluation Stack UI"
+      ]
+    },
+    {
+      "feature_id": "automated-red-teaming",
+      "name": "Automated Red Teaming (powered by Garak)",
+      "category": "Evaluation",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Reaches GA: OpenAI Responses API endpoint support, multilingual red-teaming via LLM-based translation, multiclass judge safety evaluation, parallelized execution, disconnected/air-gapped support, runnable via EvalHub or standalone Kubeflow Pipelines.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "mcp-lifecycle-operator",
+      "name": "MCP Lifecycle Operator",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Kubernetes-native operator for deploying/managing MCP servers. Current 3.5 implementation guide: mcplifecycleoperator defaults to Removed in DataScienceCluster and must be explicitly set to Managed; mcpCatalog dashboard flag must also be enabled for catalog deployment. This procedural guidance supersedes ambiguous release-note wording suggesting it is automatically active.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "mcp-gateway-operator",
+      "name": "MCP gateway Operator",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Optional external dependency, installed/upgraded independently of the OpenShift AI Operator. Cluster administrators own its lifecycle; used for governed MCP management and tool-call routing.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "mcp-catalog-tier-labeling",
+      "name": "MCP Catalog support-tier labeling",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Badges distinguish Red Hat Supported, Partner Supported, and Community Supported MCP server entries.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "opencode-agent",
+      "name": "OpenCode coding-agent deployment",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Validated coding-agent pattern showing vLLM/OGX inference backends and MLflow tracing generalize to coding-specific agent workloads.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "tool-calling-evaldata-gen",
+      "name": "Automated tool-calling evaluation-data generation for custom MCP servers",
+      "category": "Agents/MCP",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Actively explores MCP servers to generate verified question-answer-tool-call triplets for single- and multi-step tool chains, feeding standard evaluation frameworks.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "validated-tool-calling-catalog",
+      "name": "Validated tool-calling configuration in Model Catalog",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Gated behind spec.dashboardConfig.toolCalling in OdhDashboardConfig; surfaces validated vLLM tool-calling and reasoning arguments for supported models.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "ai-available-assets-page",
+      "name": "AI Available Assets page",
+      "category": "Agents/MCP",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.3",
+          "status": "GA",
+          "detail": "Lists deployed models and MCP servers available for consumption in a project.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "ogx-agentic-api-surface",
+      "name": "OGX-native agentic API surface (Tool Runtime, Responses, Conversations)",
+      "category": "Agents/MCP",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Mixed GA/TP/DP: Tool Runtime API and model-context-protocol tool-runtime provider are DP; Responses API is GA; Conversations API is TP. See ogx_provider_table for full per-endpoint/provider detail.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "openshell",
+      "name": "OpenShell (secure agent sandboxing and policy enforcement)",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Helm deployment, mTLS, LLM provider setup, isolated sandboxes, controlled network egress. Experimental upstream artifacts; not supported for production.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "agent-catalog-aihub",
+      "name": "Agent Catalog in AI Hub",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Gated behind agentsCatalog. Central discovery interface for starter kits built on LangGraph, CrewAI, LlamaIndex, and other frameworks.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "openclaw-starter-kit",
+      "name": "OpenClaw agent starter kit",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Validated Kustomize/installer deployment; self-hosted vLLM through OGX; MLflow/OpenTelemetry tracing; browser RBAC; restricted-v2 SCC.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "claude-code-starter-kit",
+      "name": "Claude Code agent starter kit",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Validated direct Anthropic, self-hosted vLLM, or vLLM-through-OGX paths; MLflow tracing; ConfigMap skill/MCP injection; restricted-v2 SCC.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "genai-studio-saved-agent",
+      "name": "Gen AI Studio saved-agent configuration",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Gated behind agentConfigManagement. Saves model, inference, prompt, RAG, and MCP configuration as reusable project-scoped agent resources.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "view-running-agents-dashboard",
+      "name": "View running agent deployments in dashboard",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Lists OpenShell-managed Sandbox custom resources deployed manually, with per-namespace filtering.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "midojo",
+      "name": "MiDojo adversarial testing engine",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "MITM agent-security testing that intercepts tool communications, injects attacks, and grades utility/security using declarative scenarios and multiple agent protocols.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "mcp-catalog-admin-ui",
+      "name": "MCP Catalog administrative interface",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Administrator-only YAML add/edit/remove for MCP Catalog sources from Settings, replacing manual ConfigMap editing.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "external-metering-general",
+      "name": "External metering: per-user token usage and cost",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Inference Gateway IPP plugin plus PostgreSQL-backed metering service; balance checks, provider token extraction, CloudEvents, admin dashboard, REST API.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "external-metering-maas",
+      "name": "External metering integration for MaaS",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Separate MaaS-specific BBR plugins for post-inference usage webhook and pre-inference credit checking; invoice/rate calculation remains external.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "hierarchical-kv-cache-tiering",
+      "name": "Hierarchical KV Cache Tiering",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Configurable cache tiers to increase effective cache size and prefix-cache reuse for concurrent long-context and multi-turn workloads.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "lora-aware-routing-llmd",
+      "name": "LoRA-aware routing for llm-d",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Routes requests to pods where the requested adapter is already loaded; falls back to standard routing when no matching pod is available.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "latency-aware-routing-llmd",
+      "name": "Latency-aware routing for llm-d",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Uses per-request TTFT/TPOT targets to place latency-sensitive and throughput-sensitive traffic on suitable pods.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "text-mode-training-multimodal",
+      "name": "Text-mode training for multimodal models in Training Hub",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Text-only fine-tuning path for listed vision-language model families; full multimodal fine-tuning not supported in this release.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "ogx-anthropic-gemini-providers",
+      "name": "OGX remote::anthropic and remote::gemini providers",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Provider-specific OGX inference integrations enabled by ANTHROPIC_API_KEY and ENABLE_GEMINI.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "ogx-file-processors-api",
+      "name": "OGX File Processors API",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "inline::auto/docling/markitdown/pypdf and remote::docling-serve providers; some require dependency-specific custom configuration.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "kale-jupyterlab-extension",
+      "name": "Kale JupyterLab extension",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Converts annotated notebooks into AI Pipelines without KFP SDK code; pre-installed but disabled by default in standard images; requires a DSPA in the namespace.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "csv-export-model-catalog",
+      "name": "CSV export for Model Catalog data",
+      "category": "Agents/MCP (Developer Preview surface)",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "Standalone Python 3.10+ CLI that paginates Model Catalog REST API data and emits RFC 4180 CSV including custom properties.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "kubeflow-trainer-v2",
+      "name": "Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)",
+      "category": "Distributed Training",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "2.25",
+          "status": "Deprecated",
+          "detail": "Kubeflow Training Operator v1 marked deprecated; transition to Trainer v2 announced.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.2",
+          "status": "TP",
+          "detail": "Kubeflow Trainer v2 introduced as Technology Preview: TrainJob/TrainingRuntime API, Python SDK, web UI, checkpointing, Kueue integration.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Supported Configurations matrix lists Kubeflow Trainer v2 2.1.0 as GA on x86_64/Arm; unavailable on IBM Power/Z. Cumulative release-note text can retain older TP wording -- the matrix governs production status.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Remains GA on x86_64/Arm. Training Hub fine-tuning algorithms (SFT, OSFT, LoRA, GRPO) can run on Ray clusters; universal workbench images include RLVR/GRPO dependencies; automated prompt optimization added for agentic systems. KubeRay version/status has a live source conflict (see kuberay feature).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "kubeflow-training-operator-v1",
+      "name": "Kubeflow Training Operator v1 (KFTOv1)",
+      "category": "Distributed Training",
+      "current_status": "Deprecated",
+      "risk_color": "red",
+      "timeline": [
+        {
+          "version": "2.25",
+          "status": "Deprecated",
+          "detail": "Marked deprecated; transition to Trainer v2 announced.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "Deprecated",
+          "detail": "Specific v1 training images deprecated again at 3.4.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "Deprecated",
+          "detail": "Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March 2027. Migrate to Kubeflow Trainer v2 before that date.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "kuberay",
+      "name": "KubeRay (CodeFlare Operator successor)",
+      "category": "Distributed Training",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "2.24",
+          "status": "Deprecated",
+          "detail": "CodeFlare Operator marked deprecated.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.0",
+          "status": "Removed",
+          "detail": "CodeFlare Operator removed outright; functionality (mTLS, network isolation, authentication) folded directly into the KubeRay Operator.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "KubeRay remains the successor component. Live source conflict: 3.5 release notes say the operator was upgraded to 1.6.x, while the current Supported Configurations matrix lists KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z). Use the matrix for formal supported-version statements until reconciled.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [
+        {
+          "feature_id": "kuberay",
+          "topic": "Supported KubeRay version at 3.5",
+          "claim_a_source": "3.5 release notes",
+          "claim_a_value": "KubeRay operator upgraded to 1.6.x",
+          "claim_b_source": "Supported Configurations matrix (3.5)",
+          "claim_b_value": "KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z)",
+          "note": null
+        }
+      ],
+      "aliases": [
+        "CodeFlare Operator"
+      ]
+    },
+    {
+      "feature_id": "kueue",
+      "name": "Kueue (embedded component -> Red Hat build of Kueue Operator)",
+      "category": "Distributed Training",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "2.24",
+          "status": "Deprecated",
+          "detail": "Embedded Kueue component marked deprecated.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.0",
+          "status": "Removed",
+          "detail": "Embedded component removed; replaced by the standalone Red Hat build of Kueue Operator for workload scheduling across training, workbenches, and serving.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "New at 3.5 GA: administrators can self-manage ClusterQueues/LocalQueues via a boolean flag on the Kueue component spec, disabled by default, so the Operator skips automatic queue creation for GitOps-managed environments.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "kserve-serverless",
+      "name": "KServe Serverless deployment mode",
+      "category": "Model Serving",
+      "current_status": "Removed",
+      "risk_color": "red",
+      "timeline": [
+        {
+          "version": "2.25",
+          "status": "Deprecated",
+          "detail": "Marked deprecated.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.0",
+          "status": "Change",
+          "detail": "Architecture consolidated onto KServe RawDeployment mode. Unmigrated Serverless workloads return HTTP 503 after upgrade, with no automated conversion path.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "Removed",
+          "detail": "Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment InferenceServices ships GA (progressive traffic splitting via OpenShift Route alternateBackends or Gateway API HTTPRoute weighted backends; fixed replica count, no HPA/KEDA autoscaling for canary specifically).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "modelmesh",
+      "name": "Multi-model serving platform (ModelMesh)",
+      "category": "Model Serving",
+      "current_status": "Removed",
+      "risk_color": "red",
+      "timeline": [
+        {
+          "version": "2.19",
+          "status": "Deprecated",
+          "detail": "Marked deprecated.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.0",
+          "status": "Change",
+          "detail": "Architecture consolidated onto KServe RawDeployment mode. Unmigrated ModelMesh workloads return HTTP 503 after upgrade, with no automated conversion path.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "Removed",
+          "detail": "Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "llm-d-core",
+      "name": "Distributed Inference with llm-d (core)",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "2.25",
+          "status": "DP",
+          "detail": "Introduced as Developer Preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "GA in the OpenShift AI 3.4 Supported Configurations matrix on x86_64 and aarch64 (0.7.1). Requires OpenShift 4.20+; unavailable on IBM Power/Z. Several advanced capabilities and MaaS-specific integrations remained preview.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "GA extended to Azure Kubernetes Service (AKS) and CoreWeave Kubernetes Service (CKS); Amazon EKS added as Technology Preview (inference-aware scheduling also TP on EKS). Istio is now the supported gateway implementation, with GAIE fully supported. Controlled deployment (weighted traffic-split canary), inference-aware pod lifecycle management, multimodal prefix-cache-aware routing, and end-to-end distributed tracing all reach GA. Tokenizer now runs as a dedicated external service requiring an amd64 node (previously ran with the EndpointPicker on amd64 or ARM). Still unavailable on IBM Power/Z. See flow-control-llmd for the breaking TP->GA promotion within this cycle.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "flow-control-llmd",
+      "name": "Distributed Inference with llm-d: priority-based flow control",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "red",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Technology Preview flow control for Distributed Inference with llm-d.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Breaking change on promotion: TP (3.4) -> GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -> llm-d.ai), metrics prefix (inference_extension_ -> llm_d_epp_), and saturation-detector configuration path (top-level saturationDetector -> flowControl.saturationDetector, now plugin-referenced). Anyone who configured flow control during the 3.4 TP window has mandatory remediation work before or during the 3.5 upgrade, even though the destination status is GA rather than deprecation. Unusual: most GA promotions in this dataset are additive; this one requires active remediation from 3.4 TP adopters.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "vllm-kserve-runtime",
+      "name": "vLLM ServingRuntime for KServe",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "GA",
+          "detail": "Classic ServingRuntime + InferenceService path. Core supported runtime; bundled versions remain architecture-specific.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Remains GA. Foundational vLLM GA status does not extend to every vLLM-adjacent delivery path -- see the other vllm-* feature entries.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "vllm-llminferenceservice",
+      "name": "LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "GA with llm-d. Newer CRD path for Distributed Inference with llm-d.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Maturity follows llm-d: GA on OpenShift/AKS/CKS, TP on EKS as of 3.5.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "vllm-cpu-arch-restriction",
+      "name": "vLLM CPU ServingRuntime on IBM Z / Power",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Standard deployment mode only -- a permanent, architecture-specific restriction regardless of overall vLLM maturity.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Unchanged: standard mode only.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "vllm-fast-release-images",
+      "name": "Red Hat AI Inference fast-release images as custom ServingRuntime",
+      "category": "Model Serving",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "New in 3.5: deploy Red Hat AI Inference fast release container images as custom serving runtimes on an existing OpenShift AI installation without upgrading OpenShift AI -- access to newer vLLM versions/model support between stable releases. Create a ServingRuntime + LLMInferenceServiceConfig referencing the fast container image; fast images from the next version cycle are validated against the current stable release.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "gateway-api-rhcl",
+      "name": "Gateway API and Red Hat Connectivity Link (RHCL)",
+      "category": "Platform",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "Change",
+          "detail": "Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Direct OIDC auth via GatewayConfig CR reaches GA. RHCL included in Red Hat AI SKUs for MaaS use cases only starting 3.4; for all other components RHCL is not included -- when MaaS is enabled, RHCL is deployed via the Kuadrant Operator.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "New known issue on RHCL 1.4.0/1.4.1: rate limiting silently stops working on batch gateway deployments (RHOAIENG-76586), plus an OOMKill risk from the 1.4 wasm plugin's higher compile-time memory requirement -- recommend RHCL 1.3.5 for batch gateway deployments. Also new at 3.5 EA2: OAuth proxy sidecar CPU/memory customizable via spec.components.kserve.oauthProxy.resources instead of an unmanaged ConfigMap edit.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "model-registry-catalog",
+      "name": "Model registry and model catalog",
+      "category": "Model Registry",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.0",
+          "status": "GA",
+          "detail": "Added IBM Power (ppc64le) and IBM Z (s390x) architecture support. (GA version prior to 3.0 unconfirmed -- introduced as TP and reached GA at an unconfirmed 2.x version, before 2.23.)",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        },
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "New capability: OCI-compliant storage layer, converting registered models to ModelCar OCI images for KServe ModelCar deployment.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Catalog enrichment: Safety and Security Insights tab (security scan results by category -- prompt injection, jailbreak resistance, harmful content generation). Cold-start load time and minimum vRAM metrics per GPU configuration in the Performance Insights tab. Validated tool-calling arguments panel.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": "EA2",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "model-registry-default-group-creation",
+      "name": "Automatic default group creation for model registry",
+      "category": "Model Registry",
+      "current_status": "Deprecated",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "Deprecated",
+          "detail": "Deprecated starting 3.4 itself (definitionally confirmed, since 3.4 is the version in which the deprecation was first announced). No 3.5 removal confirmed.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "feature-store",
+      "name": "Feature Store (Feast-based)",
+      "category": "Feature Store / AutoML / AutoRAG",
+      "current_status": "GA",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "GA",
+          "detail": "Core GA on x86_64/Arm, TP on IBM Power, unavailable on IBM Z.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Adds SparkApplication batch materialization engine (batch_engine.type: spark_application, feature transformations on Kubeflow-Spark-Operator-managed Spark clusters; supports enterprise RAG pipelines via batch document embedding to offline/online stores including Milvus) and bidirectional workbench/Feature Store visibility. These additions do not promote the Power implementation beyond TP.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "automl",
+      "name": "AutoML",
+      "category": "Feature Store / AutoML / AutoRAG",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Technology Preview (EA2 also used Developer Preview wording).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Remains TP. Current matrix: TP on x86_64 and IBM Power, unavailable on Arm and IBM Z. Adds model-insight curves/backtesting, experiment transparency, TP AutoGluon serving runtime; no GA promotion.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": []
+    },
+    {
+      "feature_id": "autorag",
+      "name": "AutoRAG",
+      "category": "Feature Store / AutoML / AutoRAG",
+      "current_status": "TP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.4",
+          "status": "TP",
+          "detail": "Technology Preview (EA2 also used Developer Preview wording).",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        },
+        {
+          "version": "3.5",
+          "status": "TP",
+          "detail": "Remains TP on x86_64 in the current matrix; unavailable on Arm/Power/Z. Adds CPU-only deployment, multilingual support, structural contextualization, visual experiment-pipeline representation. EA2 release notes claim Power extension, but the current matrix does not list it there -- treated as an unresolved source conflict.",
+          "source": "MD:OpenShift_AI_Version_History_and_Integration_Research_FinalV1.md",
+          "milestone": null,
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [
+        {
+          "feature_id": "autorag",
+          "topic": "IBM Power availability",
+          "claim_a_source": "3.5 EA2 release notes",
+          "claim_a_value": "AutoRAG support extended to IBM Power",
+          "claim_b_source": "Supported Configurations matrix (3.5)",
+          "claim_b_value": "AutoRAG not listed as available on IBM Power",
+          "note": null
+        }
+      ],
+      "aliases": []
+    }
+  ],
+  "deprecation_timeline": [
+    {
+      "feature": "Multi-model serving (ModelMesh)",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.19",
+      "removed_status": "Retired from the supported 3.x serving architecture; unmigrated workloads fail after migration to 3.0.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "KServe Serverless deployment mode",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.25",
+      "removed_status": "Retired from the supported 3.x serving architecture; unmigrated workloads fail after migration to 3.0.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "Accelerator profiles",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.22",
+      "removed_status": "Not yet removed; superseded by Hardware Profiles at 3.0.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "OVMS CUDA plugin",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.22",
+      "removed_status": "Not yet removed.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "OdhDashboardConfig groupsConfig",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.17",
+      "removed_status": "Superseded by the Auth resource.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Kubeflow Training Operator v1",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.25",
+      "removed_status": "Not yet removed; specific v1 images deprecated again at 3.4.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "CodeFlare Operator",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "2.24",
+      "removed_status": "Removed at 3.0; folded into KubeRay Operator.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "AppWrapper Controller",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 3.0.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "DataSciencePipelinesApplication v1alpha1 API",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 3.0.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Connection Secrets annotation format",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "3.0",
+      "removed_status": "Not yet removed.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Microsoft SQL Server CLI tools",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 2.24.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Anaconda",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 2.18.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Pipeline logs for Elyra scripts stored in S3",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 2.11; replaced by pipeline log viewer.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "HabanaAI 1.10 workbench image",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed for new installs at 2.14; retained on upgrade.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Beta subscription channel",
+      "introduced": "2.5",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Removed at 2.5.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "CodeFlare SDK Ray cluster config parameters",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": "version not stated",
+      "removed_status": "Not yet removed.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "JupyterHub",
+      "introduced": "Predates RHODS 1.15",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Removed at 1.16 (RHODS era); replaced by Kubeflow Notebook Controller.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Data Science Pipelines on Kubeflow Pipelines v1",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 2.9; rebuilt on KFP v2 (2.8 was last v1 release).",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "TrustyAI bias detection functionality",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed at 2.7 (TrustyAI notebook image itself retained).",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Notebook container image v1.2",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed from new-workbench selection at 2.5.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "tf2onnx package (TensorFlow images)",
+      "introduced": "2.5",
+      "introduced_is_placeholder": true,
+      "deprecated": null,
+      "removed_status": "Removed 3.4 with no prior deprecation notice -- the only such instance identified in this review.",
+      "notes": "Not previously deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "TrustyAI service CRD v1alpha1",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": "2.25",
+      "removed_status": "Not yet removed.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Model registry API v1alpha1",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": "2.24",
+      "removed_status": "Not yet removed; v1beta1 current.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Model registry ML Metadata (MLMD) server",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Removed at 2.23.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Text Generation Inference Server (TGIS)",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": "2.19",
+      "removed_status": "Removed at 3.0.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "LAB-tuning",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": "2.25",
+      "removed_status": "Removed at 3.0.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "Embedded Kueue component",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": "2.24",
+      "removed_status": "Removed at 3.0; replaced by Red Hat build of Kueue Operator.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "Caikit-NLP component",
+      "introduced": "Undetermined",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Removed at 3.0.",
+      "notes": "Not separately deprecated.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "Default group creation for model registry",
+      "introduced": "3.4",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.4",
+      "removed_status": "Not yet removed.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "SQLite as production Llama Stack/OGX metadata store",
+      "introduced": "3.0",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.2",
+      "removed_status": "Not removed; permitted for local dev/test only.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Ray-based multi-node vLLM template",
+      "introduced": "3.3 (TP)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.4",
+      "removed_status": "Removed at 3.4; native vLLM multiprocessing used instead.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "Llama Stack -> OGX rename",
+      "introduced": "3.0 (as Llama Stack)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 EA1 (renamed, breaking)",
+      "removed_status": "API group llamastack.io -> ogx.io; API version v1alpha1 -> v1beta1; kind LlamaStackDistribution -> OGXServer; activation field spec.components.llamastackoperator.managementState -> spec.components.ogx.managementState. Manual migration required.",
+      "notes": "Amber preview-adoption risk: source path was Technology Preview, so this is not a broken GA compatibility promise -- but it is still a mandatory manual migration for anyone on the Llama Stack preview path.",
+      "risk_color": "amber"
+    },
+    {
+      "feature": "FMS-Guardrails Orchestrator",
+      "introduced": "2.19 (as TP)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 (formal, directly confirmed)",
+      "removed_status": "DEPRECATED, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. Remains functional in 3.5.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "LM-Eval standalone evaluation service (LMEvalJob CRD, LM-Eval UI)",
+      "introduced": "Pre-3.4",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 (formal)",
+      "removed_status": "DEPRECATED, will be removed in a future release. Migrate to EvalHub.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "RStudio Server / CUDA - RStudio Server workbench images",
+      "introduced": "Pre-2.25",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 (formal)",
+      "removed_status": "REMOVED at 3.5 for AGPL licensing-compliance reasons. Remains available (supported) on 2.25 (EOL 5 Oct 2026) and 3.3 (EOL 26 Apr 2027) only. Self-build recipes exist for an unsupported 3.5+ image.",
+      "notes": "Compliance-driven removal, not a product-direction one -- different risk profile from the vLLM/OGX/MaaS architectural changes elsewhere.",
+      "risk_color": "red"
+    },
+    {
+      "feature": "OGX Evaluation REST API and providers",
+      "introduced": "3.0 (as Llama Stack)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 EA1",
+      "removed_status": "REMOVED from the OGX Operator in the same EA1 milestone as its deprecation.",
+      "notes": null,
+      "risk_color": "red"
+    },
+    {
+      "feature": "Safety and Shields APIs (OGX)",
+      "introduced": "3.0 (as Llama Stack)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 EA1",
+      "removed_status": "DEPRECATED.",
+      "notes": null,
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Evaluation Stack UI / DP orchestration layer (3.4)",
+      "introduced": "3.4 (TP/DP)",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Superseded at 3.5 by EvalHub. 3.5 release notes label EvalHub GA/full support, while the current Supported Configurations matrix lists EvalHub 0.3.0 as TP on x86_64.",
+      "notes": "Superseded, not formally deprecated.",
+      "risk_color": "amber"
+    },
+    {
+      "feature": "2025.2-generation workbench and pipeline runtime images",
+      "introduced": "Pre-3.5",
+      "introduced_is_placeholder": false,
+      "deprecated": null,
+      "removed_status": "Retained through 3.5 GA for transition; selectable but marked outdated/not recommended in the dashboard. No removal date stated.",
+      "notes": "Not formally deprecated.",
+      "risk_color": "amber"
+    },
+    {
+      "feature": "Distributed Inference with llm-d flow control API (inference.networking.x-k8s.io)",
+      "introduced": "3.4 (TP)",
+      "introduced_is_placeholder": false,
+      "deprecated": "3.5 (breaking rename on GA promotion, not a deprecation)",
+      "removed_status": "API group moves to llm-d.ai, metrics prefix to llm_d_epp_. Anyone on the 3.4 TP must migrate resources and dashboards.",
+      "notes": null,
+      "risk_color": "red"
+    }
+  ],
+  "integration_notes": [
+    {
+      "title": "Guardrails x MaaS / OGX / MCP Gateway: the 3.5 integration paths are distinct",
+      "detail": "FMS-Guardrails retains a documented OGX integration path via the trustyai_fms external provider, but FMS Guardrails is formally deprecated in 3.5 and Red Hat directs new deployments to NeMo Guardrails. The current 3.5 OGX security guide documents a native NeMo Guardrails integration as the recommended production guardrails path -- this should NOT be generalized into a MaaS-specific integration; no equivalent MaaS-native NeMo control-plane feature is documented. The Gen AI Playground guardrails experience differs by milestone (EA1: NeMo-powered; GA Technology Preview chapter: 'basic guardrails' sourced from OGX, limited to llm_input/llm_output, tool-level guardrails excluded -- follow GA documentation for current-state wording). Separately, NeMo Guardrails x MCP Gateway (introduced 3.5 EA2) remains Technology Preview and enforces guardrails on agent tool calls at the gateway layer, requiring the MCP Gateway Operator as an external prerequisite.",
+      "risk_color": "amber",
+      "confidence": "directly_sourced"
+    },
+    {
+      "title": "Model Registry to MaaS: no re-registration required, but the connection point is the deployment, not the registry entry",
+      "detail": "Documented path: Model Registry -> deployment through the standard InferenceService flow -> enabling the model as an available AI asset/service from the deployment interface (a Developer Preview integration in 3.3/3.4, distinct from MaaS core which is GA). No separate re-registration step is required, but the connection point is one step removed from where a user might expect it. No 3.5 release-note entry found changing this relationship.",
+      "risk_color": "green",
+      "confidence": "directly_sourced"
+    },
+    {
+      "title": "MLflow to Kubeflow Trainer v2: confirmed gap at 3.4, confirmed closed at 3.5 GA",
+      "detail": "At 3.4, automatic MLflow SDK configuration was scoped to workbenches only (opendatahub.io/mlflow-instance annotation); no equivalent auto-attach mechanism was found for Kubeflow Trainer v2 TrainJobs -- a documented gap. At 3.5 GA, Red Hat's own release notes state MLflow tracking is embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub, and that training jobs run through a pipeline or SDK are automatically tracked by a dedicated MLflow server instance -- a direct, dated closure of the gap. Training Hub's Ray integration (SFT/OSFT/LoRA/GRPO) is documented separately without an explicit MLflow auto-attach statement for Ray-submitted jobs specifically -- re-verify independently before assuming identical behavior to the Kubeflow Trainer path.",
+      "risk_color": "green",
+      "confidence": "directly_sourced"
+    },
+    {
+      "title": "Feature Store to AutoML/AutoRAG: appears isolated -- inferred from documentation silence, not confirmed",
+      "detail": "AutoRAG's documented prerequisites (an OGX instance, a remote Milvus vector database -- inline Milvus explicitly not supported -- and S3-compatible document storage) never mention Feature Store, in the prerequisites, the introduction blog post, or interactive demo materials. AutoRAG's 3.5 enhancements (CPU-only support, multilingual support, structural contextualization) contain no documented Feature Store dependency. This is an absence of evidence after a renewed search, not confirmation no integration exists -- a later release could connect them without release-note language using these exact terms. Adjacent: a documented 3.4 bug (RHOAIENG-64768) causes AutoML/AutoRAG default pipelines to hang on ImagePullBackOff due to unavailable image digests; no 3.5 resolved-issues entry confirming a fix was located -- treat as open until re-verified against the current z-stream.",
+      "risk_color": "amber",
+      "confidence": "inferred_from_absence"
+    },
+    {
+      "title": "EvalHub x MLflow: confirmed integration (EvalCard generation)",
+      "detail": "EvalCard generation, new at 3.5 GA, is a directly documented integration: when an evaluation job request specifies an MLflow experiment (or OCI export configuration), EvalHub's runtime automatically generates a schema-validated JSON EvalCard capturing metadata, results, provenance, and pass/fail outcomes, storing it as an MLflow run artifact (or OCI artifact). EvalHub's overall 3.5 support label remains subject to the GA-vs-TP source conflict documented for the evalhub feature.",
+      "risk_color": "green",
+      "confidence": "directly_sourced"
+    }
+  ],
+  "operational_notes": [
+    {
+      "category": "Upgrade Path",
+      "detail": "3.0 and 3.2 offered no upgrade path from 2.x at all -- new installs only. 3.3.2 specifically (not 3.3.0/3.3.1) is the first 3.x release supporting migration from 2.x, and only from 2.25.4 or later -- a precise version gate. This is a migration with significant component changes, not zero-downtime: requires a proactive support case, complete backup, prerequisite checks, and the rhai-cli migration assessment process. Unconverted ModelMesh/KServe Serverless models return HTTP 503 immediately after upgrade with no grace period; OGX (Llama Stack) data is permanently lost during migration unless backed up beforehand, with no automated migration path. Custom workbench images built against oauth-proxy must be rebuilt for kube-rbac-proxy or they fail with redirect loops. RHOAI 3.3 requires OpenShift 4.19.9 specifically. Release cadence: EA1 (1 month, unsupported) -> EA2 -> GA (7 months full support); EUS releases add 11 more months on top; one EUS release per three GA releases.",
+      "risk_color": "red"
+    },
+    {
+      "category": "Upgrade Path",
+      "detail": "At 3.5 GA, a dedicated migration guide ('Assess and plan for migration from 2.25.9+ to 3.5') ships using rhai-cli, covering side-by-side and in-place approaches, Kueue management-state prerequisites, and component-specific rhai-cli migrate actions for Kueue/RHBOK, AI Pipelines, Model Serving, Workbenches, TrustyAI, Training, Llama Stack/OGX, and Ray. After upgrading, move off the support-required-upgrade-3.5 channel onto stable-3.5 / stable-3.x / eus-3.5 per lifecycle needs. New 3.5-specific item: anyone who configured llm-d flow control during the 3.4 TP window must update the API group, metrics prefix, and saturation-detector configuration path before/during the 3.5 upgrade.",
+      "risk_color": "amber"
+    },
+    {
+      "category": "Hardware/Architecture",
+      "detail": "Architecture support is per-component, not per-product-label: a 3.5 GA product on a supported OpenShift architecture does not imply every AI component is GA there. The 3.5 release notes announce IBM Power support for OGX, KubeRay, MLflow, AutoML, AutoRAG, the GenAI playground, and milvus-lite, but the current matrix is narrower: OGX is GA on Power; KubeRay/MLflow/AutoML are TP; AutoRAG is not listed on Power at all -- treated as source conflicts, matrix governs. The Llama Stack/OGX Operator remains unavailable on IBM Z. NeMo Guardrails has a direct IBM Z source conflict (announced vs. matrix absence). vLLM CPU ServingRuntime on IBM Z/Power is permanently restricted to standard deployment mode only. New at 3.5: llm-d's cross-Kubernetes expansion (GA on AKS/CKS, TP on EKS) is a Kubernetes-platform dimension layered on top of, not a replacement for, the existing hardware-architecture dimension; the llm-d tokenizer's new dedicated-amd64-node requirement is new at 3.5 (previously ran with the EndpointPicker on amd64 or ARM).",
+      "risk_color": "amber"
+    },
+    {
+      "category": "Hardware/Architecture",
+      "detail": "Known issue RHOAIENG-54101 (discovered 3.4 EA1): on IBM Z, a model deployed from Model Registry does not appear under the registry's own Deployments tab; workaround is to manage it from the global Deployments page. No 3.5 resolved-issues entry confirming a fix was located -- recheck against the current z-stream.",
+      "risk_color": "amber"
+    },
+    {
+      "category": "Workbench Images",
+      "detail": "Starting with 3.5, RStudio Server and CUDA - RStudio Server workbench images are removed outright (not merely deprecated) due to AGPL licensing-compliance issues in bundled packages/binaries. Already-running RStudio workbenches keep operating post-upgrade, but new ones cannot be created and stopped ones cannot be restarted from the dashboard. RStudio remains available (supported) on 2.25 (EOL 5 Oct 2026) and 3.3 (EOL 26 Apr 2027) only. Unsupported self-build recipes exist for 3.5+. This is a compliance-driven removal, not a product-direction one -- flag distinctly from the vLLM/OGX/MaaS architectural changes when advising R-workflow customers.",
+      "risk_color": "red"
+    },
+    {
+      "category": "Evaluation Tooling Consolidation",
+      "detail": "LM-Eval (LMEvalJob CRD + UI) is deprecated at 3.5, will be removed in a future release; migrate to EvalHub (now including LM Evaluation Harness support). The OGX Evaluation REST API and its providers were deprecated AND removed from the OGX Operator in the same 3.5 EA1 milestone -- an unusually fast deprecation-to-removal cycle. The Safety and Shields APIs/providers in OGX were deprecated at 3.5 EA1. Combined with the FMS Guardrails deprecation, this is a deliberate, multi-pronged consolidation of safety/evaluation tooling onto NeMo Guardrails and EvalHub respectively.",
+      "risk_color": "red"
+    },
+    {
+      "category": "Licensing",
+      "detail": "Starting with 3.4, Red Hat Connectivity Link (RHCL) is included in Red Hat AI SKUs for Models-as-a-Service use cases only; for all other RHOAI components RHCL is not included -- when MaaS is enabled, RHCL is deployed via the Kuadrant Operator. No change at 3.5. The Seldon alibi-detect and alibi-explain libraries ship inside the certified Seldon MLServer runtime but are licensed under Business Source License 1.1; Red Hat explicitly states they are 'not tested, verified, or supported' as part of that certified runtime and recommends against production use -- a library physically present in a supported runtime but carved out of the support boundary entirely. Unchanged at 3.5.",
+      "risk_color": "amber"
+    },
+    {
+      "category": "Renames",
+      "detail": "Llama Stack renamed to OGX (Open GenAI Stack) at 3.5 EA1 -- see ogx-core and the Llama Stack -> OGX rename deprecation-timeline entry for the full breaking-change detail. Data Science Pipelines renamed to AI Pipelines at 3.0 (datasciencepipelines component -> aipipelines in the DataScienceCluster CR). A complete rename audit across all 2.x/3.x release notes remains out of scope; no additional rename beyond OGX was identified for the 3.5 cycle in the sources reviewed.",
+      "risk_color": "amber"
+    },
+    {
+      "category": "API Tiers",
+      "detail": "RHOAI has its own documented API support-tier policy (separate from the generic OpenShift Container Platform API tier system), present in every version 3.0 through 3.5: APIs are stable within a major release for a minimum of nine months from the announcement of deprecation; APIs may be deprecated and removed within a major release; APIs may have a longer deprecation window than the minimum. The actual per-endpoint tier table is gated behind a Red Hat customer portal subscription login and could not be retrieved for this registry -- pull it directly from the portal for endpoint-level planning. The public, granular OGX per-endpoint/provider table (ogx_provider_table in this registry) is useful for OGX planning specifically but is not the same as the gated cross-product tier table.",
+      "risk_color": "amber"
+    }
+  ],
+  "ogx_provider_table": [
+    {
+      "provider_api": "Responses (native)",
+      "provider": "inline::builtin",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": true,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Messages (native)",
+      "provider": "inline::builtin",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": true,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Dataset_IO",
+      "provider": "inline::localfs",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Dataset_IO",
+      "provider": "remote::huggingface",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Files",
+      "provider": "inline::localfs",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Files",
+      "provider": "remote::s3",
+      "how_to_enable": "Set ENABLE_S3=\"true\"",
+      "disconnected_supported": true,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::vllm",
+      "how_to_enable": "Set VLLM_URL",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "inline::sentence-transformers",
+      "how_to_enable": "Set ENABLE_SENTENCE_TRANSFORMERS=\"true\"",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::azure",
+      "how_to_enable": "Set AZURE_API_KEY",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::gemini",
+      "how_to_enable": "Set ENABLE_GEMINI",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::anthropic",
+      "how_to_enable": "Set ANTHROPIC_API_KEY",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::bedrock",
+      "how_to_enable": "Set AWS_ACCESS_KEY_ID",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::openai",
+      "how_to_enable": "Set OPENAI_API_KEY",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::vertexai",
+      "how_to_enable": "Set VERTEX_AI_PROJECT",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Inference",
+      "provider": "remote::watsonx",
+      "how_to_enable": "Set WATSONX_API_KEY",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Tool_Runtime",
+      "provider": "remote::model-context-protocol",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Tool_Runtime",
+      "provider": "inline::rag-runtime",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Tool_Runtime",
+      "provider": "remote::brave-search",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Tool_Runtime",
+      "provider": "remote::tavily-search",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "Vector_IO",
+      "provider": "inline::faiss",
+      "how_to_enable": "Set ENABLE_FAISS",
+      "disconnected_supported": false,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Vector_IO",
+      "provider": "inline::milvus",
+      "how_to_enable": "Set ENABLE_INLINE_MILVUS=\"true\"",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Vector_IO",
+      "provider": "remote::milvus",
+      "how_to_enable": "Set MILVUS_ENDPOINT",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Vector_IO",
+      "provider": "remote::pgvector",
+      "how_to_enable": "Set ENABLE_PGVECTOR",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "Vector_IO",
+      "provider": "remote::qdrant",
+      "how_to_enable": "Set ENABLE_QDRANT",
+      "disconnected_supported": true,
+      "status": "TP"
+    },
+    {
+      "provider_api": "File Processors",
+      "provider": "inline::auto",
+      "how_to_enable": "Enabled by default",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "File Processors",
+      "provider": "inline::docling",
+      "how_to_enable": "Dependency only -- custom config.yaml required",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "File Processors",
+      "provider": "inline::markitdown",
+      "how_to_enable": "Dependency only -- custom config.yaml required",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "File Processors",
+      "provider": "inline::pypdf",
+      "how_to_enable": "Dependency only -- custom config.yaml required",
+      "disconnected_supported": false,
+      "status": "DP"
+    },
+    {
+      "provider_api": "File Processors",
+      "provider": "remote::docling-serve",
+      "how_to_enable": "Dependency only -- custom config.yaml required",
+      "disconnected_supported": false,
+      "status": "DP"
+    }
+  ],
+  "source_conflicts": [
+    {
+      "feature_id": "ogx-core",
+      "topic": "OGX component/operator GA vs. OpenShift AI OGX integration guide TP",
+      "claim_a_source": "Supported Configurations matrix (3.5)",
+      "claim_a_value": "OGX Operator + OGX component: GA on x86_64, Arm, IBM Power",
+      "claim_b_source": "OpenShift AI OGX product/integration guide (3.5)",
+      "claim_b_value": "OpenShift AI OGX integration: Technology Preview",
+      "note": "Component support and integration/API maturity are genuinely separate layers here, not a simple contradiction -- state both."
+    },
+    {
+      "feature_id": "nemo-guardrails",
+      "topic": "IBM Z (s390x) support",
+      "claim_a_source": "3.5 GA release notes",
+      "claim_a_value": "Announces IBM Z (s390x) support",
+      "claim_b_source": "Supported Configurations matrix (3.5)",
+      "claim_b_value": "Does not list NeMo Guardrails as available on IBM Z",
+      "note": "Use the matrix for production support commitments until reconciled."
+    },
+    {
+      "feature_id": "evalhub",
+      "topic": "EvalHub formal support status",
+      "claim_a_source": "3.5 GA release notes",
+      "claim_a_value": "EvalHub is generally available (GA), full Red Hat support",
+      "claim_b_source": "Supported Configurations matrix (3.5)",
+      "claim_b_value": "EvalHub 0.3.0: Technology Preview on x86_64; unavailable on Arm/IBM Power/IBM Z",
+      "note": "Matrix governs formal/contractual support classification; release-note GA statement preserved as release-history language."
+    },
+    {
+      "feature_id": "kuberay",
+      "topic": "Supported KubeRay version at 3.5",
+      "claim_a_source": "3.5 release notes",
+      "claim_a_value": "KubeRay operator upgraded to 1.6.x",
+      "claim_b_source": "Supported Configurations matrix (3.5)",
+      "claim_b_value": "KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z)",
+      "note": null
+    },
+    {
+      "feature_id": "autorag",
+      "topic": "IBM Power availability",
+      "claim_a_source": "3.5 EA2 release notes",
+      "claim_a_value": "AutoRAG support extended to IBM Power",
+      "claim_b_source": "Supported Configurations matrix (3.5)",
+      "claim_b_value": "AutoRAG not listed as available on IBM Power",
+      "note": null
+    }
+  ]
+}

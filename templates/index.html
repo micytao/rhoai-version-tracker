@@ -1,0 +1,72 @@
+{% extends "base.html" %}
+{% block title %}Dashboard — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Version &amp; Feature Tracker</h1>
+<p class="lede">
+  Tracks Red Hat OpenShift AI's feature lifecycle, deprecations, and upgrade paths
+  release over release &mdash; cross-checked against the live Supported Configurations
+  matrix so sellers and customers can see where the release notes and the formal
+  support matrix disagree, not just where they agree.
+</p>
+
+<div class="legend">
+  <span class="chip green">Green &mdash; GA / production supported</span>
+  <span class="chip amber">Amber &mdash; preview instability, migration caution, or an unresolved conflict</span>
+  <span class="chip red">Red &mdash; confirmed production-impacting removal or breaking change</span>
+</div>
+
+<div class="stat-cards">
+  <div class="stat-card green"><div class="num">{{ stats.green }}</div><div class="label">Green features</div></div>
+  <div class="stat-card amber"><div class="num">{{ stats.amber }}</div><div class="label">Amber features</div></div>
+  <div class="stat-card red"><div class="num">{{ stats.red }}</div><div class="label">Red features</div></div>
+  <div class="stat-card"><div class="num">{{ stats.conflicts }}</div><div class="label">Open source conflicts</div></div>
+  <div class="stat-card"><div class="num">{{ stats.deprecations }}</div><div class="label">Deprecation-timeline entries</div></div>
+</div>
+
+<h2>Release timeline</h2>
+<p class="section-note">EA1 &rarr; EA2 &rarr; GA per version, where applicable. EUS releases shaded.</p>
+<div class="version-strip">
+  {% for v in versions %}
+  <div class="version-card {{ 'eus' if v.is_eus else '' }}">
+    <div class="v">{{ v.version }}</div>
+    <div class="milestones">{{ v.milestones | join(' &rarr; ') | safe if v.milestones else '&mdash;' }}</div>
+    {% if v.ga_date %}<div class="milestones">GA {{ v.ga_date }}</div>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+
+<h2>What's new in {{ latest_version }}</h2>
+<p class="section-note">Auto-derived from every feature whose most recent timeline entry lands on {{ latest_version }}.</p>
+<div class="card-grid">
+  {% for h in highlights %}
+  <div class="item-card">
+    <span class="tag">{{ h.category }}</span>
+    <h4><a href="matrix.html#{{ h.feature_id }}">{{ h.name }}</a> <span class="badge {{ h.risk_color }}">{{ h.status }}</span></h4>
+    <p>{{ h.detail | truncate(220) }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+{% if red_highlights %}
+<h2>&#9888;&#65039; Breaking changes / high-risk items in {{ latest_version }}</h2>
+<div class="card-grid">
+  {% for h in red_highlights %}
+  <div class="item-card" style="border-color:var(--red-border)">
+    <span class="tag">{{ h.category }}</span>
+    <h4><a href="matrix.html#{{ h.feature_id }}">{{ h.name }}</a> <span class="badge red">{{ h.status }}</span></h4>
+    <p>{{ h.detail | truncate(260) }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<h2>Explore</h2>
+<div class="card-grid">
+  <div class="item-card"><h4><a href="matrix.html">Feature Lifecycle Matrix</a></h4><p>Every tracked feature/component across every version, color-coded.</p></div>
+  <div class="item-card"><h4><a href="migration.html">Upgrade Path / Migration Checklist</a></h4><p>Every deprecation, removal, and breaking change in one actionable list.</p></div>
+  <div class="item-card"><h4><a href="conflicts.html">Source Conflicts</a></h4><p>Where the release notes and the Supported Configurations matrix disagree.</p></div>
+  {% for v in version_pages %}
+  <div class="item-card"><h4><a href="versions/{{ v }}.html">{{ v }} release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
+  {% endfor %}
+</div>
+{% endblock %}

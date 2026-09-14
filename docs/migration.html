@@ -1,0 +1,344 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Migration Checklist — RHOAI Version Tracker</title>
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+    <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+  </div>
+  <nav class="site-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="matrix.html">Feature Matrix</a>
+    <a href="migration.html">Migration Checklist</a>
+    <a href="conflicts.html">Source Conflicts</a>
+<a href="versions/3.5.html">3.5</a>  </nav>
+</header>
+<main>
+<h1>Upgrade Path / Migration Checklist</h1>
+<p class="lede">Every deprecation, removal, and breaking change tracked across the version history, plus the operational notes that matter most when planning an upgrade.</p>
+
+
+<h2>Upgrade-path operational notes</h2>
+<div class="card-grid">
+  <div class="item-card" style="border-color: var(--red-border)">
+    <span class="tag">Upgrade Path</span>
+    <p>3.0 and 3.2 offered no upgrade path from 2.x at all -- new installs only. 3.3.2 specifically (not 3.3.0/3.3.1) is the first 3.x release supporting migration from 2.x, and only from 2.25.4 or later -- a precise version gate. This is a migration with significant component changes, not zero-downtime: requires a proactive support case, complete backup, prerequisite checks, and the rhai-cli migration assessment process. Unconverted ModelMesh/KServe Serverless models return HTTP 503 immediately after upgrade with no grace period; OGX (Llama Stack) data is permanently lost during migration unless backed up beforehand, with no automated migration path. Custom workbench images built against oauth-proxy must be rebuilt for kube-rbac-proxy or they fail with redirect loops. RHOAI 3.3 requires OpenShift 4.19.9 specifically. Release cadence: EA1 (1 month, unsupported) -&gt; EA2 -&gt; GA (7 months full support); EUS releases add 11 more months on top; one EUS release per three GA releases.</p>
+  </div>
+  <div class="item-card" style="border-color: var(--amber-border)">
+    <span class="tag">Upgrade Path</span>
+    <p>At 3.5 GA, a dedicated migration guide (&#39;Assess and plan for migration from 2.25.9+ to 3.5&#39;) ships using rhai-cli, covering side-by-side and in-place approaches, Kueue management-state prerequisites, and component-specific rhai-cli migrate actions for Kueue/RHBOK, AI Pipelines, Model Serving, Workbenches, TrustyAI, Training, Llama Stack/OGX, and Ray. After upgrading, move off the support-required-upgrade-3.5 channel onto stable-3.5 / stable-3.x / eus-3.5 per lifecycle needs. New 3.5-specific item: anyone who configured llm-d flow control during the 3.4 TP window must update the API group, metrics prefix, and saturation-detector configuration path before/during the 3.5 upgrade.</p>
+  </div>
+</div>
+
+<h2>Deprecation &amp; removal timeline (40)</h2>
+<p class="section-note">Mirrors the flat, one-row-per-feature view: when a feature was introduced, when it was deprecated, and its current removal status.</p>
+<div class="filters">
+  <input type="text" id="dep-search" placeholder="Search feature&hellip;" onkeyup="filterDepTable()">
+</div>
+<table class="plain" id="dep-table">
+<thead><tr><th>Feature</th><th>Introduced</th><th>Deprecated</th><th>Removal status</th><th>Notes</th></tr></thead>
+<tbody>
+<tr data-feature="multi-model serving (modelmesh)">
+  <td><span class="badge red">&nbsp;</span> Multi-model serving (ModelMesh)</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.19</td>
+  <td>Retired from the supported 3.x serving architecture; unmigrated workloads fail after migration to 3.0.</td>
+  <td></td>
+</tr>
+<tr data-feature="kserve serverless deployment mode">
+  <td><span class="badge red">&nbsp;</span> KServe Serverless deployment mode</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.25</td>
+  <td>Retired from the supported 3.x serving architecture; unmigrated workloads fail after migration to 3.0.</td>
+  <td></td>
+</tr>
+<tr data-feature="accelerator profiles">
+  <td><span class="badge amber">&nbsp;</span> Accelerator profiles</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.22</td>
+  <td>Not yet removed; superseded by Hardware Profiles at 3.0.</td>
+  <td></td>
+</tr>
+<tr data-feature="ovms cuda plugin">
+  <td><span class="badge amber">&nbsp;</span> OVMS CUDA plugin</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.22</td>
+  <td>Not yet removed.</td>
+  <td></td>
+</tr>
+<tr data-feature="odhdashboardconfig groupsconfig">
+  <td><span class="badge amber">&nbsp;</span> OdhDashboardConfig groupsConfig</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.17</td>
+  <td>Superseded by the Auth resource.</td>
+  <td></td>
+</tr>
+<tr data-feature="kubeflow training operator v1">
+  <td><span class="badge amber">&nbsp;</span> Kubeflow Training Operator v1</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.25</td>
+  <td>Not yet removed; specific v1 images deprecated again at 3.4.</td>
+  <td></td>
+</tr>
+<tr data-feature="codeflare operator">
+  <td><span class="badge red">&nbsp;</span> CodeFlare Operator</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>2.24</td>
+  <td>Removed at 3.0; folded into KubeRay Operator.</td>
+  <td></td>
+</tr>
+<tr data-feature="appwrapper controller">
+  <td><span class="badge red">&nbsp;</span> AppWrapper Controller</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 3.0.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="datasciencepipelinesapplication v1alpha1 api">
+  <td><span class="badge red">&nbsp;</span> DataSciencePipelinesApplication v1alpha1 API</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 3.0.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="connection secrets annotation format">
+  <td><span class="badge amber">&nbsp;</span> Connection Secrets annotation format</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>3.0</td>
+  <td>Not yet removed.</td>
+  <td></td>
+</tr>
+<tr data-feature="microsoft sql server cli tools">
+  <td><span class="badge red">&nbsp;</span> Microsoft SQL Server CLI tools</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.24.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="anaconda">
+  <td><span class="badge red">&nbsp;</span> Anaconda</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.18.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="pipeline logs for elyra scripts stored in s3">
+  <td><span class="badge red">&nbsp;</span> Pipeline logs for Elyra scripts stored in S3</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.11; replaced by pipeline log viewer.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="habanaai 1.10 workbench image">
+  <td><span class="badge red">&nbsp;</span> HabanaAI 1.10 workbench image</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed for new installs at 2.14; retained on upgrade.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="beta subscription channel">
+  <td><span class="badge red">&nbsp;</span> Beta subscription channel</td>
+  <td>2.5</td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.5.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="codeflare sdk ray cluster config parameters">
+  <td><span class="badge amber">&nbsp;</span> CodeFlare SDK Ray cluster config parameters</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>version not stated</td>
+  <td>Not yet removed.</td>
+  <td></td>
+</tr>
+<tr data-feature="jupyterhub">
+  <td><span class="badge red">&nbsp;</span> JupyterHub</td>
+  <td>Predates RHODS 1.15</td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 1.16 (RHODS era); replaced by Kubeflow Notebook Controller.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="data science pipelines on kubeflow pipelines v1">
+  <td><span class="badge red">&nbsp;</span> Data Science Pipelines on Kubeflow Pipelines v1</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.9; rebuilt on KFP v2 (2.8 was last v1 release).</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="trustyai bias detection functionality">
+  <td><span class="badge red">&nbsp;</span> TrustyAI bias detection functionality</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.7 (TrustyAI notebook image itself retained).</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="notebook container image v1.2">
+  <td><span class="badge red">&nbsp;</span> Notebook container image v1.2</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed from new-workbench selection at 2.5.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="tf2onnx package (tensorflow images)">
+  <td><span class="badge red">&nbsp;</span> tf2onnx package (TensorFlow images)</td>
+  <td>2.5 <span class="section-note">(approx.)</span></td>
+  <td>&amp;mdash;</td>
+  <td>Removed 3.4 with no prior deprecation notice -- the only such instance identified in this review.</td>
+  <td>Not previously deprecated.</td>
+</tr>
+<tr data-feature="trustyai service crd v1alpha1">
+  <td><span class="badge amber">&nbsp;</span> TrustyAI service CRD v1alpha1</td>
+  <td>Undetermined</td>
+  <td>2.25</td>
+  <td>Not yet removed.</td>
+  <td></td>
+</tr>
+<tr data-feature="model registry api v1alpha1">
+  <td><span class="badge amber">&nbsp;</span> Model registry API v1alpha1</td>
+  <td>Undetermined</td>
+  <td>2.24</td>
+  <td>Not yet removed; v1beta1 current.</td>
+  <td></td>
+</tr>
+<tr data-feature="model registry ml metadata (mlmd) server">
+  <td><span class="badge red">&nbsp;</span> Model registry ML Metadata (MLMD) server</td>
+  <td>Undetermined</td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 2.23.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="text generation inference server (tgis)">
+  <td><span class="badge red">&nbsp;</span> Text Generation Inference Server (TGIS)</td>
+  <td>Undetermined</td>
+  <td>2.19</td>
+  <td>Removed at 3.0.</td>
+  <td></td>
+</tr>
+<tr data-feature="lab-tuning">
+  <td><span class="badge red">&nbsp;</span> LAB-tuning</td>
+  <td>Undetermined</td>
+  <td>2.25</td>
+  <td>Removed at 3.0.</td>
+  <td></td>
+</tr>
+<tr data-feature="embedded kueue component">
+  <td><span class="badge red">&nbsp;</span> Embedded Kueue component</td>
+  <td>Undetermined</td>
+  <td>2.24</td>
+  <td>Removed at 3.0; replaced by Red Hat build of Kueue Operator.</td>
+  <td></td>
+</tr>
+<tr data-feature="caikit-nlp component">
+  <td><span class="badge red">&nbsp;</span> Caikit-NLP component</td>
+  <td>Undetermined</td>
+  <td>&amp;mdash;</td>
+  <td>Removed at 3.0.</td>
+  <td>Not separately deprecated.</td>
+</tr>
+<tr data-feature="default group creation for model registry">
+  <td><span class="badge amber">&nbsp;</span> Default group creation for model registry</td>
+  <td>3.4</td>
+  <td>3.4</td>
+  <td>Not yet removed.</td>
+  <td></td>
+</tr>
+<tr data-feature="sqlite as production llama stack/ogx metadata store">
+  <td><span class="badge amber">&nbsp;</span> SQLite as production Llama Stack/OGX metadata store</td>
+  <td>3.0</td>
+  <td>3.2</td>
+  <td>Not removed; permitted for local dev/test only.</td>
+  <td></td>
+</tr>
+<tr data-feature="ray-based multi-node vllm template">
+  <td><span class="badge red">&nbsp;</span> Ray-based multi-node vLLM template</td>
+  <td>3.3 (TP)</td>
+  <td>3.4</td>
+  <td>Removed at 3.4; native vLLM multiprocessing used instead.</td>
+  <td></td>
+</tr>
+<tr data-feature="llama stack -&gt; ogx rename">
+  <td><span class="badge amber">&nbsp;</span> Llama Stack -&gt; OGX rename</td>
+  <td>3.0 (as Llama Stack)</td>
+  <td>3.5 EA1 (renamed, breaking)</td>
+  <td>API group llamastack.io -&gt; ogx.io; API version v1alpha1 -&gt; v1beta1; kind LlamaStackDistribution -&gt; OGXServer; activation field spec.components.llamastackoperator.managementState -&gt; spec.components.ogx.managementState. Manual migration required.</td>
+  <td>Amber preview-adoption risk: source path was Technology Preview, so this is not a broken GA compatibility promise -- but it is still a mandatory manual migration for anyone on the Llama Stack preview path.</td>
+</tr>
+<tr data-feature="fms-guardrails orchestrator">
+  <td><span class="badge red">&nbsp;</span> FMS-Guardrails Orchestrator</td>
+  <td>2.19 (as TP)</td>
+  <td>3.5 (formal, directly confirmed)</td>
+  <td>DEPRECATED, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. Remains functional in 3.5.</td>
+  <td></td>
+</tr>
+<tr data-feature="lm-eval standalone evaluation service (lmevaljob crd, lm-eval ui)">
+  <td><span class="badge red">&nbsp;</span> LM-Eval standalone evaluation service (LMEvalJob CRD, LM-Eval UI)</td>
+  <td>Pre-3.4</td>
+  <td>3.5 (formal)</td>
+  <td>DEPRECATED, will be removed in a future release. Migrate to EvalHub.</td>
+  <td></td>
+</tr>
+<tr data-feature="rstudio server / cuda - rstudio server workbench images">
+  <td><span class="badge red">&nbsp;</span> RStudio Server / CUDA - RStudio Server workbench images</td>
+  <td>Pre-2.25</td>
+  <td>3.5 (formal)</td>
+  <td>REMOVED at 3.5 for AGPL licensing-compliance reasons. Remains available (supported) on 2.25 (EOL 5 Oct 2026) and 3.3 (EOL 26 Apr 2027) only. Self-build recipes exist for an unsupported 3.5+ image.</td>
+  <td>Compliance-driven removal, not a product-direction one -- different risk profile from the vLLM/OGX/MaaS architectural changes elsewhere.</td>
+</tr>
+<tr data-feature="ogx evaluation rest api and providers">
+  <td><span class="badge red">&nbsp;</span> OGX Evaluation REST API and providers</td>
+  <td>3.0 (as Llama Stack)</td>
+  <td>3.5 EA1</td>
+  <td>REMOVED from the OGX Operator in the same EA1 milestone as its deprecation.</td>
+  <td></td>
+</tr>
+<tr data-feature="safety and shields apis (ogx)">
+  <td><span class="badge amber">&nbsp;</span> Safety and Shields APIs (OGX)</td>
+  <td>3.0 (as Llama Stack)</td>
+  <td>3.5 EA1</td>
+  <td>DEPRECATED.</td>
+  <td></td>
+</tr>
+<tr data-feature="evaluation stack ui / dp orchestration layer (3.4)">
+  <td><span class="badge amber">&nbsp;</span> Evaluation Stack UI / DP orchestration layer (3.4)</td>
+  <td>3.4 (TP/DP)</td>
+  <td>&amp;mdash;</td>
+  <td>Superseded at 3.5 by EvalHub. 3.5 release notes label EvalHub GA/full support, while the current Supported Configurations matrix lists EvalHub 0.3.0 as TP on x86_64.</td>
+  <td>Superseded, not formally deprecated.</td>
+</tr>
+<tr data-feature="2025.2-generation workbench and pipeline runtime images">
+  <td><span class="badge amber">&nbsp;</span> 2025.2-generation workbench and pipeline runtime images</td>
+  <td>Pre-3.5</td>
+  <td>&amp;mdash;</td>
+  <td>Retained through 3.5 GA for transition; selectable but marked outdated/not recommended in the dashboard. No removal date stated.</td>
+  <td>Not formally deprecated.</td>
+</tr>
+<tr data-feature="distributed inference with llm-d flow control api (inference.networking.x-k8s.io)">
+  <td><span class="badge red">&nbsp;</span> Distributed Inference with llm-d flow control API (inference.networking.x-k8s.io)</td>
+  <td>3.4 (TP)</td>
+  <td>3.5 (breaking rename on GA promotion, not a deprecation)</td>
+  <td>API group moves to llm-d.ai, metrics prefix to llm_d_epp_. Anyone on the 3.4 TP must migrate resources and dashboards.</td>
+  <td></td>
+</tr>
+</tbody>
+</table>
+<script>
+function filterDepTable() {
+  const q = document.getElementById('dep-search').value.toLowerCase();
+  document.querySelectorAll('#dep-table tbody tr').forEach(function(row) {
+    row.classList.toggle('hidden-row', !row.dataset.feature.includes(q));
+  });
+}
+</script>
+</main>
+<footer class="site-footer">
+  Built from official Red Hat OpenShift AI release notes and the live
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
+  Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
+</footer>
+</body>
+</html>

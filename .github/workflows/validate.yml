@@ -1,0 +1,32 @@
+name: Validate registry
+
+# Deterministic, key-free CI: re-runs the same schema/sanity checks and a
+# dry-run site build on every push/PR that touches the pipeline. No secrets
+# are used or required anywhere in this workflow.
+
+on:
+  push:
+    branches: [main]
+  pull_request:
+    branches: [main]
+
+jobs:
+  validate:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+        with:
+          fetch-depth: 0 # needed so validate_registry.py can diff against HEAD
+
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.13"
+
+      - name: Install dependencies
+        run: pip install -r requirements.txt
+
+      - name: Validate feature registry + diffs
+        run: python scripts/validate_registry.py
+
+      - name: Dry-run site build
+        run: python scripts/build_site.py --out /tmp/docs-dry-run

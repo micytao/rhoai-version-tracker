@@ -1,0 +1,55 @@
+{% extends "base.html" %}
+{% block title %}Migration Checklist — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Upgrade Path / Migration Checklist</h1>
+<p class="lede">Every deprecation, removal, and breaking change tracked across the version history, plus the operational notes that matter most when planning an upgrade.</p>
+
+{% if breaking_changes %}
+<h2>&#9888;&#65039; Breaking changes from version diffs</h2>
+{% for bc in breaking_changes %}
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">{{ bc.from_version }} &rarr; {{ bc.to_version }}: {{ bc.feature_name }}</h4>
+  <div class="claim"><b>What changed:</b> {{ bc.what_changed }}</div>
+  <div class="claim"><b>Migration action:</b> {{ bc.migration_note }}</div>
+</div>
+{% endfor %}
+{% endif %}
+
+<h2>Upgrade-path operational notes</h2>
+<div class="card-grid">
+  {% for n in upgrade_notes %}
+  <div class="item-card" style="border-color: var(--{{ n.risk_color }}-border)">
+    <span class="tag">{{ n.category }}</span>
+    <p>{{ n.detail }}</p>
+  </div>
+  {% endfor %}
+</div>
+
+<h2>Deprecation &amp; removal timeline ({{ deprecation_timeline | length }})</h2>
+<p class="section-note">Mirrors the flat, one-row-per-feature view: when a feature was introduced, when it was deprecated, and its current removal status.</p>
+<div class="filters">
+  <input type="text" id="dep-search" placeholder="Search feature&hellip;" onkeyup="filterDepTable()">
+</div>
+<table class="plain" id="dep-table">
+<thead><tr><th>Feature</th><th>Introduced</th><th>Deprecated</th><th>Removal status</th><th>Notes</th></tr></thead>
+<tbody>
+{% for d in deprecation_timeline %}
+<tr data-feature="{{ d.feature | lower }}">
+  <td><span class="badge {{ d.risk_color }}">&nbsp;</span> {{ d.feature }}</td>
+  <td>{{ d.introduced }}{% if d.introduced_is_placeholder %} <span class="section-note">(approx.)</span>{% endif %}</td>
+  <td>{{ d.deprecated or '&mdash;' }}</td>
+  <td>{{ d.removed_status }}</td>
+  <td>{{ d.notes or '' }}</td>
+</tr>
+{% endfor %}
+</tbody>
+</table>
+<script>
+function filterDepTable() {
+  const q = document.getElementById('dep-search').value.toLowerCase();
+  document.querySelectorAll('#dep-table tbody tr').forEach(function(row) {
+    row.classList.toggle('hidden-row', !row.dataset.feature.includes(q));
+  });
+}
+</script>
+{% endblock %}

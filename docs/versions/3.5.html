@@ -1,0 +1,925 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>3.5 — RHOAI Version Tracker</title>
+<link rel="stylesheet" href="../assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+    <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+  </div>
+  <nav class="site-nav">
+    <a href="../index.html">Dashboard</a>
+    <a href="../matrix.html">Feature Matrix</a>
+    <a href="../migration.html">Migration Checklist</a>
+    <a href="../conflicts.html">Source Conflicts</a>
+<a href="../versions/3.5.html">3.5</a>  </nav>
+</header>
+<main>
+<h1>Red Hat OpenShift AI 3.5</h1>
+<p class="lede">
+  Parsed from <code>Red_Hat_OpenShift_AI_Self-Managed-3.5-Release_notes-en-US.pdf</code> on 2026-09-14T08:03:20.407841Z.
+  Milestones covered: EA1, EA2, GA.
+</p>
+
+
+<h2>New Features (45)</h2>
+<div class="card-grid">
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Migration guide using rhai-cli for upgrading from OpenShift AI 2.25.9 and later releases in the 2.25 series to 3.5</h4>
+    <p>A new migration guide, Assess and plan for migration from Red Hat OpenShift AI 2.25.9 and later releases in the 2.25 series to 3.5 , is now available. This guide walks administrators through the pre- rhai-cli upgrade migration assessment process by using the command-line tool, including guidance for side-by-side...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>support-required-upgrade-3.5</h4>
+    <p>After upgrading to 3.5, move away from the update channel that was used to trigger the migration. Select an appropriate supported update channel for your environment, stable-3.5 stable-3.x eus-3.5 such as , , or , according to your update and lifecycle requirements. For information about available update channels...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>External OIDC authentication for Models-as-a-Service</h4>
+    <p>You can configure Models-as-a-Service to authenticate users with an external OpenID Connect (OIDC) identity provider. This feature enables enterprise-wide access to large language models without requiring OpenShift accounts for every user. Key capabilities include: External identity provider integration: As a...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EvalHub general availability for the Red Hat AI evaluation stack</h4>
+    <p>EvalHub is generally available (GA). EvalHub provides an enterprise-ready evaluation orchestration service for AI systems, including models, AI applications, agents, tools, and AI vulnerability assessment and scanning. This release includes a documented API versioning scheme, an established breaking change policy,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EvalHub client SDK and CLI</h4>
+    <p>OpenShift AI includes the EvalHub client SDK and command-line interface (CLI). The EvalHub SDK provides a Python client library and CLI for integrating evaluation workflows into development environments, automation pipelines, and notebook-based experimentation. This introduces the following capabilities: Python...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Support for deploying Red Hat AI Inference fast release container images as a custom serving runtime</h4>
+    <p>You can deploy Red Hat AI Inference fast release container images as custom serving runtimes on your existing Red Hat OpenShift AI installation without upgrading Red Hat OpenShift AI. This enables access to the latest vLLM versions and new model support between Red Hat OpenShift AI stable releases. To deploy a fast...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Adversarial vulnerability scanning for Red Hat-validated models</h4>
+    <p>New models added to the Red Hat AI validated models catalog now undergo automated adversarial vulnerability scanning as part of the validation process. This extends the existing validation pipeline with a behavioral security assessment of each model. The scans use garak, an open-source LLM vulnerability scanner, to...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EvalCard generation for evaluation runs</h4>
+    <p>In OpenShift AI, you can generate standardized Evaluation Cards (EvalCards) for every evaluation run in EvalHub. When you specify an MLflow experiment or OCI export configuration in the evaluation job request, a post-processing step in the EvalHub runtime automatically generates a schema-validated JSON card that...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>SparkApplication batch engine for Feast Feature Store SparkApplication</h4>
+    <p>Feast Feature Store supports a batch engine. You can run feature transformations on your own Apache Spark clusters managed by the Kubeflow Spark Operator. You batch_engine.type: spark_application featurestore.yaml can configure in your to submit materialization jobs as SparkApplication custom resources for...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EvalHub server local development mode</h4>
+    <p>You can run the EvalHub Server in a local development mode on macOS, Linux, and Windows workstations. By installing the server as a cross-platform Python wheel ( pip install &#34;eval-hub- sdk[server]&#34; ), you can complete the full Evaluation-Driven Development (EDD) loop locally without requiring a Kubernetes or...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>DiffusionGemma (dLLM) model support</h4>
+    <p>You can deploy DiffusionGemma models for inference. DiffusionGemma is a 26B discrete diffusion large language model (dLLM) based on the Gemma 4 backbone. It is the first discrete diffusion LLM supported for model serving with KServe in OpenShift AI.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>GPU-accelerated runtime for predictive machine learning</h4>
+    <p>A new MLServer GPU container image and corresponding cluster serving runtime ( mlserver-onnx- gpu ) are available to support NVIDIA GPU-accelerated inference for predictive machine learning workloads. By utilizing a dedicated GPU runtime, you can achieve predictable, low-latency inference under high concurrency...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Automated Red Teaming</h4>
+    <p>Automated Red Teaming is generally available (GA). Automated Red Teaming (powered by Garak) helps you proactively discover model vulnerabilities and safety risks. This release introduces support for OpenAI Responses API endpoints, multilingual red teaming with LLM-based translations, multiclass judge safety...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Kueue workload scheduling visibility in the workbenches overview</h4>
+    <p>When Kueue manages workload scheduling in a project, the workbenches overview page displays Kueue-derived scheduling states for each workbench. You can view states such as Queued , Starting , Preempted , Evicted , and Requeued , with human-readable messages that explain the current scheduling status. If you have...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Custom role creation UI for data science projects</h4>
+    <p>Project administrators can create, edit, and duplicate custom RBAC roles for workbenches directly from the Roles tab in data science projects, without requiring CLI access or YAML expertise. The OpenShift AI dashboard provides a form-based interface for selecting API groups, resource types, and verbs, along with...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MLflow integration for AI Pipelines and training environments</h4>
+    <p>MLflow is fully integrated to provide centralized machine learning (ML) lifecycle management. You can track experiments, parameters, metrics, and artifacts directly within your primary workspace, reducing context switching. This feature embeds MLflow tracking capabilities into AI Pipelines, workbenches, the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Inference-aware pod lifecycle for Distributed Inference with llm-d</h4>
+    <p>You can perform routine deployment operations, such as rolling updates, scale-downs, and node maintenance, without dropping active inference requests. With inference-aware pod lifecycle management, the system safely transitions pods and prevents routing traffic to instances that are still loading model weights....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Distributed Inference with llm-d on cross-Kubernetes platforms</h4>
+    <p>Distributed Inference with llm-d is generally available on Azure Kubernetes Service (AKS), CoreWeave Kubernetes Service (CKS), and OpenShift. This release supports multi-model serving, intelligent inference scheduling, and disaggregated serving to improve GPU utilization for generative AI models. Additionally,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Priority-based flow control for mixed Distributed Inference with llm-d workloads</h4>
+    <p>Flow control for Distributed Inference with llm-d is generally available. Platform Operators can define priority tiers using InferenceObjective resources, configure saturation detection, and apply per- band queuing policies to ensure that latency-sensitive interactive requests are served ahead of...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>inference_extension_ llm_d_epp_</h4>
+    <p>The metrics prefix has changed from to . You must update any applicable Prometheus dashboards, alerts, or Grafana panels. The saturation detector configuration has moved from a top-level saturationDetector field to flowControl.saturationDetector , and it now uses a plugin-reference pattern.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Controlled deployment for Distributed Inference with llm-d</h4>
+    <p>With this update, you can use controlled deployment with Distributed Inference with llm-d to validate engine upgrades, model version rotations, and configuration changes on a fraction of production traffic before a full promotion. You can deploy two or more versions of an inference workload side- by-side on the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Observability reference dashboards for Distributed Inference with llm-d using Perses</h4>
+    <p>You can monitor Distributed Inference with llm-d deployments by using reference dashboards delivered through Perses and the Cluster Observability Operator. These dashboards provide a health overview and a structured drill-down path from cluster-level signals to specific models, phases, or underlying failures.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Multimodal input support for Distributed Inference with llm-d</h4>
+    <p>Platform Operators serving multimodal models benefit from prefix cache-aware routing that accounts for image, audio, and video content. The scheduler routes multimodal requests to pods that already hold relevant KV cache entries, reducing redundant prefill computation and improving time to first token.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>End-to-end distributed tracing for Distributed Inference with llm-d</h4>
+    <p>Distributed Inference with llm-d supports end-to-end distributed tracing across the full inference Distributed Inference with llm-d supports end-to-end distributed tracing across the full inference request path. Platform Operators can correlate latency and identify errors across service boundaries using...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>User-request header routing for external OGX providers</h4>
+    <p>You can pass specific user-request headers to external OGX (formerly Llama Stack) providers. Previously, only built-in providers could access these headers, which prevented external providers from receiving dynamic, per-user tokens. With this update, you can configure a declarative mapping that assigns specific...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Existing Kubernetes Secrets as workbench environment variables</h4>
+    <p>You can reference pre-existing Kubernetes Secrets as environment variables when creating or editing a workbench. In the Environment variables section of the workbench form, select Existing secret as the variable type to reference a secret that is already present in the project namespace. The Existing secret option...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>GPU topology and utilization dashboard</h4>
+    <p>In OpenShift AI, a new Infrastructure page provides platform administrators with an integrated view of accelerator cluster health. The page displays summary cards for total accelerator count, compute utilization, and memory utilization. It also includes a Kueue cohort overview showing GPU usage versus effective...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Automated generation of tool-calling evaluation data for custom MCP servers</h4>
+    <p>You can automatically generate tool-calling evaluation benchmark data from custom Model Context Protocol (MCP) servers. This feature introduces an automated pipeline that actively explores MCP servers to discover real data and behaviors, rather than just reading schemas. It generates question- answer-tool-call...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>KubeRay operator upgraded to version 1.6.x</h4>
+    <p>The KubeRay operator is upgraded to version 1.6.x. This update aligns OpenShift AI with upstream RayCluster KubeRay capabilities and includes various stability improvements. Your existing and RayJob workloads remain fully supported and will continue to function normally after the upgrade without requiring changes.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Support for Hosted Control Planes on OpenShift Virtualization</h4>
+    <p>You can deploy OpenShift AI on Hosted Control Planes (HCP) running on OpenShift Virtualization. This officially supported configuration enables a multi-tenant architecture, allowing you to efficiently share resources across different tenants or customers. For more information, see Supported configurations.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Automated prompt optimization for agentic systems</h4>
+    <p>You can automate the optimization of prompts for your agentic systems by using Training Hub. By providing a seed prompt and an evaluation dataset, the automated workflow systematically evolves and optimizes prompts using evolutionary search and LLM-driven reflection. This capability replaces manual, trial-and-error...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Per-tenant EvalHub deployment</h4>
+    <p>Namespace administrators can deploy a dedicated EvalHub instance in their own namespace without cluster administrator or OpenShift AI administrator involvement. Set spec.tenancy: single in the EvalHub custom resource to deploy a per-tenant instance. The TrustyAI Operator automatically provisions all required RBAC...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>NOTE</h4>
+    <p>The shared multi-tenant deployment mode remains the recommended approach for most organizations. Existing shared and per-tenant EvalHub deployments continue to function without disruption after an Operator upgrade.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Integration of Training Hub in Ray for distributed fine-tuning</h4>
+    <p>You can use Training Hub fine-tuning algorithms on Ray clusters. The training-hub Python package and its supporting dependencies are pre-installed in the Ray CUDA Training Hub runtime image, so you can run algorithms such as Supervised Fine-Tuning (SFT), Orthogonal Subspace Fine-Tuning (OSFT), LoRA, and Group...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Automatic Prometheus monitoring integration for EvalHub on OpenShift ServiceMonitor</h4>
+    <p>The TrustyAI Service Operator automatically creates a resource when EvalHub is deployed with metrics enabled. Previously, the EvalHub /metrics endpoint was not scraped by the OpenShift platform Prometheus instance because a ServiceMonitor was not created. With this release, EvalHub metrics are discovered and...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>NeMo Guardrails support on IBM Z</h4>
+    <p>NeMo Guardrails is supported on IBM Z (s390x). With this enhancement, you can deploy and use NeMo Guardrails to add safety controls and conversation policies to models running on IBM Z platforms in Red Hat OpenShift AI.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Responses API on OGX</h4>
+    <p>The Responses API is generally available on OGX. The Responses API is OpenAI-compatible, which allows you to reuse existing OpenAI SDKs, tools, and workflows directly in your cluster environment without changing the client. The providers are enabled by default in the runtime config.yaml file. You can view examples...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Support for customizing OAuth proxy sidecar resource allocation via the DataScienceCluster API</h4>
+    <p>Administrators can configure OAuth proxy sidecar resource requests and limits directly in the DataScienceCluster CR under spec.components.kserve.oauthProxy.resources , without changing Managed Unmanaged any component state from to . You can explicitly set the fields to override the defaults. The default value...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Safety and Security Insights tab in the Red Hat AI Model Catalog</h4>
+    <p>The Red Hat AI Model Catalog includes a new Safety and Security Insights tab that displays AI security evaluation results for each model. The tab shows security scan results organized by category, including safety testing and security testing. These results cover risk vectors such as prompt injection, jailbreak...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Cold-start load time and vRAM metrics in the model catalog</h4>
+    <p>The model catalog displays operational metrics for validated models, including cold-start load time, minimum vRAM requirements, and the runtime command used for benchmarking. Cold-start load time and runtime commands are shown per GPU configuration in the Performance Insights tab, while minimum vRAM and container...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Self-service Subscriptions tab for Models-as-a-Service users</h4>
+    <p>With this update, you can view your Models-as-a-Service subscription assignments, browse associated models, and check token rate limits from the Subscriptions tab on the API keys page in Gen AI studio . You can toggle between a subscription-grouped view and a model-grouped view, expand rows to see details, search...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>MLflow, AutoML, AutoRAG, and OGX enhancements on IBM Power</h4>
+    <p>Red Hat OpenShift AI extends support for MLflow, AutoML, AutoRAG, the GenAI playground, milvus-lite , and the OGX ecosystem to the IBM Power architecture.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>Support for OGX and KubeRay on IBM Power</h4>
+    <p>Red Hat OpenShift AI 3.5 EA1 introduces official support for both OGX (which replaces Llama Stack) and KubeRay on the IBM Power architecture.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>Task Shortcuts section added to the dashboard homepage</h4>
+    <p>The Red Hat OpenShift AI dashboard homepage includes a Task Shortcuts section. This enhancement provides direct entry points to key platform workflows. Tasks are organized by capability groups, such as AI Hub, Gen AI Studio, and Develop &amp; Train. From these groups, you can directly access common tasks, such as...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>ROCm TensorFlow workbench image defaults to Red Hat Python index</h4>
+    <p>Workbench and runtime images default to the Red Hat Python index. In addition to the existing packages, the ROCm TensorFlow notebook image is pulled from the Red Hat Python index rather than PyPI when you install or update Python packages.</p>
+  </div>
+</div>
+
+
+<h2>Enhancements (24)</h2>
+<div class="card-grid">
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Canary rollout support for KServe RawDeployment mode</h4>
+    <p>In OpenShift AI, you can perform canary rollouts for KServe InferenceService deployments in RawDeployment mode. This feature enables progressive model version rollouts by splitting traffic between the primary deployment and a canary deployment within the same InferenceService alternateBackends resource. Traffic...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Observability dashboards installed by default for Distributed Inference with llm-d</h4>
+    <p>Distributed Inference with llm-d includes observability dashboards installed by default in the ConfigMap OpenShift web console. When Distributed Inference with llm-d is deployed, dashboard objects are automatically created in the cluster, providing Platform Operators with out-of-the-box visibility into model server...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Non-cluster administrator access and embeddable Perses-based dashboards</h4>
+    <p>In OpenShift AI, non-cluster administrators, such as data scientists, can access Perses-based metrics dashboards scoped to their authorized namespaces. Previously, these dashboards were restricted to cluster administrators. In addition, this update refines the dashboard contribution pattern into a production-ready...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>View the vLLM version for distributed inference deployments</h4>
+    <p>When using distributed inference with Distributed Inference with llm-d, platform administrators can view the version of vLLM that is running directly from the OpenShift AI dashboard. This information helps administrators quickly assess model compatibility, determine which vLLM features are available, and identify...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Option to disable TLS within Distributed Inference with llm-d deployments</h4>
+    <p>Platform Operators can disable built-in TLS on LLMInferenceService workload pods by setting spec.tls.enabled: false in the LLMInferenceServiceConfig custom resource. This allows environments that use a service mesh, such as Istio, for mutual TLS (mTLS) to avoid redundant double encryption across router, prefill,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>2025.2 workbench and pipeline runtime images retained for transition</h4>
+    <p>Red Hat OpenShift AI 3.5 retains the 2025.2 workbench and pipeline runtime images alongside the new images that default to the Red Hat Python index. In the dashboard workbench creation flow, 2025.2 workbench images remain selectable but are marked as outdated and not recommended. In JupyterLab, the corresponding...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Enhancements to Distributed Inference with llm-d EndPoint Picker scheduler configuration</h4>
+    <p>The OpenShift AI 3.4 default scheduler configuration used two scorer plugins, queue-scorer prefix-cache-scorer kv- (weight: 2) and (weight: 3). OpenShift AI 3.5 adds two additional scorers ( cache-utilization-scorer and no-hit-lru-scorer ) to improve performance by optimizing KV cache reuse across replicas and...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Service-level SLI metrics for Distributed Inference with llm-d</h4>
+    <p>You can monitor end-to-end inference performance from the user’s perspective by using service- level Prometheus histogram metrics exposed by the Endpoint Picker in Distributed Inference with llm-d deployments. Unlike pod-level vLLM metrics, these metrics include scheduler queue wait time and network latency. The...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Targeted vLLM access-log filtering for LLMInferenceService</h4>
+    <p>The default LLMInferenceServiceConfig templates switch from the blanket --disable-uvicorn- access-log to vLLM 0.16’s --disable-access-log-for-endpoints /health,/metrics,/ping with a runtime fallback to the old flag on vLLM below 0.16. The blanket flag added in OpenShift AI 3.4 to stop the EPP scheduler’s 200 ms...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Feature store and workbench bidirectional visibility</h4>
+    <p>You can view connections between feature stores and workbenches directly in the OpenShift AI web console. Previously, verifying these connections required running notebook code or manually inspecting Kubernetes resources. The dashboard shows connected workbenches on the feature store details page and displays...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Hiding default workbench images</h4>
+    <p>Administrators can hide out-of-the-box workbench images from the image selection drop-down list. By navigating to the Settings → Notebook images page in the OpenShift AI web console, you can use a toggle to show or hide these default images. This feature prevents users from selecting images that are incompatible...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Telemetry collection for OGX API adoption metrics</h4>
+    <p>Telemetry data collection is introduced for OGX (formerly Llama Stack) API usage. This feature collects aggregated, quantitative metrics about API, Retrieval-Augmented Generation (RAG), and agentic activity to help Red Hat guide future product improvements. This telemetry data is collected through the standard...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>PVC as a storage source for EvalHub evaluation test data</h4>
+    <p>You can use a PersistentVolumeClaim (PVC) as a storage source for custom test data in EvalHub evaluation jobs. When you specify a PVC in the test_data_ref field of a benchmark configuration, /test_data EvalHub mounts the PVC read-only at inside the evaluation job pod. The adapter reads the data directly from that...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MLflow-compatible agent connectors for Synthetic Data Generation (SDG) Hub</h4>
+    <p>The Synthetic Data Generation (SDG) Hub features MLflow-compatible agent connectors. This update standardizes the SDG Hub programmatic interface within pipeline components to use MLflow’s ChatAgentRequest and ChatAgentResponse types as the canonical input and output formats. As a result, you can connect SDG Hub...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>CPU-only support for AutoRAG deployments</h4>
+    <p>AutoRAG optimization supports CPU-only infrastructure, enabling you to evaluate Retrieval- Augmented Generation (RAG) pipelines without requiring GPU resources. This capability relies on lightweight foundation and embedding models optimized for CPU inference. Supported embedding nomic-embed-text-v1.5 BAAI/bge-m3...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Training Hub RLVR and GRPO dependencies in universal workbench images</h4>
+    <p>The universal workbench image includes all dependencies required for Reinforcement Learning from Verifiable Rewards (RLVR) and Group Relative Policy Optimization (GRPO) training workflows. These dependencies, provided by Training Hub, ensure out-of-the-box compatibility on CUDA backends, with ROCm and CPU image...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Trace archival support for MLflow at scale</h4>
+    <p>You can use age-based trace archival for MLflow to manage large volumes of trace data. A background archival process automatically migrates trace payloads from the PostgreSQL tracking database to S3-compatible object storage after a configurable retention period. Trace metadata remains in PostgreSQL to ensure...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Guided tours for the OpenShift AI dashboard</h4>
+    <p>A new guided tour system is available in the dashboard. A &#34;Welcome to OpenShift AI 3.5&#34; tour automatically launches on your first visit after an upgrade. This tour dynamically adapts its steps based on the features enabled or disabled on your cluster, and it provides role-aware messaging tailored to administrative...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Ability to self-manage ClusterQueues and LocalQueues ClusterQueue LocalQueue</h4>
+    <p>In OpenShift AI, you can self-manage and resources for your data science projects. A new boolean flag in the Kueue component specification of the DataScienceCluster custom resource (CR) controls whether the Operator automatically creates default queue resources. This flag is disabled by default, meaning the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>OpenAI-compatible body-based model routing for Models-as-a-Service</h4>
+    <p>You can send inference requests to the standard OpenAI /v1/chat/completions endpoint with the model name in the request body, and MaaS applies subscription, rate-limiting, and authorization policies automatically. This enables drop-in compatibility with OpenAI-compatible SDKs and clients such as the Python openai...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Unified MaaS governance page for subscriptions and authorization policies</h4>
+    <p>This enhancement combines the Subscriptions and Authorization policies pages in Settings into a single MaaS governance page, accessible from Settings → MaaS governance. The unified page uses a tabbed layout with Subscriptions and Authorization policies tabs, allowing administrators to manage both resources from one...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Code Interpreter flow for synthetic Python code generation</h4>
+    <p>In OpenShift AI, SDG Hub includes a Code Interpreter flow for synthetic Python code generation. You can automatically validate whether generated Python code runs successfully, ensuring that training data sets do not contain broken code samples. By automating the verification of synthetic code, you can generate...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Distributed Inference with llm-d tokenizer runs as a dedicated external service</h4>
+    <p>The Distributed Inference with llm-d tokenizer runs as a dedicated external service, which requires it to run on an amd64 node. The previous Distributed Inference with llm-d tokenizer, which ran with the EndpointPicker, could run on either an amd64 node or an ARM node. Running the tokenizer requires more resources...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Inference scheduler routing logic and scorer weight configuration</h4>
+    <p>Platform operators can configure the routing logic used by the inference scheduler and tune scorer weights to optimize for specific workloads. This enhancement provides greater control over how inference requests are evaluated and routed to available model server replicas.</p>
+  </div>
+</div>
+
+
+<h2>Technology Preview (51)</h2>
+<div class="card-grid">
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MCP gateway Operator as an external dependency for MCP management workflows</h4>
+    <p>The MCP gateway Operator is an optional external prerequisite for OpenShift AI MCP management workflows, including agentic AI workflows, that route agent tool calls through a governed protocol gateway layer. The MCP gateway Operator must be installed, configured, and upgraded independently from the OpenShift AI...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Unified dashboard experience for generative AI model deployment workflows</h4>
+    <p>Generative AI model deployment workflows are in a unified dashboard experience, replacing separate entry points for different model serving runtimes with a single guided wizard. Previous versions of OpenShift AI required users to choose between separate UI workflows for different model serving runtimes: Legacy...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Default vector store for GenAI Studio</h4>
+    <p>GenAI Studio includes a default PostgreSQL vector store with the pgvector extension enabled for playground Retrieval-Augmented Generation (RAG) workflows. This enhancement provides an out- of-the-box vector storage solution for development and experimentation, replacing the previous inline vector store provider....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Enhanced trained model insights for AutoML</h4>
+    <p>AutoML tabular and time-series pipelines generate and persist detailed evaluation artifacts to S3- compatible object storage. Additionally, the AutoML dashboard plugin includes new visualizations for these artifacts, such as receiver operating characteristic (ROC) curves, precision-recall curves, and time-series...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Model Context Protocol (MCP) Lifecycle Operator</h4>
+    <p>The Model Context Protocol (MCP) Lifecycle Operator is available as a Technology Preview feature. This Kubernetes-native operator provides the runtime infrastructure necessary to deploy, configure, and manage MCP servers. It is automatically deployed during a standard OpenShift AI installation, enabling the MCP...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MCP Catalog support tier labeling</h4>
+    <p>The Model Context Protocol (MCP) Catalog in Red Hat OpenShift AI displays explicit support tier labels for server entries, allowing you to easily identify official support commitments before deployment. Support tiers are rendered directly in the MCP dashboard using accessible, visually distinct badges for the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Ray 2.55.1 runtime images for distributed workloads</h4>
+    <p>New Ray 2.55.1 runtime images are included in Distributed Workloads. These images serve as the RayCluster default runtime images for resources created using the CodeFlare SDK.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>DP-aware load balancing for Distributed Inference with llm-d WideEP deployments</h4>
+    <p>You can run WideEP multi-rank inference with a single vllm serve command, enabling the Distributed Inference with llm-d Endpoint Picker to route requests to individual data-parallel (DP) ranks for prefix-cache-aware scheduling. The external multi-port DP mode provides one serving port per local rank for this...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>API surface full-stack passthrough for tool calling in Distributed Inference with llm-d</h4>
+    <p>Tool calling parameters pass through the full Distributed Inference with llm-d serving stack without modification. Tool definitions, tool choice settings, structured output schemas, and parallel_tool_calls in the request reach the model server unaltered through all layers of the serving stack, including the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Multimodal support in the Gen AI Studio playground</h4>
+    <p>The Gen AI Studio playground supports multimodal interactions, allowing you to experiment with models that process text, images, and audio. You can upload images for visual analysis, capture audio using your microphone, upload audio files, and play back speech generated by models directly in the playground. This...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Inference-aware scheduling for Distributed Inference with llm-d on Amazon EKS</h4>
+    <p>Platform Operators can deploy Distributed Inference with llm-d on Amazon Elastic Kubernetes Service (EKS) with inference-aware scheduling as a Technology Preview. Requests are routed based on real-time pod state and cache availability, matching the scheduling behavior available on OpenShift and AKS.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EKS platform support for Distributed Inference with llm-d</h4>
+    <p>Platform Operators can deploy and operate Distributed Inference with llm-d on Amazon EKS as a Technology Preview, using the same installation paths, observability, and tooling as on other validated Kubernetes platforms.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MaaS multi-tenancy with per-tenant gateway and identity isolation</h4>
+    <p>Platform administrators can provision isolated tenants for Models-as-a-Service by using a single custom resource. The controller automatically creates the tenant namespace, deploys the per- tenant API service, and configures authentication and rate-limit policies. The gateway and identity provider are external...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>AutoGluon serving runtime</h4>
+    <p>Red Hat OpenShift AI includes AutoGluon as a pre-configured serving runtime for deploying AutoML models as a Technology Preview. You can deploy AutoGluon TabularPredictor models for regression, classification, and time series forecasting by selecting AutoGluon from the runtime dropdown in the dashboard, eliminating...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Multi-provider API passthrough for Models-as-a-Service external models</h4>
+    <p>You can route inference requests through the Models-as-a-Service (MaaS) gateway using native /v1/messages provider API formats—such as the Anthropic Messages API at or the OpenAI Responses API at /v1/responses —without format translation. When the client API format matches apiFormat the external model’s configured...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Autoscaling support for Ray distributed workloads</h4>
+    <p>You can enable cluster autoscaling for your Ray distributed workloads. Previously, network connectivity issues prevented the autoscaler sidecar from communicating with the Ray head pod due to missing TLS certificates. This update automatically injects the necessary client certificates into the sidecar container,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Chat metrics and observability tracing in Gen AI Studio</h4>
+    <p>You can view real-time chat-level metrics and execution traces directly within the Gen AI Studio Playground. This Technology Preview feature introduces an inline metrics panel that displays key performance indicators for each chat instance, including time to first token (TTFT), tokens per second, total token usage,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Global prompt registry namespaces in Gen AI Studio playground</h4>
+    <p>You can browse, load, and iterate on organization-curated prompts from global registry namespaces in the Gen AI Studio playground. Platform administrators choose shared MLflow prompt registry namespaces in the OdhDashboardConfig custom resource. Users with access can browse global prompts alongside their project...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Interactive Spark job management in workbenches</h4>
+    <p>You can interactively manage and execute PySpark workloads directly from your workbenches using the Kube-native Spark Operator (KSO). This integration enables you to run PySpark code inline within a notebook, providing instant outputs for interactive development. You can submit, run, analyze job logs, and clean up...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Kueue support for the Kubeflow Spark Operator</h4>
+    <p>SparkApplication workloads managed by the Kubeflow Spark Operator (KSO) can be admitted and scheduled through Kueue. You can apply cluster and local queue quotas so that driver and executor pods respect fair sharing, gang scheduling, and multi-tenant resource limits.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Monitoring Spark jobs with the Spark Application UI and History Server</h4>
+    <p>You can monitor Spark jobs submitted with the Kubeflow Spark Operator by using the Spark Application UI through OpenShift routes or port forwarding. For completed jobs, you can configure the Spark History Server with S3-compatible storage or persistent volumes to access execution history, logs, and performance...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>OpenCode coding agent deployment and operation</h4>
+    <p>You can deploy and operate OpenCode, an open-source, terminal-based coding agent. OpenCode is the first coding agent validated to follow the onboarding pattern established by OpenClaw. This update confirms that agent platform operators, vLLM and OGX (formerly Llama Stack) inference backends, and MLflow tracing...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>AutoML experimentation visibility and transparency</h4>
+    <p>You can view detailed AutoML experimentation data directly in the dashboard. This update surfaces the exploration process, allowing you to see which algorithms were tried, their associated hyperparameters, performance metrics, and the reasons specific configurations were eliminated. By providing a comprehensive...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>AutoRAG visual pipeline representation for experimentation</h4>
+    <p>The AutoRAG user interface includes a visual pipeline representation of the experimentation process. You can view each evaluated Retrieval-Augmented Generation (RAG) pattern as an interactive directed graph that displays pipeline stages, such as chunking, embedding, retrieval, re- ranking, and generation. This...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>OpenTelemetry metrics export for EvalHub</h4>
+    <p>You can export EvalHub operational metrics to OpenTelemetry Protocol (OTLP)-compatible observability backends using gRPC or HTTP transport. OTLP metrics export is available as a Technology Preview feature. To enable metrics export, set enableMetrics to true in the otel section of the EvalHub custom resource....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>http_requests_total http_request_duration_seconds http_requests_in_flight</h4>
+    <p>Each metric includes Kubernetes resource attributes (service.name, k8s.namespace.name, k8s.pod.name, and k8s.node.name) to support multi-tenant filtering in your observability backend. When OTEL metrics export is not configured, only the existing Prometheus metrics are available, with no change to current behavior....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Verify connection credentials before saving</h4>
+    <p>You can verify that connection credentials are valid and the endpoint is reachable before saving a connection. When adding or editing a connection in a project, click Verify connection to check the configuration. The Connections tab also displays a Status column showing the verification result for each connection....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>View external model endpoints in the dashboard</h4>
+    <p>You can view registered external model endpoints and their associated provider details from the → OpenShift AI dashboard. Navigate to AI hub Models and select the External models tab on the Model deployments page to see all ExternalModel resources in the selected project, including name, provider, and...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>spec.dashboardConfig.externalModels true</h4>
+    <p>To enable this feature, set to in the OdhDashboardConfig custom resource. For more information, see About external models for Models-as-a-Service.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>AWS Security Token Service (STS) authentication for AWS Bedrock</h4>
+    <p>You can use AWS Security Token Service (STS) authentication with the AWS Bedrock inference provider. This enhancement allows you to authenticate by using temporary security credentials rather than relying on long-lived API keys, enabling organizations to comply with enterprise security policies.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Multi-lingual support for AutoRAG</h4>
+    <p>AutoRAG includes multi-lingual capabilities, allowing you to discover optimal Retrieval-Augmented Generation (RAG) patterns for non-English and mixed-language document corpora. This enhancement introduces language detection and configuration within AutoRAG experiments, language-aware chunking strategies for...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>EvalHub job execution log access via HTTP API and CLI</h4>
+    <p>In OpenShift AI, you can access evaluation job execution logs directly through the EvalHub HTTP API and the evalhub CLI. This feature is available as a Technology Preview. By using the evalhub eval logs &lt;job_id&gt; command, you can inspect logs for jobs in any state, including running, completed, failed, or canceled,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>NOTE</h4>
+    <p>You cannot retrieve logs if the pod has been deleted.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Cross-namespace shared workspace access for curated resources</h4>
+    <p>You can access curated resources, starting with prompts in GenAI Studio, from a designated global workspace. This capability allows organizations to distribute standard, vetted prompt templates across teams without duplicating them in individual namespaces. Administrators can designate a spec.globalMLflowNamespace...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Structural contextualization support for AutoRAG</h4>
+    <p>In OpenShift AI, AutoRAG supports structural contextualization (LLM contextual enrichment) during document chunking. When enabled in your AutoRAG pipeline, chunks are automatically prepended with model-generated contextual descriptions grounded in the full source document before embedding and indexing. AutoRAG...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Loki-based showback and user-scoped dashboards for Models-as-a-Service</h4>
+    <p>Models-as-a-Service (MaaS) includes a Loki-based structured log pipeline for showback data in addition to the existing metrics-based dashboard. The Loki-based pipeline provides 30-day retention on object storage to better support monthly billing cycles. This enhancement also provides user-scoped, read-only...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Side-by-side evaluation run comparison in EvalHub</h4>
+    <p>You can compare two or more completed evaluation runs side by side in the OpenShift AI dashboard. This Technology Preview feature enables you to select runs from the evaluations list, initiate a comparison, and view metrics and parameters for all selected runs in an embedded MLflow comparison view. The comparison...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>OGX Server custom resource definition (CRD) runtime updates</h4>
+    <p>OpenShift AI 3.5EA2 introduces enhancements to the OGX Server CRD by natively exposing config.yaml runtime configuration fields. Previously, users had to manually manage templates with custom ConfigMaps. Users can optionally add their custom config through CRD. The users still have an option to use their custom configmap.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>NeMo Guardrails integration with MCP Gateway for agent tool-call enforcement</h4>
+    <p>You can integrate NeMo Guardrails with the MCP Gateway to enforce guardrails on agent tool calls at the gateway layer. This integration protects against PII leakage, prompt injection, and content safety violations for traffic that flows through the MCP Gateway, without requiring you to implement guardrails...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Validated tool-calling configuration for models in the model catalog</h4>
+    <p>The model catalog displays validated vLLM deployment arguments for models with confirmed tool- calling support. Models that have been validated for tool calling display a Validated Arguments section on the Model Details page, where you can expand the Tool Calling panel to view and copy the exact vllm serve CLI...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Multi-tenancy support in OGX</h4>
+    <p>OGX supports multi-tenancy, allowing teams to share infrastructure while isolating data and access. You can configure a single-server or multi-server environment based on your team’s resource needs. For more information, see the &#34;Deploying OGX for multi-tenancy&#34; documentation in the &#34;Building Agentic/AI...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>GPU-accelerated Docling SDK container image for batch document processing</h4>
+    <p>Red Hat OpenShift AI provides the docling-sdk-cuda-ubi9 container image for GPU-accelerated document conversion using the Docling SDK 2.88.0 with NVIDIA CUDA 13.0 support. The image includes all required dependencies for fully disconnected operation: PyTorch 2.12, Tesseract OCR, and pre-bundled machine learning...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Docling Serve API container image for on-demand document conversion docling-serve-cuda-ubi9</h4>
+    <p>Red Hat OpenShift AI provides the container image, which offers a REST API for on-demand document conversion, chunking, and GPU-accelerated parsing. The image is docling-sdk-cuda-ubi9 built as a thin layer on top of , inheriting all machine learning models, dependencies, and CUDA GPU acceleration capabilities. When...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Batch inference with the OpenAI-compatible Batches API in llm-d</h4>
+    <p>Distributed Inference with llm-d supports batch inference through the OpenAI-compatible /v1/batches API. You can submit large volumes of requests asynchronously and retrieve results on your own schedule without maintaining an active connection. The scheduler runs batch workloads during periods of low cluster...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Prompt management with template variables in Gen AI Studio</h4>
+    <p>You can save, version, and reuse system instructions as named prompts in Gen AI Studio. Prompts are stored in the MLflow prompt registry and scoped to your project, so any team member can browse and load them. Prompts can have {{variable}} placeholders that are filled with specific values before inference. When you...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Kueue support in EvalHub for evaluation job scheduling</h4>
+    <p>You can route EvalHub evaluation jobs through Red Hat build of Kueue LocalQueues by specifying a queue name when creating an evaluation job. This integration provides fair resource sharing, quota management, priority-based scheduling, and queue-based admission control across evaluation workloads. If Red Hat build...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>EvalHub MCP server for AI coding agents</h4>
+    <p>The EvalHub Model Context Protocol (MCP) server is available as a Technology Preview. It enables compatible AI coding agents to discover benchmarks, submit evaluations, and monitor evaluation jobs in EvalHub. The MCP server includes tools for discovering evaluation providers and for submitting, monitoring, and...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Thresholds support in evaluation runs in the OpenShift AI dashboard</h4>
+    <p>EvalHub introduces threshold configuration in evaluation runs as a Technology Preview. You can set pass or fail thresholds when submitting evaluation jobs through the OpenShift AI dashboard. You can define minimum acceptable performance scores for your model evaluations, making it easier to validate whether your...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>NeMo Guardrails in Gen AI Studio</h4>
+    <p>Red Hat OpenShift AI 3.5 EA1 updates the guardrails experience in the Gen AI Studio playground. Guardrails are powered by NeMo Guardrails, providing more reliable and consistent safety checks for model interactions. You can independently control guardrails for user input and model output directly from the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>Renaming of Llama Stack to OGX</h4>
+    <p>Starting in OpenShift AI 3.5 EA1, Llama Stack and its associated variables and configurations are renamed to OGX. All existing configuration examples have been updated to reflect this change. Manual migration is required to use OpenShift AI 3.5 EA1 with the OGX Operator. For more information, see the &#34;Llama Stack...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA1</span>    <h4>Conversations API on OGX</h4>
+    <p>The OpenAI Conversations API is available on OGX. This development tool allows you to build context-aware, multi-turn AI applications. Key capabilities of the Conversations API include: Session memory: Maintains chat history to support multi-turn interactions. State management: Handles conversation states and context.</p>
+  </div>
+</div>
+
+
+<h2>Developer Preview (22)</h2>
+<div class="card-grid">
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Secure agent sandboxing and policy enforcement using OpenShell</h4>
+    <p>A Developer Preview of OpenShell is available for secure agent onboarding on OpenShift. The included guide covers Helm deployment, mTLS, LLM provider setup, isolated sandboxes, and controlled network egress. This experimental preview uses upstream artifacts and is not supported for production environments. To try...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Agent Catalog in AI Hub for agent starter kit discovery</h4>
+    <p>The Agent Catalog in AI Hub provides a centralized interface for discovering and exploring agent starter kits as a Developer Preview. You can browse available agents, view each agent’s description, and filter by framework or use text search to find agents for a specific use case. Each catalog entry displays the...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Configuration persistence for Gen AI Studio</h4>
+    <p>You can save your Gen AI Studio Playground configuration as a named, reusable agent scoped to your project namespace. A saved agent captures model selection, inference parameters, MLflow prompt references, retrieval augmented generation (RAG) knowledge sources, and Model Context Protocol (MCP) server connections....</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Hierarchical KV Cache Tiering</h4>
+    <p>Hierarchical KV cache tiering for GPU inference workloads allows platform operators to serve more concurrent users on the same GPU footprint, directly improving the cost-effectiveness of inference deployments. Cache entries are automatically placed on the tiers operators configure. This increases the effective...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>LoRA-aware request routing for Distributed Inference with llm-d</h4>
+    <p>Platform operators can route requests to pods where the target LoRA adapter is already loaded, avoiding cold-load latency from on-demand adapter swaps. When no pod with the target adapter is available, requests automatically fall back to standard routing.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Latency-aware routing for Distributed Inference with llm-d</h4>
+    <p>Platform operators can declare per-request latency targets for Time To First Token (TTFT) and Time Per Output Token (TPOT). The routing layer then places each request on a pod predicted to meet its specific target. This allows latency-sensitive traffic to be routed to pods with available capacity, while...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>External metering for per-user token usage and cost tracking</h4>
+    <p>In OpenShift AI, an external metering IPP plugin and standalone metering service are available as a Developer Preview feature. This feature enables platform operators to track per-user and per-model token consumption, attribute costs, enforce quotas, and generate chargeback reports for inference requests passing...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MCP Catalog administrative interface for managing entries</h4>
+    <p>In OpenShift AI, administrators can manage Model Context Protocol (MCP) Catalog source configurations directly from the Settings page of the dashboard. This new interface enables you to add, edit, and remove MCP server catalog entries using YAML-based creation, eliminating the need to manually edit Kubernetes...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>MiDojo adversarial testing execution engine</h4>
+    <p>In OpenShift AI, you can use MiDojo, a man-in-the-middle adversarial testing execution engine for AI agents, available as a Developer Preview feature. MiDojo intercepts communications at the tool layer, injecting attack payloads into tool responses while forwarding legitimate calls upstream. With MiDojo, you can...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>External metering integration for Models-as-a-Service</h4>
+    <p>You can connect Models-as-a-Service (MaaS) inference traffic to an external metering or billing system by using Backend-Based Routing (BBR) plugins. This integration enables platform operators running MaaS as a commercial AI service to capture per-request token usage and enforce token budgets through an external...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>NOTE</h4>
+    <p>This feature provides raw usage event emission to any HTTP endpoint. Invoice generation, cost attribution, and rate calculation are the responsibility of the external metering system.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>View running agent deployments in the dashboard</h4>
+    <p>In OpenShift AI, you can view a list of running agent deployments directly in the dashboard. This feature enables you to see agents that were deployed manually as OpenShell-managed Sandbox custom resources (CRs). The dashboard allows you to view the name and status of each deployed agent instance in each namespace,...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">GA</span>    <h4>Text-mode training for multimodal models in Training Hub</h4>
+    <p>Training Hub supports text-only training (&#34;text mode&#34;) for multimodal model architectures. This enhancement enables you to fine-tune Qwen 3.5, Qwen 3.6, Qwen 3.8, Gemma, Nemotron, and Mistral vision-language models (VLMs) by using text datasets. In this release, multimodal-capable models can be fine-tuned in text mode only.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>The remote::anthropic inference provider for OGX</h4>
+    <p>The remote::anthropic inference provider is available on OGX. You can use this provider by enabling ANTHROPIC_API_KEY config.yaml the environment variable in your file.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>File Processors API on OGX</h4>
+    <p>The File Processors API is available on OGX. The File Processors API allows you to convert documents into vector-ready chunks using the following providers:</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>inline::auto inline::docling inline::markitdown inline::pypdf remote::docling-serve NOTE</h4>
+    <p>Some listed providers are not included in the default runtime config.yaml file and must be enabled by passing a custom config.yaml file that includes the provider definitions. For more information, see the &#34;OGX API provider support&#34; documentation.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>The remote::gemini inference provider for OGX</h4>
+    <p>The remote::gemini inference provider is available on OGX. You can use this provider by enabling the ENABLE_GEMINI environment variable in your config.yaml file.</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>OpenClaw agent starter kit</h4>
+    <p>You can deploy and manage OpenClaw, an open-source general-purpose agent, on Red Hat OpenShift AI. The starter kit includes validated Kustomize manifests and an automated installer to manage runtime concerns and optimize workspace persistence. The starter kit includes the following capabilities: Deploy OpenClaw by...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Claude Code agent starter kit</h4>
+    <p>You can deploy and configure the Anthropic Claude Code agent on Red Hat OpenShift AI by using a You can deploy and configure the Anthropic Claude Code agent on Red Hat OpenShift AI by using a new agentic starter kit. The kit provides a Containerfile and Kustomize deployment manifests to streamline setup in a secure...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>Kale JupyterLab extension for notebook-to-pipeline conversion</h4>
+    <p>You can use the Kale (Kubeflow Automated pipeLines Engine) JupyterLab extension to convert annotated Jupyter notebooks into AI Pipelines without writing Kubeflow Pipelines SDK code. The Kale extension ships pre-installed but disabled by default in the following default data science Jupyter notebook images: Standard...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>NOTE</h4>
+    <p>Kale is not available in custom notebook images. To enable the extension, run jupyter labextension enable jupyterlab-kubeflow-kale in your workbench terminal and refresh your browser. A Data Science Pipelines Application must be deployed in the same namespace as the workbench. After enabling, a green connection...</p>
+  </div>
+  <div class="item-card">
+<span class="tag">EA2</span>    <h4>CSV export for model catalog data</h4>
+    <p>You can export model catalog metadata to CSV format by using a standalone Python CLI script. The script queries the Model Catalog REST API, paginates through the full result set, and produces an RFC 4180-compliant CSV file that includes all model metadata and custom properties. The export script requires Python...</p>
+  </div>
+</div>
+
+
+<h2>Support Removals: Deprecated (17)</h2>
+<div class="card-grid">
+  <div class="item-card">
+    <h4>Deprecation of FMS Guardrails Orchestrator</h4>
+    <p>In OpenShift AI 3.5, the FMS Guardrails Orchestrator is deprecated and will be removed in a future release. NeMo Guardrails is now the single, recommended framework for all LLM safety guardrailing in OpenShift AI. While the FMS Guardrails Orchestrator remains functional in OpenShift AI 3.5, use NeMo Guardrails for...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated LM-Eval</h4>
+    <p>The LM-Eval standalone evaluation service, including the LMEvalJob custom resource and the LM- Eval model evaluation UI, is deprecated and will be removed in a future release. Migrate evaluation workflows to EvalHub, which provides a unified evaluation platform with support for multiple evaluation frameworks,...</p>
+  </div>
+  <div class="item-card">
+    <h4>RStudio Server and CUDA - RStudio Server workbench images removed</h4>
+    <p>Starting with OpenShift AI 3.5, the RStudio Server and CUDA - RStudio Server workbench images have been removed from Red Hat OpenShift AI due to licensing compliance requirements. The existing RStudio images contained packages with incorrect AGPL license declarations and proprietary binaries that do not meet Red...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecation of OGX Evaluation API</h4>
+    <p>In OpenShift AI 3.5 EA1, the Evaluation REST API and its associated providers are deprecated and removed from the OGX Operator.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecation of the Safety and Shields APIs from OGX</h4>
+    <p>The Safety and Shields APIs and their respective providers have been deprecated in OGX, previously known as Llama Stack, in OpenShift AI 3.5 EA1.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated default group creation for model registry</h4>
+    <p>Starting with OpenShift AI 3.4, the default group creation performed by the OpenShift AI Operator when a model registry is created is deprecated. This default group will be removed in a future release of OpenShift AI. The OpenShift administrator will then be responsible for creating this group after the model...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated SQLite as a production metadata store for OGX</h4>
+    <p>Starting with OpenShift AI 3.2, SQLite is deprecated for use as a metadata store in production OGX deployments. PostgreSQL is required for production-grade environments to ensure adequate performance, concurrency, and scalability. SQLite remains available for local development and testing only and must be...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated annotation format for Connection Secrets</h4>
+    <p>Starting with OpenShift AI 3.0, the opendatahub.io/connection-type-ref annotation format for creating Connection Secrets is deprecated. For all new Connection Secrets, use the opendatahub.io/connection-type-protocol annotation instead. While both formats are currently supported, connection-type-protocol takes...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated Kubeflow Training operator v1</h4>
+    <p>The Kubeflow Training Operator (v1) is deprecated starting OpenShift AI 2.25 and is planned to be removed in a future release. This deprecation is part of our transition to Kubeflow Trainer v2, which delivers enhanced capabilities and improved functionality.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated TrustyAI service CRD v1alpha1</h4>
+    <p>Starting with OpenShift AI 2.25, the v1alpha1 version is deprecated and planned for removal in an v1 upcoming release. You must update the TrustyAI Operator to version to receive future Operator updates.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated KServe Serverless deployment mode</h4>
+    <p>Starting with OpenShift AI 2.25, The KServe Serverless deployment mode is deprecated. You can continue to deploy models by migrating to the KServe RawDeployment mode. If you are upgrading to Red Hat OpenShift AI 3.0, all workloads that use the retired Serverless or ModelMesh modes must be migrated before upgrading.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated model registry API v1alpha1</h4>
+    <p>Starting with OpenShift AI 2.24, the model registry API version v1alpha1 is deprecated and will be v1beta1 removed in a future release of OpenShift AI. The latest model registry API version is .</p>
+  </div>
+  <div class="item-card">
+    <h4>Multi-model serving platform (ModelMesh)</h4>
+    <p>Starting with OpenShift AI version 2.19, the multi-model serving platform based on ModelMesh is deprecated. You can continue to deploy models on the multi-model serving platform, but it is recommended that you migrate to the single-model serving platform. For more information or for help on using the single-model...</p>
+  </div>
+  <div class="item-card">
+    <h4>Accelerator Profiles and legacy Container Size selector deprecated</h4>
+    <p>Starting with OpenShift AI 3.0, Accelerator Profiles and the Container Size selector for workbenches are deprecated. These features are replaced by the more flexible and unified Hardware Profiles capability.</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated OpenVINO Model Server (OVMS) plugin</h4>
+    <p>The CUDA plugin for the OpenVINO Model Server (OVMS) is now deprecated and will no longer be available in future releases of OpenShift AI.</p>
+  </div>
+  <div class="item-card">
+    <h4>OpenShift AI dashboard user management moved from OdhDashboardConfig to Auth resource groupsConfig OdhDashboardConfig</h4>
+    <p>Previously, cluster administrators used the option in the resource to manage the OpenShift groups (both administrators and non-administrators) that can access the OpenShift AI dashboard. Starting with OpenShift AI 2.17, this functionality has moved to the Auth resource. If you have workflows (such as GitOps...</p>
+  </div>
+  <div class="item-card">
+    <h4>Deprecated parameter Replaced by head_cpus head_cpu_requests head_cpu_limits</h4>
+    <p>, head_memory head_memory_requests , head_memory_limits min_cpus worker_cpu_requests max_cpus worker_cpu_limits min_memory worker_memory_requests max_memory worker_memory_limits head_gpus head_extended_resource_requests num_gpus worker_extended_resource_requests You can also use the new extended_resource_mapping...</p>
+  </div>
+</div>
+
+
+<h2>Support Removals: Removed (17)</h2>
+<div class="card-grid">
+  <div class="item-card">
+    <h4>RStudio Server and CUDA - RStudio Server workbench images removed</h4>
+    <p>Starting with OpenShift AI 3.5, the RStudio Server and CUDA - RStudio Server workbench images have been removed from Red Hat OpenShift AI due to licensing compliance requirements. The existing RStudio images contained packages with incorrect AGPL license declarations and proprietary binaries that do not meet Red...</p>
+  </div>
+  <div class="item-card">
+    <h4>Training images removed for Kubeflow Training Operator v1</h4>
+    <p>The following training runtime images for the Kubeflow Training Operator v1 (deprecated in OpenShift AI 3.4) have been removed: registry.redhat.io/rhoai/odh-training-cuda121-torch24-py311-rhel9 registry.redhat.io/rhoai/odh-training-cuda124-torch25-py311-rhel9...</p>
+  </div>
+  <div class="item-card">
+    <h4>tf2onnx package removed from TensorFlow images</h4>
+    <p>The tf2onnx package has been removed from TensorFlow workbench and runtime images. This package, which converts TensorFlow models to ONNX format, was incompatible with Keras 3 (used in TensorFlow 2.16+) and had irreconcilable dependency conflicts with protobuf versions required by onnx tensorflow feast , , and ....</p>
+  </div>
+  <div class="item-card">
+    <h4>Caikit-NLP component removed caikit-nlp</h4>
+    <p>The component has been formally deprecated and removed from OpenShift AI 3.0. This runtime is no longer included or supported in OpenShift AI. Users should migrate any dependent workloads to supported model serving runtimes.</p>
+  </div>
+  <div class="item-card">
+    <h4>TGIS component removed</h4>
+    <p>The TGIS component, which was deprecated in OpenShift AI 2.19, has been removed in OpenShift AI 3.0. TGIS continued to be supported through the OpenShift AI 2.16 Extended Update Support (EUS) lifecycle, which ended in June 2025. Starting with this release, TGIS is no longer available or supported. Users should...</p>
+  </div>
+  <div class="item-card">
+    <h4>AppWrapper Controller removed</h4>
+    <p>The AppWrapper controller has been removed from OpenShift AI as part of the broader CodeFlare Operator removal process. This change eliminates redundant functionality and reduces maintenance overhead and architectural complexity.</p>
+  </div>
+  <div class="item-card">
+    <h4>CodeFlare Operator removed</h4>
+    <p>Starting with OpenShift AI 3.0, the CodeFlare Operator has been removed. The functionality previously provided by the CodeFlare Operator is now included in the KubeRay The functionality previously provided by the CodeFlare Operator is now included in the KubeRay Operator, which provides equivalent capabilities such...</p>
+  </div>
+  <div class="item-card">
+    <h4>LAB-tuning feature removed</h4>
+    <p>Starting with OpenShift AI 3.0, the LAB-tuning feature has been removed. Users who previously relied on LAB-tuning for large language model customization should migrate to alternative fine-tuning or model customization methods.</p>
+  </div>
+  <div class="item-card">
+    <h4>Embedded Kueue component removed</h4>
+    <p>The embedded Kueue component, which was deprecated in OpenShift AI 2.24, has been removed in OpenShift AI 3.0. OpenShift AI now uses the Red Hat Build of the Kueue Operator to provide enhanced workload scheduling across distributed training, workbench, and model serving workloads. The embedded Kueue component is...</p>
+  </div>
+  <div class="item-card">
+    <h4>Removal of DataSciencePipelinesApplication v1alpha1 API version</h4>
+    <p>The v1alpha1 API version of the DataSciencePipelinesApplication custom resource datasciencepipelinesapplications.opendatahub.io/v1alpha1 ( ) has been removed. OpenShift AI now uses the stable v1 API version ( datasciencepipelinesapplications.opendatahub.io/v1 ). You must update any existing manifests or automation...</p>
+  </div>
+  <div class="item-card">
+    <h4>Microsoft SQL Server command-line tool removal</h4>
+    <p>Starting with OpenShift AI 2.24, the Microsoft SQL Server command-line tools (sqlcmd, bcp) have been removed from workbenches. You can no longer manage Microsoft SQL Server using the preinstalled command-line client.</p>
+  </div>
+  <div class="item-card">
+    <h4>Model registry ML Metadata (MLMD) server removal</h4>
+    <p>Starting with OpenShift AI 2.23, the ML Metadata (MLMD) server has been removed from the model registry component. The model registry now interacts directly with the underlying database by using the existing model registry API and database schema. This change simplifies the overall architecture and ensures the...</p>
+  </div>
+  <div class="item-card">
+    <h4>Embedded subscription channel not used in some versions</h4>
+    <p>For OpenShift AI 2.8 to 2.20 and 2.22 to 3.5, the embedded subscription channel is not used. You cannot select the embedded channel for a new installation of the Operator for those versions. For more information about subscription channels, see Installing the Red Hat OpenShift AI Operator.</p>
+  </div>
+  <div class="item-card">
+    <h4>Anaconda removal</h4>
+    <p>Anaconda is an open source distribution of the Python and R programming languages. Starting with OpenShift AI version 2.18, Anaconda is no longer included in OpenShift AI, and Anaconda resources are no longer supported or managed by OpenShift AI. If you previously installed Anaconda from OpenShift AI, a cluster...</p>
+  </div>
+  <div class="item-card">
+    <h4>NOTE</h4>
+    <p>For this change to take effect, you must use the Elyra runtime images provided in workbench images at version 2024.1 or later. If you have an older workbench image version, update the Version selection field to a compatible workbench image version, for example, 2024.1, as described in Updating a project workbench....</p>
+  </div>
+  <div class="item-card">
+    <h4>Beta subscription channel no longer used beta</h4>
+    <p>Starting with OpenShift AI 2.5, the subscription channel is no longer used. You can no longer select the beta channel for a new installation of the Operator. For more information about subscription channels, see Installing the Red Hat OpenShift AI Operator.</p>
+  </div>
+  <div class="item-card">
+    <h4>HabanaAI workbench image removal</h4>
+    <p>Support for the HabanaAI 1.10 workbench image has been removed. New installations of OpenShift AI from version 2.14 do not include the HabanaAI workbench image. However, if you upgrade OpenShift AI from a previous version, the HabanaAI workbench image remains available, and existing HabanaAI workbench images...</p>
+  </div>
+</div>
+
+
+<h2>Resolved Issues (13)</h2>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-70232</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-70232 - vLLM CPU model serving fails on IBM Z (s390x) during model warmup — Previously, on IBM Z, vLLM CPU model serving failed during model warmup due to a GCC version incompatibility. The vLLM container image included GCC 11.5.0, but PyTorch 2.11.0 required GCC 14...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-80354</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-80354 - Perses observability dashboards fail to load in the OpenShift AI dashboard — Previously, after deploying OpenShift AI 3.5 with Cluster Observability Operator (COO) monitoring configured, the Perses proxy was not automatically set up. The Operator did not...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-65203</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-65203 - Model Car (OCI) deployment fails for ONNX models with external data — Before this update, when you used the Model Car (OCI image) method to deploy an ONNX model split into model.onnx and model.onnx.data files, the MLServer runtime container could not access...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-62527</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-62527 - RayJobs in the dashboard are missing a hyperlink to the Ray dashboard — Previously, when you created a RayJob, the Ray cluster name displayed in the OpenShift AI dashboard was plain text and did not include a hyperlink to the Ray cluster dashboard. This issue...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-65143</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-65143 - Models-as-a-Service UI does not detect custom gateway hostname — Previously, when the Models-as-a-Service (MaaS) gateway was configured with a custom hostname instead of the default maas.apps.&lt;cluster_domain&gt; pattern, the MaaS UI Backend-for-Frontend (BFF)...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-74715</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-74715 - DataScienceCluster status incorrectly reported aigateway module as not ready — Previously, when you enabled the aigateway component in the DataScienceCluster (DSC) custom Ready: False resource, the DSC status might incorrectly report with the message &#34;Some...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-60855</span> &middot; resolved_issues:3.5 GA
+  <p>RHOAIENG-60855 - Upgrade error: OGX Operator produces invalid Deployment when storage is configured — Previously, when you upgraded OpenShift AI from 3.3 to 3.4, the Llama Stack Operator could fail to reconcile an existing LlamaStackDistribution custom resource that included...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-66859</span> &middot; resolved_issues:3.5 EA2
+  <p>RHOAIENG-66859 - Evaluation jobs fail to complete with an MLflow experiment configured — Before this update, when you submitted an evaluation job with a configured MLflow experiment, the evaluation adapter failed after the evaluation completed successfully while trying to...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-59801</span> &middot; resolved_issues:3.5 EA1
+  <p>RHOAIENG-59801 - Inconsistent resource limits when creating workloads with hardware profiles via API or CLI — Before this update, when you created a workbench or model deployment with a hardware profile using the API or CLI without pre-populating container resources, the...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHAIENG-3816</span> &middot; resolved_issues:3.5 EA1
+  <p>RHAIENG-3816 - Encrypted PDF uploads to Llama Stack vector stores fail on FIPS-enabled clusters — Before this update, on FIPS-enabled clusters, registering certain encrypted PDF files into Llama Stack vector stores failed because the underlying PDF parsing library used an...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-50523</span> &middot; resolved_issues:3.5 EA1
+  <p>RHOAIENG-50523 - Unable to upload RAG documents in Gen AI Playground on disconnected clusters — Before this update, on disconnected clusters, uploading documents in the Gen AI Playground RAG ibm-granite/granite-embedding- section failed because Llama Stack attempted to...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">RHOAIENG-49017</span> &middot; resolved_issues:3.5 EA1
+  <p>RHOAIENG-49017 - Upgrade RAGAS provider to Llama Stack 0.4.z / 0.5.z — Before this update, using the RAGAS evaluation provider required manually updating the Llama Stack llama-stack-provider-ragas distribution to use a specific workaround version of due to compatibility...</p>
+</div>
+<div class="issue-card">
+  <span class="issue-id">AIPCC-13675</span> &middot; resolved_issues:3.5 EA1
+  <p>AIPCC-13675 - Feast and other python packages fail to start in workbench notebooks on IBM Z (s390x) — Before this update, when you start a workbench on IBM Z (s390x) systems, a segmentation fault (exit code 139) occurs during startup and the application stops. This issue...</p>
+</div>
+
+<h2>Known Issues (24)</h2>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-87834</span> &middot; known_issues:3.5 GA
+  <p>RHOAIENG-87834 - Kueue-managed TrainJobs are not scheduled when using Red Hat Build of Kueue 1.4 or later TrainJob — In OpenShift AI 3.5, resources managed by Kueue are not scheduled when using Red Hat Build of Kueue (RHBoK) 1.4 or later with TrainJob support enabled. The...</p>
+<p><strong>Workaround:</strong> Use RHBoK 1.3 with Kubeflow Trainer v2.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-87625</span> &middot; known_issues:3.5 GA
+  <p>RHOAIENG-87625 - Kubeflow Trainer v2 is not compatible with Red Hat Build of Kueue 1.4 or later — The Kubeflow Trainer v2 component in OpenShift AI 3.5 is not compatible with Red Hat Build of Kueue (RHBoK) 1.4 or later. Kubeflow Trainer v2 continues to function, but the...</p>
+<p><strong>Workaround:</strong> If you use Kubeflow Trainer v2 with Kueue, keep RHBoK at version 1.3 or earlier and do not upgrade to RHBoK 1.4 or later.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-82694</span> &middot; known_issues:3.5 GA
+  <p>RHOAIENG-82694 - MCP Lifecycle Operator memory consumption might cause the operator to fail — The MCP Lifecycle Operator watches all ConfigMaps and Secrets cluster-wide by using full structured informers, loading complete object data into the operator’s in-memory cache. As a...</p>
+<p><strong>Workaround:</strong> No known workaround exists.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-85220</span> &middot; known_issues:3.5 GA
+  <p>InferenceService RHOAIENG-85220 - “Legacy deployment” wording is misleading for generative deployments — In the OpenShift AI model deployment UI, generative model deployments that use an InferenceService with a ServingRuntime display a Legacy deployment label. This wording...</p>
+<p><strong>Workaround:</strong> No workaround is required. You can continue to use InferenceService with ServingRuntime deployments. Improved wording in the model deployment UI is planned for a future release.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-66855</span> &middot; known_issues:3.5 GA
+  <p>RHOAIENG-66855 - Distributed Inference with llm-d deployment through the dashboard selects CUDA image instead of ROCm for AMD hardware profiles — When you deploy a model through the OpenShift AI dashboard by using distributed inference with mi300x Distributed Inference with...</p>
+<p><strong>Workaround:</strong> Deploy the LLMInferenceService by using a YAML manifest with the ROCm image explicitly specified in the container spec. Alternatively, for non-Distributed Inference with llm-d vLLM deployments, manually select the &#34;vLLM AMD GPU...</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-76586</span> &middot; known_issues:3.5 EA2
+  <p>RHOAIENG-76586 - Rate limiting stops working with Red Hat Connectivity Link 1.4.x — When you use Red Hat Connectivity Link (RHCL) 1.4.0 or 1.4.1 with batch gateway deployments, rate limiting silently stops functioning. RHCL 1.4 changed how the wasm plugin is injected, which...</p>
+<p><strong>Workaround:</strong> Use RHCL 1.3.5 for batch gateway deployments. RHCL 1.3.5 works without additional configuration. If your cluster already has RHCL 1.4.x installed, apply both of the following workarounds: 1. Increase gateway pod memory to 2Gi. Create a...</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-73389</span> &middot; known_issues:3.5 EA2
+  <p>RHOAIENG-73389 - Prefix caching causes inference scheduler crash for models requiring transformers 5.x odh-llm-d-kv-cache-rhel9 — The tokenizer sidecar ships transformers 4.57.6, which does not recognize model architecture types added in transformers 5.x. As a consequence,...</p>
+<p><strong>Workaround:</strong> Disable in the when using these models.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-66068</span> &middot; known_issues:3.5 EA1
+  <p>RHOAIENG-66068 - The OpenShift AI dashboard only supports an EvalHub instance in the redhat- ods-applications namespace — The Backend-for-Frontend (BFF) service always looks for the MLflow multi-tenant instance in its own redhat-ods-applications , regardless of where the...</p>
+<p><strong>Workaround:</strong> Deploy the MLflow multi-tenant instance in the redhat-ods-applications . As a result, the BFF service correctly detects the instance and the evaluations feature is available in the dashboard. Note that others instances will work, but...</p></div>
+<div class="issue-card ">
+  <span class="issue-id">RHOAIENG-67534</span> &middot; known_issues:3.5 EA1
+  <p>RHOAIENG-67534 - A new evaluation run fails in the OpenShift AI dashboard workspaces_enabled — If the MLflow custom resource (CR) is created after the Evaluations CR, the setting is set to false . As a result, creating a new evaluation run in the OpenShift AI dashboard fails...</p>
+</div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">AIPCC-18235</span> &middot; known_issues:3.5 EA1
+  <p>AIPCC-18235 - Structured output (JSON Schema) generation fails on IBM Z (s390x) with llguidance backend — When you use the llguidance structured decoding backend on IBM Z (s390x), JSON schema- constrained generation may produce invalid output or become stuck generating...</p>
+<p><strong>Workaround:</strong> A fix is available in llguidance version 1.7.0 and later. Update your wheel from version 1.3.0 to at least version 1.7.0 for this fix.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">AIPCC-17927</span> &middot; known_issues:3.5 EA1
+  <p>AIPCC-17927 - vLLM crashes when multiple requests are inflight with structured outputs — When you send multiple inference requests in parallel to a vLLM-based inference server and at least one request includes structured output, the service stops responding, causing the pod...</p>
+<p><strong>Workaround:</strong> To prevent the service from failing, apply one of the following workarounds: Process requests sequentially instead of sending multiple parallel requests that include structured output in the same batch. Exclude structured output...</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-83207</span> &middot; known_issues:3.4 GA
+  <p>redhat- RHOAIENG-83207 - Secure Models-as-a-Service gateway requires namespace labeling for ods-applications — When you deploy a secure Models-as-a-Service (MaaS) gateway that restricts route attachment by namespace selector, you must also label the redhat-ods-applications...</p>
+<p><strong>Workaround:</strong> For details on how to detect unauthorized routes and apply a secure, label-based namespace configuration, see Insecure Models-as-a-Service gateway configuration can allow unauthorized route hijacking in Red Hat OpenShift AI.</p></div>
+<div class="issue-card ">
+  <span class="issue-id">RHOAIENG-67403</span> &middot; known_issues:3.4 GA
+  <p>RHOAIENG-67403: Hardware profiles with Node selectors and tolerations are unavailable for workbenches after enabling Kueue — When the Kueue component is set to unmanaged in the DataScienceCluster custom resource, hardware profiles configured with &#34;Node selectors and...</p>
+</div>
+<div class="issue-card ">
+  <span class="issue-id">INFERENG-6962</span> &middot; known_issues:3.4 GA
+  <p>INFERENG-6962 - Distributed Inference with llm-d EndpointPicker is bypassed when multiple HTTPRoutes share the same gateway listener HTTPRoutes — When multiple are attached to the same wildcard Gateway listener, Istio aggregates them into a single autogenerated Gateway...</p>
+</div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">OSSM-12585</span> &middot; known_issues:3.4 GA
+  <p>openshift-ingress — This affects Istio 1.26, deployed by in OSSM 3.3.x and 3.4. The upstream fix is in Istio 1.29. The following issue is related: OSSM-12585. LLMInferenceService HTTPRoute Move them to a separate Gateway so the is the only consumer of the wildcard listener.</p>
+<p><strong>Workaround:</strong> Remove or reassign any non- LLMInferenceService HTTPRoutes from the inference Gateway.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-71638</span> &middot; known_issues:3.4 GA
+  <p>RHOAIENG-71638 - Models-as-a-Service returns HTTP 500 errors under high concurrent request load — Red Hat Connectivity Link (RHCL) configures the Kuadrant WASM plugin with a default authentication service timeout of 200 ms. Under high concurrent request load, Authorino...</p>
+<p><strong>Workaround:</strong> Set AUTH_SERVICE_TIMEOUT to 2s on the RHCL operator Subscription : 1. Set the Subscription name and namespace for your installation: $ RHCL_NAMESPACE=rh-connectivity-link $ RHCL_SUBSCRIPTION=rhcl-operator 2. Patch the Subscription to...</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-58765</span> &middot; known_issues:3.4 EA2
+  <p>RHOAIENG-58765 - Distributed Inference with llm-d prefill and decode disaggregation fails on FIPS-enabled clusters — Using Distributed Inference with llm-d prefill and decode disaggregation for LLM deployments on FIPS- enabled clusters causes the routing sidecar pod to enter...</p>
+<p><strong>Workaround:</strong> Do not use prefill and decode disaggregation with Distributed Inference with llm-d in Red Hat OpenShift AI 3.4 EA2 on FIPS-enabled clusters. Other features continue to work correctly on FIPS- enabled clusters.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-57224</span> &middot; known_issues:3.4 EA2
+  <p>RHOAIENG-57224 - ROCm universal image training produces NaN on MI300X due to torch aotriton 0.11.1 regression — ROCm universal training image (th06) produces NaN values on MI300X due to aotriton 0.11.1 regression in AIPCC-built PyTorch wheel.</p>
+<p><strong>Workaround:</strong> Use th05 image or set attn_implementation=&#34;flash_attention_2&#34; .</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-57427</span> &middot; known_issues:3.4 EA2
+  <p>RHOAIENG-57427 - RAG in Gen AI Playground doesn’t work with default system prompt and model Qwen/Qwen3-14B-AWQ — In Gen AI Playground RAG, the default system prompt might not reliably trigger the knowledge search/tool-calling behavior for some models, so document retrieval is...</p>
+<p><strong>Workaround:</strong> Manually edit the system prompt to explicitly instruct the model to use the knowledge search tool first for document-based/factual questions (as documented in the Gen AI Playground RAG documentation). As a result, after updating the...</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-54005</span> &middot; known_issues:3.4 EA2
+  <p>RHOAIENG-54005 - Generate MaaS Token Endpoint Removed - breaks Gen AI Studio Playground — The /v1/token API was removed and this endpoint was merged in with the new post creation of /v1/api- keys . As a result, Gen AI Playground cannot generate a token on the fly for MaaS and...</p>
+<p><strong>Workaround:</strong> There is no existing workaround for this known issue. As a result, there is no access to MaaS and Playground in 3.4 EA2.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-48753</span> &middot; known_issues:3.4 EA2
+  <p>RHOAIENG-48753 - Pipeline Name must be DNS-compliant to use &#34;Store pipeline definitions in Kubernetes&#34; — Elyra does not convert the pipeline name to a DNS-compliant name when using the default Kubernetes storage. As a consequence, if you don’t use a DNS-compliant name when...</p>
+<p><strong>Workaround:</strong> Use DNS-compliant naming when running Elyra pipelines.</p></div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-54101</span> &middot; known_issues:3.4 EA1
+  <p>RHOAIENG-54101 - Deployments not listed in Model Registry on IBM Z — When you deploy a model from the Model Registry on IBM Z, the deployment does not appear under the Deployments tab in the Model Registry.</p>
+<p><strong>Workaround:</strong> Access and manage the deployment from the global Deployments page in the OpenShift AI dashboard.</p></div>
+<div class="issue-card ">
+  <span class="issue-id">RHOAIENG-53206</span> &middot; known_issues:3.4 EA1
+  <p>RHOAIENG-53206 - Spark driver pods fail to communicate due to RpcTimeoutException — After installing the Spark Operator, Spark executor pods cannot communicate with the driver pod because the redhat-ods-applications namespace defaults to a &#34;deny-all&#34; traffic rule....</p>
+</div>
+<div class="issue-card has-workaround">
+  <span class="issue-id">RHOAIENG-52130</span> &middot; known_issues:3.4 EA1
+  <p>Workaround redhat-ods-applications — Create a NetworkPolicy in the namespace to allow communication between the pods created by the SparkApplication controller: apiVersion: networking.k8s.io/v1 kind: NetworkPolicy metadata: name: spark-operator-allow-internal spec:...</p>
+<p><strong>Workaround:</strong> Create a custom ServingRuntime by duplicating the vllm-spyre-s390x-runtime ServingRuntime and command removing the section from the container specification. Keep all other configuration, including environment variables, ports, and...</p></div>
+
+<h2>Extraction notes</h2>
+<p class="section-note">80 items were skipped or flagged during automated parsing (older-version carry-over sections, or ambiguous title detection). Spot-check against the source PDF if precision matters for a specific item.</p>
+</main>
+<footer class="site-footer">
+  Built from official Red Hat OpenShift AI release notes and the live
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
+  Not an official Red Hat resource. See <a href="../conflicts.html">Source Conflicts</a> for open disagreements between sources.
+</footer>
+</body>
+</html>

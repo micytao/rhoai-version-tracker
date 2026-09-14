@@ -1,0 +1,24 @@
+{% extends "base.html" %}
+{% block title %}Source Conflicts — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Source Conflicts</h1>
+<p class="lede">
+  Open disagreements between official Red Hat sources (release notes, the live
+  Supported Configurations matrix, product guides). Never silently resolved to
+  one answer &mdash; both claims are preserved verbatim so sellers and customers
+  know exactly where to caveat a claim. Source precedence when a single answer
+  is required for formal support purposes: <strong>Supported Configurations matrix
+  &rarr; release notes &rarr; product guides &rarr; press coverage (corroboration only)</strong>.
+</p>
+
+<p class="section-note">{{ conflicts | length }} open conflict(s).</p>
+
+{% for c in conflicts %}
+<div class="conflict-card">
+  <h4>{{ c.topic }} <span class="section-note">({{ c.feature_id }})</span></h4>
+  <div class="claim"><b>{{ c.claim_a_source }}:</b> {{ c.claim_a_value }}</div>
+  <div class="claim"><b>{{ c.claim_b_source }}:</b> {{ c.claim_b_value }}</div>
+  {% if c.note %}<div class="claim"><em>{{ c.note }}</em></div>{% endif %}
+</div>
+{% endfor %}
+{% endblock %}

@@ -1,0 +1,539 @@
+{
+  "fetched_at": "2026-09-14T08:06:51.882252Z",
+  "source_url": "https://access.redhat.com/articles/rhoai-supported-configs-3.x",
+  "rhoai_version_scope": "3.x",
+  "entries": [
+    {
+      "component": "Dashboard",
+      "component_version": "2.0.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Dashboard",
+      "component_version": "2.0.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Dashboard",
+      "component_version": "2.0.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AI Pipelines",
+      "component_version": "2.5.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AI Pipelines",
+      "component_version": "2.16.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AI Pipelines",
+      "component_version": "2.16.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Argo Workflows",
+      "component_version": "v3.6.7",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "Argo Workflows",
+      "component_version": "v3.7.3",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "Argo Workflows",
+      "component_version": "v3.7.3",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "Distributed Inference with llm-d-(1)",
+      "component_version": "0.4",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Distributed Inference with llm-d-(1)",
+      "component_version": "0.7.1",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Distributed Inference with llm-d-(1)",
+      "component_version": "0.9.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Feature Store (Feast)",
+      "component_version": "0.59.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Feature Store (Feast)",
+      "component_version": "0.62.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Feature Store (Feast)",
+      "component_version": "0.65.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KServe",
+      "component_version": "0.15",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KServe",
+      "component_version": "0.17.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KServe",
+      "component_version": "0.19.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Red Hat AI Inference(2)",
+      "component_version": "3.4.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Red Hat AI Inference(2)",
+      "component_version": "3.5.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Training Operator v1",
+      "component_version": "1.9.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "Deprecated",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Training Operator v1",
+      "component_version": "1.9.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "Deprecated",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Training Operator v1",
+      "component_version": "1.9.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "Deprecated",
+      "notes": "(3)"
+    },
+    {
+      "component": "Kubeflow Trainer v2",
+      "component_version": "2.1.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Trainer v2",
+      "component_version": "2.1.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Trainer v2",
+      "component_version": "2.1.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KubeRay",
+      "component_version": "1.4.2",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KubeRay",
+      "component_version": "1.4.2",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "KubeRay",
+      "component_version": "1.4.2",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Llama Stack Operator",
+      "component_version": "0.6.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "Llama Stack Operator",
+      "component_version": "0.9.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "OGX Operator",
+      "component_version": "0.11.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "OGX",
+      "component_version": "1.1.2",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "Model as a Service (MaaS)",
+      "component_version": "0.0.2",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "Model as a Service (MaaS)",
+      "component_version": "0.1.1",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Model as a Service (MaaS)",
+      "component_version": "0.2.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "MLflow",
+      "component_version": "3.6.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "MLflow",
+      "component_version": "3.10.1",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "MLflow",
+      "component_version": "3.14.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "MLServer",
+      "component_version": "1.7.1",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "MLServer",
+      "component_version": "1.7.1",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "MLServer",
+      "component_version": "1.7.1",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Spark Operator",
+      "component_version": "2.4.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "Spark Operator",
+      "component_version": "2.4.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Spark",
+      "component_version": "4.0.1",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "Spark",
+      "component_version": "4.0.1",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "TrustyAI",
+      "component_version": "1.37.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "TrustyAI",
+      "component_version": "1.37.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "TrustyAI",
+      "component_version": "1.37.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "LM-Eval",
+      "component_version": "0.4.8",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "LM-Eval",
+      "component_version": "0.4.8",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "LM-Eval",
+      "component_version": "0.4.8",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "NeMo Guardrails",
+      "component_version": "0.9.4",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "NeMo Guardrails",
+      "component_version": "0.9.4",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "NeMo Guardrails",
+      "component_version": "0.9.4",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": "sub-component row (indented under the row above it)"
+    },
+    {
+      "component": "AI Hub",
+      "component_version": "0.3.5",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AI Hub",
+      "component_version": "0.3.9",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AI Hub",
+      "component_version": "0.3.10",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Notebook Controller",
+      "component_version": "1.10.0",
+      "rhoai_version": "3.3",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Notebook Controller",
+      "component_version": "1.10.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "Kubeflow Notebook Controller",
+      "component_version": "1.10.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "GA",
+      "notes": null
+    },
+    {
+      "component": "AutoML",
+      "component_version": "1.11.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "AutoML",
+      "component_version": "1.11.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "AutoRAG",
+      "component_version": "1.11.0",
+      "rhoai_version": "3.4",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "AutoRAG",
+      "component_version": "1.11.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    },
+    {
+      "component": "EvalHub",
+      "component_version": "0.3.0",
+      "rhoai_version": "3.5",
+      "architecture": "x86_64",
+      "status": "TP",
+      "notes": null
+    }
+  ],
+  "fetch_warnings": [
+    "4 populated candidate tables found on the page (duplicate DOM copies); used the first one. Re-check the live page if entries look stale.",
+    "Scope limitation: only the main 'Architecture, Version and Components' table was parsed; all entries are tagged architecture='x86_64'. Per-architecture (Arm/IBM Power/IBM Z) breakdowns live in separate tables/prose on the same page and are not yet captured by this script -- cross-check by hand during synthesis."
+  ]
+}

@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{% block title %}RHOAI Version Tracker{% endblock %}</title>
+<link rel="stylesheet" href="{{ asset_prefix }}assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <div class="brand">
+    Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+    <small>Generated {{ generated_at }} &middot; latest tracked release: {{ latest_version }}</small>
+  </div>
+  <nav class="site-nav">
+    <a href="{{ root_prefix }}index.html">Dashboard</a>
+    <a href="{{ root_prefix }}matrix.html">Feature Matrix</a>
+    <a href="{{ root_prefix }}migration.html">Migration Checklist</a>
+    <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a>
+    {% for v in version_pages %}<a href="{{ root_prefix }}versions/{{ v }}.html">{{ v }}</a>{% endfor %}
+  </nav>
+</header>
+<main>
+{% block content %}{% endblock %}
+</main>
+<footer class="site-footer">
+  Built from official Red Hat OpenShift AI release notes and the live
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
+  Not an official Red Hat resource. See <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a> for open disagreements between sources.
+</footer>
+</body>
+</html>
