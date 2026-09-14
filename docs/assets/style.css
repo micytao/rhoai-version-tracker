@@ -216,3 +216,31 @@ footer.site-footer {
 
 .section-note { color: var(--muted); font-size: 0.86rem; margin: -4px 0 14px; }
 .hidden-row { display: none !important; }
+
+/* Feature swimlane: same underlying timeline data as the Feature Matrix,
+   rendered as continuous run-length-encoded bars (one <td colspan> per
+   status "run") instead of one badge per column, so version-to-version
+   comparison reads as a Gantt-style strip rather than a grid of pills. */
+.swimlane-wrap { max-height: 620px; overflow-y: auto; }
+table.swimlane th, table.swimlane td { padding: 0; }
+table.swimlane th { padding: 6px 8px; }
+table.swimlane td.feature-name { padding: 6px 10px; min-width: 260px; }
+table.swimlane td.feature-name a { color: var(--ink); }
+table.swimlane td.feature-name a:hover { color: var(--link); }
+td.swimlane-cell {
+  text-align: center;
+  vertical-align: middle;
+  font-size: 0.66rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  padding: 7px 4px;
+  min-width: 40px;
+  border-left: 2px solid var(--bg);
+}
+td.swimlane-cell.empty { background: var(--bg-alt); }
+td.swimlane-cell.status-ga         { background: var(--green-bg);      color: var(--green-fg); }
+td.swimlane-cell.status-tp         { background: var(--amber-bg);      color: var(--amber-fg); }
+td.swimlane-cell.status-dp         { background: var(--dp-bg);         color: var(--dp-fg); }
+td.swimlane-cell.status-deprecated { background: var(--deprecated-bg); color: var(--deprecated-fg); }
+td.swimlane-cell.status-removed    { background: var(--red-bg);        color: var(--red-fg); }
+td.swimlane-cell.status-change     { background: var(--bg-alt);        color: var(--muted); }

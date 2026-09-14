@@ -50,6 +50,44 @@
   {% endfor %}
 </div>
 
+<h2>Feature swimlane</h2>
+<p class="section-note">
+  Every tracked feature, one lane per row, run across the versions that actually carry a recorded change &mdash; status
+  is carried forward as a continuous bar until the next change, so you can scan a row left-to-right and immediately see
+  where a feature moved between GA/TP/DP/Deprecated/Removed relative to any other feature. Full per-version detail
+  (including sourced tooltips) is on the <a href="matrix.html">Feature Matrix</a>.
+</p>
+<div class="filters">
+  <input type="text" id="swimlane-search" placeholder="Search feature or category&hellip;">
+  <select id="swimlane-category">
+    <option value="">All categories</option>
+    {% for c in swimlane_categories %}<option value="{{ c }}">{{ c }}</option>{% endfor %}
+  </select>
+</div>
+<div class="matrix-wrap swimlane-wrap">
+<table class="matrix swimlane" id="swimlane-table">
+<thead>
+<tr>
+  <th>Feature</th>
+  {% for v in swimlane_versions %}<th>{{ v }}</th>{% endfor %}
+</tr>
+</thead>
+<tbody>
+{% for lane in swimlane_lanes %}
+<tr data-name="{{ lane.name }}" data-category="{{ lane.category }}" data-statuses="{{ lane.all_statuses | join(',') }}">
+  <td class="feature-name"><a href="matrix.html#{{ lane.feature_id }}"><span class="cat">{{ lane.category }}</span>{{ lane.name }}</a></td>
+  {% for seg in lane.segments %}
+  <td colspan="{{ seg.span }}" class="swimlane-cell {{ seg.status_class }}"
+      title="{{ lane.name }}: {{ seg.status or 'not yet introduced' }} ({{ seg.start_version }}{% if seg.end_version != seg.start_version %}&ndash;{{ seg.end_version }}{% endif %})">
+    {{ seg.status or '' }}
+  </td>
+  {% endfor %}
+</tr>
+{% endfor %}
+</tbody>
+</table>
+</div>
+
 <h2>What's new in {{ latest_version }}</h2>
 <p class="section-note">Auto-derived from every feature whose most recent timeline entry lands on {{ latest_version }}.</p>
 <div class="card-grid">
@@ -84,4 +122,5 @@
   <div class="item-card"><h4><a href="versions/{{ v }}.html">{{ v }} release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
   {% endfor %}
 </div>
+<script src="{{ asset_prefix }}assets/app.js"></script>
 {% endblock %}

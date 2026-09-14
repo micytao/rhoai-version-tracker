@@ -161,6 +161,64 @@ def compute_lifecycle_phase(version_meta: dict, today: "date | None" = None) -> 
     return {"phase": "End of Life", "phase_class": "lifecycle-eol", "until": (eus_end or fs_end).isoformat()}
 
 
+def build_swimlane_data(registry: dict, matrix_versions: list[str]) -> list[dict]:
+    """One lane per feature, run-length-encoded across `matrix_versions` so
+    consecutive versions with the same (carried-forward) status render as a
+    single continuous colored bar segment -- a Gantt/swimlane view of the
+    same timeline data the Feature Matrix shows per-cell, meant for
+    at-a-glance version-to-version comparison on the dashboard.
+
+    Status is carried forward from the last recorded timeline entry until
+    the next one (a feature with no new entry at a given version hasn't
+    changed status, not disappeared); versions before a feature's first
+    recorded entry render as an empty/unintroduced segment.
+    """
+    version_index = {v: i for i, v in enumerate(matrix_versions)}
+    lanes = []
+    for f in registry["features"]:
+        entries_by_index = {}
+        for t in f["timeline"]:
+            idx = version_index.get(t["version"])
+            if idx is not None:
+                entries_by_index[idx] = t["status"]
+        if not entries_by_index:
+            continue
+        first_idx = min(entries_by_index.keys())
+
+        effective = []
+        current_status = None
+        for i in range(len(matrix_versions)):
+            if i in entries_by_index:
+                current_status = entries_by_index[i]
+            effective.append(current_status if i >= first_idx else None)
+
+        segments = []
+        i = 0
+        while i < len(effective):
+            status = effective[i]
+            j = i
+            while j + 1 < len(effective) and effective[j + 1] == status:
+                j += 1
+            segments.append({
+                "status": status,
+                "status_class": _status_class(status) if status else "empty",
+                "span": j - i + 1,
+                "start_version": matrix_versions[i],
+                "end_version": matrix_versions[j],
+            })
+            i = j + 1
+
+        lanes.append({
+            "feature_id": f["feature_id"],
+            "name": f["name"],
+            "category": f["category"],
+            "all_statuses": sorted({t["status"] for t in f["timeline"]}),
+            "segments": segments,
+        })
+    lanes.sort(key=lambda l: (l["category"], l["name"]))
+    return lanes
+
+
 def build_highlights(registry: dict, latest_version: str) -> tuple[list[dict], list[dict]]:
     highlights, red_highlights = [], []
     for f in registry["features"]:
@@ -213,6 +271,7 @@ def main():
     latest_version = sorted_versions[-1]["version"] if sorted_versions else None
 
     matrix_versions, matrix_features, categories = build_matrix_data(registry)
+    swimlane_lanes = build_swimlane_data(registry, matrix_versions)
     highlights, red_highlights = build_highlights(registry, latest_version)
     stats = compute_stats(registry)
     version_pages = sorted(extracted_releases.keys(), key=version_sort_key)
@@ -253,6 +312,9 @@ def main():
         "versions": sorted_versions,
         "highlights": highlights,
         "red_highlights": red_highlights,
+        "swimlane_versions": matrix_versions,
+        "swimlane_lanes": swimlane_lanes,
+        "swimlane_categories": categories,
     })
 
     render("matrix.html", out_dir / "matrix.html", {
