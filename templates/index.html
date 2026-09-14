@@ -24,13 +24,28 @@
 </div>
 
 <h2>Release timeline</h2>
-<p class="section-note">EA1 &rarr; EA2 &rarr; GA per version, where applicable. EUS releases shaded.</p>
+<p class="section-note">
+  Overlaid with the official
+  <a href="https://access.redhat.com/support/policy/updates/rhoai-sm/lifecycle" target="_blank" rel="noopener">OpenShift AI Self-Managed Life Cycle</a>:
+  each card's phase badge (Full Support / Extended Update Support / End of Life) is computed against today's date, not hand-maintained.
+  EA1 &rarr; EA2 &rarr; GA milestones shown where a release had dated Early Access drops.
+</p>
+<div class="legend">
+  <span class="chip lifecycle-full-support">Full Support</span>
+  <span class="chip lifecycle-eus">Extended Update Support</span>
+  <span class="chip lifecycle-eol">End of Life</span>
+</div>
 <div class="version-strip">
   {% for v in versions %}
-  <div class="version-card {{ 'eus' if v.is_eus else '' }}">
+  <div class="version-card {{ v.lifecycle.phase_class }}">
     <div class="v">{{ v.version }}</div>
-    <div class="milestones">{{ v.milestones | join(' &rarr; ') | safe if v.milestones else '&mdash;' }}</div>
+    <span class="badge {{ v.lifecycle.phase_class }}">{{ v.lifecycle.phase }}</span>
+    {% if v.milestones %}<div class="milestones">{{ v.milestones | join(' &rarr; ') | safe }}</div>{% endif %}
     {% if v.ga_date %}<div class="milestones">GA {{ v.ga_date }}</div>{% endif %}
+    {% if v.lifecycle.until %}
+    <div class="milestones">{{ 'Full Support until' if v.lifecycle.phase == 'Full Support' else ('EUS until' if v.lifecycle.phase == 'Extended Update Support' else 'Ended') }} {{ v.lifecycle.until }}</div>
+    {% endif %}
+    {% if v.lifecycle_note %}<div class="milestones" title="{{ v.lifecycle_note }}">&#9432; details</div>{% endif %}
   </div>
   {% endfor %}
 </div>
@@ -41,7 +56,7 @@
   {% for h in highlights %}
   <div class="item-card">
     <span class="tag">{{ h.category }}</span>
-    <h4><a href="matrix.html#{{ h.feature_id }}">{{ h.name }}</a> <span class="badge {{ h.risk_color }}">{{ h.status }}</span></h4>
+    <h4><a href="matrix.html#{{ h.feature_id }}">{{ h.name }}</a> <span class="badge {{ h.status_class }}">{{ h.status }}</span></h4>
     <p>{{ h.detail | truncate(220) }}</p>
   </div>
   {% endfor %}

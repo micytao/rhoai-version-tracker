@@ -240,6 +240,18 @@ class VersionMeta(BaseModel):
     ga_date: Optional[date] = None
     is_eus: bool = False
 
+    # Official Red Hat OpenShift AI Self-Managed Life Cycle overlay, sourced
+    # from https://access.redhat.com/support/policy/updates/rhoai-sm/lifecycle
+    # (the Life Cycle Dates table, backed by the public product-life-cycles
+    # API). full_support_end / eus_end drive the dynamically computed
+    # "current lifecycle phase" shown on the dashboard release timeline --
+    # recomputed at every `build_site.py` run against the build date, so the
+    # site never needs a manual status flip when a phase boundary passes.
+    full_support_end: Optional[date] = None
+    eus_end: Optional[date] = None
+    openshift_versions: Optional[str] = None
+    lifecycle_note: Optional[str] = None
+
 
 class FeatureRegistry(BaseModel):
     """The single cumulative file the whole site is rendered from."""

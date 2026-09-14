@@ -20,7 +20,7 @@ import json
 import re
 import shutil
 import sys
-from datetime import datetime, timezone
+from datetime import date, datetime, timezone
 from pathlib import Path
 
 from jinja2 import Environment, FileSystemLoader, select_autoescape
@@ -88,11 +88,13 @@ def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str]]
                 "status": t["status"],
                 "detail": t["detail"],
                 "risk_color": _status_risk(t["status"]),
+                "status_class": _status_class(t["status"]),
             }
         matrix_features.append({
             **f,
             "by_version": by_version,
             "all_statuses": sorted({t["status"] for t in f["timeline"]}),
+            "current_status_class": _status_class(f["current_status"]),
         })
     matrix_features.sort(key=lambda f: (f["category"], f["name"]))
 
@@ -106,6 +108,57 @@ def _status_risk(status: str) -> str:
     if status == "Removed":
         return "red"
     return "amber"  # TP, DP, Deprecated, Change
+
+
+# Per-status badge color, distinct from the coarser 3-way risk_color (which
+# intentionally collapses TP/DP/Deprecated/Change into "amber" for the
+# aggregate risk framework). This is purely a display concern -- callers
+# that need the risk framework should keep using _status_risk / risk_color.
+_STATUS_CLASS = {
+    "GA": "status-ga",
+    "TP": "status-tp",
+    "DP": "status-dp",
+    "Deprecated": "status-deprecated",
+    "Removed": "status-removed",
+    "Change": "status-change",
+}
+
+
+def _status_class(status: str) -> str:
+    return _STATUS_CLASS.get(status, "neutral")
+
+
+def _parse_date(value) -> "date | None":
+    if not value:
+        return None
+    if isinstance(value, date):
+        return value
+    return datetime.strptime(value, "%Y-%m-%d").date()
+
+
+def compute_lifecycle_phase(version_meta: dict, today: "date | None" = None) -> dict:
+    """Overlays the official Red Hat OpenShift AI Self-Managed Life Cycle
+    (https://access.redhat.com/support/policy/updates/rhoai-sm/lifecycle) onto
+    a version. Recomputed at every build against `today`, so a version's
+    displayed phase (Full Support -> Extended Update Support -> End of Life)
+    advances automatically as real time passes, without needing a manual
+    status flip in the registry data.
+    """
+    today = today or datetime.now(timezone.utc).date()
+    fs_end = _parse_date(version_meta.get("full_support_end"))
+    eus_end = _parse_date(version_meta.get("eus_end"))
+
+    if fs_end is None:
+        return {
+            "phase": "End of Life" if version_meta["version"].startswith("1.") else "Unknown",
+            "phase_class": "lifecycle-eol" if version_meta["version"].startswith("1.") else "neutral",
+            "until": None,
+        }
+    if today <= fs_end:
+        return {"phase": "Full Support", "phase_class": "lifecycle-full-support", "until": fs_end.isoformat()}
+    if eus_end and today <= eus_end:
+        return {"phase": "Extended Update Support", "phase_class": "lifecycle-eus", "until": eus_end.isoformat()}
+    return {"phase": "End of Life", "phase_class": "lifecycle-eol", "until": (eus_end or fs_end).isoformat()}
 
 
 def build_highlights(registry: dict, latest_version: str) -> tuple[list[dict], list[dict]]:
@@ -122,6 +175,7 @@ def build_highlights(registry: dict, latest_version: str) -> tuple[list[dict], l
             "category": f["category"],
             "status": latest_entry["status"],
             "risk_color": f["risk_color"],
+            "status_class": _status_class(latest_entry["status"]),
             "detail": latest_entry["detail"],
         }
         highlights.append(row)
@@ -152,6 +206,9 @@ def main():
     diffs = load_diffs()
 
     sorted_versions = sorted(registry["versions"], key=lambda v: version_sort_key(v["version"]))
+    build_today = datetime.now(timezone.utc).date()
+    for v in sorted_versions:
+        v["lifecycle"] = compute_lifecycle_phase(v, build_today)
     registry["versions"] = sorted_versions
     latest_version = sorted_versions[-1]["version"] if sorted_versions else None
 

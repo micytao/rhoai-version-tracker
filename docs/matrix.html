@@ -24,10 +24,14 @@
 <p class="lede">Rows = features/components. Columns = versions. Hover a badge for the sourced detail behind it.</p>
 
 <div class="legend">
-  <span class="chip green">GA</span>
-  <span class="chip amber">TP / DP / Deprecated</span>
-  <span class="chip red">Removed / breaking</span>
+  <span class="chip status-ga">GA</span>
+  <span class="chip status-tp">TP &mdash; Technology Preview</span>
+  <span class="chip status-dp">DP &mdash; Developer Preview</span>
+  <span class="chip status-deprecated">Deprecated</span>
+  <span class="chip status-removed">Removed</span>
+  <span class="chip status-change">Change (architecture shift, no maturity change)</span>
 </div>
+<p class="section-note">Badge colors above are per-status. The Search/status filter below can additionally filter by the coarser green/amber/red risk framework used elsewhere on the site (see the dashboard legend).</p>
 
 <div class="filters">
   <input type="text" id="matrix-search" placeholder="Search feature or category&hellip;">
@@ -62,7 +66,7 @@
 <tbody>
 <tr id="ai-available-assets-page" data-name="AI Available Assets page" data-category="Agents/MCP" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Agents/MCP</span>AI Available Assets page</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -74,7 +78,7 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Lists deployed models and MCP servers available for consumption in a project.">GA</span>    </td>
+<span class="badge status-ga" title="Lists deployed models and MCP servers available for consumption in a project.">GA</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -82,7 +86,7 @@
 </tr>
 <tr id="tool-calling-evaldata-gen" data-name="Automated tool-calling evaluation-data generation for custom MCP servers" data-category="Agents/MCP" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Agents/MCP</span>Automated tool-calling evaluation-data generation for custom MCP servers</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -98,11 +102,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Actively explores MCP servers to generate verified question-answer-tool-call triplets for single- and multi-step tool chains, feeding standard evaluation frameworks.">GA</span>    </td>
+<span class="badge status-ga" title="Actively explores MCP servers to generate verified question-answer-tool-call triplets for single- and multi-step tool chains, feeding standard evaluation frameworks.">GA</span>    </td>
 </tr>
 <tr id="mcp-catalog-tier-labeling" data-name="MCP Catalog support-tier labeling" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP Catalog support-tier labeling</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -118,11 +122,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Badges distinguish Red Hat Supported, Partner Supported, and Community Supported MCP server entries.">TP</span>    </td>
+<span class="badge status-tp" title="Badges distinguish Red Hat Supported, Partner Supported, and Community Supported MCP server entries.">TP</span>    </td>
 </tr>
 <tr id="mcp-lifecycle-operator" data-name="MCP Lifecycle Operator" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP Lifecycle Operator</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -138,11 +142,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Kubernetes-native operator for deploying/managing MCP servers. Current 3.5 implementation guide: mcplifecycleoperator defaults to Removed in DataScienceCluster and must be explicitly set to Managed; mcpCatalog dashboard flag must also be enabled for catalog deployment. This procedural guidance supersedes ambiguous release-note wording suggesting it is automatically active.">TP</span>    </td>
+<span class="badge status-tp" title="Kubernetes-native operator for deploying/managing MCP servers. Current 3.5 implementation guide: mcplifecycleoperator defaults to Removed in DataScienceCluster and must be explicitly set to Managed; mcpCatalog dashboard flag must also be enabled for catalog deployment. This procedural guidance supersedes ambiguous release-note wording suggesting it is automatically active.">TP</span>    </td>
 </tr>
 <tr id="mcp-gateway-operator" data-name="MCP gateway Operator" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP gateway Operator</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -158,11 +162,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Optional external dependency, installed/upgraded independently of the OpenShift AI Operator. Cluster administrators own its lifecycle; used for governed MCP management and tool-call routing.">TP</span>    </td>
+<span class="badge status-tp" title="Optional external dependency, installed/upgraded independently of the OpenShift AI Operator. Cluster administrators own its lifecycle; used for governed MCP management and tool-call routing.">TP</span>    </td>
 </tr>
 <tr id="ogx-agentic-api-surface" data-name="OGX-native agentic API surface (Tool Runtime, Responses, Conversations)" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>OGX-native agentic API surface (Tool Runtime, Responses, Conversations)</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -178,11 +182,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Mixed GA/TP/DP: Tool Runtime API and model-context-protocol tool-runtime provider are DP; Responses API is GA; Conversations API is TP. See ogx_provider_table for full per-endpoint/provider detail.">TP</span>    </td>
+<span class="badge status-tp" title="Mixed GA/TP/DP: Tool Runtime API and model-context-protocol tool-runtime provider are DP; Responses API is GA; Conversations API is TP. See ogx_provider_table for full per-endpoint/provider detail.">TP</span>    </td>
 </tr>
 <tr id="opencode-agent" data-name="OpenCode coding-agent deployment" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>OpenCode coding-agent deployment</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -198,11 +202,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Validated coding-agent pattern showing vLLM/OGX inference backends and MLflow tracing generalize to coding-specific agent workloads.">TP</span>    </td>
+<span class="badge status-tp" title="Validated coding-agent pattern showing vLLM/OGX inference backends and MLflow tracing generalize to coding-specific agent workloads.">TP</span>    </td>
 </tr>
 <tr id="validated-tool-calling-catalog" data-name="Validated tool-calling configuration in Model Catalog" data-category="Agents/MCP" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP</span>Validated tool-calling configuration in Model Catalog</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -218,11 +222,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Gated behind spec.dashboardConfig.toolCalling in OdhDashboardConfig; surfaces validated vLLM tool-calling and reasoning arguments for supported models.">TP</span>    </td>
+<span class="badge status-tp" title="Gated behind spec.dashboardConfig.toolCalling in OdhDashboardConfig; surfaces validated vLLM tool-calling and reasoning arguments for supported models.">TP</span>    </td>
 </tr>
 <tr id="agent-catalog-aihub" data-name="Agent Catalog in AI Hub" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Agent Catalog in AI Hub</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -238,11 +242,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Gated behind agentsCatalog. Central discovery interface for starter kits built on LangGraph, CrewAI, LlamaIndex, and other frameworks.">DP</span>    </td>
+<span class="badge status-dp" title="Gated behind agentsCatalog. Central discovery interface for starter kits built on LangGraph, CrewAI, LlamaIndex, and other frameworks.">DP</span>    </td>
 </tr>
 <tr id="csv-export-model-catalog" data-name="CSV export for Model Catalog data" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>CSV export for Model Catalog data</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -258,11 +262,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Standalone Python 3.10+ CLI that paginates Model Catalog REST API data and emits RFC 4180 CSV including custom properties.">DP</span>    </td>
+<span class="badge status-dp" title="Standalone Python 3.10+ CLI that paginates Model Catalog REST API data and emits RFC 4180 CSV including custom properties.">DP</span>    </td>
 </tr>
 <tr id="claude-code-starter-kit" data-name="Claude Code agent starter kit" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Claude Code agent starter kit</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -278,11 +282,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Validated direct Anthropic, self-hosted vLLM, or vLLM-through-OGX paths; MLflow tracing; ConfigMap skill/MCP injection; restricted-v2 SCC.">DP</span>    </td>
+<span class="badge status-dp" title="Validated direct Anthropic, self-hosted vLLM, or vLLM-through-OGX paths; MLflow tracing; ConfigMap skill/MCP injection; restricted-v2 SCC.">DP</span>    </td>
 </tr>
 <tr id="external-metering-maas" data-name="External metering integration for MaaS" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>External metering integration for MaaS</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -298,11 +302,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Separate MaaS-specific BBR plugins for post-inference usage webhook and pre-inference credit checking; invoice/rate calculation remains external.">DP</span>    </td>
+<span class="badge status-dp" title="Separate MaaS-specific BBR plugins for post-inference usage webhook and pre-inference credit checking; invoice/rate calculation remains external.">DP</span>    </td>
 </tr>
 <tr id="external-metering-general" data-name="External metering: per-user token usage and cost" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>External metering: per-user token usage and cost</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -318,11 +322,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Inference Gateway IPP plugin plus PostgreSQL-backed metering service; balance checks, provider token extraction, CloudEvents, admin dashboard, REST API.">DP</span>    </td>
+<span class="badge status-dp" title="Inference Gateway IPP plugin plus PostgreSQL-backed metering service; balance checks, provider token extraction, CloudEvents, admin dashboard, REST API.">DP</span>    </td>
 </tr>
 <tr id="genai-studio-saved-agent" data-name="Gen AI Studio saved-agent configuration" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Gen AI Studio saved-agent configuration</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -338,11 +342,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Gated behind agentConfigManagement. Saves model, inference, prompt, RAG, and MCP configuration as reusable project-scoped agent resources.">DP</span>    </td>
+<span class="badge status-dp" title="Gated behind agentConfigManagement. Saves model, inference, prompt, RAG, and MCP configuration as reusable project-scoped agent resources.">DP</span>    </td>
 </tr>
 <tr id="hierarchical-kv-cache-tiering" data-name="Hierarchical KV Cache Tiering" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Hierarchical KV Cache Tiering</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -358,11 +362,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Configurable cache tiers to increase effective cache size and prefix-cache reuse for concurrent long-context and multi-turn workloads.">DP</span>    </td>
+<span class="badge status-dp" title="Configurable cache tiers to increase effective cache size and prefix-cache reuse for concurrent long-context and multi-turn workloads.">DP</span>    </td>
 </tr>
 <tr id="kale-jupyterlab-extension" data-name="Kale JupyterLab extension" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Kale JupyterLab extension</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -378,11 +382,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Converts annotated notebooks into AI Pipelines without KFP SDK code; pre-installed but disabled by default in standard images; requires a DSPA in the namespace.">DP</span>    </td>
+<span class="badge status-dp" title="Converts annotated notebooks into AI Pipelines without KFP SDK code; pre-installed but disabled by default in standard images; requires a DSPA in the namespace.">DP</span>    </td>
 </tr>
 <tr id="latency-aware-routing-llmd" data-name="Latency-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Latency-aware routing for llm-d</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -398,11 +402,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Uses per-request TTFT/TPOT targets to place latency-sensitive and throughput-sensitive traffic on suitable pods.">DP</span>    </td>
+<span class="badge status-dp" title="Uses per-request TTFT/TPOT targets to place latency-sensitive and throughput-sensitive traffic on suitable pods.">DP</span>    </td>
 </tr>
 <tr id="lora-aware-routing-llmd" data-name="LoRA-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>LoRA-aware routing for llm-d</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -418,11 +422,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Routes requests to pods where the requested adapter is already loaded; falls back to standard routing when no matching pod is available.">DP</span>    </td>
+<span class="badge status-dp" title="Routes requests to pods where the requested adapter is already loaded; falls back to standard routing when no matching pod is available.">DP</span>    </td>
 </tr>
 <tr id="mcp-catalog-admin-ui" data-name="MCP Catalog administrative interface" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>MCP Catalog administrative interface</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -438,11 +442,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Administrator-only YAML add/edit/remove for MCP Catalog sources from Settings, replacing manual ConfigMap editing.">DP</span>    </td>
+<span class="badge status-dp" title="Administrator-only YAML add/edit/remove for MCP Catalog sources from Settings, replacing manual ConfigMap editing.">DP</span>    </td>
 </tr>
 <tr id="midojo" data-name="MiDojo adversarial testing engine" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>MiDojo adversarial testing engine</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -458,11 +462,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="MITM agent-security testing that intercepts tool communications, injects attacks, and grades utility/security using declarative scenarios and multiple agent protocols.">DP</span>    </td>
+<span class="badge status-dp" title="MITM agent-security testing that intercepts tool communications, injects attacks, and grades utility/security using declarative scenarios and multiple agent protocols.">DP</span>    </td>
 </tr>
 <tr id="ogx-file-processors-api" data-name="OGX File Processors API" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>OGX File Processors API</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -478,11 +482,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="inline::auto/docling/markitdown/pypdf and remote::docling-serve providers; some require dependency-specific custom configuration.">DP</span>    </td>
+<span class="badge status-dp" title="inline::auto/docling/markitdown/pypdf and remote::docling-serve providers; some require dependency-specific custom configuration.">DP</span>    </td>
 </tr>
 <tr id="ogx-anthropic-gemini-providers" data-name="OGX remote::anthropic and remote::gemini providers" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>OGX remote::anthropic and remote::gemini providers</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -498,11 +502,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Provider-specific OGX inference integrations enabled by ANTHROPIC_API_KEY and ENABLE_GEMINI.">DP</span>    </td>
+<span class="badge status-dp" title="Provider-specific OGX inference integrations enabled by ANTHROPIC_API_KEY and ENABLE_GEMINI.">DP</span>    </td>
 </tr>
 <tr id="openclaw-starter-kit" data-name="OpenClaw agent starter kit" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>OpenClaw agent starter kit</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -518,11 +522,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Validated Kustomize/installer deployment; self-hosted vLLM through OGX; MLflow/OpenTelemetry tracing; browser RBAC; restricted-v2 SCC.">DP</span>    </td>
+<span class="badge status-dp" title="Validated Kustomize/installer deployment; self-hosted vLLM through OGX; MLflow/OpenTelemetry tracing; browser RBAC; restricted-v2 SCC.">DP</span>    </td>
 </tr>
 <tr id="openshell" data-name="OpenShell (secure agent sandboxing and policy enforcement)" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>OpenShell (secure agent sandboxing and policy enforcement)</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -538,11 +542,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Helm deployment, mTLS, LLM provider setup, isolated sandboxes, controlled network egress. Experimental upstream artifacts; not supported for production.">DP</span>    </td>
+<span class="badge status-dp" title="Helm deployment, mTLS, LLM provider setup, isolated sandboxes, controlled network egress. Experimental upstream artifacts; not supported for production.">DP</span>    </td>
 </tr>
 <tr id="text-mode-training-multimodal" data-name="Text-mode training for multimodal models in Training Hub" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>Text-mode training for multimodal models in Training Hub</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -558,11 +562,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Text-only fine-tuning path for listed vision-language model families; full multimodal fine-tuning not supported in this release.">DP</span>    </td>
+<span class="badge status-dp" title="Text-only fine-tuning path for listed vision-language model families; full multimodal fine-tuning not supported in this release.">DP</span>    </td>
 </tr>
 <tr id="view-running-agents-dashboard" data-name="View running agent deployments in dashboard" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>View running agent deployments in dashboard</td>
-  <td class="status-cell"><span class="badge amber">DP</span></td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -578,19 +582,19 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Lists OpenShell-managed Sandbox custom resources deployed manually, with per-namespace filtering.">DP</span>    </td>
+<span class="badge status-dp" title="Lists OpenShell-managed Sandbox custom resources deployed manually, with per-namespace filtering.">DP</span>    </td>
 </tr>
 <tr id="kuberay" data-name="KubeRay (CodeFlare Operator successor)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Distributed Training</span>KubeRay (CodeFlare Operator successor)</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="CodeFlare Operator marked deprecated.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="CodeFlare Operator marked deprecated.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge red" title="CodeFlare Operator removed outright; functionality (mTLS, network isolation, authentication) folded directly into the KubeRay Operator.">Removed</span>    </td>
+<span class="badge status-removed" title="CodeFlare Operator removed outright; functionality (mTLS, network isolation, authentication) folded directly into the KubeRay Operator.">Removed</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -598,37 +602,37 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="KubeRay remains the successor component. Live source conflict: 3.5 release notes say the operator was upgraded to 1.6.x, while the current Supported Configurations matrix lists KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z). Use the matrix for formal supported-version statements until reconciled.">GA</span>    </td>
+<span class="badge status-ga" title="KubeRay remains the successor component. Live source conflict: 3.5 release notes say the operator was upgraded to 1.6.x, while the current Supported Configurations matrix lists KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z). Use the matrix for formal supported-version statements until reconciled.">GA</span>    </td>
 </tr>
 <tr id="kubeflow-trainer-v2" data-name="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)" data-category="Distributed Training" data-statuses="Deprecated,GA,TP" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Distributed Training</span>Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Kubeflow Training Operator v1 marked deprecated; transition to Trainer v2 announced.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Kubeflow Training Operator v1 marked deprecated; transition to Trainer v2 announced.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Kubeflow Trainer v2 introduced as Technology Preview: TrainJob/TrainingRuntime API, Python SDK, web UI, checkpointing, Kueue integration.">TP</span>    </td>
+<span class="badge status-tp" title="Kubeflow Trainer v2 introduced as Technology Preview: TrainJob/TrainingRuntime API, Python SDK, web UI, checkpointing, Kueue integration.">TP</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Supported Configurations matrix lists Kubeflow Trainer v2 2.1.0 as GA on x86_64/Arm; unavailable on IBM Power/Z. Cumulative release-note text can retain older TP wording -- the matrix governs production status.">GA</span>    </td>
+<span class="badge status-ga" title="Supported Configurations matrix lists Kubeflow Trainer v2 2.1.0 as GA on x86_64/Arm; unavailable on IBM Power/Z. Cumulative release-note text can retain older TP wording -- the matrix governs production status.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Remains GA on x86_64/Arm. Training Hub fine-tuning algorithms (SFT, OSFT, LoRA, GRPO) can run on Ray clusters; universal workbench images include RLVR/GRPO dependencies; automated prompt optimization added for agentic systems. KubeRay version/status has a live source conflict (see kuberay feature).">GA</span>    </td>
+<span class="badge status-ga" title="Remains GA on x86_64/Arm. Training Hub fine-tuning algorithms (SFT, OSFT, LoRA, GRPO) can run on Ray clusters; universal workbench images include RLVR/GRPO dependencies; automated prompt optimization added for agentic systems. KubeRay version/status has a live source conflict (see kuberay feature).">GA</span>    </td>
 </tr>
 <tr id="kubeflow-training-operator-v1" data-name="Kubeflow Training Operator v1 (KFTOv1)" data-category="Distributed Training" data-statuses="Deprecated" data-risk-colors="red">
   <td class="feature-name"><span class="cat">Distributed Training</span>Kubeflow Training Operator v1 (KFTOv1)</td>
-  <td class="status-cell"><span class="badge red">Deprecated</span></td>
+  <td class="status-cell"><span class="badge status-deprecated">Deprecated</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Marked deprecated; transition to Trainer v2 announced.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Marked deprecated; transition to Trainer v2 announced.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -636,21 +640,21 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Specific v1 training images deprecated again at 3.4.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Specific v1 training images deprecated again at 3.4.">Deprecated</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March 2027. Migrate to Kubeflow Trainer v2 before that date.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March 2027. Migrate to Kubeflow Trainer v2 before that date.">Deprecated</span>    </td>
 </tr>
 <tr id="kueue" data-name="Kueue (embedded component -&gt; Red Hat build of Kueue Operator)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Distributed Training</span>Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Embedded Kueue component marked deprecated.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Embedded Kueue component marked deprecated.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge red" title="Embedded component removed; replaced by the standalone Red Hat build of Kueue Operator for workload scheduling across training, workbenches, and serving.">Removed</span>    </td>
+<span class="badge status-removed" title="Embedded component removed; replaced by the standalone Red Hat build of Kueue Operator for workload scheduling across training, workbenches, and serving.">Removed</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -658,11 +662,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="New at 3.5 GA: administrators can self-manage ClusterQueues/LocalQueues via a boolean flag on the Kueue component spec, disabled by default, so the Operator skips automatic queue creation for GitOps-managed environments.">GA</span>    </td>
+<span class="badge status-ga" title="New at 3.5 GA: administrators can self-manage ClusterQueues/LocalQueues via a boolean flag on the Kueue component spec, disabled by default, so the Operator skips automatic queue creation for GitOps-managed environments.">GA</span>    </td>
 </tr>
 <tr id="automated-red-teaming" data-name="Automated Red Teaming (powered by Garak)" data-category="Evaluation" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Evaluation</span>Automated Red Teaming (powered by Garak)</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -678,11 +682,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Reaches GA: OpenAI Responses API endpoint support, multilingual red-teaming via LLM-based translation, multiclass judge safety evaluation, parallelized execution, disconnected/air-gapped support, runnable via EvalHub or standalone Kubeflow Pipelines.">GA</span>    </td>
+<span class="badge status-ga" title="Reaches GA: OpenAI Responses API endpoint support, multilingual red-teaming via LLM-based translation, multiclass judge safety evaluation, parallelized execution, disconnected/air-gapped support, runnable via EvalHub or standalone Kubeflow Pipelines.">GA</span>    </td>
 </tr>
 <tr id="evalhub" data-name="Evaluation Stack -&gt; EvalHub" data-category="Evaluation" data-statuses="GA,TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Evaluation</span>Evaluation Stack -&gt; EvalHub</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -696,13 +700,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Evaluation Stack UI: Technology Preview, guided dashboard requiring EvalHub deployed on the cluster (LM Evaluation Harness, RAGAS, Garak, GuideLLM). Underlying REST orchestration control plane: Developer Preview.">TP</span>    </td>
+<span class="badge status-tp" title="Evaluation Stack UI: Technology Preview, guided dashboard requiring EvalHub deployed on the cluster (LM Evaluation Harness, RAGAS, Garak, GuideLLM). Underlying REST orchestration control plane: Developer Preview.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="3.5 GA release notes state EvalHub is generally available with a documented API-versioning scheme, breaking-change policy, must-gather tooling, and full Red Hat support (SDK/CLI, EvalCard, per-tenant deployment). The current Supported Configurations matrix instead lists EvalHub 0.3.0 as Technology Preview on x86_64, unavailable on Arm/Power/Z. This registry follows the matrix for formal support commitments and records the release-note GA statement as a source conflict. Automated Red Teaming (Garak) separately reaches GA (see automated-red-teaming). Dashboard comparison, MCP server, thresholds, and Kueue-routed scheduling remain TP.">GA</span>    </td>
+<span class="badge status-ga" title="3.5 GA release notes state EvalHub is generally available with a documented API-versioning scheme, breaking-change policy, must-gather tooling, and full Red Hat support (SDK/CLI, EvalCard, per-tenant deployment). The current Supported Configurations matrix instead lists EvalHub 0.3.0 as Technology Preview on x86_64, unavailable on Arm/Power/Z. This registry follows the matrix for formal support commitments and records the release-note GA statement as a source conflict. Automated Red Teaming (Garak) separately reaches GA (see automated-red-teaming). Dashboard comparison, MCP server, thresholds, and Kueue-routed scheduling remain TP.">GA</span>    </td>
 </tr>
 <tr id="automl" data-name="AutoML" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoML</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -716,13 +720,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
+<span class="badge status-tp" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Remains TP. Current matrix: TP on x86_64 and IBM Power, unavailable on Arm and IBM Z. Adds model-insight curves/backtesting, experiment transparency, TP AutoGluon serving runtime; no GA promotion.">TP</span>    </td>
+<span class="badge status-tp" title="Remains TP. Current matrix: TP on x86_64 and IBM Power, unavailable on Arm and IBM Z. Adds model-insight curves/backtesting, experiment transparency, TP AutoGluon serving runtime; no GA promotion.">TP</span>    </td>
 </tr>
 <tr id="autorag" data-name="AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoRAG</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -736,13 +740,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
+<span class="badge status-tp" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Remains TP on x86_64 in the current matrix; unavailable on Arm/Power/Z. Adds CPU-only deployment, multilingual support, structural contextualization, visual experiment-pipeline representation. EA2 release notes claim Power extension, but the current matrix does not list it there -- treated as an unresolved source conflict.">TP</span>    </td>
+<span class="badge status-tp" title="Remains TP on x86_64 in the current matrix; unavailable on Arm/Power/Z. Adds CPU-only deployment, multilingual support, structural contextualization, visual experiment-pipeline representation. EA2 release notes claim Power extension, but the current matrix does not list it there -- treated as an unresolved source conflict.">TP</span>    </td>
 </tr>
 <tr id="feature-store" data-name="Feature Store (Feast-based)" data-category="Feature Store / AutoML / AutoRAG" data-statuses="GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>Feature Store (Feast-based)</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -756,33 +760,33 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Core GA on x86_64/Arm, TP on IBM Power, unavailable on IBM Z.">GA</span>    </td>
+<span class="badge status-ga" title="Core GA on x86_64/Arm, TP on IBM Power, unavailable on IBM Z.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Adds SparkApplication batch materialization engine (batch_engine.type: spark_application, feature transformations on Kubeflow-Spark-Operator-managed Spark clusters; supports enterprise RAG pipelines via batch document embedding to offline/online stores including Milvus) and bidirectional workbench/Feature Store visibility. These additions do not promote the Power implementation beyond TP.">GA</span>    </td>
+<span class="badge status-ga" title="Adds SparkApplication batch materialization engine (batch_engine.type: spark_application, feature transformations on Kubeflow-Spark-Operator-managed Spark clusters; supports enterprise RAG pipelines via batch document embedding to offline/online stores including Milvus) and bidirectional workbench/Feature Store visibility. These additions do not promote the Power implementation beyond TP.">GA</span>    </td>
 </tr>
 <tr id="fms-guardrails" data-name="FMS-Guardrails Orchestrator (via TrustyAI)" data-category="Guardrails" data-statuses="Deprecated,GA,TP" data-risk-colors="red">
   <td class="feature-name"><span class="cat">Guardrails</span>FMS-Guardrails Orchestrator (via TrustyAI)</td>
-  <td class="status-cell"><span class="badge red">Deprecated</span></td>
+  <td class="status-cell"><span class="badge status-deprecated">Deprecated</span></td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced via the TrustyAI Operator, built on IBM Research&#39;s open-source fms-guardrails-orchestrator project. Regex detector and vLLM guardrails gateway called out as TP at introduction.">TP</span>    </td>
-    <td class="status-cell">
-&mdash;    </td>
-    <td class="status-cell">
-&mdash;    </td>
-    <td class="status-cell">
-<span class="badge green" title="Core described by Red Hat as generally available through 3.4. The 3.4 safety guide labels FMS Guardrails as legacy and says it will be deprecated in a future release. The separate TrustyAI-to-Llama-Stack integration remains TP.">GA</span>    </td>
+<span class="badge status-tp" title="Introduced via the TrustyAI Operator, built on IBM Research&#39;s open-source fms-guardrails-orchestrator project. Regex detector and vLLM guardrails gateway called out as TP at introduction.">TP</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
+<span class="badge status-ga" title="Core described by Red Hat as generally available through 3.4. The 3.4 safety guide labels FMS Guardrails as legacy and says it will be deprecated in a future release. The separate TrustyAI-to-Llama-Stack integration remains TP.">GA</span>    </td>
+    <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. The trustyai_fms external-provider path continues to work with OGX.">Deprecated</span>    </td>
+&mdash;    </td>
+    <td class="status-cell">
+&mdash;    </td>
+    <td class="status-cell">
+<span class="badge status-deprecated" title="Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. The trustyai_fms external-provider path continues to work with OGX.">Deprecated</span>    </td>
 </tr>
 <tr id="nemo-guardrails" data-name="NeMo Guardrails" data-category="Guardrails" data-statuses="GA,TP" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Guardrails</span>NeMo Guardrails</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -792,17 +796,17 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced as Technology Preview.">TP</span>    </td>
+<span class="badge status-tp" title="Introduced as Technology Preview.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Remained TP. Documentation includes a direct comparison table against FMS-Guardrails Orchestrator as parallel, competing paths.">TP</span>    </td>
+<span class="badge status-tp" title="Remained TP. Documentation includes a direct comparison table against FMS-Guardrails Orchestrator as parallel, competing paths.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Fully supported. Adds standalone /v1/guardrails/checks endpoint, OpenAI-compatible /v1/models/ endpoint, regex-based rails, multi-replica scaling, OpenTelemetry support, Gen AI Playground surfacing. No additional NVIDIA licensing required.">GA</span>    </td>
+<span class="badge status-ga" title="Fully supported. Adds standalone /v1/guardrails/checks endpoint, OpenAI-compatible /v1/models/ endpoint, regex-based rails, multi-replica scaling, OpenTelemetry support, Gen AI Playground surfacing. No additional NVIDIA licensing required.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Gen AI Studio playground guardrails experience rebuilt on NeMo Guardrails (independently toggled input/output rails). Core NeMo Guardrails remains GA on x86_64 and IBM Power. Release notes announce IBM Z support, but the current Supported Configurations matrix does not list NeMo Guardrails on s390x -- treat Z support as unresolved for formal commitments.">GA</span>    </td>
+<span class="badge status-ga" title="Gen AI Studio playground guardrails experience rebuilt on NeMo Guardrails (independently toggled input/output rails). Core NeMo Guardrails remains GA on x86_64 and IBM Power. Release notes announce IBM Z support, but the current Supported Configurations matrix does not list NeMo Guardrails on s390x -- treat Z support as unresolved for formal commitments.">GA</span>    </td>
 </tr>
 <tr id="nemo-mcp-gateway-integration" data-name="NeMo Guardrails integration with MCP Gateway" data-category="Guardrails" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Guardrails</span>NeMo Guardrails integration with MCP Gateway</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -818,11 +822,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced 3.5 EA2, retained TP in current 3.5 docs. Enforces guardrails on agent tool calls at the MCP Gateway layer; requires the MCP Gateway Operator as an external prerequisite. Distinct from OGX model-response guardrails and from core NeMo Guardrails GA status.">TP</span>    </td>
+<span class="badge status-tp" title="Introduced 3.5 EA2, retained TP in current 3.5 docs. Enforces guardrails on agent tool calls at the MCP Gateway layer; requires the MCP Gateway Operator as an external prerequisite. Distinct from OGX model-response guardrails and from core NeMo Guardrails GA status.">TP</span>    </td>
 </tr>
 <tr id="mlflow" data-name="MLflow experiment tracking / MLOps integration" data-category="MLOps" data-statuses="DP,GA,TP" data-risk-colors="green">
   <td class="feature-name"><span class="cat">MLOps</span>MLflow experiment tracking / MLOps integration</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -832,17 +836,17 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced as Developer Preview.">DP</span>    </td>
+<span class="badge status-dp" title="Introduced as Developer Preview.">DP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Promoted to Technology Preview.">TP</span>    </td>
+<span class="badge status-tp" title="Promoted to Technology Preview.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Fully supported. MLflow Operator became a managed component in the DataScienceCluster CR. SDK pre-installed in datascience/TensorFlow/PyTorch/codeserver images. Workbenches auto-configure MLflow connectivity via the opendatahub.io/mlflow-instance annotation.">GA</span>    </td>
+<span class="badge status-ga" title="Fully supported. MLflow Operator became a managed component in the DataScienceCluster CR. SDK pre-installed in datascience/TensorFlow/PyTorch/codeserver images. Workbenches auto-configure MLflow connectivity via the opendatahub.io/mlflow-instance annotation.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Scope substantially widened: embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub. Training jobs run through a pipeline or SDK are tracked by a dedicated per-project MLflow server -- closes the previously documented MLflow-to-Kubeflow-Trainer gap. Adds age-based trace archival to S3-compatible storage with searchable PostgreSQL metadata, EvalCard generation for EvalHub runs, a shared Gen AI Studio prompt-registry namespace, and SDG Hub MLflow-compatible agent connectors.">GA</span>    </td>
+<span class="badge status-ga" title="Scope substantially widened: embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub. Training jobs run through a pipeline or SDK are tracked by a dedicated per-project MLflow server -- closes the previously documented MLflow-to-Kubeflow-Trainer gap. Adds age-based trace archival to S3-compatible storage with searchable PostgreSQL metadata, EvalCard generation for EvalHub runs, a shared Gen AI Studio prompt-registry namespace, and SDG Hub MLflow-compatible agent connectors.">GA</span>    </td>
 </tr>
 <tr id="maas-loki-showback" data-name="Loki-based showback and user-scoped usage dashboards (MaaS)" data-category="MaaS" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">MaaS</span>Loki-based showback and user-scoped usage dashboards (MaaS)</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -856,13 +860,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="TP precursor: usage/showback observability dashboard.">TP</span>    </td>
+<span class="badge status-tp" title="TP precursor: usage/showback observability dashboard.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Expanded: Loki-based structured log pipeline with 30-day object-storage retention for monthly billing, plus read-only, data-isolated per-user usage dashboards.">TP</span>    </td>
+<span class="badge status-tp" title="Expanded: Loki-based structured log pipeline with 30-day object-storage retention for monthly billing, plus read-only, data-isolated per-user usage dashboards.">TP</span>    </td>
 </tr>
 <tr id="maas-llmd-routing" data-name="MaaS deployment/routing path for Distributed Inference with llm-d" data-category="MaaS" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">MaaS</span>MaaS deployment/routing path for Distributed Inference with llm-d</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -876,13 +880,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Preview integration.">TP</span>    </td>
+<span class="badge status-tp" title="Preview integration.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Unchanged Technology Preview. Its status does not change the GA status of core llm-d or core MaaS.">TP</span>    </td>
+<span class="badge status-tp" title="Unchanged Technology Preview. Its status does not change the GA status of core llm-d or core MaaS.">TP</span>    </td>
 </tr>
 <tr id="maas-multitenancy" data-name="MaaS multi-tenancy with per-tenant gateway and identity isolation" data-category="MaaS" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">MaaS</span>MaaS multi-tenancy with per-tenant gateway and identity isolation</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -898,11 +902,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="New in 3.5 GA. A single CR provisions a tenant namespace, per-tenant API service, and auth/rate-limit policy; gateway and identity provider are external prerequisites. Supports long-lived tenant-scoped API keys, Bring-Your-Own-Identity-Provider, per-tenant subscriptions, and an access-grant mechanism for shared foundation models across tenants.">TP</span>    </td>
+<span class="badge status-tp" title="New in 3.5 GA. A single CR provisions a tenant namespace, per-tenant API service, and auth/rate-limit policy; gateway and identity provider are external prerequisites. Supports long-lived tenant-scoped API keys, Bring-Your-Own-Identity-Provider, per-tenant subscriptions, and an access-grant mechanism for shared foundation models across tenants.">TP</span>    </td>
 </tr>
 <tr id="maas-external-oidc" data-name="MaaS-specific external OIDC user authentication" data-category="MaaS" data-statuses="GA,TP" data-risk-colors="green">
   <td class="feature-name"><span class="cat">MaaS</span>MaaS-specific external OIDC user authentication</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -916,13 +920,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Technology Preview. Distinct from the platform-wide Gateway OIDC capability.">TP</span>    </td>
+<span class="badge status-tp" title="Technology Preview. Distinct from the platform-wide Gateway OIDC capability.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="TP -&gt; GA in 3.5. Administrators integrate an external OIDC identity provider, map OIDC group claims to MaaS subscriptions, and issue API keys scoped to OIDC group memberships -- without requiring OpenShift accounts.">GA</span>    </td>
+<span class="badge status-ga" title="TP -&gt; GA in 3.5. Administrators integrate an external OIDC identity provider, map OIDC group claims to MaaS subscriptions, and issue API keys scoped to OIDC group memberships -- without requiring OpenShift accounts.">GA</span>    </td>
 </tr>
 <tr id="maas-core" data-name="Models-as-a-Service (MaaS) core: access model and token mechanism" data-category="MaaS" data-statuses="GA,TP" data-risk-colors="green">
   <td class="feature-name"><span class="cat">MaaS</span>Models-as-a-Service (MaaS) core: access model and token mechanism</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -934,15 +938,15 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced as Technology Preview. Governance was tier-based: OpenShift group membership selected a single highest-priority tier controlling model access, request limits, and token quotas. Authentication used a MaaS-issued, service-account-backed token (Authorization: Bearer &lt;token&gt;).">TP</span>    </td>
+<span class="badge status-tp" title="Introduced as Technology Preview. Governance was tier-based: OpenShift group membership selected a single highest-priority tier controlling model access, request limits, and token quotas. Authentication used a MaaS-issued, service-account-backed token (Authorization: Bearer &lt;token&gt;).">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Reached GA. Tiers replaced by subscriptions and dedicated CRs (MaaSSubscription, MaaSAuthPolicy, MaaSModelRef). Authentication changed to subscription-bound API keys with the sk-oai- prefix (one-hour temporary or managed with expiration/revocation). Credential/policy/storage/governance NOT backward compatible with 3.3 -- amber TP-to-GA migration break, not a red regression of an already-GA service.">GA</span>    </td>
+<span class="badge status-ga" title="Reached GA. Tiers replaced by subscriptions and dedicated CRs (MaaSSubscription, MaaSAuthPolicy, MaaSModelRef). Authentication changed to subscription-bound API keys with the sk-oai- prefix (one-hour temporary or managed with expiration/revocation). Credential/policy/storage/governance NOT backward compatible with 3.3 -- amber TP-to-GA migration break, not a red regression of an already-GA service.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="GA core expanded: external OIDC authentication for MaaS reaches GA (map OIDC group claims to subscriptions, issue API keys without requiring OpenShift accounts, coexists with OpenShift-group auth). OpenAI-compatible body-based model routing reaches GA (drop-in with openai/LangChain/LlamaIndex/OpenWebUI; legacy path-based routing still supported). Subscriptions + Authorization policy pages merge into one MaaS governance page (Settings -&gt; MaaS governance).">GA</span>    </td>
+<span class="badge status-ga" title="GA core expanded: external OIDC authentication for MaaS reaches GA (map OIDC group claims to subscriptions, issue API keys without requiring OpenShift accounts, coexists with OpenShift-group auth). OpenAI-compatible body-based model routing reaches GA (drop-in with openai/LangChain/LlamaIndex/OpenWebUI; legacy path-based routing still supported). Subscriptions + Authorization policy pages merge into one MaaS governance page (Settings -&gt; MaaS governance).">GA</span>    </td>
 </tr>
 <tr id="maas-multiprovider-passthrough" data-name="Multi-provider API passthrough for external models (MaaS)" data-category="MaaS" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">MaaS</span>Multi-provider API passthrough for external models (MaaS)</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -956,13 +960,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="TP precursor: integration for routing to external model providers such as OpenAI or Anthropic.">TP</span>    </td>
+<span class="badge status-tp" title="TP precursor: integration for routing to external model providers such as OpenAI or Anthropic.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Expanded: native-provider passthrough through the MaaS gateway using Anthropic Messages API (/v1/messages) or OpenAI Responses API (/v1/responses), without format translation, preserving provider-specific features such as prompt caching and extended thinking.">TP</span>    </td>
+<span class="badge status-tp" title="Expanded: native-provider passthrough through the MaaS gateway using Anthropic Messages API (/v1/messages) or OpenAI Responses API (/v1/responses), without format translation, preserving provider-specific features such as prompt caching and extended thinking.">TP</span>    </td>
 </tr>
 <tr id="platform-oidc-gateway" data-name="Platform-wide direct OIDC authentication (GatewayConfig CR)" data-category="MaaS" data-statuses="Change,GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">MaaS</span>Platform-wide direct OIDC authentication (GatewayConfig CR)</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -970,19 +974,19 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift. Custom workbench images built against oauth-proxy require rebuilding.">Change</span>    </td>
+<span class="badge status-change" title="Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift. Custom workbench images built against oauth-proxy require rebuilding.">Change</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Direct authentication with an external OIDC provider through the Gateway API, configured via the GatewayConfig CR, reaches GA. This is a platform authentication feature, not MaaS-specific, though MaaS traffic flows through the same Gateway -- easy to conflate with MaaS-specific external OIDC, but distinct.">GA</span>    </td>
+<span class="badge status-ga" title="Direct authentication with an external OIDC provider through the Gateway API, configured via the GatewayConfig CR, reaches GA. This is a platform authentication feature, not MaaS-specific, though MaaS traffic flows through the same Gateway -- easy to conflate with MaaS-specific external OIDC, but distinct.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="No maturity change; unchanged platform capability. (Distinct sub-feature: MaaS-specific external OIDC user authentication moved TP-&gt;GA in 3.5 -- see maas-external-oidc.)">GA</span>    </td>
+<span class="badge status-ga" title="No maturity change; unchanged platform capability. (Distinct sub-feature: MaaS-specific external OIDC user authentication moved TP-&gt;GA in 3.5 -- see maas-external-oidc.)">GA</span>    </td>
 </tr>
 <tr id="maas-vllm-deployment" data-name="vLLM model deployment directly through MaaS" data-category="MaaS" data-statuses="TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">MaaS</span>vLLM model deployment directly through MaaS</td>
-  <td class="status-cell"><span class="badge amber">TP</span></td>
+  <td class="status-cell"><span class="badge status-tp">TP</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -996,13 +1000,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Technology Preview vLLM deployment path through MaaS.">TP</span>    </td>
+<span class="badge status-tp" title="Technology Preview vLLM deployment path through MaaS.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Remains Technology Preview. The current OdhDashboardConfig documentation explicitly marks vLLMDeploymentOnMaaS as Technology Preview; flag defaults to false.">TP</span>    </td>
+<span class="badge status-tp" title="Remains Technology Preview. The current OdhDashboardConfig documentation explicitly marks vLLMDeploymentOnMaaS as Technology Preview; flag defaults to false.">TP</span>    </td>
 </tr>
 <tr id="model-registry-default-group-creation" data-name="Automatic default group creation for model registry" data-category="Model Registry" data-statuses="Deprecated" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Model Registry</span>Automatic default group creation for model registry</td>
-  <td class="status-cell"><span class="badge amber">Deprecated</span></td>
+  <td class="status-cell"><span class="badge status-deprecated">Deprecated</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1016,13 +1020,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Deprecated starting 3.4 itself (definitionally confirmed, since 3.4 is the version in which the deprecation was first announced). No 3.5 removal confirmed.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Deprecated starting 3.4 itself (definitionally confirmed, since 3.4 is the version in which the deprecation was first announced). No 3.5 removal confirmed.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
 </tr>
 <tr id="model-registry-catalog" data-name="Model registry and model catalog" data-category="Model Registry" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Model Registry</span>Model registry and model catalog</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1030,25 +1034,25 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Added IBM Power (ppc64le) and IBM Z (s390x) architecture support. (GA version prior to 3.0 unconfirmed -- introduced as TP and reached GA at an unconfirmed 2.x version, before 2.23.)">GA</span>    </td>
+<span class="badge status-ga" title="Added IBM Power (ppc64le) and IBM Z (s390x) architecture support. (GA version prior to 3.0 unconfirmed -- introduced as TP and reached GA at an unconfirmed 2.x version, before 2.23.)">GA</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="New capability: OCI-compliant storage layer, converting registered models to ModelCar OCI images for KServe ModelCar deployment.">GA</span>    </td>
+<span class="badge status-ga" title="New capability: OCI-compliant storage layer, converting registered models to ModelCar OCI images for KServe ModelCar deployment.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Catalog enrichment: Safety and Security Insights tab (security scan results by category -- prompt injection, jailbreak resistance, harmful content generation). Cold-start load time and minimum vRAM metrics per GPU configuration in the Performance Insights tab. Validated tool-calling arguments panel.">GA</span>    </td>
+<span class="badge status-ga" title="Catalog enrichment: Safety and Security Insights tab (security scan results by category -- prompt injection, jailbreak resistance, harmful content generation). Cold-start load time and minimum vRAM metrics per GPU configuration in the Performance Insights tab. Validated tool-calling arguments panel.">GA</span>    </td>
 </tr>
 <tr id="llm-d-core" data-name="Distributed Inference with llm-d (core)" data-category="Model Serving" data-statuses="DP,GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Model Serving</span>Distributed Inference with llm-d (core)</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced as Developer Preview.">DP</span>    </td>
+<span class="badge status-dp" title="Introduced as Developer Preview.">DP</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1056,13 +1060,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="GA in the OpenShift AI 3.4 Supported Configurations matrix on x86_64 and aarch64 (0.7.1). Requires OpenShift 4.20+; unavailable on IBM Power/Z. Several advanced capabilities and MaaS-specific integrations remained preview.">GA</span>    </td>
+<span class="badge status-ga" title="GA in the OpenShift AI 3.4 Supported Configurations matrix on x86_64 and aarch64 (0.7.1). Requires OpenShift 4.20+; unavailable on IBM Power/Z. Several advanced capabilities and MaaS-specific integrations remained preview.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="GA extended to Azure Kubernetes Service (AKS) and CoreWeave Kubernetes Service (CKS); Amazon EKS added as Technology Preview (inference-aware scheduling also TP on EKS). Istio is now the supported gateway implementation, with GAIE fully supported. Controlled deployment (weighted traffic-split canary), inference-aware pod lifecycle management, multimodal prefix-cache-aware routing, and end-to-end distributed tracing all reach GA. Tokenizer now runs as a dedicated external service requiring an amd64 node (previously ran with the EndpointPicker on amd64 or ARM). Still unavailable on IBM Power/Z. See flow-control-llmd for the breaking TP-&gt;GA promotion within this cycle.">GA</span>    </td>
+<span class="badge status-ga" title="GA extended to Azure Kubernetes Service (AKS) and CoreWeave Kubernetes Service (CKS); Amazon EKS added as Technology Preview (inference-aware scheduling also TP on EKS). Istio is now the supported gateway implementation, with GAIE fully supported. Controlled deployment (weighted traffic-split canary), inference-aware pod lifecycle management, multimodal prefix-cache-aware routing, and end-to-end distributed tracing all reach GA. Tokenizer now runs as a dedicated external service requiring an amd64 node (previously ran with the EndpointPicker on amd64 or ARM). Still unavailable on IBM Power/Z. See flow-control-llmd for the breaking TP-&gt;GA promotion within this cycle.">GA</span>    </td>
 </tr>
-<tr id="flow-control-llmd" data-name="Distributed Inference with llm-d: priority-based flow control" data-category="Model Serving" data-statuses="GA,TP" data-risk-colors="red">
+<tr id="flow-control-llmd" data-name="Distributed Inference with llm-d: priority-based flow control" data-category="Model Serving" data-statuses="GA,TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Model Serving</span>Distributed Inference with llm-d: priority-based flow control</td>
-  <td class="status-cell"><span class="badge red">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1076,33 +1080,33 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Technology Preview flow control for Distributed Inference with llm-d.">TP</span>    </td>
+<span class="badge status-tp" title="Technology Preview flow control for Distributed Inference with llm-d.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Breaking change on promotion: TP (3.4) -&gt; GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -&gt; llm-d.ai), metrics prefix (inference_extension_ -&gt; llm_d_epp_), and saturation-detector configuration path (top-level saturationDetector -&gt; flowControl.saturationDetector, now plugin-referenced). Anyone who configured flow control during the 3.4 TP window has mandatory remediation work before or during the 3.5 upgrade, even though the destination status is GA rather than deprecation. Unusual: most GA promotions in this dataset are additive; this one requires active remediation from 3.4 TP adopters.">GA</span>    </td>
+<span class="badge status-ga" title="Breaking change on promotion: TP (3.4) -&gt; GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -&gt; llm-d.ai), metrics prefix (inference_extension_ -&gt; llm_d_epp_), and saturation-detector configuration path (top-level saturationDetector -&gt; flowControl.saturationDetector, now plugin-referenced). Anyone who configured flow control during the 3.4 TP window has mandatory remediation work before or during the 3.5 upgrade, even though the destination status is GA rather than deprecation. Unusual: most GA promotions in this dataset are additive; this one requires active remediation from 3.4 TP adopters.">GA</span>    </td>
 </tr>
 <tr id="kserve-serverless" data-name="KServe Serverless deployment mode" data-category="Model Serving" data-statuses="Change,Deprecated,Removed" data-risk-colors="red">
   <td class="feature-name"><span class="cat">Model Serving</span>KServe Serverless deployment mode</td>
-  <td class="status-cell"><span class="badge red">Removed</span></td>
+  <td class="status-cell"><span class="badge status-removed">Removed</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Marked deprecated.">Deprecated</span>    </td>
+<span class="badge status-deprecated" title="Marked deprecated.">Deprecated</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Architecture consolidated onto KServe RawDeployment mode. Unmigrated Serverless workloads return HTTP 503 after upgrade, with no automated conversion path.">Change</span>    </td>
-    <td class="status-cell">
-&mdash;    </td>
+<span class="badge status-change" title="Architecture consolidated onto KServe RawDeployment mode. Unmigrated Serverless workloads return HTTP 503 after upgrade, with no automated conversion path.">Change</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge red" title="Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment InferenceServices ships GA (progressive traffic splitting via OpenShift Route alternateBackends or Gateway API HTTPRoute weighted backends; fixed replica count, no HPA/KEDA autoscaling for canary specifically).">Removed</span>    </td>
+&mdash;    </td>
+    <td class="status-cell">
+<span class="badge status-removed" title="Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment InferenceServices ships GA (progressive traffic splitting via OpenShift Route alternateBackends or Gateway API HTTPRoute weighted backends; fixed replica count, no HPA/KEDA autoscaling for canary specifically).">Removed</span>    </td>
 </tr>
 <tr id="vllm-llminferenceservice" data-name="LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)" data-category="Model Serving" data-statuses="GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Model Serving</span>LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1116,33 +1120,33 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="GA with llm-d. Newer CRD path for Distributed Inference with llm-d.">GA</span>    </td>
+<span class="badge status-ga" title="GA with llm-d. Newer CRD path for Distributed Inference with llm-d.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Maturity follows llm-d: GA on OpenShift/AKS/CKS, TP on EKS as of 3.5.">GA</span>    </td>
+<span class="badge status-ga" title="Maturity follows llm-d: GA on OpenShift/AKS/CKS, TP on EKS as of 3.5.">GA</span>    </td>
 </tr>
 <tr id="modelmesh" data-name="Multi-model serving platform (ModelMesh)" data-category="Model Serving" data-statuses="Change,Deprecated,Removed" data-risk-colors="red">
   <td class="feature-name"><span class="cat">Model Serving</span>Multi-model serving platform (ModelMesh)</td>
-  <td class="status-cell"><span class="badge red">Removed</span></td>
+  <td class="status-cell"><span class="badge status-removed">Removed</span></td>
     <td class="status-cell">
-<span class="badge amber" title="Marked deprecated.">Deprecated</span>    </td>
-    <td class="status-cell">
-&mdash;    </td>
-    <td class="status-cell">
-&mdash;    </td>
-    <td class="status-cell">
-<span class="badge amber" title="Architecture consolidated onto KServe RawDeployment mode. Unmigrated ModelMesh workloads return HTTP 503 after upgrade, with no automated conversion path.">Change</span>    </td>
+<span class="badge status-deprecated" title="Marked deprecated.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
+<span class="badge status-change" title="Architecture consolidated onto KServe RawDeployment mode. Unmigrated ModelMesh workloads return HTTP 503 after upgrade, with no automated conversion path.">Change</span>    </td>
+    <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge red" title="Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.">Removed</span>    </td>
+&mdash;    </td>
+    <td class="status-cell">
+&mdash;    </td>
+    <td class="status-cell">
+<span class="badge status-removed" title="Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.">Removed</span>    </td>
 </tr>
 <tr id="vllm-fast-release-images" data-name="Red Hat AI Inference fast-release images as custom ServingRuntime" data-category="Model Serving" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Model Serving</span>Red Hat AI Inference fast-release images as custom ServingRuntime</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1158,11 +1162,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="New in 3.5: deploy Red Hat AI Inference fast release container images as custom serving runtimes on an existing OpenShift AI installation without upgrading OpenShift AI -- access to newer vLLM versions/model support between stable releases. Create a ServingRuntime + LLMInferenceServiceConfig referencing the fast container image; fast images from the next version cycle are validated against the current stable release.">GA</span>    </td>
+<span class="badge status-ga" title="New in 3.5: deploy Red Hat AI Inference fast release container images as custom serving runtimes on an existing OpenShift AI installation without upgrading OpenShift AI -- access to newer vLLM versions/model support between stable releases. Create a ServingRuntime + LLMInferenceServiceConfig referencing the fast container image; fast images from the next version cycle are validated against the current stable release.">GA</span>    </td>
 </tr>
 <tr id="vllm-cpu-arch-restriction" data-name="vLLM CPU ServingRuntime on IBM Z / Power" data-category="Model Serving" data-statuses="GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Model Serving</span>vLLM CPU ServingRuntime on IBM Z / Power</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1176,13 +1180,13 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Standard deployment mode only -- a permanent, architecture-specific restriction regardless of overall vLLM maturity.">GA</span>    </td>
+<span class="badge status-ga" title="Standard deployment mode only -- a permanent, architecture-specific restriction regardless of overall vLLM maturity.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Unchanged: standard mode only.">GA</span>    </td>
+<span class="badge status-ga" title="Unchanged: standard mode only.">GA</span>    </td>
 </tr>
 <tr id="vllm-kserve-runtime" data-name="vLLM ServingRuntime for KServe" data-category="Model Serving" data-statuses="GA" data-risk-colors="green">
   <td class="feature-name"><span class="cat">Model Serving</span>vLLM ServingRuntime for KServe</td>
-  <td class="status-cell"><span class="badge green">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1190,7 +1194,7 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Classic ServingRuntime + InferenceService path. Core supported runtime; bundled versions remain architecture-specific.">GA</span>    </td>
+<span class="badge status-ga" title="Classic ServingRuntime + InferenceService path. Core supported runtime; bundled versions remain architecture-specific.">GA</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1198,11 +1202,11 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Remains GA. Foundational vLLM GA status does not extend to every vLLM-adjacent delivery path -- see the other vllm-* feature entries.">GA</span>    </td>
+<span class="badge status-ga" title="Remains GA. Foundational vLLM GA status does not extend to every vLLM-adjacent delivery path -- see the other vllm-* feature entries.">GA</span>    </td>
 </tr>
 <tr id="ogx-core" data-name="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration" data-category="OGX" data-statuses="Change,GA,TP" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">OGX</span>Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1210,19 +1214,19 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Introduced as Technology Preview (distribution ~0.2.22-class). Remote inference, built-in embeddings, vector DB operations, TrustyAI safety/eval integration.">TP</span>    </td>
+<span class="badge status-tp" title="Introduced as Technology Preview (distribution ~0.2.22-class). Remote inference, built-in embeddings, vector DB operations, TrustyAI safety/eval integration.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="PostgreSQL Operator became a hard requirement. Distribution 0.3.5. HA configuration and custom embeddings added as TP sub-features.">Change</span>    </td>
+<span class="badge status-change" title="PostgreSQL Operator became a hard requirement. Distribution 0.3.5. HA configuration and custom embeddings added as TP sub-features.">Change</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Distribution 0.4.2. Multi-architecture Operator support became default. OpenAI-compatible citation annotations added as TP.">TP</span>    </td>
+<span class="badge status-tp" title="Distribution 0.4.2. Multi-architecture Operator support became default. OpenAI-compatible citation annotations added as TP.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Llama Stack Operator remains Technology Preview in the formal 3.4 support matrix (0.9.0, TP on x86_64/Arm/Power, unavailable on IBM Z). Responses API alignment, connectors, Conversations API, and FAISS additions do not promote the operator itself to GA.">TP</span>    </td>
+<span class="badge status-tp" title="Llama Stack Operator remains Technology Preview in the formal 3.4 support matrix (0.9.0, TP on x86_64/Arm/Power, unavailable on IBM Z). Responses API alignment, connectors, Conversations API, and FAISS additions do not promote the operator itself to GA.">TP</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="Renamed to OGX at 3.5 EA1 (breaking manual migration: remove Llama Stack Operator, create new OGXServer resources; API group llamastack.io-&gt;ogx.io; v1alpha1-&gt;v1beta1; kind LlamaStackDistribution-&gt;OGXServer; activation field spec.components.llamastackoperator.managementState-&gt;spec.components.ogx.managementState). At 3.5 GA: Supported Configurations lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, IBM Power, while the current OGX product guide labels the OpenShift AI integration Technology Preview, and individual APIs/providers range GA/TP/DP (Responses API is GA; most others TP/DP). State component, integration, and per-API/provider maturity as separate layers -- never collapse into one label.">GA</span>    </td>
+<span class="badge status-ga" title="Renamed to OGX at 3.5 EA1 (breaking manual migration: remove Llama Stack Operator, create new OGXServer resources; API group llamastack.io-&gt;ogx.io; v1alpha1-&gt;v1beta1; kind LlamaStackDistribution-&gt;OGXServer; activation field spec.components.llamastackoperator.managementState-&gt;spec.components.ogx.managementState). At 3.5 GA: Supported Configurations lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, IBM Power, while the current OGX product guide labels the OpenShift AI integration Technology Preview, and individual APIs/providers range GA/TP/DP (Responses API is GA; most others TP/DP). State component, integration, and per-API/provider maturity as separate layers -- never collapse into one label.">GA</span>    </td>
 </tr>
 <tr id="ogx-sqlite-metadata-store" data-name="SQLite as Llama Stack / OGX metadata store" data-category="OGX" data-statuses="Deprecated,GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">OGX</span>SQLite as Llama Stack / OGX metadata store</td>
-  <td class="status-cell"><span class="badge amber">Deprecated</span></td>
+  <td class="status-cell"><span class="badge status-deprecated">Deprecated</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1230,19 +1234,19 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Default and only metadata store option (3.0-3.1).">GA</span>    </td>
+<span class="badge status-ga" title="Default and only metadata store option (3.0-3.1).">GA</span>    </td>
     <td class="status-cell">
-<span class="badge amber" title="Deprecated for production use specifically. PostgreSQL required for production-grade environments. SQLite remains permitted for local development/testing only.">Deprecated</span>    </td>
-    <td class="status-cell">
-&mdash;    </td>
+<span class="badge status-deprecated" title="Deprecated for production use specifically. PostgreSQL required for production-grade environments. SQLite remains permitted for local development/testing only.">Deprecated</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Unchanged through 3.5 GA: SQLite remains available only for local dev/testing and must be explicitly configured; PostgreSQL required for production-grade OGX deployments.">Deprecated</span>    </td>
+&mdash;    </td>
+    <td class="status-cell">
+<span class="badge status-deprecated" title="Unchanged through 3.5 GA: SQLite remains available only for local dev/testing and must be explicitly configured; PostgreSQL required for production-grade OGX deployments.">Deprecated</span>    </td>
 </tr>
 <tr id="gateway-api-rhcl" data-name="Gateway API and Red Hat Connectivity Link (RHCL)" data-category="Platform" data-statuses="Change,GA" data-risk-colors="amber">
   <td class="feature-name"><span class="cat">Platform</span>Gateway API and Red Hat Connectivity Link (RHCL)</td>
-  <td class="status-cell"><span class="badge amber">GA</span></td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
@@ -1250,15 +1254,15 @@
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge amber" title="Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift.">Change</span>    </td>
+<span class="badge status-change" title="Gateway API replacing OpenShift Routes, kube-rbac-proxy replacing oauth-proxy -- core architecture shift.">Change</span>    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
 &mdash;    </td>
     <td class="status-cell">
-<span class="badge green" title="Direct OIDC auth via GatewayConfig CR reaches GA. RHCL included in Red Hat AI SKUs for MaaS use cases only starting 3.4; for all other components RHCL is not included -- when MaaS is enabled, RHCL is deployed via the Kuadrant Operator.">GA</span>    </td>
+<span class="badge status-ga" title="Direct OIDC auth via GatewayConfig CR reaches GA. RHCL included in Red Hat AI SKUs for MaaS use cases only starting 3.4; for all other components RHCL is not included -- when MaaS is enabled, RHCL is deployed via the Kuadrant Operator.">GA</span>    </td>
     <td class="status-cell">
-<span class="badge green" title="New known issue on RHCL 1.4.0/1.4.1: rate limiting silently stops working on batch gateway deployments (RHOAIENG-76586), plus an OOMKill risk from the 1.4 wasm plugin&#39;s higher compile-time memory requirement -- recommend RHCL 1.3.5 for batch gateway deployments. Also new at 3.5 EA2: OAuth proxy sidecar CPU/memory customizable via spec.components.kserve.oauthProxy.resources instead of an unmanaged ConfigMap edit.">GA</span>    </td>
+<span class="badge status-ga" title="New known issue on RHCL 1.4.0/1.4.1: rate limiting silently stops working on batch gateway deployments (RHOAIENG-76586), plus an OOMKill risk from the 1.4 wasm plugin&#39;s higher compile-time memory requirement -- recommend RHCL 1.3.5 for batch gateway deployments. Also new at 3.5 EA2: OAuth proxy sidecar CPU/memory customizable via spec.components.kserve.oauthProxy.resources instead of an unmanaged ConfigMap edit.">GA</span>    </td>
 </tr>
 </tbody>
 </table>

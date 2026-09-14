@@ -6,115 +6,286 @@
       "version": "1.15",
       "milestones": [],
       "ga_date": null,
-      "is_eus": false
+      "is_eus": false,
+      "full_support_end": null,
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": "Pre-dates the RHOAI Life Cycle Dates table (RHODS 1.x era); long since End of Life.",
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": null
+      }
     },
     {
       "version": "1.16",
       "milestones": [],
       "ga_date": null,
-      "is_eus": false
+      "is_eus": false,
+      "full_support_end": null,
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": "Pre-dates the RHOAI Life Cycle Dates table (RHODS 1.x era); long since End of Life.",
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": null
+      }
     },
     {
       "version": "2.5",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2023-12-13",
+      "is_eus": false,
+      "full_support_end": "2024-03-31",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2024-03-31"
+      }
     },
     {
       "version": "2.7",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2024-02-27",
+      "is_eus": false,
+      "full_support_end": "2024-05-21",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2024-05-21"
+      }
     },
     {
       "version": "2.9",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2024-05-01",
+      "is_eus": false,
+      "full_support_end": "2024-06-24",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2024-06-24"
+      }
     },
     {
       "version": "2.11",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2024-07-16",
+      "is_eus": false,
+      "full_support_end": "2025-01-01",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-01-01"
+      }
     },
     {
       "version": "2.14",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2024-10-17",
+      "is_eus": false,
+      "full_support_end": "2024-11-14",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2024-11-14"
+      }
     },
     {
       "version": "2.16",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2024-12-09",
+      "is_eus": true,
+      "full_support_end": "2025-07-07",
+      "eus_end": "2026-06-09",
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2026-06-09"
+      }
     },
     {
       "version": "2.17",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-02-13",
+      "is_eus": false,
+      "full_support_end": "2025-03-12",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-03-12"
+      }
     },
     {
       "version": "2.18",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-03-12",
+      "is_eus": false,
+      "full_support_end": "2025-04-16",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-04-16"
+      }
     },
     {
       "version": "2.19",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-04-16",
+      "is_eus": false,
+      "full_support_end": "2025-11-17",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-11-17"
+      }
     },
     {
       "version": "2.22",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-07-21",
+      "is_eus": false,
+      "full_support_end": "2026-02-16",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2026-02-16"
+      }
     },
     {
       "version": "2.23",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-08-14",
+      "is_eus": false,
+      "full_support_end": "2025-09-18",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-09-18"
+      }
     },
     {
       "version": "2.24",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-10-07",
+      "is_eus": false,
+      "full_support_end": "2025-10-23",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2025-10-23"
+      }
     },
     {
       "version": "2.25",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-10-23",
+      "is_eus": true,
+      "full_support_end": "2026-05-25",
+      "eus_end": "2027-04-26",
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "Extended Update Support",
+        "phase_class": "lifecycle-eus",
+        "until": "2027-04-26"
+      }
     },
     {
       "version": "3.0",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2025-11-13",
+      "is_eus": false,
+      "full_support_end": "2026-01-15",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2026-01-15"
+      }
     },
     {
       "version": "3.2",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2026-01-22",
+      "is_eus": false,
+      "full_support_end": "2026-03-05",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "End of Life",
+        "phase_class": "lifecycle-eol",
+        "until": "2026-03-05"
+      }
     },
     {
       "version": "3.3",
       "milestones": [],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2026-03-05",
+      "is_eus": false,
+      "full_support_end": "2026-10-05",
+      "eus_end": null,
+      "openshift_versions": "4.19.9+, 4.20, 4.21",
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "Full Support",
+        "phase_class": "lifecycle-full-support",
+        "until": "2026-10-05"
+      }
     },
     {
       "version": "3.3.2",
       "milestones": [],
       "ga_date": null,
-      "is_eus": false
+      "is_eus": false,
+      "full_support_end": "2026-10-05",
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": "Micro release within the 3.3 minor's Life Cycle window (first 3.x release supporting migration from 2.x).",
+      "lifecycle": {
+        "phase": "Full Support",
+        "phase_class": "lifecycle-full-support",
+        "until": "2026-10-05"
+      }
     },
     {
       "version": "3.4",
@@ -123,8 +294,17 @@
         "EA2",
         "GA"
       ],
-      "ga_date": null,
-      "is_eus": false
+      "ga_date": "2026-05-14",
+      "is_eus": false,
+      "full_support_end": "2026-11-16",
+      "eus_end": null,
+      "openshift_versions": "4.19, 4.20, 4.21",
+      "lifecycle_note": null,
+      "lifecycle": {
+        "phase": "Full Support",
+        "phase_class": "lifecycle-full-support",
+        "until": "2026-11-16"
+      }
     },
     {
       "version": "3.5",
@@ -133,8 +313,17 @@
         "EA2",
         "GA"
       ],
-      "ga_date": "2026-09-09",
-      "is_eus": true
+      "ga_date": "2026-08-27",
+      "is_eus": true,
+      "full_support_end": "2027-03-29",
+      "eus_end": "2028-02-28",
+      "openshift_versions": "4.19, 4.20, 4.21, 4.22",
+      "lifecycle_note": "Official Life Cycle page lists GA as 2026-08-27; the 3.5 release notes/press materials state 9 September 2026. Both are reproduced -- see source_conflicts.",
+      "lifecycle": {
+        "phase": "Full Support",
+        "phase_class": "lifecycle-full-support",
+        "until": "2027-03-29"
+      }
     }
   ],
   "features": [
@@ -1434,7 +1623,7 @@
       "name": "Distributed Inference with llm-d: priority-based flow control",
       "category": "Model Serving",
       "current_status": "GA",
-      "risk_color": "red",
+      "risk_color": "amber",
       "timeline": [
         {
           "version": "3.4",
@@ -2096,7 +2285,7 @@
       "deprecated": "3.5 (breaking rename on GA promotion, not a deprecation)",
       "removed_status": "API group moves to llm-d.ai, metrics prefix to llm_d_epp_. Anyone on the 3.4 TP must migrate resources and dashboards.",
       "notes": null,
-      "risk_color": "red"
+      "risk_color": "amber"
     }
   ],
   "integration_notes": [
@@ -2428,6 +2617,15 @@
       "claim_b_source": "Supported Configurations matrix (3.5)",
       "claim_b_value": "AutoRAG not listed as available on IBM Power",
       "note": null
+    },
+    {
+      "feature_id": "platform-lifecycle",
+      "topic": "3.5 GA date",
+      "claim_a_source": "OpenShift AI Self-Managed Life Cycle (access.redhat.com/support/policy/updates/rhoai-sm/lifecycle)",
+      "claim_a_value": "2026-08-27",
+      "claim_b_source": "3.5 release notes / launch press coverage",
+      "claim_b_value": "2026-09-09",
+      "note": "The official Life Cycle Dates table's General Availability date for 3.5 (27 Aug 2026) precedes the date stated in the release notes and corroborating press coverage (9 Sep 2026) by about two weeks. The dashboard release timeline uses the Life Cycle page's date since it drives the Full Support / EUS phase math; the release-notes date is preserved here as the milestone-history figure."
     }
   ]
 }
