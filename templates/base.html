@@ -10,8 +10,11 @@
 <body>
 <header class="site-header">
   <div class="brand">
-    Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
-    <small>Generated {{ generated_at }} &middot; latest tracked release: {{ latest_version }}</small>
+    <img class="brand-icon" src="{{ asset_prefix }}assets/favicon.png" alt="">
+    <span class="brand-text">
+      Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+      <small>Generated {{ generated_at }} &middot; latest tracked release: {{ latest_version }}</small>
+    </span>
   </div>
   <nav class="site-nav">
     <a href="{{ root_prefix }}index.html">Dashboard</a>

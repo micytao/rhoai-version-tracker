@@ -53,6 +53,14 @@ header.site-header {
 header.site-header .brand {
   font-weight: 700;
   font-size: 1.05rem;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+header.site-header .brand-icon {
+  width: 28px;
+  height: 28px;
+  flex: 0 0 auto;
 }
 header.site-header .brand small {
   display: block;
