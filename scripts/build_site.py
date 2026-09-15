@@ -213,7 +213,7 @@ def build_release_calendar(sorted_versions: list[dict], today: "date | None" = N
             excluded.append(v["version"])
 
     if not placeable:
-        return {"lanes": [], "ticks": [], "today_pct": None, "excluded": excluded}
+        return {"lanes": [], "ticks": [], "today_pct": None, "excluded": excluded, "legacy_count": 0}
 
     min_date = min(l["ga"] for l in placeable)
     max_date = max((l["eus_end"] or l["fs_end"]) for l in placeable)
@@ -229,6 +229,7 @@ def build_release_calendar(sorted_versions: list[dict], today: "date | None" = N
         fs_left = pct(l["ga"])
         row = {
             "version": l["version"],
+            "legacy": version_sort_key(l["version"]) < version_sort_key("3.0"),
             "fs_left": fs_left,
             "fs_width": max(pct(l["fs_end"]) - fs_left, 0.4),
             "fs_label": f"Full Support {l['ga'].isoformat()} \u2192 {l['fs_end'].isoformat()}",
@@ -249,6 +250,7 @@ def build_release_calendar(sorted_versions: list[dict], today: "date | None" = N
         y += 1
 
     today_pct = pct(today) if span_start <= today <= span_end else None
+    legacy_count = sum(1 for l in lanes if l["legacy"])
 
     return {
         "lanes": lanes,
@@ -256,6 +258,7 @@ def build_release_calendar(sorted_versions: list[dict], today: "date | None" = N
         "today_pct": today_pct,
         "today": today.isoformat(),
         "excluded": excluded,
+        "legacy_count": legacy_count,
     }
 
 

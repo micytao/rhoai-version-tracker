@@ -58,9 +58,12 @@ header.site-header .brand {
   gap: 10px;
 }
 header.site-header .brand-icon {
-  width: 28px;
-  height: 28px;
+  width: 32px;
+  height: 32px;
   flex: 0 0 auto;
+  border-radius: 7px;
+  object-fit: contain;
+  display: block;
 }
 header.site-header .brand small {
   display: block;
@@ -328,6 +331,13 @@ footer.site-footer {
 }
 .timeline-bar.lifecycle-full-support { background: var(--green-fg); }
 .timeline-bar.lifecycle-eus { background: var(--eus-fg); }
+
+/* Lanes for versions before 3.0 are collapsed by default, mirroring the
+   Feature Matrix's .legacy-col pattern; the toggle button in the legend
+   flips .show-legacy on #timeline-swimlane to reveal them. */
+.timeline-swimlane .legacy-lane { display: none; }
+.timeline-swimlane.show-legacy .timeline-lane-label.legacy-lane { display: block; }
+.timeline-swimlane.show-legacy .timeline-lane-track.legacy-lane { display: flex; }
 .timeline-today-line {
   position: absolute;
   top: 0;

@@ -63,8 +63,13 @@
 <div class="legend">
   <span class="chip lifecycle-full-support">&#9632; Full Support</span>
   <span class="chip lifecycle-eus">&#9632; Extended Update Support</span>
+  {% if release_calendar.legacy_count %}
+  <button type="button" id="toggle-timeline-legacy" class="btn-toggle" data-count="{{ release_calendar.legacy_count }}">
+    Show {{ release_calendar.legacy_count }} version{{ 's' if release_calendar.legacy_count != 1 else '' }} before 3.0
+  </button>
+  {% endif %}
 </div>
-<div class="timeline-swimlane">
+<div class="timeline-swimlane" id="timeline-swimlane">
   <div class="timeline-header-row">
     <div class="timeline-label-spacer"></div>
     <div class="timeline-axis">
@@ -75,14 +80,14 @@
   </div>
   <div class="timeline-body">
     <div class="timeline-labels">
-      {% for lane in release_calendar.lanes %}<div class="timeline-lane-label">{{ lane.version }}</div>{% endfor %}
+      {% for lane in release_calendar.lanes %}<div class="timeline-lane-label{{ ' legacy-lane' if lane.legacy else '' }}">{{ lane.version }}</div>{% endfor %}
     </div>
     <div class="timeline-tracks">
       {% if release_calendar.today_pct is not none %}
       <div class="timeline-today-line" style="left: {{ release_calendar.today_pct }}%" title="Today ({{ release_calendar.today }})"></div>
       {% endif %}
       {% for lane in release_calendar.lanes %}
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track{{ ' legacy-lane' if lane.legacy else '' }}">
         <div class="timeline-bar lifecycle-full-support" style="left:{{ lane.fs_left }}%; width:{{ lane.fs_width }}%" title="{{ lane.version }}: {{ lane.fs_label }}"></div>
         {% if lane.eus_width %}
         <div class="timeline-bar lifecycle-eus" style="left:{{ lane.eus_left }}%; width:{{ lane.eus_width }}%" title="{{ lane.version }}: {{ lane.eus_label }}"></div>
@@ -127,4 +132,5 @@
   <div class="item-card"><h4><a href="versions/{{ v }}.html">{{ v }} release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
   {% endfor %}
 </div>
+<script src="{{ asset_prefix }}assets/app.js"></script>
 {% endblock %}

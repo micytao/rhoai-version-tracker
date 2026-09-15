@@ -89,4 +89,11 @@
     buttonId: "toggle-legacy-versions",
     wrapId: "matrix-wrap",
   });
+
+  // Same collapse-by-default pattern, applied to the release timeline
+  // swimlane's pre-3.0 lanes (see .legacy-lane in style.css).
+  setupLegacyToggle({
+    buttonId: "toggle-timeline-legacy",
+    wrapId: "timeline-swimlane",
+  });
 })();

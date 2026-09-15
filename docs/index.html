@@ -10,7 +10,7 @@
 <body>
 <header class="site-header">
   <div class="brand">
-    <img class="brand-icon" src="assets/favicon.png" alt="">
+    <img class="brand-icon" src="assets/favicon.png" alt="" width="32" height="32">
     <span class="brand-text">
       Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
       <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
@@ -175,8 +175,11 @@
 <div class="legend">
   <span class="chip lifecycle-full-support">&#9632; Full Support</span>
   <span class="chip lifecycle-eus">&#9632; Extended Update Support</span>
+  <button type="button" id="toggle-timeline-legacy" class="btn-toggle" data-count="13">
+    Show 13 versions before 3.0
+  </button>
 </div>
-<div class="timeline-swimlane">
+<div class="timeline-swimlane" id="timeline-swimlane">
   <div class="timeline-header-row">
     <div class="timeline-label-spacer"></div>
     <div class="timeline-axis">
@@ -189,47 +192,47 @@
   </div>
   <div class="timeline-body">
     <div class="timeline-labels">
-<div class="timeline-lane-label">2.5</div><div class="timeline-lane-label">2.7</div><div class="timeline-lane-label">2.9</div><div class="timeline-lane-label">2.11</div><div class="timeline-lane-label">2.14</div><div class="timeline-lane-label">2.16</div><div class="timeline-lane-label">2.17</div><div class="timeline-lane-label">2.18</div><div class="timeline-lane-label">2.19</div><div class="timeline-lane-label">2.22</div><div class="timeline-lane-label">2.23</div><div class="timeline-lane-label">2.24</div><div class="timeline-lane-label">2.25</div><div class="timeline-lane-label">3.0</div><div class="timeline-lane-label">3.2</div><div class="timeline-lane-label">3.3</div><div class="timeline-lane-label">3.4</div><div class="timeline-lane-label">3.5</div>    </div>
+<div class="timeline-lane-label legacy-lane">2.5</div><div class="timeline-lane-label legacy-lane">2.7</div><div class="timeline-lane-label legacy-lane">2.9</div><div class="timeline-lane-label legacy-lane">2.11</div><div class="timeline-lane-label legacy-lane">2.14</div><div class="timeline-lane-label legacy-lane">2.16</div><div class="timeline-lane-label legacy-lane">2.17</div><div class="timeline-lane-label legacy-lane">2.18</div><div class="timeline-lane-label legacy-lane">2.19</div><div class="timeline-lane-label legacy-lane">2.22</div><div class="timeline-lane-label legacy-lane">2.23</div><div class="timeline-lane-label legacy-lane">2.24</div><div class="timeline-lane-label legacy-lane">2.25</div><div class="timeline-lane-label">3.0</div><div class="timeline-lane-label">3.2</div><div class="timeline-lane-label">3.3</div><div class="timeline-lane-label">3.4</div><div class="timeline-lane-label">3.5</div>    </div>
     <div class="timeline-tracks">
       <div class="timeline-today-line" style="left: 64.99%" title="Today (2026-09-15)"></div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:1.57%; width:6.869999999999999%" title="2.5: Full Support 2023-12-13 → 2024-03-31"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:6.36%; width:5.29%" title="2.7: Full Support 2024-02-27 → 2024-05-21"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:10.39%; width:3.3999999999999986%" title="2.9: Full Support 2024-05-01 → 2024-06-24"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:15.18%; width:10.64%" title="2.11: Full Support 2024-07-16 → 2025-01-01"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:21.03%; width:1.7699999999999996%" title="2.14: Full Support 2024-10-17 → 2024-11-14"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:24.37%; width:13.220000000000002%" title="2.16: Full Support 2024-12-09 → 2025-07-07"></div>
         <div class="timeline-bar lifecycle-eus" style="left:37.59%; width:21.229999999999997%" title="2.16: Extended Update Support 2025-07-07 → 2026-06-09"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:28.53%; width:1.6999999999999993%" title="2.17: Full Support 2025-02-13 → 2025-03-12"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:30.23%; width:2.1999999999999993%" title="2.18: Full Support 2025-03-12 → 2025-04-16"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:32.43%; width:13.54%" title="2.19: Full Support 2025-04-16 → 2025-11-17"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:38.48%; width:13.220000000000006%" title="2.22: Full Support 2025-07-21 → 2026-02-16"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:39.99%; width:2.1999999999999957%" title="2.23: Full Support 2025-08-14 → 2025-09-18"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:43.39%; width:1.009999999999998%" title="2.24: Full Support 2025-10-07 → 2025-10-23"></div>
       </div>
-      <div class="timeline-lane-track">
+      <div class="timeline-lane-track legacy-lane">
         <div class="timeline-bar lifecycle-full-support" style="left:44.4%; width:13.469999999999999%" title="2.25: Full Support 2025-10-23 → 2026-05-25"></div>
         <div class="timeline-bar lifecycle-eus" style="left:57.87%; width:21.160000000000004%" title="2.25: Extended Update Support 2026-05-25 → 2027-04-26"></div>
       </div>
@@ -579,6 +582,7 @@
   <div class="item-card"><h4><a href="conflicts.html">Source Conflicts</a></h4><p>Where the release notes and the Supported Configurations matrix disagree.</p></div>
   <div class="item-card"><h4><a href="versions/3.5.html">3.5 release detail</a></h4><p>Full chapter breakdown parsed from the official release notes.</p></div>
 </div>
+<script src="assets/app.js"></script>
 </main>
 <footer class="site-footer">
   Built from official Red Hat OpenShift AI release notes and the live
