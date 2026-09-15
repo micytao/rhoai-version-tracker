@@ -618,6 +618,15 @@
           "claim_b_source": "OpenShift AI OGX product/integration guide (3.5)",
           "claim_b_value": "OpenShift AI OGX integration: Technology Preview",
           "note": "Component support and integration/API maturity are genuinely separate layers here, not a simple contradiction -- state both."
+        },
+        {
+          "feature_id": "ogx-core",
+          "topic": "OGX Arm (aarch64) architecture support unverified",
+          "claim_a_source": "Registry detail text (ogx-core, 3.5 timeline entry)",
+          "claim_a_value": "States the Supported Configurations matrix lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, and IBM Power",
+          "claim_b_source": "Local Supported Configurations matrix snapshot (data/matrix_snapshots/2026-09-14.json) and the 3.5 release notes",
+          "claim_b_value": "The captured matrix snapshot only contains x86_64 rows for OGX Operator / OGX; the 3.5 release notes never mention Arm or aarch64 (IBM Power GA is separately corroborated by a 3.5 EA1 release-notes headline, but Arm is not corroborated anywhere)",
+          "note": "Re-verify against the live Supported Configurations matrix directly. Until reconciled, treat OGX Arm support as unconfirmed rather than a settled GA claim."
         }
       ],
       "aliases": [
@@ -2433,7 +2442,7 @@
       "provider": "inline::builtin",
       "how_to_enable": "Enabled by default",
       "disconnected_supported": true,
-      "status": "DP"
+      "status": "GA"
     },
     {
       "provider_api": "Messages (native)",
@@ -2641,6 +2650,15 @@
       "claim_b_source": "OpenShift AI OGX product/integration guide (3.5)",
       "claim_b_value": "OpenShift AI OGX integration: Technology Preview",
       "note": "Component support and integration/API maturity are genuinely separate layers here, not a simple contradiction -- state both."
+    },
+    {
+      "feature_id": "ogx-core",
+      "topic": "OGX Arm (aarch64) architecture support unverified",
+      "claim_a_source": "Registry detail text (ogx-core, 3.5 timeline entry)",
+      "claim_a_value": "States the Supported Configurations matrix lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, and IBM Power",
+      "claim_b_source": "Local Supported Configurations matrix snapshot (data/matrix_snapshots/2026-09-14.json) and the 3.5 release notes",
+      "claim_b_value": "The captured matrix snapshot only contains x86_64 rows for OGX Operator / OGX; the 3.5 release notes never mention Arm or aarch64 (IBM Power GA is separately corroborated by a 3.5 EA1 release-notes headline, but Arm is not corroborated anywhere)",
+      "note": "Re-verify against the live Supported Configurations matrix directly. Until reconciled, treat OGX Arm support as unconfirmed rather than a settled GA claim."
     },
     {
       "feature_id": "nemo-guardrails",

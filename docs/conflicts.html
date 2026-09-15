@@ -34,13 +34,18 @@
   &rarr; release notes &rarr; product guides &rarr; press coverage (corroboration only)</strong>.
 </p>
 
-<p class="section-note">6 open conflict(s).</p>
+<p class="section-note">7 open conflict(s).</p>
 
 <div class="conflict-card">
   <h4>OGX component/operator GA vs. OpenShift AI OGX integration guide TP <span class="section-note">(ogx-core)</span></h4>
   <div class="claim"><b>Supported Configurations matrix (3.5):</b> OGX Operator + OGX component: GA on x86_64, Arm, IBM Power</div>
   <div class="claim"><b>OpenShift AI OGX product/integration guide (3.5):</b> OpenShift AI OGX integration: Technology Preview</div>
 <div class="claim"><em>Component support and integration/API maturity are genuinely separate layers here, not a simple contradiction -- state both.</em></div></div>
+<div class="conflict-card">
+  <h4>OGX Arm (aarch64) architecture support unverified <span class="section-note">(ogx-core)</span></h4>
+  <div class="claim"><b>Registry detail text (ogx-core, 3.5 timeline entry):</b> States the Supported Configurations matrix lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, and IBM Power</div>
+  <div class="claim"><b>Local Supported Configurations matrix snapshot (data/matrix_snapshots/2026-09-14.json) and the 3.5 release notes:</b> The captured matrix snapshot only contains x86_64 rows for OGX Operator / OGX; the 3.5 release notes never mention Arm or aarch64 (IBM Power GA is separately corroborated by a 3.5 EA1 release-notes headline, but Arm is not corroborated anywhere)</div>
+<div class="claim"><em>Re-verify against the live Supported Configurations matrix directly. Until reconciled, treat OGX Arm support as unconfirmed rather than a settled GA claim.</em></div></div>
 <div class="conflict-card">
   <h4>IBM Z (s390x) support <span class="section-note">(nemo-guardrails)</span></h4>
   <div class="claim"><b>3.5 GA release notes:</b> Announces IBM Z (s390x) support</div>
