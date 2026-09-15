@@ -190,6 +190,15 @@ class FeatureEntry(BaseModel):
     source_conflicts: list[SourceConflict] = Field(default_factory=list)
     aliases: list[str] = Field(default_factory=list)  # prior names, e.g. "Llama Stack"
 
+    # Optional umbrella grouping that cuts *across* category boundaries, used
+    # by the Feature Lifecycle Matrix to visually merge rows that a reader
+    # would consider "the same feature" even though they're split into
+    # several category-tagged rows (e.g. the five OGX rows span the "OGX",
+    # "Agents/MCP", and "Agents/MCP (Developer Preview surface)" categories).
+    # When unset, the matrix falls back to grouping by `category` instead, so
+    # existing category-only clustering is unaffected.
+    epic: Optional[str] = None
+
 
 class DeprecationTimelineEntry(BaseModel):
     """Flat, one-row-per-feature table mirroring reference doc Part 1."""

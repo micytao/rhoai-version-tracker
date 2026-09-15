@@ -2,7 +2,7 @@
 {% block title %}Feature Lifecycle Matrix — RHOAI Version Tracker{% endblock %}
 {% block content %}
 <h1>Feature Lifecycle Matrix</h1>
-<p class="lede">Rows = features/components. Columns = versions. Hover a badge for the sourced detail behind it.</p>
+<p class="lede">Rows = features/components. Columns = versions. Hover a badge for the sourced detail behind it. The leftmost <strong>Epic</strong> column merges rows that belong to the same umbrella feature (e.g. all OGX rows) even when they sit in different categories; rows with no explicit epic are grouped by category instead, and both are shown as banded blocks of shared background color.</p>
 
 <div class="legend">
   <span class="chip status-ga">GA</span>
@@ -35,25 +35,35 @@
       <option value="red">Red</option>
     </optgroup>
   </select>
+  {% if legacy_versions %}
+  <button type="button" id="toggle-legacy-versions" class="btn-toggle" data-count="{{ legacy_versions | length }}">
+    Show {{ legacy_versions | length }} version{{ 's' if legacy_versions | length != 1 else '' }} before 3.0
+  </button>
+  {% endif %}
 </div>
 
-<div class="matrix-wrap">
+<div class="matrix-wrap" id="matrix-wrap">
 <table class="matrix" id="feature-matrix-table">
 <thead>
 <tr>
+  <th>Epic</th>
   <th>Feature</th>
   <th>Current</th>
-  {% for v in matrix_versions %}<th>{{ v }}</th>{% endfor %}
+  {% for v in matrix_versions %}<th class="{{ 'legacy-col' if v in legacy_versions else '' }}">{{ v }}</th>{% endfor %}
 </tr>
 </thead>
 <tbody>
 {% for f in features %}
-<tr id="{{ f.feature_id }}" data-name="{{ f.name }}" data-category="{{ f.category }}" data-statuses="{{ f.all_statuses | join(',') }}" data-risk-colors="{{ f.risk_color }}">
+<tr id="{{ f.feature_id }}"
+    class="{{ f.band_class }}{{ ' show-epic-label' if f.group_first else '' }}"
+    data-name="{{ f.name }}" data-category="{{ f.category }}" data-statuses="{{ f.all_statuses | join(',') }}"
+    data-risk-colors="{{ f.risk_color }}" data-group="{{ f.group_key }}">
+  <td class="epic-cell{{ ' is-epic' if f.is_epic else ' is-fallback' }}">{{ f.group_key }}</td>
   <td class="feature-name"><span class="cat">{{ f.category }}</span>{{ f.name }}</td>
   <td class="status-cell"><span class="badge {{ f.current_status_class }}">{{ f.current_status }}</span></td>
   {% for v in matrix_versions %}
     {% set cell = f.by_version.get(v) %}
-    <td class="status-cell">
+    <td class="status-cell {{ 'legacy-col' if v in legacy_versions else '' }}">
       {% if cell %}<span class="badge {{ cell.status_class }}" title="{{ cell.detail }}">{{ cell.status }}</span>{% else %}&mdash;{% endif %}
     </td>
   {% endfor %}

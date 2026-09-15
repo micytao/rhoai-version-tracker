@@ -220,7 +220,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "platform-oidc-gateway",
@@ -257,7 +258,8 @@
       "source_conflicts": [],
       "aliases": [
         "Gateway API direct OIDC"
-      ]
+      ],
+      "epic": "Gateway API & Authentication"
     },
     {
       "feature_id": "maas-external-oidc",
@@ -284,7 +286,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "maas-vllm-deployment",
@@ -311,7 +314,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "maas-multitenancy",
@@ -330,7 +334,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "maas-multiprovider-passthrough",
@@ -357,7 +362,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "maas-loki-showback",
@@ -384,7 +390,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "maas-llmd-routing",
@@ -411,7 +418,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MaaS (Models-as-a-Service)"
     },
     {
       "feature_id": "ogx-core",
@@ -474,7 +482,8 @@
       ],
       "aliases": [
         "Llama Stack"
-      ]
+      ],
+      "epic": "OGX (Open GenAI Stack)"
     },
     {
       "feature_id": "ogx-sqlite-metadata-store",
@@ -509,7 +518,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "OGX (Open GenAI Stack)"
     },
     {
       "feature_id": "fms-guardrails",
@@ -544,7 +554,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Guardrails"
     },
     {
       "feature_id": "nemo-guardrails",
@@ -597,7 +608,8 @@
           "note": "Use the matrix for production support commitments until reconciled."
         }
       ],
-      "aliases": []
+      "aliases": [],
+      "epic": "Guardrails"
     },
     {
       "feature_id": "nemo-mcp-gateway-integration",
@@ -616,7 +628,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Guardrails"
     },
     {
       "feature_id": "mlflow",
@@ -698,7 +711,8 @@
       ],
       "aliases": [
         "Evaluation Stack UI"
-      ]
+      ],
+      "epic": "Evaluation (EvalHub)"
     },
     {
       "feature_id": "automated-red-teaming",
@@ -717,7 +731,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Evaluation (EvalHub)"
     },
     {
       "feature_id": "mcp-lifecycle-operator",
@@ -736,7 +751,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MCP platform"
     },
     {
       "feature_id": "mcp-gateway-operator",
@@ -755,7 +771,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MCP platform"
     },
     {
       "feature_id": "mcp-catalog-tier-labeling",
@@ -774,7 +791,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MCP platform"
     },
     {
       "feature_id": "opencode-agent",
@@ -869,7 +887,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "OGX (Open GenAI Stack)"
     },
     {
       "feature_id": "openshell",
@@ -1021,7 +1040,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "MCP platform"
     },
     {
       "feature_id": "external-metering-general",
@@ -1040,7 +1060,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "External metering"
     },
     {
       "feature_id": "external-metering-maas",
@@ -1059,7 +1080,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "External metering"
     },
     {
       "feature_id": "hierarchical-kv-cache-tiering",
@@ -1078,7 +1100,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Distributed Inference (llm-d)"
     },
     {
       "feature_id": "lora-aware-routing-llmd",
@@ -1097,7 +1120,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Distributed Inference (llm-d)"
     },
     {
       "feature_id": "latency-aware-routing-llmd",
@@ -1116,7 +1140,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Distributed Inference (llm-d)"
     },
     {
       "feature_id": "text-mode-training-multimodal",
@@ -1154,7 +1179,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "OGX (Open GenAI Stack)"
     },
     {
       "feature_id": "ogx-file-processors-api",
@@ -1173,7 +1199,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "OGX (Open GenAI Stack)"
     },
     {
       "feature_id": "kale-jupyterlab-extension",
@@ -1254,7 +1281,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Kubeflow Training"
     },
     {
       "feature_id": "kubeflow-training-operator-v1",
@@ -1289,7 +1317,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Kubeflow Training"
     },
     {
       "feature_id": "kuberay",
@@ -1406,7 +1435,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Legacy serving migration (KServe RawDeployment)"
     },
     {
       "feature_id": "modelmesh",
@@ -1441,7 +1471,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Legacy serving migration (KServe RawDeployment)"
     },
     {
       "feature_id": "llm-d-core",
@@ -1476,7 +1507,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Distributed Inference (llm-d)"
     },
     {
       "feature_id": "flow-control-llmd",
@@ -1503,7 +1535,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Distributed Inference (llm-d)"
     },
     {
       "feature_id": "vllm-kserve-runtime",
@@ -1530,7 +1563,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "vLLM serving surfaces"
     },
     {
       "feature_id": "vllm-llminferenceservice",
@@ -1557,7 +1591,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "vLLM serving surfaces"
     },
     {
       "feature_id": "vllm-cpu-arch-restriction",
@@ -1584,7 +1619,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "vLLM serving surfaces"
     },
     {
       "feature_id": "vllm-fast-release-images",
@@ -1603,7 +1639,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "vLLM serving surfaces"
     },
     {
       "feature_id": "gateway-api-rhcl",
@@ -1638,7 +1675,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Gateway API & Authentication"
     },
     {
       "feature_id": "model-registry-catalog",
@@ -1673,7 +1711,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Model Registry"
     },
     {
       "feature_id": "model-registry-default-group-creation",
@@ -1692,7 +1731,8 @@
         }
       ],
       "source_conflicts": [],
-      "aliases": []
+      "aliases": [],
+      "epic": "Model Registry"
     },
     {
       "feature_id": "feature-store",

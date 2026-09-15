@@ -178,6 +178,50 @@ table.matrix td.feature-name .cat { display: block; font-size: 0.68rem; color: v
 table.matrix td.status-cell { text-align: center; white-space: nowrap; }
 .matrix-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
 
+/* Epic column: merges rows that belong to the same umbrella feature (an
+   explicit `epic`, or the row's `category` as a fallback) into a visually
+   banded block. We deliberately avoid <td rowspan> here -- the client-side
+   filters can hide the specific row a rowspan would live on while leaving
+   sibling rows in the same group visible, orphaning the label. Instead every
+   row carries the label but it's only shown (via .show-epic-label, toggled
+   server-side by default and re-computed by app.js after every filter pass)
+   on the first visible row of its group; the shared .band-* background on
+   every row in the group carries the "merged" look regardless of which row
+   is showing the text. */
+table.matrix td.epic-cell {
+  min-width: 150px;
+  font-size: 0.78rem;
+  font-weight: 700;
+  color: var(--muted);
+  visibility: hidden;
+}
+table.matrix td.epic-cell.is-fallback { font-weight: 500; font-style: italic; }
+table.matrix tr.show-epic-label td.epic-cell { visibility: visible; }
+
+table.matrix tr.band-0 { background: #ffffff; }
+table.matrix tr.band-1 { background: #f5f8fd; }
+table.matrix tr.band-2 { background: #f8f6fd; }
+table.matrix tr.band-3 { background: #fdf8f3; }
+table.matrix tr.band-4 { background: #f4fbf7; }
+table.matrix tr.band-5 { background: #fdf5f6; }
+
+/* Versions before 3.0 are collapsed by default to keep the matrix focused on
+   current/recent releases; the toggle button in the filters bar flips
+   .show-legacy on #matrix-wrap to reveal them. */
+table.matrix .legacy-col { display: none; }
+.matrix-wrap.show-legacy .legacy-col { display: table-cell; }
+
+.btn-toggle {
+  padding: 6px 12px;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+  background: var(--bg-alt);
+  color: var(--ink);
+  font-size: 0.85rem;
+  cursor: pointer;
+}
+.btn-toggle:hover { background: var(--border); }
+
 .filters { display: flex; gap: 10px; flex-wrap: wrap; margin: 14px 0 18px; align-items: center; }
 .filters input[type=text], .filters select {
   padding: 6px 10px;

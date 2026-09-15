@@ -73,12 +73,20 @@ def load_diffs() -> list[dict]:
     return diffs
 
 
-def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str]]:
+# Cycling palette of subtle background tints used to visually band
+# consecutive rows that share a group (an explicit `epic`, or the feature's
+# `category` as a fallback when no epic is set). Adjacent groups always get
+# different shades since the index increments every time the group changes.
+_BAND_CLASSES = ["band-0", "band-1", "band-2", "band-3", "band-4", "band-5"]
+
+
+def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str], list[str]]:
     all_versions = set()
     for f in registry["features"]:
         for t in f["timeline"]:
             all_versions.add(t["version"])
     matrix_versions = sorted(all_versions, key=version_sort_key)
+    legacy_versions = [v for v in matrix_versions if version_sort_key(v) < version_sort_key("3.0")]
 
     matrix_features = []
     for f in registry["features"]:
@@ -90,16 +98,35 @@ def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str]]
                 "risk_color": _status_risk(t["status"]),
                 "status_class": _status_class(t["status"]),
             }
+        group_key = f.get("epic") or f["category"]
         matrix_features.append({
             **f,
             "by_version": by_version,
             "all_statuses": sorted({t["status"] for t in f["timeline"]}),
             "current_status_class": _status_class(f["current_status"]),
+            "group_key": group_key,
+            "is_epic": bool(f.get("epic")),
         })
-    matrix_features.sort(key=lambda f: (f["category"], f["name"]))
+    # Group by epic (falling back to category), then order within a group by
+    # (category, name) so cross-category epics still read predictably.
+    matrix_features.sort(key=lambda f: (f["group_key"], f["category"], f["name"]))
+
+    # Second pass: mark the first row of each consecutive group (for the
+    # server-rendered default label placement) and assign a cycling band
+    # class so same-group rows share a background tint.
+    prev_group = None
+    band_idx = -1
+    for row in matrix_features:
+        if row["group_key"] != prev_group:
+            band_idx = (band_idx + 1) % len(_BAND_CLASSES)
+            prev_group = row["group_key"]
+            row["group_first"] = True
+        else:
+            row["group_first"] = False
+        row["band_class"] = _BAND_CLASSES[band_idx]
 
     categories = sorted({f["category"] for f in registry["features"]})
-    return matrix_versions, matrix_features, categories
+    return matrix_versions, matrix_features, categories, legacy_versions
 
 
 def _status_risk(status: str) -> str:
@@ -283,7 +310,7 @@ def main():
     registry["versions"] = sorted_versions
     latest_version = sorted_versions[-1]["version"] if sorted_versions else None
 
-    matrix_versions, matrix_features, categories = build_matrix_data(registry)
+    matrix_versions, matrix_features, categories, legacy_versions = build_matrix_data(registry)
     release_calendar = build_release_calendar(sorted_versions, build_today)
     highlights, red_highlights = build_highlights(registry, latest_version)
     stats = compute_stats(registry)
@@ -332,6 +359,7 @@ def main():
         "matrix_versions": matrix_versions,
         "features": matrix_features,
         "categories": categories,
+        "legacy_versions": legacy_versions,
     })
 
     render("migration.html", out_dir / "migration.html", {
