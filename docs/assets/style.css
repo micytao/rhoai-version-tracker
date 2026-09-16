@@ -200,29 +200,35 @@ table.matrix th, table.matrix td {
 table.matrix thead th {
   background: var(--bg-alt);
   position: sticky;
-  /* Sticks just below the sticky site header rather than at the viewport
-     top -- --header-h is measured and kept in sync by the inline script in
-     base.html so this stays correct even as the header wraps to a second
-     line on narrow viewports or gains more version-tab nav links. */
-  top: var(--header-h, 64px);
+  /* Sticks to the top of .matrix-wrap's own scroll viewport (see the
+     .matrix-wrap comment below for why it's an internally-scrolling region
+     rather than relying on the page's scroll). */
+  top: 0;
   z-index: 5;
 }
 table.matrix td.feature-name { min-width: 260px; }
 table.matrix td.feature-name .cat { display: block; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
 table.matrix td.status-cell { text-align: center; white-space: nowrap; }
-/* overflow-x:auto is needed so wide tables (many version columns) get their
-   own horizontal scrollbar instead of blowing out the page width. Left to
-   its default, overflow-y would be forced to `auto` too (the CSS spec makes
-   `visible` on one axis resolve to `auto` whenever the other axis isn't
-   `visible`), and once this wrapper actually has real horizontal overflow it
-   becomes the nearest "scrolling ancestor" for the sticky <thead> cells
-   inside it -- but since *this* box never scrolls vertically itself (only
-   sideways), the thead's `position: sticky` stops tracking the page's
-   vertical scroll entirely and the header ends up floating over/under body
-   rows instead of pinning below the site nav. `overflow-y: clip` keeps the
-   horizontal scrollbar working while explicitly opting out of being a
-   vertical scroll container, so the sticky header tracks page scroll again. */
-.matrix-wrap { overflow-x: auto; overflow-y: clip; border: 1px solid var(--border); border-radius: var(--radius); }
+/* .matrix-wrap needs horizontal scrolling for wide tables (many version
+   columns), which normally is as simple as `overflow-x: auto`. But once a
+   box actually has scrollable overflow in one axis, it becomes the nearest
+   "scrolling ancestor" that any `position: sticky` descendant is scoped to
+   -- and a sticky element only reacts to *that* ancestor's own scroll
+   offset, not the page's. Since this box would otherwise never scroll
+   vertically itself (only sideways), the sticky <thead> would stop tracking
+   page scroll entirely and the header would end up floating over/under body
+   rows instead of pinning in place. So instead of fighting that, we embrace
+   it: cap the wrapper's height and let it scroll in both axes for real, so
+   the sticky header tracks *this* box's own (now genuinely real) vertical
+   scroll -- i.e. the table becomes its own scrollable region, with the
+   header pinned to the top of it, rather than the whole page scrolling past
+   it. */
+.matrix-wrap {
+  overflow: auto;
+  max-height: 75vh;
+  border: 1px solid var(--border);
+  border-radius: var(--radius);
+}
 
 /* Epic column: merges rows that belong to the same umbrella feature (an
    explicit `epic`, or the row's `category` as a fallback) into a visually
