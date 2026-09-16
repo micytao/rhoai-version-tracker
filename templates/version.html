@@ -7,11 +7,14 @@
   Milestones covered: {{ release.milestones_covered | join(', ') if release.milestones_covered else 'n/a' }}.
 </p>
 
-{% macro item_list(items) %}
+{% macro item_list(items, status_label, status_class) %}
 <div class="card-grid">
   {% for it in items %}
   <div class="item-card">
-    {% if it.milestone %}<span class="tag">{{ it.milestone }}</span>{% endif %}
+    <div class="badges-row">
+      <span class="badge {{ status_class }}">{{ status_label }}</span>
+      {% if it.milestone %}<span class="tag">{{ it.milestone }}</span>{% endif %}
+    </div>
     <h4>{{ it.title }}</h4>
     <p>{{ it.detail | truncate(320) }}</p>
   </div>
@@ -20,22 +23,22 @@
 {% endmacro %}
 
 <h2>New Features ({{ release.new_features | length }})</h2>
-{{ item_list(release.new_features) }}
+{{ item_list(release.new_features, 'GA', 'status-ga') }}
 
 <h2>Enhancements ({{ release.enhancements | length }})</h2>
-{{ item_list(release.enhancements) }}
+{{ item_list(release.enhancements, 'GA', 'status-ga') }}
 
 <h2>Technology Preview ({{ release.tech_preview | length }})</h2>
-{{ item_list(release.tech_preview) }}
+{{ item_list(release.tech_preview, 'TP', 'status-tp') }}
 
 <h2>Developer Preview ({{ release.dev_preview | length }})</h2>
-{{ item_list(release.dev_preview) }}
+{{ item_list(release.dev_preview, 'DP', 'status-dp') }}
 
 <h2>Support Removals: Deprecated ({{ release.deprecated | length }})</h2>
-{{ item_list(release.deprecated) }}
+{{ item_list(release.deprecated, 'Deprecated', 'status-deprecated') }}
 
 <h2>Support Removals: Removed ({{ release.removed | length }})</h2>
-{{ item_list(release.removed) }}
+{{ item_list(release.removed, 'Removed', 'status-removed') }}
 
 <h2>Resolved Issues ({{ release.resolved_issues | length }})</h2>
 {% for it in release.resolved_issues %}
