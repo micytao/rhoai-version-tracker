@@ -48,6 +48,9 @@ header.site-header {
   justify-content: space-between;
   flex-wrap: wrap;
   gap: 12px;
+  position: sticky;
+  top: 0;
+  z-index: 30;
 }
 
 header.site-header .brand {
@@ -90,6 +93,18 @@ h1 { font-size: 1.7rem; margin-bottom: 6px; }
 h2 { font-size: 1.25rem; margin-top: 2.2em; border-bottom: 1px solid var(--border); padding-bottom: 6px; }
 h3 { font-size: 1.05rem; margin-top: 1.6em; }
 p.lede { color: var(--muted); max-width: 780px; }
+
+.disclaimer-banner {
+  border: 1px solid var(--eus-border);
+  background: var(--eus-bg);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 4px 0 22px;
+  color: var(--ink);
+}
+.disclaimer-banner strong { color: var(--eus-fg); }
 
 .legend { display: flex; gap: 10px; flex-wrap: wrap; margin: 16px 0 8px; }
 
@@ -182,7 +197,12 @@ table.matrix th, table.matrix td {
 table.matrix thead th {
   background: var(--bg-alt);
   position: sticky;
-  top: 0;
+  /* Sticks just below the sticky site header rather than at the viewport
+     top -- --header-h is measured and kept in sync by the inline script in
+     base.html so this stays correct even as the header wraps to a second
+     line on narrow viewports or gains more version-tab nav links. */
+  top: var(--header-h, 64px);
+  z-index: 5;
 }
 table.matrix td.feature-name { min-width: 260px; }
 table.matrix td.feature-name .cat { display: block; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }

@@ -23,6 +23,23 @@
     <a href="conflicts.html">Source Conflicts</a>
 <a href="versions/3.5.html">3.5</a>  </nav>
 </header>
+<script>
+  // The header is sticky (position: sticky; top: 0) so the nav stays
+  // reachable while scrolling long pages. It can wrap to a second line on
+  // narrow viewports or as more version-tab links accumulate, so its height
+  // isn't a fixed constant -- measure it and expose it as --header-h so
+  // other sticky elements (e.g. the Feature Matrix table header) can stick
+  // just below it instead of underneath/behind it.
+  (function () {
+    var header = document.querySelector(".site-header");
+    if (!header) return;
+    function syncHeaderHeight() {
+      document.documentElement.style.setProperty("--header-h", header.offsetHeight + "px");
+    }
+    syncHeaderHeight();
+    window.addEventListener("resize", syncHeaderHeight);
+  })();
+</script>
 <main>
 <h1>Upgrade Path / Migration Checklist</h1>
 <p class="lede">Every deprecation, removal, and breaking change tracked across the version history, plus the operational notes that matter most when planning an upgrade.</p>

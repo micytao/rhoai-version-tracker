@@ -2,6 +2,17 @@
 {% block title %}Dashboard — RHOAI Version Tracker{% endblock %}
 {% block content %}
 <h1>Version &amp; Feature Tracker</h1>
+<div class="disclaimer-banner">
+  <strong>Community-maintained, unofficial tracker.</strong> This site is an independent,
+  community-maintained project and is <strong>not</strong> an official Red Hat resource. It
+  cross-checks publicly available release notes against the Supported Configurations matrix, but
+  it can still contain errors, omissions, or drift from the latest sources (see
+  <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a> for known disagreements). For
+  authoritative, up-to-date information, always refer to the official
+  <a href="https://access.redhat.com/documentation/en-us/red_hat_openshift_ai_self-managed" target="_blank" rel="noopener">Red Hat OpenShift AI documentation</a>
+  and the
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x" target="_blank" rel="noopener">Supported Configurations for 3.x</a> matrix.
+</div>
 <p class="lede">
   Tracks Red Hat OpenShift AI's feature lifecycle, deprecations, and upgrade paths
   release over release &mdash; cross-checked against the live Supported Configurations
