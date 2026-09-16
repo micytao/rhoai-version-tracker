@@ -59,7 +59,9 @@ header.site-header .brand {
   display: flex;
   align-items: center;
   gap: 10px;
+  color: inherit;
 }
+header.site-header .brand:hover { text-decoration: none; }
 header.site-header .brand-icon {
   width: 32px;
   height: 32px;
@@ -208,7 +210,19 @@ table.matrix thead th {
 table.matrix td.feature-name { min-width: 260px; }
 table.matrix td.feature-name .cat { display: block; font-size: 0.68rem; color: var(--muted); text-transform: uppercase; }
 table.matrix td.status-cell { text-align: center; white-space: nowrap; }
-.matrix-wrap { overflow-x: auto; border: 1px solid var(--border); border-radius: var(--radius); }
+/* overflow-x:auto is needed so wide tables (many version columns) get their
+   own horizontal scrollbar instead of blowing out the page width. Left to
+   its default, overflow-y would be forced to `auto` too (the CSS spec makes
+   `visible` on one axis resolve to `auto` whenever the other axis isn't
+   `visible`), and once this wrapper actually has real horizontal overflow it
+   becomes the nearest "scrolling ancestor" for the sticky <thead> cells
+   inside it -- but since *this* box never scrolls vertically itself (only
+   sideways), the thead's `position: sticky` stops tracking the page's
+   vertical scroll entirely and the header ends up floating over/under body
+   rows instead of pinning below the site nav. `overflow-y: clip` keeps the
+   horizontal scrollbar working while explicitly opting out of being a
+   vertical scroll container, so the sticky header tracks page scroll again. */
+.matrix-wrap { overflow-x: auto; overflow-y: clip; border: 1px solid var(--border); border-radius: var(--radius); }
 
 /* Epic column: merges rows that belong to the same umbrella feature (an
    explicit `epic`, or the row's `category` as a fallback) into a visually
