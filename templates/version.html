@@ -13,7 +13,7 @@
   <div class="item-card">
     <div class="badges-row">
       <span class="badge {{ status_class }}">{{ status_label }}</span>
-      {% if it.milestone %}<span class="tag">{{ it.milestone }}</span>{% endif %}
+      {% if it.milestone %}<span class="tag" title="Appeared in the {{ release.version }} {{ it.milestone }} release-notes milestone (not a maturity status)">since {{ release.version }} {{ it.milestone }}</span>{% endif %}
     </div>
     <h4>{{ it.title }}</h4>
     <p>{{ it.detail | truncate(320) }}</p>
