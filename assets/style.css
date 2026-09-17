@@ -77,13 +77,11 @@ header.site-header .brand small {
   font-size: 0.75rem;
 }
 
-header.site-header .site-header-right {
+nav.site-nav {
   display: flex;
   align-items: center;
-  gap: 16px;
   flex-wrap: wrap;
 }
-
 nav.site-nav a {
   margin-left: 18px;
   color: var(--ink);
@@ -92,13 +90,12 @@ nav.site-nav a {
 }
 nav.site-nav a:hover { color: var(--link); }
 
-header.site-header .github-link {
-  display: flex;
+nav.site-nav .github-link {
+  display: inline-flex;
   align-items: center;
   color: var(--muted);
-  flex: 0 0 auto;
 }
-header.site-header .github-link:hover { color: var(--ink); }
+nav.site-nav .github-link:hover { color: var(--ink); }
 
 main {
   max-width: 1180px;
