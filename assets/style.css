@@ -77,6 +77,13 @@ header.site-header .brand small {
   font-size: 0.75rem;
 }
 
+header.site-header .site-header-right {
+  display: flex;
+  align-items: center;
+  gap: 16px;
+  flex-wrap: wrap;
+}
+
 nav.site-nav a {
   margin-left: 18px;
   color: var(--ink);
@@ -84,6 +91,14 @@ nav.site-nav a {
   font-weight: 500;
 }
 nav.site-nav a:hover { color: var(--link); }
+
+header.site-header .github-link {
+  display: flex;
+  align-items: center;
+  color: var(--muted);
+  flex: 0 0 auto;
+}
+header.site-header .github-link:hover { color: var(--ink); }
 
 main {
   max-width: 1180px;
