@@ -52,6 +52,19 @@ header.site-header {
   top: 0;
   z-index: 30;
 }
+/* GitHub icon is taken out of the wrapping nav flow and pinned to the
+   header's own top-right corner, so it always stays on the first row
+   next to the brand regardless of how many nav links wrap below it. */
+header.site-header .github-link {
+  position: absolute;
+  top: 14px;
+  right: 24px;
+  display: inline-flex;
+  align-items: center;
+  height: 32px;
+  color: var(--muted);
+}
+header.site-header .github-link:hover { color: var(--ink); }
 
 header.site-header .brand {
   font-weight: 700;
@@ -81,6 +94,9 @@ nav.site-nav {
   display: flex;
   align-items: center;
   flex-wrap: wrap;
+  /* Reserve room on the right so wrapped links never render under the
+     absolutely-positioned GitHub icon pinned to the header corner. */
+  padding-right: 34px;
 }
 nav.site-nav a {
   margin-left: 18px;
@@ -89,13 +105,6 @@ nav.site-nav a {
   font-weight: 500;
 }
 nav.site-nav a:hover { color: var(--link); }
-
-nav.site-nav .github-link {
-  display: inline-flex;
-  align-items: center;
-  color: var(--muted);
-}
-nav.site-nav .github-link:hover { color: var(--ink); }
 
 main {
   max-width: 1180px;
