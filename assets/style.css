@@ -228,6 +228,7 @@ table.matrix thead th.planned-col { font-style: italic; }
   text-align: center;
 }
 .version-card .v { font-weight: 700; font-size: 1.05rem; }
+.version-card .badge { display: block; width: fit-content; margin: 4px auto 0; }
 .version-card .milestones { font-size: 0.7rem; color: var(--muted); margin-top: 4px; }
 .version-card.lifecycle-full-support { border-color: var(--green-border); }
 .version-card.lifecycle-eus          { border-color: var(--eus-border); background: var(--eus-bg); }
