@@ -22,6 +22,10 @@ Checks:
   7. Every data/diffs/*.json file parses against VersionDiff, and every
      feature_id it references (breaking_changes, newly_*, new_tp/new_dp)
      exists in the current registry.
+  8. Roadmap layer: the "Planned" status never appears inside a shipped
+     timeline[] row; every planned target has a non-empty detail and a real
+     migration_note when breaking=True; and features carrying planned[]
+     targets have roadmap_meta present in the registry.
 """
 
 from __future__ import annotations
@@ -90,7 +94,16 @@ def check_details_nonempty(registry: FeatureRegistry, report: Report):
             if is_placeholder(t.detail):
                 report.error(f"Feature '{f.feature_id}' version {t.version}: empty/placeholder detail.")
         if f.risk_color in ("amber", "red"):
-            if not f.timeline or is_placeholder(f.timeline[-1].detail):
+            # Roadmap-only features (current_status "Planned", no shipped
+            # timeline) justify their color with their planned[] detail
+            # instead of a timeline row.
+            if f.current_status == "Planned":
+                if not f.planned or is_placeholder(f.planned[-1].detail):
+                    report.error(
+                        f"Feature '{f.feature_id}' has risk_color={f.risk_color} and no shipped "
+                        "timeline; it needs a real detail on its latest planned target to justify it."
+                    )
+            elif not f.timeline or is_placeholder(f.timeline[-1].detail):
                 report.error(
                     f"Feature '{f.feature_id}' has risk_color={f.risk_color} but no real detail "
                     "on its latest timeline entry to justify it."
@@ -112,6 +125,36 @@ def check_source_conflicts(registry: FeatureRegistry, report: Report):
             report.error(f"SourceConflict on '{c.feature_id}' ({c.topic}): both claims cite the same source.")
         if is_placeholder(c.claim_a_value) or is_placeholder(c.claim_b_value):
             report.error(f"SourceConflict on '{c.feature_id}' ({c.topic}): a claim value is empty.")
+
+
+def check_roadmap_layer(registry: FeatureRegistry, report: Report):
+    """Roadmap-layer sanity: 'Planned' never inside shipped history, planned
+    targets well-formed, and provenance present when the layer is used."""
+    for f in registry.features:
+        for t in f.timeline:
+            if t.status == "Planned":
+                report.error(
+                    f"Feature '{f.feature_id}' has a Planned status in its shipped timeline[] "
+                    f"(version {t.version}) -- roadmap targets belong in planned[], not timeline[]."
+                )
+        for t in f.planned:
+            if is_placeholder(t.detail):
+                report.error(f"Feature '{f.feature_id}': planned target {t.version} has empty/placeholder detail.")
+            if t.breaking and is_placeholder(t.migration_note):
+                report.error(
+                    f"Feature '{f.feature_id}': planned breaking target {t.version} has no "
+                    "actionable migration_note."
+                )
+            if t.target_status != "Planned" and not t.source:
+                report.warn(f"Feature '{f.feature_id}': planned target {t.version} has no source.")
+    has_planned = any(f.planned for f in registry.features)
+    if has_planned and registry.roadmap_meta is None:
+        report.error("Registry carries planned[] targets but has no roadmap_meta provenance section.")
+    if has_planned and not any(v.ga_date_is_target for v in registry.versions):
+        report.warn(
+            "Registry carries planned[] targets but no version has ga_date_is_target -- the matrix "
+            "would show planned cells for a version that isn't declared as targeted."
+        )
 
 
 def check_timeline_not_shrunk(registry: FeatureRegistry, report: Report):
@@ -181,6 +224,7 @@ def main():
         check_source_conflicts(registry, report)
         check_timeline_not_shrunk(registry, report)
         check_diffs(registry, report)
+        check_roadmap_layer(registry, report)
 
     if report.warnings:
         print(f"\u26a0  {len(report.warnings)} warning(s):")

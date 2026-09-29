@@ -80,13 +80,18 @@ def load_diffs() -> list[dict]:
 _BAND_CLASSES = ["band-0", "band-1", "band-2", "band-3", "band-4", "band-5"]
 
 
-def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str], list[str]]:
+def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str], list[str], list[str]]:
     all_versions = set()
     for f in registry["features"]:
         for t in f["timeline"]:
             all_versions.add(t["version"])
+        # Roadmap targets introduce version columns (e.g. a targeted 3.6)
+        # even though nothing has shipped for them yet.
+        for t in f.get("planned", []):
+            all_versions.add(t["version"])
     matrix_versions = sorted(all_versions, key=version_sort_key)
     legacy_versions = [v for v in matrix_versions if version_sort_key(v) < version_sort_key("3.0")]
+    planned_versions = [v["version"] for v in registry["versions"] if v.get("ga_date_is_target")]
 
     matrix_features = []
     for f in registry["features"]:
@@ -98,11 +103,30 @@ def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str],
                 "risk_color": _status_risk(t["status"]),
                 "status_class": _status_class(t["status"]),
             }
+        # Planned roadmap targets render as dashed "planned" cells. Multiple
+        # targets for the same version collapse into one cell: the status
+        # comes from the entry whose window names the version (e.g. a
+        # TP->GA pair inside one release) and the details are joined.
+        planned_by_version = {}
+        for t in f.get("planned", []):
+            planned_by_version.setdefault(t["version"], []).append(t)
+        for v, targets in planned_by_version.items():
+            primary = next((t for t in targets if v in t.get("window", "")), targets[0])
+            by_version[v] = {
+                "status": primary["target_status"],
+                "detail": " \u2022 ".join(f"[{t.get('window', '')}] {t['detail']}" for t in targets),
+                "risk_color": _status_risk(primary["target_status"]),
+                "status_class": _status_class(primary["target_status"]),
+                "planned": True,
+            }
+        statuses = {t["status"] for t in f["timeline"]}
+        statuses |= {t["target_status"] for t in f.get("planned", [])}
         group_key = f.get("epic") or f["category"]
         matrix_features.append({
             **f,
             "by_version": by_version,
-            "all_statuses": sorted({t["status"] for t in f["timeline"]}),
+            "all_statuses": sorted(statuses),
+            "has_planned": bool(f.get("planned")),
             "current_status_class": _status_class(f["current_status"]),
             "group_key": group_key,
             "is_epic": bool(f.get("epic")),
@@ -126,7 +150,7 @@ def build_matrix_data(registry: dict) -> tuple[list[str], list[dict], list[str],
         row["band_class"] = _BAND_CLASSES[band_idx]
 
     categories = sorted({f["category"] for f in registry["features"]})
-    return matrix_versions, matrix_features, categories, legacy_versions
+    return matrix_versions, matrix_features, categories, legacy_versions, planned_versions
 
 
 def _status_risk(status: str) -> str:
@@ -292,7 +316,67 @@ def compute_stats(registry: dict) -> dict:
         stats[f["risk_color"]] = stats.get(f["risk_color"], 0) + 1
     stats["conflicts"] = len(registry["source_conflicts"])
     stats["deprecations"] = len(registry["deprecation_timeline"])
+    stats["planned"] = sum(len(f.get("planned", [])) for f in registry["features"])
     return stats
+
+
+def build_roadmap(registry: dict, headline_version: str | None) -> dict:
+    """Roadmap layer data, built from FeatureEntry.planned[] (never from the
+    shipped timeline[]).
+
+    Returns rows for the Roadmap page (split into the headline release's
+    cycle vs. 1H 2027 / 3.7 "beyond" windows), breaking planned changes for
+    the Migration Checklist, and one-card-per-feature highlights for the
+    dashboard's "What's next" section. Planned work is always presented as
+    a target subject to change -- see roadmap_meta.disclaimer.
+    """
+    def cycle_of(window: str) -> str:
+        return "3.6" if ("3.6" in window or window == "Q4 2026") else "beyond"
+
+    rows = []
+    planned_changes = []
+    for f in registry["features"]:
+        for t in f.get("planned", []):
+            row = {
+                "feature_id": f["feature_id"],
+                "name": f["name"],
+                "category": f["category"],
+                "epic": f.get("epic") or f["category"],
+                "version": t["version"],
+                "window": t.get("window", ""),
+                "cycle": cycle_of(t.get("window", "")),
+                "status": t["target_status"],
+                "status_class": _status_class(t["target_status"]),
+                "detail": t["detail"],
+                "breaking": bool(t.get("breaking")),
+                "migration_note": t.get("migration_note"),
+                "confidence": t.get("confidence", "directly_sourced"),
+                "source": t.get("source", ""),
+            }
+            rows.append(row)
+            if t.get("breaking"):
+                planned_changes.append(row)
+
+    highlights = []
+    for f in registry["features"]:
+        targets = [t for t in f.get("planned", [])
+                   if headline_version and t["version"] == headline_version
+                   and cycle_of(t.get("window", "")) == "3.6"]
+        if not targets:
+            continue
+        primary = next((t for t in targets if headline_version in t.get("window", "")), targets[0])
+        highlights.append({
+            "feature_id": f["feature_id"],
+            "name": f["name"],
+            "category": f["category"],
+            "status": primary["target_status"],
+            "status_class": _status_class(primary["target_status"]),
+            "windows": sorted({t.get("window", "") for t in targets if t.get("window")}),
+            "detail": " \u2022 ".join(t["detail"] for t in targets),
+        })
+    highlights.sort(key=lambda h: (h["category"], h["name"]))
+
+    return {"rows": rows, "planned_changes": planned_changes, "highlights": highlights}
 
 
 def main():
@@ -311,11 +395,18 @@ def main():
     for v in sorted_versions:
         v["lifecycle"] = compute_lifecycle_phase(v, build_today)
     registry["versions"] = sorted_versions
-    latest_version = sorted_versions[-1]["version"] if sorted_versions else None
+    # "Latest" and the dashboard's "what's new" stay grounded in the latest
+    # *shipped* release; targeted (roadmap-only) versions drive the roadmap
+    # layer instead.
+    shipped_versions = [v for v in sorted_versions if not v.get("ga_date_is_target")]
+    planned_metas = [v for v in sorted_versions if v.get("ga_date_is_target")]
+    latest_version = shipped_versions[-1]["version"] if shipped_versions else None
+    headline_planned = planned_metas[-1]["version"] if planned_metas else None
 
-    matrix_versions, matrix_features, categories, legacy_versions = build_matrix_data(registry)
-    release_calendar = build_release_calendar(sorted_versions, build_today)
+    matrix_versions, matrix_features, categories, legacy_versions, planned_versions = build_matrix_data(registry)
+    release_calendar = build_release_calendar(shipped_versions, build_today)
     highlights, red_highlights = build_highlights(registry, latest_version)
+    roadmap = build_roadmap(registry, headline_planned)
     stats = compute_stats(registry)
     version_pages = sorted(extracted_releases.keys(), key=version_sort_key)
 
@@ -336,6 +427,7 @@ def main():
     base_ctx = {
         "generated_at": registry["generated_at"],
         "latest_version": latest_version,
+        "headline_planned": headline_planned,
         "version_pages": version_pages,
     }
 
@@ -356,6 +448,8 @@ def main():
         "highlights": highlights,
         "red_highlights": red_highlights,
         "release_calendar": release_calendar,
+        "roadmap_meta": registry.get("roadmap_meta"),
+        "roadmap_highlights": roadmap["highlights"],
     })
 
     render("matrix.html", out_dir / "matrix.html", {
@@ -363,10 +457,18 @@ def main():
         "features": matrix_features,
         "categories": categories,
         "legacy_versions": legacy_versions,
+        "planned_versions": planned_versions,
+    })
+
+    render("roadmap.html", out_dir / "roadmap.html", {
+        "roadmap_meta": registry.get("roadmap_meta"),
+        "headline_planned": headline_planned,
+        "roadmap_rows": roadmap["rows"],
     })
 
     render("migration.html", out_dir / "migration.html", {
         "breaking_changes": breaking_changes,
+        "planned_changes": roadmap["planned_changes"],
         "upgrade_notes": upgrade_notes,
         "deprecation_timeline": registry["deprecation_timeline"],
     })
@@ -392,7 +494,7 @@ def main():
     data_out.mkdir(exist_ok=True)
     (data_out / "feature_registry.json").write_text(json.dumps(registry, indent=2), encoding="utf-8")
 
-    pages = ["index.html", "matrix.html", "migration.html", "conflicts.html"] + [
+    pages = ["index.html", "matrix.html", "roadmap.html", "migration.html", "conflicts.html"] + [
         f"versions/{v}.html" for v in version_pages
     ]
     print(f"Built site -> {out_dir} ({len(pages)} pages)")

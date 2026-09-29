@@ -15,6 +15,18 @@
 {% endfor %}
 {% endif %}
 
+{% if planned_changes %}
+<h2>&#128295; Planned changes (roadmap, not yet shipped)</h2>
+<p class="section-note">Breaking changes announced in the <a href="roadmap.html">Roadmap</a> (Red Hat Product Management's quarterly What's New &amp; What's Next deck) ahead of the release that ships them. Subject to change; plan for them, don't act on them yet.</p>
+{% for pc in planned_changes %}
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">{{ pc.version }} ({{ pc.window }}): {{ pc.name }} <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> {{ pc.detail }}</div>
+  {% if pc.migration_note %}<div class="claim"><b>Migration action:</b> {{ pc.migration_note }}</div>{% endif %}
+</div>
+{% endfor %}
+{% endif %}
+
 <h2>Upgrade-path operational notes</h2>
 <div class="card-grid">
   {% for n in upgrade_notes %}

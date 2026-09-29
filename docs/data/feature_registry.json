@@ -1,12 +1,13 @@
 {
   "schema_version": "1.0",
-  "generated_at": "2026-09-14T08:26:04.479817Z",
+  "generated_at": "2026-09-29T06:36:53.522955Z",
   "versions": [
     {
       "version": "1.15",
       "milestones": [],
       "ga_date": null,
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": null,
       "eus_end": null,
       "openshift_versions": null,
@@ -22,6 +23,7 @@
       "milestones": [],
       "ga_date": null,
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": null,
       "eus_end": null,
       "openshift_versions": null,
@@ -37,6 +39,7 @@
       "milestones": [],
       "ga_date": "2023-12-13",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2024-03-31",
       "eus_end": null,
       "openshift_versions": null,
@@ -52,6 +55,7 @@
       "milestones": [],
       "ga_date": "2024-02-27",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2024-05-21",
       "eus_end": null,
       "openshift_versions": null,
@@ -67,6 +71,7 @@
       "milestones": [],
       "ga_date": "2024-05-01",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2024-06-24",
       "eus_end": null,
       "openshift_versions": null,
@@ -82,6 +87,7 @@
       "milestones": [],
       "ga_date": "2024-07-16",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-01-01",
       "eus_end": null,
       "openshift_versions": null,
@@ -97,6 +103,7 @@
       "milestones": [],
       "ga_date": "2024-10-17",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2024-11-14",
       "eus_end": null,
       "openshift_versions": null,
@@ -112,6 +119,7 @@
       "milestones": [],
       "ga_date": "2024-12-09",
       "is_eus": true,
+      "ga_date_is_target": false,
       "full_support_end": "2025-07-07",
       "eus_end": "2026-06-09",
       "openshift_versions": null,
@@ -127,6 +135,7 @@
       "milestones": [],
       "ga_date": "2025-02-13",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-03-12",
       "eus_end": null,
       "openshift_versions": null,
@@ -142,6 +151,7 @@
       "milestones": [],
       "ga_date": "2025-03-12",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-04-16",
       "eus_end": null,
       "openshift_versions": null,
@@ -157,6 +167,7 @@
       "milestones": [],
       "ga_date": "2025-04-16",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-11-17",
       "eus_end": null,
       "openshift_versions": null,
@@ -172,6 +183,7 @@
       "milestones": [],
       "ga_date": "2025-07-21",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-02-16",
       "eus_end": null,
       "openshift_versions": null,
@@ -187,6 +199,7 @@
       "milestones": [],
       "ga_date": "2025-08-14",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-09-18",
       "eus_end": null,
       "openshift_versions": null,
@@ -202,6 +215,7 @@
       "milestones": [],
       "ga_date": "2025-10-07",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2025-10-23",
       "eus_end": null,
       "openshift_versions": null,
@@ -217,6 +231,7 @@
       "milestones": [],
       "ga_date": "2025-10-23",
       "is_eus": true,
+      "ga_date_is_target": false,
       "full_support_end": "2026-05-25",
       "eus_end": "2027-04-26",
       "openshift_versions": null,
@@ -232,6 +247,7 @@
       "milestones": [],
       "ga_date": "2025-11-13",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-01-15",
       "eus_end": null,
       "openshift_versions": null,
@@ -247,6 +263,7 @@
       "milestones": [],
       "ga_date": "2026-01-22",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-03-05",
       "eus_end": null,
       "openshift_versions": null,
@@ -262,6 +279,7 @@
       "milestones": [],
       "ga_date": "2026-03-05",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-10-05",
       "eus_end": null,
       "openshift_versions": "4.19.9+, 4.20, 4.21",
@@ -277,6 +295,7 @@
       "milestones": [],
       "ga_date": null,
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-10-05",
       "eus_end": null,
       "openshift_versions": null,
@@ -296,6 +315,7 @@
       ],
       "ga_date": "2026-05-14",
       "is_eus": false,
+      "ga_date_is_target": false,
       "full_support_end": "2026-11-16",
       "eus_end": null,
       "openshift_versions": "4.19, 4.20, 4.21",
@@ -315,6 +335,7 @@
       ],
       "ga_date": "2026-08-27",
       "is_eus": true,
+      "ga_date_is_target": false,
       "full_support_end": "2027-03-29",
       "eus_end": "2028-02-28",
       "openshift_versions": "4.19, 4.20, 4.21, 4.22",
@@ -323,6 +344,26 @@
         "phase": "Full Support",
         "phase_class": "lifecycle-full-support",
         "until": "2027-03-29"
+      }
+    },
+    {
+      "version": "3.6",
+      "milestones": [
+        "EA1",
+        "EA2",
+        "GA"
+      ],
+      "ga_date": "2026-11-01",
+      "is_eus": false,
+      "ga_date_is_target": true,
+      "full_support_end": null,
+      "eus_end": null,
+      "openshift_versions": null,
+      "lifecycle_note": "GA targeted for November 2026 per the Q3 2026 What's New & What's Next roadmap deck (subject to change; exact date not announced and lifecycle dates not yet published). Targeted version: excluded from the real-time lifecycle calendar and from the 'latest tracked release' logic.",
+      "lifecycle": {
+        "phase": "Unknown",
+        "phase_class": "neutral",
+        "until": null
       }
     }
   ],
@@ -361,6 +402,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -399,6 +441,7 @@
       "aliases": [
         "Gateway API direct OIDC"
       ],
+      "planned": [],
       "epic": "Gateway API & Authentication"
     },
     {
@@ -427,6 +470,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -455,6 +499,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -475,6 +520,30 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "MaaS/AI Gateway multi-tenancy promoted TP -> GA (targeted): per-tenant gateway and identity isolation officially supported.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Further multi-tenancy improvements listed under 'What's Next (RHAI 3.6, 1H 2027)' on the Model Gateway slide (deck does not itemize them).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -501,8 +570,19 @@
           "confidence": "directly_sourced"
         }
       ],
-      "source_conflicts": [],
+      "source_conflicts": [
+        {
+          "feature_id": "maas-multiprovider-passthrough",
+          "topic": "Multi-provider external model support: roadmap deck says GA at 3.5, release notes say TP",
+          "claim_a_source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next (Model Gateway slide, What's New Q3 2026, RHAI 3.5)",
+          "claim_a_value": "Multi-provider external model support (GA)",
+          "claim_b_source": "release_notes:3.5 / feature_registry (data/extracted/3.5.json)",
+          "claim_b_value": "Technology Preview at 3.5: expanded native-provider passthrough through the MaaS gateway using the Anthropic Messages API; no GA promotion recorded in the 3.5 release notes.",
+          "note": "Per source precedence (release notes over roadmap decks), the registry keeps TP as the current status; the deck's GA claim is preserved here verbatim as an open disagreement. Watch for the 3.6 release notes to resolve it."
+        }
+      ],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -531,6 +611,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -559,6 +640,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "MaaS (Models-as-a-Service)"
     },
     {
@@ -632,6 +714,7 @@
       "aliases": [
         "Llama Stack"
       ],
+      "planned": [],
       "epic": "OGX (Open GenAI Stack)"
     },
     {
@@ -668,6 +751,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "OGX (Open GenAI Stack)"
     },
     {
@@ -704,6 +788,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Removed",
+          "window": "Q4 2026",
+          "detail": "Removal of FMS Guardrails targeted for Q4 2026 (RHAI 3.6). NeMo Guardrails is the default guardrail service going forward.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": true,
+          "migration_note": "Migrate workloads off FMS Guardrails Orchestrator to NeMo Guardrails before upgrading to 3.6. The deck targets removal in Q4 2026 on top of the 3.5 deprecation."
+        }
+      ],
       "epic": "Guardrails"
     },
     {
@@ -758,6 +855,63 @@
         }
       ],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "Guardrails integration with the AI Gateway / MaaS (Model Gateway 'What's Next' item).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Support for Responses and Messages APIs in guardrails.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Support guardrails for MCP servers.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Source-app based guardrail selection and enforcement.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Stand-alone guardrail runtime with template rails and a built-in rails catalog.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "Guardrails"
     },
     {
@@ -778,6 +932,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Guardrails"
     },
     {
@@ -822,6 +977,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "MLflow integration with the inference and AI gateways; Agent Registry and Skills registry integration (1H 2027 targets).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -862,6 +1030,63 @@
       "aliases": [
         "Evaluation Stack UI"
       ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "New GA EvalHub UI with an Evaluation Gallery; creation/customization of evaluations in the UI; import of collections from git repos.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "GA adapters: Inspect AI, Garak, LightEval, RAGAS, GuideLLM, IBM CLEAR.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Sandboxing of adversarial AI evaluations.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Native support for the ATIF Agent Trajectory format (Harbor format) and Harbor Hub benchmarks via Inspect AI (inspect-harbor).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Deprecate LMEvalJob in favor of a native LM-Eval-Harness EvalHub adapter.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": true,
+          "migration_note": "Stop authoring new LMEvalJob custom resources. Port existing evaluation jobs to the EvalHub SDK/CLI with the native LM-Eval-Harness adapter before upgrading to 3.6; LMEvalJob is targeted for deprecation in the same release (Q4 2026)."
+        }
+      ],
       "epic": "Evaluation (EvalHub)"
     },
     {
@@ -882,6 +1107,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Evaluation (EvalHub)"
     },
     {
@@ -902,6 +1128,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "MCP Lifecycle promoted TP -> GA targeted in RHAI 3.6 ('MCP Lifecycle (GA)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "MCP platform"
     },
     {
@@ -922,6 +1161,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "MCP Gateway promoted TP -> GA targeted in RHAI 3.6 ('MCP Gateway has made it to Tech Preview w/ GA targeted in RHAI 3.6'; 'MCP Management: MCP Gateway (GA)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "MCP platform"
     },
     {
@@ -942,6 +1194,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "MCP Catalog promoted DP -> GA targeted in RHAI 3.6 ('MCP Catalog (GA)'; includes support-tier labeling).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "MCP platform"
     },
     {
@@ -962,6 +1227,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -982,6 +1248,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1002,6 +1269,41 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "3.6 GA tool-calling validated-models batch (in-planning): Muse Glimmer, Inkling, Qwen 3.8 - with verified chat templates, tool-call parsers, and vLLM configs.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Agentic Evaluation integration into the Model Catalog for validated models.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 / 1H 2027",
+          "detail": "Evaluations integration and static security scan integration for validated models (deck header groups these under RHAI 3.6 / 1H 2027).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1022,6 +1324,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1042,6 +1345,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "OGX (Open GenAI Stack)"
     },
     {
@@ -1062,6 +1366,63 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "OpenShell promoted DP -> TP targeted for RHAI 3.6 (roadmap summary: 'OpenShell (TP)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Token exchange and delegated identity: agents authenticate as themselves to external services.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Native OpenTelemetry tracing via an OTEL relay.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Sandbox lifecycle management: stop/start, eviction protection, graceful termination.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 / 1H 2027",
+          "detail": "OpenShell UI (deck groups it under the RHAI 3.6 / 1H 2027 OpenShell items).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1082,6 +1443,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "3.6 GA",
+          "detail": "Agent Catalog gains a deploy button via the OpenShell Go SDK plus harness images (targeted RHAI 3.6 / 1H 2027).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1102,6 +1476,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1122,6 +1497,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1142,6 +1518,30 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "3.6 GA",
+          "detail": "Deploy saved configurations as agents from Gen AI Studio (targeted RHAI 3.6).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "1H 2027",
+          "detail": "Register saved agents in the Agent Registry (1H 2027 target).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1162,6 +1562,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1182,6 +1583,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1202,6 +1604,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "MCP Catalog administrative interface part of the 'MCP Catalog (GA)' target for RHAI 3.6.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "MCP platform"
     },
     {
@@ -1222,6 +1637,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "Q4 2026",
+          "detail": "Token tracking, usage, rate limiting, and advanced metrics move into the Praxis AI Gateway data plane (per-user token usage and cost attribution).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "External metering"
     },
     {
@@ -1242,6 +1670,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "External metering"
     },
     {
@@ -1262,6 +1691,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Distributed Inference (llm-d)"
     },
     {
@@ -1282,6 +1712,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Distributed Inference (llm-d)"
     },
     {
@@ -1302,6 +1733,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Distributed Inference (llm-d)"
     },
     {
@@ -1322,6 +1754,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1342,6 +1775,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "OGX (Open GenAI Stack)"
     },
     {
@@ -1362,6 +1796,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "OGX (Open GenAI Stack)"
     },
     {
@@ -1382,6 +1817,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1402,6 +1838,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1446,6 +1883,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Kubeflow Training"
     },
     {
@@ -1482,6 +1920,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Kubeflow Training"
     },
     {
@@ -1530,6 +1969,7 @@
       "aliases": [
         "CodeFlare Operator"
       ],
+      "planned": [],
       "epic": null
     },
     {
@@ -1566,6 +2006,74 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 / 1H 2027",
+          "detail": "Kueue integration for KServe workload preemption (GPU-as-a-Service item).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 / 1H 2027",
+          "detail": "Kueue UI: org-to-team quota tree.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 / 1H 2027",
+          "detail": "Kueue Topology Aware Scheduling.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 / 1H 2027",
+          "detail": "Per-tenant GPU usage export to enable showback.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Deeper Kueue integration across the platform (explicitly marked 'uncommitted' in the deck), with better visibility for users and admins: quota hierarchy visualisation, queue and workload visibility for data scientists.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Smarter placement: topology-aware scheduling with Kueue to co-locate distributed jobs on well-connected hardware (marked 'uncommitted').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1602,6 +2110,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Legacy serving migration (KServe RawDeployment)"
     },
     {
@@ -1638,6 +2147,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Legacy serving migration (KServe RawDeployment)"
     },
     {
@@ -1674,6 +2184,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Distributed Inference (llm-d)"
     },
     {
@@ -1702,6 +2213,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Distributed Inference (llm-d)"
     },
     {
@@ -1730,6 +2242,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "vLLM serving surfaces"
     },
     {
@@ -1758,6 +2271,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "vLLM serving surfaces"
     },
     {
@@ -1786,6 +2300,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "vLLM serving surfaces"
     },
     {
@@ -1806,6 +2321,19 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Model Runtime Library to deliver vLLM outside of z-stream releases (1H 2027 target), extending today's fast-release ServingRuntime mechanism.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": "vLLM serving surfaces"
     },
     {
@@ -1842,6 +2370,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Gateway API & Authentication"
     },
     {
@@ -1878,6 +2407,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Model Registry"
     },
     {
@@ -1898,6 +2428,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": "Model Registry"
     },
     {
@@ -1926,6 +2457,7 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [],
       "epic": null
     },
     {
@@ -1954,6 +2486,41 @@
       ],
       "source_conflicts": [],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "AutoML promoted TP -> GA targeted for RHAI 3.6 (roadmap summary: 'AutoML (GA)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "AutoML integration with MLflow (1H 2027 target).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Expose AutoML models as MCP tools for agentic workflows (1H 2027 target).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     },
     {
@@ -1992,6 +2559,1010 @@
         }
       ],
       "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "AutoRAG promoted TP -> GA targeted for RHAI 3.6 (roadmap summary: 'AutoRAG (GA)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "AutoRAG integration into the Gen AI Studio playground (1H 2027 target).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "vllm-omni",
+      "name": "vLLM Omni (any-to-any multimodal serving)",
+      "category": "Model Serving",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists 'vLLM Omni (DP)' under RHAI 3.5 What's New, but no DP entry exists in the 3.5 release notes or product docs - deck-sourced only, subject to change.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [
+        "vLLM Omni"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 Fast 1",
+          "detail": "Omni TP on RHOAI ServingRuntime with real-time voice intelligence (~200ms E2E latency conversations): one container for any modality, language detection, tool-calling across modalities, WebSocket streaming and long-audio chunking.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "vLLM serving surfaces"
+    },
+    {
+      "feature_id": "vllm-granular-cache-accounting",
+      "name": "vLLM granular cache accounting for cache usage tracking",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 Fast 1",
+          "detail": "Granular cache accounting in vLLM for cache usage tracking, landing in the RHAI 3.6 Fast 1 fast-release vLLM (vLLM 0.26.0).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "vLLM serving surfaces"
+    },
+    {
+      "feature_id": "vllm-rust-frontend",
+      "name": "vLLM Rust front-end for high-throughput low-latency inference",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Rust-based vLLM front-end targeted for RHAI 3.6.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "vLLM serving surfaces"
+    },
+    {
+      "feature_id": "vllm-watermarking",
+      "name": "vLLM Watermarking for AI-generated context",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "vLLM Watermarking for AI-generated context (deck marks it '(3.6 GA)').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "vLLM serving surfaces"
+    },
+    {
+      "feature_id": "multi-cluster-routing-llmd",
+      "name": "llm-d multi-cluster routing",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [
+        "Multi Cluster routing"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Route requests across clusters based on inference state and cached context to reduce response time and GPU work.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "Distributed Inference (llm-d)"
+    },
+    {
+      "feature_id": "llmd-fast-startup",
+      "name": "llm-d fast model server startup",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Reduce cold starts during scale-up, restart, and model switching.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "Distributed Inference (llm-d)"
+    },
+    {
+      "feature_id": "llmd-omni-orchestration",
+      "name": "llm-d orchestration for vLLM Omni",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "3.6 GA",
+          "detail": "Coordinate multi-modality input and output through llm-d orchestration.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "Distributed Inference (llm-d)"
+    },
+    {
+      "feature_id": "maas-embedding-models",
+      "name": "Embedding model support (MaaS)",
+      "category": "MaaS",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Embedding model support through the Model Gateway (targeted TP).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "MaaS (Models-as-a-Service)"
+    },
+    {
+      "feature_id": "maas-consumer-portal",
+      "name": "MaaS consumer portal",
+      "category": "MaaS",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Consumer portal for MaaS (targeted TP).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "MaaS (Models-as-a-Service)"
+    },
+    {
+      "feature_id": "ai-gateway-praxis",
+      "name": "AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway)",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "red",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [
+        "Praxis",
+        "AI Gateway"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "Q4 2026",
+          "detail": "The Praxis-based AI Gateway becomes the data plane for the MaaS control plane (Subscriptions, API Keys, AITenant, Gen AI Studio stay), replacing the fragmented Envoy + IPP + shim stacks with one governed hop: same RBAC and quotas (Kuadrant/RHCL), body-based routing, provider API translation, credential injection, GenAI observability, and a path to GA without maintaining two gateway implementations.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": true,
+          "migration_note": "Plan MaaS gateway migration off the Envoy-based data plane: Envoy + IPP provider-translation filters and Istio/Kuadrant auth-rate policies move onto the Praxis data plane over time. The deck commits to same RBAC/quota behavior (Kuadrant/RHCL) but HttpRoute/provider-translation configuration will change - keep gateway config under version control and test against Praxis in EA before the cutover."
+        },
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "Q4 2026",
+          "detail": "Token tracking, usage, rate limiting, and advanced metrics; content filters, guardrails, and runtime safety filters; AI abstraction layer; content-based and model-aware routing.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "Gateway API & Authentication"
+    },
+    {
+      "feature_id": "a2a-protocol-ai-gateway",
+      "name": "A2A protocol support for multi-agent workflows (AI Gateway)",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 / 1H 2027",
+          "detail": "Agent2Agent protocol support for multi-agent workflows through the AI Gateway (deck header groups it under RHAI 3.6 / 1H 2027).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "messages-api-ai-gateway",
+      "name": "Messages API in the AI Gateway",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 / 1H 2027",
+          "detail": "OpenAI-compatible Messages API surface on the AI Gateway.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "coding-agent-qualification",
+      "name": "Coding agent qualification against the AI Gateway (Codex, Claude Code)",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 / 1H 2027",
+          "detail": "Qualify Codex and Claude Code against the AI Gateway.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "mcp-registry",
+      "name": "MCP Registry",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "MCP Registry targeted TP -> GA within RHAI 3.6 ('MCP Registry (TP -> GA)'), with registered MCP consumption in Gen AI Studio.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Trust tiers, approvals, and signed provenance (targeted TP in 1H 2027).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": "MCP platform"
+    },
+    {
+      "feature_id": "skills-catalog-registry",
+      "name": "Agentic Skills Catalog and Skills Registry",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Skills Catalog (TP) and Skills Registry (TP), plus curated Red Hat skills published via the trusted AI asset pipeline (3.5 seeded the upstream design: MLflow RFC-0008, Agent Plugins v1 format, RFC-0010).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Skills Catalog and Skills Registry promoted to GA (1H 2027 target).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "agent-eval-starter-kit",
+      "name": "Agent Eval Starter Kit (scorer templates, methodology)",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Agent Eval Starter Kit with scorer templates and evaluation methodology.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "agent-registry",
+      "name": "Agent Registry",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "1H 2027",
+          "detail": "Agent Registry targeted TP in 1H 2027.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "genai-studio-playground",
+      "name": "Gen AI Studio playground",
+      "category": "Agents/MCP",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "Gen AI Studio playground promoted to GA.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "Consumes the MCP Registry; document uploads directly to context; model-prompt pairings.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "AutoRAG integration; skills registry consumed by the playground; standalone chat experience with feedback loop; agent configuration comparison.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "data-connect-hub",
+      "name": "Data Connect Hub and Data Registry",
+      "category": "Data Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [
+        "Data Hub",
+        "Data Registry"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Discovery, connection, and ingestion of data artifacts on the RH AI platform ('a way to discover and use data artifacts on the RH AI platform'), including the Data Connect Hub and Data Registry marked 'roadmap for 3.6'.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        },
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.7",
+          "detail": "Data Registry integration with AI Gateway and OpenShell; lineage tracking (deck marks both 'roadmap planned for 3.7').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "data-credential-management",
+      "name": "Advanced credential management for data consumers",
+      "category": "Data Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Advanced credential management for users consuming data artifacts.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "nvidia-vera-rubin",
+      "name": "NVIDIA Vera Rubin accelerator enablement",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "NVIDIA Vera Rubin listed under RHAI 3.6 'AI Accelerator enablement'.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "graph-autorag",
+      "name": "Graph AutoRAG",
+      "category": "Feature Store / AutoML / AutoRAG",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Graph AutoRAG targeted TP.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "multimodal-autorag",
+      "name": "Multimodal (Audio) AutoRAG",
+      "category": "Feature Store / AutoML / AutoRAG",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Multimodal Audio AutoRAG targeted TP.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "training-as-a-service",
+      "name": "Training as a Service",
+      "category": "Distributed Training",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "DP",
+          "window": "3.6 / 1H 2027",
+          "detail": "Training as a Service (targeted DP), plus an amortized conversational experience for building SLMs (deck header groups both under RHAI 3.6 / 1H 2027).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "inference-time-scaling",
+      "name": "Inference Time Scaling (ITS) across the platform",
+      "category": "Model Serving",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [
+        "ITS"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Integration with the Red Hat AI Gateway to make ITS capabilities easily accessible across the platform. Baseline: 3.5 shipped Smarter Self-Consistency (adaptive/beta methods that let easy queries stop early) per the roadmap deck - deck-documented, no explicit status label and absent from the 3.5 release notes extract.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "genai-semantic-conventions",
+      "name": "GenAI Semantic Conventions compliant traces/metrics/logs",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "GenAI Semantic Conventions compliant traces, metrics, and logs for the inference stack.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "ai-powered-observability",
+      "name": "AI-powered observability and troubleshooting",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "AI-powered observability and troubleshooting with backend correlation (targeted TP), on top of a Day 0 observability stack.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "dashboard-as-code",
+      "name": "Dashboard as Code (DaC) platform support",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Dashboard as Code platform support for observability dashboards.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "workbench-arm-builds",
+      "name": "ARM (aarch64) workbench images (multi-arch parity)",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Native aarch64 builds of supported out-of-the-box workbenches for multi-arch parity.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "workbench-coding-assistance",
+      "name": "OOTB coding assistance in workbenches (code-server, Jupyter IDEs)",
+      "category": "Platform",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "Planned",
+          "window": "3.6 GA",
+          "detail": "Self-hosted AI coding assistance into RHOAI workbenches so users do not need GitHub Copilot, Cursor, or manual setup.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "notebooks-2.0",
+      "name": "Notebooks 2.0 (WorkspaceKind-based next-gen workbench model)",
+      "category": "Platform",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists 'Notebooks 2.0 (DP)' - a next-gen workbench model built around WorkspaceKinds with configurable templates for IDE type, resources, images, secrets, and storage - under RHAI 3.5 What's New, but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 GA",
+          "detail": "Notebooks 2.0 Tech Preview: trial the new WorkspaceKind-based model while a migration path from Notebooks 1.x is defined.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": true,
+          "migration_note": "Do not build new automation against Notebooks 1.x assumptions (per-workbench custom resources). A Notebooks 1.x -> 2.0 migration path is being defined alongside the 3.6 TP - keep workbench provisioning scripted and re-validate it against WorkspaceKinds before committing to 2.0."
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "workflow-navigator",
+      "name": "Workflow Navigator (cluster-aware agentic orchestration)",
+      "category": "Platform",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists Workflow Navigator under RHAI 3.5 What's New (intelligent model recommendation (DP), optimized vLLM model deployment (DP), role-based access control (DP)), but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change. (The deck's summary slide labels it TP while its detail slide lists DP items - the more specific DP detail is used here.)",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "3.6 GA",
+          "detail": "Workflow Navigator Tech Preview and General Availability targeted for 3.6: optimized llm-d model deployment, troubleshooting of common observability issues, and security/trust/safety/governance coverage.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": "GA",
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "policy-mapper",
+      "name": "Policy-Mapper (AI policy documents to structured risk lists)",
+      "category": "Guardrails",
+      "current_status": "DP",
+      "risk_color": "amber",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "DP",
+          "detail": "UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists 'Policy-Mapper (DP)' (asago AI Safety and Governance Orchestration: converts AI policy documents into structured risk lists, alongside MiDojo, Scenario Generator, Artifact Generator) under RHAI 3.5 What's New, but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change.",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "milestone": null,
+          "confidence": "sourced_but_interpretive"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [
+        "asago",
+        "AI Safety and Governance Orchestration"
+      ],
+      "planned": [],
+      "epic": null
+    },
+    {
+      "feature_id": "ai-safety-operator",
+      "name": "AI Safety Operator (TrustyAI Operator rename)",
+      "category": "Guardrails",
+      "current_status": "Planned",
+      "risk_color": "red",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [
+        "TrustyAI Operator"
+      ],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "Q4 2026",
+          "detail": "Renaming TrustyAI Operator to AI Safety Operator, plus refactoring the TrustyAI Service from Java to Python (both targeted Q4 2026).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": true,
+          "migration_note": "Breaking rename: update automation, Argo CD apps, and operator subscriptions that reference the TrustyAI Operator name/GVK before the Q4 2026 release. The backing service is also refactored from Java to Python - re-validate TrustyAI-service API consumers and custom images against the refactored runtime."
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "hcp-virtualization-multitenancy",
+      "name": "RHOAI on Hosted Control Planes (OpenShift Virtualization) multi-tenancy",
+      "category": "Platform",
+      "current_status": "GA",
+      "risk_color": "green",
+      "timeline": [
+        {
+          "version": "3.5",
+          "status": "GA",
+          "detail": "Officially supported configuration for deploying OpenShift AI on Hosted Control Planes (HCP) running on OpenShift Virtualization; worker nodes automatically provisioned as VMs via HyperShift + KubeVirt, enabling a multi-tenant architecture with dedicated per-tenant control planes.",
+          "source": "release_notes:3.5",
+          "milestone": "GA",
+          "confidence": "directly_sourced"
+        }
+      ],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "GA",
+          "window": "1H 2027",
+          "detail": "Fractional GPU sharing (NVIDIA vGPU / MIG) on HCP-on-Virtualization tenant clusters; scale validation to 5+ concurrent tenant clusters sharing one management cluster; per-tenant GPU usage/metering reference architecture (all explicitly marked 'uncommitted').",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "directly_sourced",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
+      "epic": null
+    },
+    {
+      "feature_id": "dra-fine-grained-gpu",
+      "name": "Fine-grained GPU allocation via Dynamic Resource Allocation (DRA)",
+      "category": "Distributed Training",
+      "current_status": "Planned",
+      "risk_color": "amber",
+      "timeline": [],
+      "source_conflicts": [],
+      "aliases": [],
+      "planned": [
+        {
+          "version": "3.6",
+          "target_status": "TP",
+          "window": "3.6 / 1H 2027",
+          "detail": "DRA support for fine-grained GPU allocation and for the workload APIs (targeted TP).",
+          "source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next",
+          "confidence": "sourced_but_interpretive",
+          "milestone": null,
+          "breaking": false,
+          "migration_note": null
+        }
+      ],
       "epic": null
     }
   ],
@@ -2704,6 +4275,25 @@
       "claim_b_source": "3.5 release notes / launch press coverage",
       "claim_b_value": "2026-09-09",
       "note": "The official Life Cycle Dates table's General Availability date for 3.5 (27 Aug 2026) precedes the date stated in the release notes and corroborating press coverage (9 Sep 2026) by about two weeks. The dashboard release timeline uses the Life Cycle page's date since it drives the Full Support / EUS phase math; the release-notes date is preserved here as the milestone-history figure."
+    },
+    {
+      "feature_id": "maas-multiprovider-passthrough",
+      "topic": "Multi-provider external model support: roadmap deck says GA at 3.5, release notes say TP",
+      "claim_a_source": "roadmap_deck:Q3-2026-Whats-New-Whats-Next (Model Gateway slide, What's New Q3 2026, RHAI 3.5)",
+      "claim_a_value": "Multi-provider external model support (GA)",
+      "claim_b_source": "release_notes:3.5 / feature_registry (data/extracted/3.5.json)",
+      "claim_b_value": "Technology Preview at 3.5: expanded native-provider passthrough through the MaaS gateway using the Anthropic Messages API; no GA promotion recorded in the 3.5 release notes.",
+      "note": "Per source precedence (release notes over roadmap decks), the registry keeps TP as the current status; the deck's GA claim is preserved here verbatim as an open disagreement. Watch for the 3.6 release notes to resolve it."
     }
-  ]
+  ],
+  "roadmap_meta": {
+    "source_deck": "[FINAL] Red Hat AI - Q3 2026 - What's New & What's Next",
+    "quarter": "Q3 2026",
+    "captured_at": "2026-09-29T06:36:53.522955Z",
+    "disclaimer": "All roadmap items below are forward-looking targets from Red Hat Product Management's Q3 2026 What's New & What's Next session. The deck states that any forward-looking statements are subject to change: these are targets, not commitments, and no production SLA applies until a feature ships in a tracked release and its status is confirmed by official release notes. Windows use the deck's own cadence language (3.6 Fast 1 / EA1 / EA2 / GA, Q4 2026, 1H 2027, 3.7, 'uncommitted').",
+    "versions_covered": [
+      "3.6",
+      "3.7"
+    ]
+  }
 }

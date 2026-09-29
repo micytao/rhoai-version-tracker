@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Roadmap — RHOAI Version Tracker</title>
+<link rel="icon" type="image/png" href="assets/favicon.png">
+<link rel="stylesheet" href="assets/style.css">
+</head>
+<body>
+<header class="site-header">
+  <a class="brand" href="index.html">
+    <img class="brand-icon" src="assets/favicon.png" alt="" width="32" height="32">
+    <span class="brand-text">
+      Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
+      <small>Generated 2026-09-29T06:36:53.522955Z &middot; latest tracked release: 3.5</small>
+    </span>
+  </a>
+  <nav class="site-nav">
+    <a href="index.html">Dashboard</a>
+    <a href="matrix.html">Feature Matrix</a>
+    <a href="roadmap.html">Roadmap (3.6)</a>
+    <a href="migration.html">Migration Checklist</a>
+    <a href="conflicts.html">Source Conflicts</a>
+<a href="versions/3.5.html">3.5</a>  </nav>
+  <a class="github-link" href="https://github.com/micytao/rhoai-version-tracker" target="_blank" rel="noopener" aria-label="View source on GitHub" title="View source on GitHub">
+    <svg viewBox="0 0 16 16" width="20" height="20" fill="currentColor" aria-hidden="true">
+      <path d="M8 0C3.58 0 0 3.58 0 8c0 3.54 2.29 6.53 5.47 7.59.4.07.55-.17.55-.38 0-.19-.01-.82-.01-1.49-2.01.37-2.53-.49-2.69-.94-.09-.23-.48-.94-.82-1.13-.28-.15-.68-.52-.01-.53.63-.01 1.08.58 1.23.82.72 1.21 1.87.87 2.33.66.07-.52.28-.87.51-1.07-1.78-.2-3.64-.89-3.64-3.95 0-.87.31-1.59.82-2.15-.08-.2-.36-1.02.08-2.12 0 0 .67-.21 2.2.82.64-.18 1.32-.27 2-.27.68 0 1.36.09 2 .27 1.53-1.04 2.2-.82 2.2-.82.44 1.1.16 1.92.08 2.12.51.56.82 1.27.82 2.15 0 3.07-1.87 3.75-3.65 3.95.29.25.54.73.54 1.48 0 1.07-.01 1.93-.01 2.2 0 .21.15.46.55.38A8.013 8.013 0 0016 8c0-4.42-3.58-8-8-8z"></path>
+    </svg>
+  </a>
+</header>
+<main>
+<h1>Roadmap — 3.6 and beyond</h1>
+<div class="roadmap-disclaimer">
+  <strong>Forward-looking roadmap targets, subject to change.</strong>
+Everything on this page is derived from
+  <em>[FINAL] Red Hat AI - Q3 2026 - What&#39;s New &amp; What&#39;s Next</em> (Q3 2026 edition).  These are targets, not commitments: the deck states that any forward-looking
+  statements are subject to change, and no production SLA applies until a
+  feature ships in a tracked release and its status is confirmed by official
+  release notes. Statuses here use the deck's own labels
+  (GA&nbsp;/&nbsp;TP&nbsp;/&nbsp;DP) as <em>targets</em>, and windows use the
+  deck's cadence language (Fast&nbsp;1, EA1/EA2, GA, Q4&nbsp;2026, 1H&nbsp;2027,
+  3.7, &ldquo;uncommitted&rdquo;). Shipped status history lives in the
+  <a href="matrix.html">Feature Matrix</a>.
+</div>
+
+<h2>3.6 targets</h2>
+<p class="section-note">Planned for the 3.6 cycle (including the 3.6 Fast&nbsp;1 fast-release and Q4&nbsp;2026 windows). Auto-derived from every feature with a planned target in this cycle.</p>
+<div class="legend">
+  <span class="chip status-ga">GA target</span>
+  <span class="chip status-tp">TP target</span>
+  <span class="chip status-dp">DP target</span>
+  <span class="chip status-planned">Planned (no label)</span>
+  <span class="chip red">&#9888;&#65039; breaking change planned</span>
+</div>
+<div class="card-grid">
+  <div class="item-card roadmap-card">
+    <span class="tag">MaaS &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#maas-multitenancy">MaaS multi-tenancy with per-tenant gateway and identity isolation</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MaaS/AI Gateway multi-tenancy promoted TP -&gt; GA (targeted): per-tenant gateway and identity isolation officially supported.</p>
+  </div>
+  <div class="item-card roadmap-card roadmap-breaking">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#fms-guardrails">FMS-Guardrails Orchestrator (via TrustyAI)</a>
+        <span class="badge status-removed">Removed</span>
+<span class="badge red">&#9888;&#65039; breaking</span>    </h4>
+    <p>Removal of FMS Guardrails targeted for Q4 2026 (RHAI 3.6). NeMo Guardrails is the default guardrail service going forward.</p>
+<p class="migration-note"><b>Migration action:</b> Migrate workloads off FMS Guardrails Orchestrator to NeMo Guardrails before upgrading to 3.6. The deck targets removal in Q4 2026 on top of the 3.5 deprecation.</p>  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Guardrails &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Guardrails integration with the AI Gateway / MaaS (Model Gateway &#39;What&#39;s Next&#39; item).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Support for Responses and Messages APIs in guardrails.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Support guardrails for MCP servers.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Source-app based guardrail selection and enforcement.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#nemo-guardrails">NeMo Guardrails</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Stand-alone guardrail runtime with template rails and a built-in rails catalog.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Evaluation &middot; Q4 2026</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>New GA EvalHub UI with an Evaluation Gallery; creation/customization of evaluations in the UI; import of collections from git repos.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Evaluation &middot; Q4 2026</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>GA adapters: Inspect AI, Garak, LightEval, RAGAS, GuideLLM, IBM CLEAR.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Evaluation &middot; Q4 2026</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Sandboxing of adversarial AI evaluations.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Evaluation &middot; Q4 2026</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Native support for the ATIF Agent Trajectory format (Harbor format) and Harbor Hub benchmarks via Inspect AI (inspect-harbor).</p>
+  </div>
+  <div class="item-card roadmap-card roadmap-breaking">
+    <span class="tag">Evaluation &middot; Q4 2026</span>
+    <h4><a href="matrix.html#evalhub">Evaluation Stack -&gt; EvalHub</a>
+        <span class="badge status-ga">GA</span>
+<span class="badge red">&#9888;&#65039; breaking</span>    </h4>
+    <p>Deprecate LMEvalJob in favor of a native LM-Eval-Harness EvalHub adapter.</p>
+<p class="migration-note"><b>Migration action:</b> Stop authoring new LMEvalJob custom resources. Port existing evaluation jobs to the EvalHub SDK/CLI with the native LM-Eval-Harness adapter before upgrading to 3.6; LMEvalJob is targeted for...</p>  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#mcp-lifecycle-operator">MCP Lifecycle Operator</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MCP Lifecycle promoted TP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Lifecycle (GA)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#mcp-gateway-operator">MCP gateway Operator</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MCP Gateway promoted TP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Gateway has made it to Tech Preview w/ GA targeted in RHAI 3.6&#39;; &#39;MCP Management: MCP Gateway (GA)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#mcp-catalog-tier-labeling">MCP Catalog support-tier labeling</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MCP Catalog promoted DP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Catalog (GA)&#39;; includes support-tier labeling).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#validated-tool-calling-catalog">Validated tool-calling configuration in Model Catalog</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>3.6 GA tool-calling validated-models batch (in-planning): Muse Glimmer, Inkling, Qwen 3.8 - with verified chat templates, tool-call parsers, and vLLM configs.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#validated-tool-calling-catalog">Validated tool-calling configuration in Model Catalog</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Agentic Evaluation integration into the Model Catalog for validated models.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#validated-tool-calling-catalog">Validated tool-calling configuration in Model Catalog</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Evaluations integration and static security scan integration for validated models (deck header groups these under RHAI 3.6 / 1H 2027).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>OpenShell promoted DP -&gt; TP targeted for RHAI 3.6 (roadmap summary: &#39;OpenShell (TP)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Token exchange and delegated identity: agents authenticate as themselves to external services.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Native OpenTelemetry tracing via an OTEL relay.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Sandbox lifecycle management: stop/start, eviction protection, graceful termination.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#openshell">OpenShell (secure agent sandboxing and policy enforcement)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>OpenShell UI (deck groups it under the RHAI 3.6 / 1H 2027 OpenShell items).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#agent-catalog-aihub">Agent Catalog in AI Hub</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Agent Catalog gains a deploy button via the OpenShell Go SDK plus harness images (targeted RHAI 3.6 / 1H 2027).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#genai-studio-saved-agent">Gen AI Studio saved-agent configuration</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Deploy saved configurations as agents from Gen AI Studio (targeted RHAI 3.6).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#mcp-catalog-admin-ui">MCP Catalog administrative interface</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MCP Catalog administrative interface part of the &#39;MCP Catalog (GA)&#39; target for RHAI 3.6.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; Q4 2026</span>
+    <h4><a href="matrix.html#external-metering-general">External metering: per-user token usage and cost</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Token tracking, usage, rate limiting, and advanced metrics move into the Praxis AI Gateway data plane (per-user token usage and cost attribution).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Kueue integration for KServe workload preemption (GPU-as-a-Service item).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Kueue UI: org-to-team quota tree.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Kueue Topology Aware Scheduling.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Per-tenant GPU usage export to enable showback.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#automl">AutoML</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>AutoML promoted TP -&gt; GA targeted for RHAI 3.6 (roadmap summary: &#39;AutoML (GA)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#autorag">AutoRAG</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>AutoRAG promoted TP -&gt; GA targeted for RHAI 3.6 (roadmap summary: &#39;AutoRAG (GA)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 Fast 1</span>
+    <h4><a href="matrix.html#vllm-omni">vLLM Omni (any-to-any multimodal serving)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Omni TP on RHOAI ServingRuntime with real-time voice intelligence (~200ms E2E latency conversations): one container for any modality, language detection, tool-calling across modalities, WebSocket streaming and long-audio chunking.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 Fast 1</span>
+    <h4><a href="matrix.html#vllm-granular-cache-accounting">vLLM granular cache accounting for cache usage tracking</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Granular cache accounting in vLLM for cache usage tracking, landing in the RHAI 3.6 Fast 1 fast-release vLLM (vLLM 0.26.0).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#vllm-rust-frontend">vLLM Rust front-end for high-throughput low-latency inference</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Rust-based vLLM front-end targeted for RHAI 3.6.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#vllm-watermarking">vLLM Watermarking for AI-generated context</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>vLLM Watermarking for AI-generated context (deck marks it &#39;(3.6 GA)&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#multi-cluster-routing-llmd">llm-d multi-cluster routing</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Route requests across clusters based on inference state and cached context to reduce response time and GPU work.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#llmd-fast-startup">llm-d fast model server startup</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Reduce cold starts during scale-up, restart, and model switching.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#llmd-omni-orchestration">llm-d orchestration for vLLM Omni</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Coordinate multi-modality input and output through llm-d orchestration.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">MaaS &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#maas-embedding-models">Embedding model support (MaaS)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Embedding model support through the Model Gateway (targeted TP).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">MaaS &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#maas-consumer-portal">MaaS consumer portal</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Consumer portal for MaaS (targeted TP).</p>
+  </div>
+  <div class="item-card roadmap-card roadmap-breaking">
+    <span class="tag">Platform &middot; Q4 2026</span>
+    <h4><a href="matrix.html#ai-gateway-praxis">AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway)</a>
+        <span class="badge neutral">Planned</span>
+<span class="badge red">&#9888;&#65039; breaking</span>    </h4>
+    <p>The Praxis-based AI Gateway becomes the data plane for the MaaS control plane (Subscriptions, API Keys, AITenant, Gen AI Studio stay), replacing the fragmented Envoy + IPP + shim stacks with one governed hop: same RBAC and quotas...</p>
+<p class="migration-note"><b>Migration action:</b> Plan MaaS gateway migration off the Envoy-based data plane: Envoy + IPP provider-translation filters and Istio/Kuadrant auth-rate policies move onto the Praxis data plane over time. The deck...</p>  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; Q4 2026</span>
+    <h4><a href="matrix.html#ai-gateway-praxis">AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Token tracking, usage, rate limiting, and advanced metrics; content filters, guardrails, and runtime safety filters; AI abstraction layer; content-based and model-aware routing.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#a2a-protocol-ai-gateway">A2A protocol support for multi-agent workflows (AI Gateway)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Agent2Agent protocol support for multi-agent workflows through the AI Gateway (deck header groups it under RHAI 3.6 / 1H 2027).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#messages-api-ai-gateway">Messages API in the AI Gateway</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>OpenAI-compatible Messages API surface on the AI Gateway.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#coding-agent-qualification">Coding agent qualification against the AI Gateway (Codex, Claude Code)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Qualify Codex and Claude Code against the AI Gateway.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#mcp-registry">MCP Registry</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>MCP Registry targeted TP -&gt; GA within RHAI 3.6 (&#39;MCP Registry (TP -&gt; GA)&#39;), with registered MCP consumption in Gen AI Studio.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#skills-catalog-registry">Agentic Skills Catalog and Skills Registry</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Skills Catalog (TP) and Skills Registry (TP), plus curated Red Hat skills published via the trusted AI asset pipeline (3.5 seeded the upstream design: MLflow RFC-0008, Agent Plugins v1 format, RFC-0010).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#agent-eval-starter-kit">Agent Eval Starter Kit (scorer templates, methodology)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Agent Eval Starter Kit with scorer templates and evaluation methodology.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#genai-studio-playground">Gen AI Studio playground</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Gen AI Studio playground promoted to GA.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#genai-studio-playground">Gen AI Studio playground</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Consumes the MCP Registry; document uploads directly to context; model-prompt pairings.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Data Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#data-connect-hub">Data Connect Hub and Data Registry</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Discovery, connection, and ingestion of data artifacts on the RH AI platform (&#39;a way to discover and use data artifacts on the RH AI platform&#39;), including the Data Connect Hub and Data Registry marked &#39;roadmap for 3.6&#39;.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Data Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#data-credential-management">Advanced credential management for data consumers</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Advanced credential management for users consuming data artifacts.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#nvidia-vera-rubin">NVIDIA Vera Rubin accelerator enablement</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>NVIDIA Vera Rubin listed under RHAI 3.6 &#39;AI Accelerator enablement&#39;.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#graph-autorag">Graph AutoRAG</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Graph AutoRAG targeted TP.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#multimodal-autorag">Multimodal (Audio) AutoRAG</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Multimodal Audio AutoRAG targeted TP.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#training-as-a-service">Training as a Service</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Training as a Service (targeted DP), plus an amortized conversational experience for building SLMs (deck header groups both under RHAI 3.6 / 1H 2027).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#inference-time-scaling">Inference Time Scaling (ITS) across the platform</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Integration with the Red Hat AI Gateway to make ITS capabilities easily accessible across the platform. Baseline: 3.5 shipped Smarter Self-Consistency (adaptive/beta methods that let easy queries stop early) per the roadmap deck -...</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#genai-semantic-conventions">GenAI Semantic Conventions compliant traces/metrics/logs</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>GenAI Semantic Conventions compliant traces, metrics, and logs for the inference stack.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#ai-powered-observability">AI-powered observability and troubleshooting</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>AI-powered observability and troubleshooting with backend correlation (targeted TP), on top of a Day 0 observability stack.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#dashboard-as-code">Dashboard as Code (DaC) platform support</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Dashboard as Code platform support for observability dashboards.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#workbench-arm-builds">ARM (aarch64) workbench images (multi-arch parity)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Native aarch64 builds of supported out-of-the-box workbenches for multi-arch parity.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#workbench-coding-assistance">OOTB coding assistance in workbenches (code-server, Jupyter IDEs)</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Self-hosted AI coding assistance into RHOAI workbenches so users do not need GitHub Copilot, Cursor, or manual setup.</p>
+  </div>
+  <div class="item-card roadmap-card roadmap-breaking">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#notebooks-2.0">Notebooks 2.0 (WorkspaceKind-based next-gen workbench model)</a>
+        <span class="badge status-tp">TP</span>
+<span class="badge red">&#9888;&#65039; breaking</span>    </h4>
+    <p>Notebooks 2.0 Tech Preview: trial the new WorkspaceKind-based model while a migration path from Notebooks 1.x is defined.</p>
+<p class="migration-note"><b>Migration action:</b> Do not build new automation against Notebooks 1.x assumptions (per-workbench custom resources). A Notebooks 1.x -&gt; 2.0 migration path is being defined alongside the 3.6 TP - keep workbench...</p>  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 3.6 GA</span>
+    <h4><a href="matrix.html#workflow-navigator">Workflow Navigator (cluster-aware agentic orchestration)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Workflow Navigator Tech Preview and General Availability targeted for 3.6: optimized llm-d model deployment, troubleshooting of common observability issues, and security/trust/safety/governance coverage.</p>
+  </div>
+  <div class="item-card roadmap-card roadmap-breaking">
+    <span class="tag">Guardrails &middot; Q4 2026</span>
+    <h4><a href="matrix.html#ai-safety-operator">AI Safety Operator (TrustyAI Operator rename)</a>
+        <span class="badge status-ga">GA</span>
+<span class="badge red">&#9888;&#65039; breaking</span>    </h4>
+    <p>Renaming TrustyAI Operator to AI Safety Operator, plus refactoring the TrustyAI Service from Java to Python (both targeted Q4 2026).</p>
+<p class="migration-note"><b>Migration action:</b> Breaking rename: update automation, Argo CD apps, and operator subscriptions that reference the TrustyAI Operator name/GVK before the Q4 2026 release. The backing service is also refactored from...</p>  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 3.6 / 1H 2027</span>
+    <h4><a href="matrix.html#dra-fine-grained-gpu">Fine-grained GPU allocation via Dynamic Resource Allocation (DRA)</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>DRA support for fine-grained GPU allocation and for the workload APIs (targeted TP).</p>
+  </div>
+</div>
+
+<h2>Beyond 3.6 — 1H 2027 / 3.7 targets</h2>
+<p class="section-note">Items the deck points at 1H 2027 or 3.7. Even less certain than the 3.6 targets; listed for the full forward picture.</p>
+<div class="card-grid">
+  <div class="item-card roadmap-card">
+    <span class="tag">MaaS &middot; 1H 2027</span>
+    <h4><a href="matrix.html#maas-multitenancy">MaaS multi-tenancy with per-tenant gateway and identity isolation</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Further multi-tenancy improvements listed under &#39;What&#39;s Next (RHAI 3.6, 1H 2027)&#39; on the Model Gateway slide (deck does not itemize them).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">MLOps &middot; 1H 2027</span>
+    <h4><a href="matrix.html#mlflow">MLflow experiment tracking / MLOps integration</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>MLflow integration with the inference and AI gateways; Agent Registry and Skills registry integration (1H 2027 targets).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP (Developer Preview surface) &middot; 1H 2027</span>
+    <h4><a href="matrix.html#genai-studio-saved-agent">Gen AI Studio saved-agent configuration</a>
+        <span class="badge status-dp">DP</span>
+    </h4>
+    <p>Register saved agents in the Agent Registry (1H 2027 target).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Deeper Kueue integration across the platform (explicitly marked &#39;uncommitted&#39; in the deck), with better visibility for users and admins: quota hierarchy visualisation, queue and workload visibility for data scientists.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Distributed Training &middot; 1H 2027</span>
+    <h4><a href="matrix.html#kueue">Kueue (embedded component -&gt; Red Hat build of Kueue Operator)</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Smarter placement: topology-aware scheduling with Kueue to co-locate distributed jobs on well-connected hardware (marked &#39;uncommitted&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Model Serving &middot; 1H 2027</span>
+    <h4><a href="matrix.html#vllm-fast-release-images">Red Hat AI Inference fast-release images as custom ServingRuntime</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Model Runtime Library to deliver vLLM outside of z-stream releases (1H 2027 target), extending today&#39;s fast-release ServingRuntime mechanism.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 1H 2027</span>
+    <h4><a href="matrix.html#automl">AutoML</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>AutoML integration with MLflow (1H 2027 target).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 1H 2027</span>
+    <h4><a href="matrix.html#automl">AutoML</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Expose AutoML models as MCP tools for agentic workflows (1H 2027 target).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Feature Store / AutoML / AutoRAG &middot; 1H 2027</span>
+    <h4><a href="matrix.html#autorag">AutoRAG</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>AutoRAG integration into the Gen AI Studio playground (1H 2027 target).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 1H 2027</span>
+    <h4><a href="matrix.html#mcp-registry">MCP Registry</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Trust tiers, approvals, and signed provenance (targeted TP in 1H 2027).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 1H 2027</span>
+    <h4><a href="matrix.html#skills-catalog-registry">Agentic Skills Catalog and Skills Registry</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Skills Catalog and Skills Registry promoted to GA (1H 2027 target).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 1H 2027</span>
+    <h4><a href="matrix.html#agent-registry">Agent Registry</a>
+        <span class="badge status-tp">TP</span>
+    </h4>
+    <p>Agent Registry targeted TP in 1H 2027.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Agents/MCP &middot; 1H 2027</span>
+    <h4><a href="matrix.html#genai-studio-playground">Gen AI Studio playground</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>AutoRAG integration; skills registry consumed by the playground; standalone chat experience with feedback loop; agent configuration comparison.</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Data Platform &middot; 3.7</span>
+    <h4><a href="matrix.html#data-connect-hub">Data Connect Hub and Data Registry</a>
+        <span class="badge neutral">Planned</span>
+    </h4>
+    <p>Data Registry integration with AI Gateway and OpenShell; lineage tracking (deck marks both &#39;roadmap planned for 3.7&#39;).</p>
+  </div>
+  <div class="item-card roadmap-card">
+    <span class="tag">Platform &middot; 1H 2027</span>
+    <h4><a href="matrix.html#hcp-virtualization-multitenancy">RHOAI on Hosted Control Planes (OpenShift Virtualization) multi-tenancy</a>
+        <span class="badge status-ga">GA</span>
+    </h4>
+    <p>Fractional GPU sharing (NVIDIA vGPU / MIG) on HCP-on-Virtualization tenant clusters; scale validation to 5+ concurrent tenant clusters sharing one management cluster; per-tenant GPU usage/metering reference architecture (all explicitly...</p>
+  </div>
+</div>
+
+<h2>How this page relates to the rest of the tracker</h2>
+<div class="card-grid">
+  <div class="item-card">
+    <h4>Not in the shipped timeline</h4>
+    <p>Planned targets live in a separate roadmap layer. A feature's status
+    history and current status only change when a release actually ships and
+    the release notes confirm it &mdash; so the
+    <a href="matrix.html">Feature Matrix</a> shows planned
+    cells as dashed marks, never as shipped fact.</p>
+  </div>
+  <div class="item-card">
+    <h4>Planned breaking changes</h4>
+    <p>Breaking changes the deck announces ahead of time (removals, renames,
+    deprecations) are also listed on the
+    <a href="migration.html">Migration Checklist</a> as
+    &ldquo;planned changes&rdquo; with actionable migration notes.</p>
+  </div>
+  <div class="item-card">
+    <h4>Source precedence</h4>
+    <p>Roadmap decks sit below release notes, product guides, and the
+    Supported Configurations matrix. Where the deck's &ldquo;What's
+    New&rdquo; claims disagree with tracked sources, it is recorded on
+    <a href="conflicts.html">Source Conflicts</a>, not
+    silently resolved.</p>
+  </div>
+</div>
+</main>
+<footer class="site-footer">
+  Built from official Red Hat OpenShift AI release notes, the quarterly Red Hat AI
+  What's New &amp; What's Next roadmap deck, and the live
+  <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
+  Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
+</footer>
+</body>
+</html>

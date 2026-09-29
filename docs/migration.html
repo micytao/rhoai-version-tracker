@@ -13,12 +13,13 @@
     <img class="brand-icon" src="assets/favicon.png" alt="" width="32" height="32">
     <span class="brand-text">
       Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
-      <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+      <small>Generated 2026-09-29T06:36:53.522955Z &middot; latest tracked release: 3.5</small>
     </span>
   </a>
   <nav class="site-nav">
     <a href="index.html">Dashboard</a>
     <a href="matrix.html">Feature Matrix</a>
+    <a href="roadmap.html">Roadmap (3.6)</a>
     <a href="migration.html">Migration Checklist</a>
     <a href="conflicts.html">Source Conflicts</a>
 <a href="versions/3.5.html">3.5</a>  </nav>
@@ -32,6 +33,29 @@
 <h1>Upgrade Path / Migration Checklist</h1>
 <p class="lede">Every deprecation, removal, and breaking change tracked across the version history, plus the operational notes that matter most when planning an upgrade.</p>
 
+
+<h2>&#128295; Planned changes (roadmap, not yet shipped)</h2>
+<p class="section-note">Breaking changes announced in the <a href="roadmap.html">Roadmap</a> (Red Hat Product Management's quarterly What's New &amp; What's Next deck) ahead of the release that ships them. Subject to change; plan for them, don't act on them yet.</p>
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">3.6 (Q4 2026): FMS-Guardrails Orchestrator (via TrustyAI) <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> Removal of FMS Guardrails targeted for Q4 2026 (RHAI 3.6). NeMo Guardrails is the default guardrail service going forward.</div>
+<div class="claim"><b>Migration action:</b> Migrate workloads off FMS Guardrails Orchestrator to NeMo Guardrails before upgrading to 3.6. The deck targets removal in Q4 2026 on top of the 3.5 deprecation.</div></div>
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">3.6 (Q4 2026): Evaluation Stack -&gt; EvalHub <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> Deprecate LMEvalJob in favor of a native LM-Eval-Harness EvalHub adapter.</div>
+<div class="claim"><b>Migration action:</b> Stop authoring new LMEvalJob custom resources. Port existing evaluation jobs to the EvalHub SDK/CLI with the native LM-Eval-Harness adapter before upgrading to 3.6; LMEvalJob is targeted for deprecation in the same release (Q4 2026).</div></div>
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">3.6 (Q4 2026): AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway) <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> The Praxis-based AI Gateway becomes the data plane for the MaaS control plane (Subscriptions, API Keys, AITenant, Gen AI Studio stay), replacing the fragmented Envoy + IPP + shim stacks with one governed hop: same RBAC and quotas (Kuadrant/RHCL), body-based routing, provider API translation, credential injection, GenAI observability, and a path to GA without maintaining two gateway implementations.</div>
+<div class="claim"><b>Migration action:</b> Plan MaaS gateway migration off the Envoy-based data plane: Envoy + IPP provider-translation filters and Istio/Kuadrant auth-rate policies move onto the Praxis data plane over time. The deck commits to same RBAC/quota behavior (Kuadrant/RHCL) but HttpRoute/provider-translation configuration will change - keep gateway config under version control and test against Praxis in EA before the cutover.</div></div>
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">3.6 (3.6 GA): Notebooks 2.0 (WorkspaceKind-based next-gen workbench model) <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> Notebooks 2.0 Tech Preview: trial the new WorkspaceKind-based model while a migration path from Notebooks 1.x is defined.</div>
+<div class="claim"><b>Migration action:</b> Do not build new automation against Notebooks 1.x assumptions (per-workbench custom resources). A Notebooks 1.x -&gt; 2.0 migration path is being defined alongside the 3.6 TP - keep workbench provisioning scripted and re-validate it against WorkspaceKinds before committing to 2.0.</div></div>
+<div class="conflict-card" style="border-color:var(--red-border); background:var(--red-bg)">
+  <h4 style="color:var(--red-fg)">3.6 (Q4 2026): AI Safety Operator (TrustyAI Operator rename) <span class="badge red">&#9888;&#65039; planned</span></h4>
+  <div class="claim"><b>What will change:</b> Renaming TrustyAI Operator to AI Safety Operator, plus refactoring the TrustyAI Service from Java to Python (both targeted Q4 2026).</div>
+<div class="claim"><b>Migration action:</b> Breaking rename: update automation, Argo CD apps, and operator subscriptions that reference the TrustyAI Operator name/GVK before the Q4 2026 release. The backing service is also refactored from Java to Python - re-validate TrustyAI-service API consumers and custom images against the refactored runtime.</div></div>
 
 <h2>Upgrade-path operational notes</h2>
 <div class="card-grid">
@@ -345,7 +369,8 @@ function filterDepTable() {
 </script>
 </main>
 <footer class="site-footer">
-  Built from official Red Hat OpenShift AI release notes and the live
+  Built from official Red Hat OpenShift AI release notes, the quarterly Red Hat AI
+  What's New &amp; What's Next roadmap deck, and the live
   <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
   Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
 </footer>

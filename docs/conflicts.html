@@ -13,12 +13,13 @@
     <img class="brand-icon" src="assets/favicon.png" alt="" width="32" height="32">
     <span class="brand-text">
       Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
-      <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+      <small>Generated 2026-09-29T06:36:53.522955Z &middot; latest tracked release: 3.5</small>
     </span>
   </a>
   <nav class="site-nav">
     <a href="index.html">Dashboard</a>
     <a href="matrix.html">Feature Matrix</a>
+    <a href="roadmap.html">Roadmap (3.6)</a>
     <a href="migration.html">Migration Checklist</a>
     <a href="conflicts.html">Source Conflicts</a>
 <a href="versions/3.5.html">3.5</a>  </nav>
@@ -39,7 +40,7 @@
   &rarr; release notes &rarr; product guides &rarr; press coverage (corroboration only)</strong>.
 </p>
 
-<p class="section-note">7 open conflict(s).</p>
+<p class="section-note">8 open conflict(s).</p>
 
 <div class="conflict-card">
   <h4>OGX component/operator GA vs. OpenShift AI OGX integration guide TP <span class="section-note">(ogx-core)</span></h4>
@@ -76,9 +77,15 @@
   <div class="claim"><b>OpenShift AI Self-Managed Life Cycle (access.redhat.com/support/policy/updates/rhoai-sm/lifecycle):</b> 2026-08-27</div>
   <div class="claim"><b>3.5 release notes / launch press coverage:</b> 2026-09-09</div>
 <div class="claim"><em>The official Life Cycle Dates table&#39;s General Availability date for 3.5 (27 Aug 2026) precedes the date stated in the release notes and corroborating press coverage (9 Sep 2026) by about two weeks. The dashboard release timeline uses the Life Cycle page&#39;s date since it drives the Full Support / EUS phase math; the release-notes date is preserved here as the milestone-history figure.</em></div></div>
+<div class="conflict-card">
+  <h4>Multi-provider external model support: roadmap deck says GA at 3.5, release notes say TP <span class="section-note">(maas-multiprovider-passthrough)</span></h4>
+  <div class="claim"><b>roadmap_deck:Q3-2026-Whats-New-Whats-Next (Model Gateway slide, What&#39;s New Q3 2026, RHAI 3.5):</b> Multi-provider external model support (GA)</div>
+  <div class="claim"><b>release_notes:3.5 / feature_registry (data/extracted/3.5.json):</b> Technology Preview at 3.5: expanded native-provider passthrough through the MaaS gateway using the Anthropic Messages API; no GA promotion recorded in the 3.5 release notes.</div>
+<div class="claim"><em>Per source precedence (release notes over roadmap decks), the registry keeps TP as the current status; the deck&#39;s GA claim is preserved here verbatim as an open disagreement. Watch for the 3.6 release notes to resolve it.</em></div></div>
 </main>
 <footer class="site-footer">
-  Built from official Red Hat OpenShift AI release notes and the live
+  Built from official Red Hat OpenShift AI release notes, the quarterly Red Hat AI
+  What's New &amp; What's Next roadmap deck, and the live
   <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
   Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
 </footer>

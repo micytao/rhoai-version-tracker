@@ -13,12 +13,13 @@
     <img class="brand-icon" src="assets/favicon.png" alt="" width="32" height="32">
     <span class="brand-text">
       Red Hat OpenShift AI &mdash; Version &amp; Feature Tracker
-      <small>Generated 2026-09-14T08:26:04.479817Z &middot; latest tracked release: 3.5</small>
+      <small>Generated 2026-09-29T06:36:53.522955Z &middot; latest tracked release: 3.5</small>
     </span>
   </a>
   <nav class="site-nav">
     <a href="index.html">Dashboard</a>
     <a href="matrix.html">Feature Matrix</a>
+    <a href="roadmap.html">Roadmap (3.6)</a>
     <a href="migration.html">Migration Checklist</a>
     <a href="conflicts.html">Source Conflicts</a>
 <a href="versions/3.5.html">3.5</a>  </nav>
@@ -39,14 +40,15 @@
   <span class="chip status-deprecated">Deprecated</span>
   <span class="chip status-removed">Removed</span>
   <span class="chip status-change">Change (architecture shift, no maturity change)</span>
+  <span class="chip status-planned">Planned (roadmap target, not shipped)</span>
 </div>
-<p class="section-note">Badge colors above are per-status. The Search/status filter below can additionally filter by the coarser green/amber/red risk framework used elsewhere on the site (see the dashboard legend).</p>
+<p class="section-note">Badge colors above are per-status. Dashed badges mark <strong>planned roadmap targets</strong> (from the <a href="roadmap.html">Roadmap</a> page) &mdash; not shipped statuses. The Search/status filter below can additionally filter by the coarser green/amber/red risk framework used elsewhere on the site (see the dashboard legend).</p>
 
 <div class="filters">
   <input type="text" id="matrix-search" placeholder="Search feature or category&hellip;">
   <select id="matrix-category">
     <option value="">All categories</option>
-<option value="Agents/MCP">Agents/MCP</option><option value="Agents/MCP (Developer Preview surface)">Agents/MCP (Developer Preview surface)</option><option value="Distributed Training">Distributed Training</option><option value="Evaluation">Evaluation</option><option value="Feature Store / AutoML / AutoRAG">Feature Store / AutoML / AutoRAG</option><option value="Guardrails">Guardrails</option><option value="MLOps">MLOps</option><option value="MaaS">MaaS</option><option value="Model Registry">Model Registry</option><option value="Model Serving">Model Serving</option><option value="OGX">OGX</option><option value="Platform">Platform</option>  </select>
+<option value="Agents/MCP">Agents/MCP</option><option value="Agents/MCP (Developer Preview surface)">Agents/MCP (Developer Preview surface)</option><option value="Data Platform">Data Platform</option><option value="Distributed Training">Distributed Training</option><option value="Evaluation">Evaluation</option><option value="Feature Store / AutoML / AutoRAG">Feature Store / AutoML / AutoRAG</option><option value="Guardrails">Guardrails</option><option value="MLOps">MLOps</option><option value="MaaS">MaaS</option><option value="Model Registry">Model Registry</option><option value="Model Serving">Model Serving</option><option value="OGX">OGX</option><option value="Platform">Platform</option>  </select>
   <select id="matrix-status">
     <option value="">All statuses / risk</option>
     <optgroup label="Status">
@@ -55,6 +57,7 @@
       <option value="DP">DP</option>
       <option value="Deprecated">Deprecated</option>
       <option value="Removed">Removed</option>
+      <option value="Planned">Planned (roadmap)</option>
     </optgroup>
     <optgroup label="Risk">
       <option value="green">Green</option>
@@ -74,11 +77,37 @@
   <th>Epic</th>
   <th>Feature</th>
   <th>Current</th>
-<th class="legacy-col">2.19</th><th class="legacy-col">2.24</th><th class="legacy-col">2.25</th><th class="">3.0</th><th class="">3.2</th><th class="">3.3</th><th class="">3.4</th><th class="">3.5</th></tr>
+<th class="legacy-col">2.19</th><th class="legacy-col">2.24</th><th class="legacy-col">2.25</th><th class="">3.0</th><th class="">3.2</th><th class="">3.3</th><th class="">3.4</th><th class="">3.5</th><th class=" planned-col">3.6 <span class="planned-flag" title="Targeted release — roadmap only, not yet shipped">planned</span></th></tr>
 </thead>
 <tbody>
-<tr id="ai-available-assets-page"
+<tr id="a2a-protocol-ai-gateway"
     class="band-0 show-epic-label"
+    data-name="A2A protocol support for multi-agent workflows (AI Gateway)" data-category="Agents/MCP" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>A2A protocol support for multi-agent workflows (AI Gateway)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 / 1H 2027] Agent2Agent protocol support for multi-agent workflows through the AI Gateway (deck header groups it under RHAI 3.6 / 1H 2027).) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="ai-available-assets-page"
+    class="band-0"
     data-name="AI Available Assets page" data-category="Agents/MCP" data-statuses="GA"
     data-risk-colors="green" data-group="Agents/MCP">
   <td class="epic-cell is-fallback">Agents/MCP</td>
@@ -100,6 +129,86 @@
 &mdash;    </td>
     <td class="status-cell ">
 &mdash;    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="agent-eval-starter-kit"
+    class="band-0"
+    data-name="Agent Eval Starter Kit (scorer templates, methodology)" data-category="Agents/MCP" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Agent Eval Starter Kit (scorer templates, methodology)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Agent Eval Starter Kit with scorer templates and evaluation methodology.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="agent-registry"
+    class="band-0"
+    data-name="Agent Registry" data-category="Agents/MCP" data-statuses="TP"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Agent Registry</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([1H 2027] Agent Registry targeted TP in 1H 2027.) — not shipped">TP</span>    </td>
+</tr>
+<tr id="skills-catalog-registry"
+    class="band-0"
+    data-name="Agentic Skills Catalog and Skills Registry" data-category="Agents/MCP" data-statuses="GA,TP"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Agentic Skills Catalog and Skills Registry</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Skills Catalog (TP) and Skills Registry (TP), plus curated Red Hat skills published via the trusted AI asset pipeline (3.5 seeded the upstream design: MLflow RFC-0008, Agent Plugins v1 format, RFC-0010). • [1H 2027] Skills Catalog and Skills Registry promoted to GA (1H 2027 target).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="tool-calling-evaldata-gen"
     class="band-0"
@@ -124,6 +233,86 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Actively explores MCP servers to generate verified question-answer-tool-call triplets for single- and multi-step tool chains, feeding standard evaluation frameworks.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="coding-agent-qualification"
+    class="band-0"
+    data-name="Coding agent qualification against the AI Gateway (Codex, Claude Code)" data-category="Agents/MCP" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Coding agent qualification against the AI Gateway (Codex, Claude Code)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 / 1H 2027] Qualify Codex and Claude Code against the AI Gateway.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="genai-studio-playground"
+    class="band-0"
+    data-name="Gen AI Studio playground" data-category="Agents/MCP" data-statuses="GA"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Gen AI Studio playground</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] Gen AI Studio playground promoted to GA. • [3.6 GA] Consumes the MCP Registry; document uploads directly to context; model-prompt pairings. • [1H 2027] AutoRAG integration; skills registry consumed by the playground; standalone chat experience with feedback loop; agent configuration comparison.) — not shipped">GA</span>    </td>
+</tr>
+<tr id="messages-api-ai-gateway"
+    class="band-0"
+    data-name="Messages API in the AI Gateway" data-category="Agents/MCP" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Agents/MCP">
+  <td class="epic-cell is-fallback">Agents/MCP</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>Messages API in the AI Gateway</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 / 1H 2027] OpenAI-compatible Messages API surface on the AI Gateway.) — not shipped">Planned</span>    </td>
 </tr>
 <tr id="opencode-agent"
     class="band-0"
@@ -148,6 +337,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Validated coding-agent pattern showing vLLM/OGX inference backends and MLflow tracing generalize to coding-specific agent workloads.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="validated-tool-calling-catalog"
     class="band-0"
@@ -172,6 +363,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Gated behind spec.dashboardConfig.toolCalling in OdhDashboardConfig; surfaces validated vLLM tool-calling and reasoning arguments for supported models.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] 3.6 GA tool-calling validated-models batch (in-planning): Muse Glimmer, Inkling, Qwen 3.8 - with verified chat templates, tool-call parsers, and vLLM configs. • [3.6 GA] Agentic Evaluation integration into the Model Catalog for validated models. • [3.6 / 1H 2027] Evaluations integration and static security scan integration for validated models (deck header groups these under RHAI 3.6 / 1H 2027).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="agent-catalog-aihub"
     class="band-1 show-epic-label"
@@ -196,6 +389,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Gated behind agentsCatalog. Central discovery interface for starter kits built on LangGraph, CrewAI, LlamaIndex, and other frameworks.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-dp" title="Planned target ([3.6 GA] Agent Catalog gains a deploy button via the OpenShell Go SDK plus harness images (targeted RHAI 3.6 / 1H 2027).) — not shipped">DP</span>    </td>
 </tr>
 <tr id="csv-export-model-catalog"
     class="band-1"
@@ -220,6 +415,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Standalone Python 3.10+ CLI that paginates Model Catalog REST API data and emits RFC 4180 CSV including custom properties.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="claude-code-starter-kit"
     class="band-1"
@@ -244,6 +441,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Validated direct Anthropic, self-hosted vLLM, or vLLM-through-OGX paths; MLflow tracing; ConfigMap skill/MCP injection; restricted-v2 SCC.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="genai-studio-saved-agent"
     class="band-1"
@@ -268,6 +467,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Gated behind agentConfigManagement. Saves model, inference, prompt, RAG, and MCP configuration as reusable project-scoped agent resources.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-dp" title="Planned target ([3.6 GA] Deploy saved configurations as agents from Gen AI Studio (targeted RHAI 3.6). • [1H 2027] Register saved agents in the Agent Registry (1H 2027 target).) — not shipped">DP</span>    </td>
 </tr>
 <tr id="kale-jupyterlab-extension"
     class="band-1"
@@ -292,6 +493,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Converts annotated notebooks into AI Pipelines without KFP SDK code; pre-installed but disabled by default in standard images; requires a DSPA in the namespace.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="midojo"
     class="band-1"
@@ -316,6 +519,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="MITM agent-security testing that intercepts tool communications, injects attacks, and grades utility/security using declarative scenarios and multiple agent protocols.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="openclaw-starter-kit"
     class="band-1"
@@ -340,10 +545,12 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Validated Kustomize/installer deployment; self-hosted vLLM through OGX; MLflow/OpenTelemetry tracing; browser RBAC; restricted-v2 SCC.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="openshell"
     class="band-1"
-    data-name="OpenShell (secure agent sandboxing and policy enforcement)" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
+    data-name="OpenShell (secure agent sandboxing and policy enforcement)" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP,TP"
     data-risk-colors="amber" data-group="Agents/MCP (Developer Preview surface)">
   <td class="epic-cell is-fallback">Agents/MCP (Developer Preview surface)</td>
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>OpenShell (secure agent sandboxing and policy enforcement)</td>
@@ -364,6 +571,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Helm deployment, mTLS, LLM provider setup, isolated sandboxes, controlled network egress. Experimental upstream artifacts; not supported for production.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] OpenShell promoted DP -&gt; TP targeted for RHAI 3.6 (roadmap summary: &#39;OpenShell (TP)&#39;). • [3.6 GA] Token exchange and delegated identity: agents authenticate as themselves to external services. • [3.6 GA] Native OpenTelemetry tracing via an OTEL relay. • [3.6 GA] Sandbox lifecycle management: stop/start, eviction protection, graceful termination. • [3.6 / 1H 2027] OpenShell UI (deck groups it under the RHAI 3.6 / 1H 2027 OpenShell items).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="text-mode-training-multimodal"
     class="band-1"
@@ -388,6 +597,8 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Text-only fine-tuning path for listed vision-language model families; full multimodal fine-tuning not supported in this release.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="view-running-agents-dashboard"
     class="band-1"
@@ -412,9 +623,63 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Lists OpenShell-managed Sandbox custom resources deployed manually, with per-namespace filtering.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="data-credential-management"
+    class="band-2 show-epic-label"
+    data-name="Advanced credential management for data consumers" data-category="Data Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Data Platform">
+  <td class="epic-cell is-fallback">Data Platform</td>
+  <td class="feature-name"><span class="cat">Data Platform</span>Advanced credential management for data consumers</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Advanced credential management for users consuming data artifacts.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="data-connect-hub"
+    class="band-2"
+    data-name="Data Connect Hub and Data Registry" data-category="Data Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Data Platform">
+  <td class="epic-cell is-fallback">Data Platform</td>
+  <td class="feature-name"><span class="cat">Data Platform</span>Data Connect Hub and Data Registry</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Discovery, connection, and ingestion of data artifacts on the RH AI platform (&#39;a way to discover and use data artifacts on the RH AI platform&#39;), including the Data Connect Hub and Data Registry marked &#39;roadmap for 3.6&#39;. • [3.7] Data Registry integration with AI Gateway and OpenShell; lineage tracking (deck marks both &#39;roadmap planned for 3.7&#39;).) — not shipped">Planned</span>    </td>
 </tr>
 <tr id="hierarchical-kv-cache-tiering"
-    class="band-2 show-epic-label"
+    class="band-3 show-epic-label"
     data-name="Hierarchical KV Cache Tiering" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
   <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
@@ -436,9 +701,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Configurable cache tiers to increase effective cache size and prefix-cache reuse for concurrent long-context and multi-turn workloads.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="latency-aware-routing-llmd"
-    class="band-2"
+    class="band-3"
     data-name="Latency-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
   <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
@@ -460,9 +727,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Uses per-request TTFT/TPOT targets to place latency-sensitive and throughput-sensitive traffic on suitable pods.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="lora-aware-routing-llmd"
-    class="band-2"
+    class="band-3"
     data-name="LoRA-aware routing for llm-d" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
   <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
@@ -484,9 +753,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Routes requests to pods where the requested adapter is already loaded; falls back to standard routing when no matching pod is available.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="llm-d-core"
-    class="band-2"
+    class="band-3"
     data-name="Distributed Inference with llm-d (core)" data-category="Model Serving" data-statuses="DP,GA"
     data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
   <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
@@ -508,9 +779,11 @@
 <span class="badge status-ga" title="GA in the OpenShift AI 3.4 Supported Configurations matrix on x86_64 and aarch64 (0.7.1). Requires OpenShift 4.20+; unavailable on IBM Power/Z. Several advanced capabilities and MaaS-specific integrations remained preview.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="GA extended to Azure Kubernetes Service (AKS) and CoreWeave Kubernetes Service (CKS); Amazon EKS added as Technology Preview (inference-aware scheduling also TP on EKS). Istio is now the supported gateway implementation, with GAIE fully supported. Controlled deployment (weighted traffic-split canary), inference-aware pod lifecycle management, multimodal prefix-cache-aware routing, and end-to-end distributed tracing all reach GA. Tokenizer now runs as a dedicated external service requiring an amd64 node (previously ran with the EndpointPicker on amd64 or ARM). Still unavailable on IBM Power/Z. See flow-control-llmd for the breaking TP-&gt;GA promotion within this cycle.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="flow-control-llmd"
-    class="band-2"
+    class="band-3"
     data-name="Distributed Inference with llm-d: priority-based flow control" data-category="Model Serving" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
   <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
@@ -532,9 +805,115 @@
 <span class="badge status-tp" title="Technology Preview flow control for Distributed Inference with llm-d.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Breaking change on promotion: TP (3.4) -&gt; GA (3.5) while simultaneously changing its API group (inference.networking.x-k8s.io -&gt; llm-d.ai), metrics prefix (inference_extension_ -&gt; llm_d_epp_), and saturation-detector configuration path (top-level saturationDetector -&gt; flowControl.saturationDetector, now plugin-referenced). Anyone who configured flow control during the 3.4 TP window has mandatory remediation work before or during the 3.5 upgrade, even though the destination status is GA rather than deprecation. Unusual: most GA promotions in this dataset are additive; this one requires active remediation from 3.4 TP adopters.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="llmd-fast-startup"
+    class="band-3"
+    data-name="llm-d fast model server startup" data-category="Model Serving" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
+  <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>llm-d fast model server startup</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Reduce cold starts during scale-up, restart, and model switching.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="multi-cluster-routing-llmd"
+    class="band-3"
+    data-name="llm-d multi-cluster routing" data-category="Model Serving" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
+  <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>llm-d multi-cluster routing</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Route requests across clusters based on inference state and cached context to reduce response time and GPU work.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="llmd-omni-orchestration"
+    class="band-3"
+    data-name="llm-d orchestration for vLLM Omni" data-category="Model Serving" data-statuses="DP"
+    data-risk-colors="amber" data-group="Distributed Inference (llm-d)">
+  <td class="epic-cell is-epic">Distributed Inference (llm-d)</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>llm-d orchestration for vLLM Omni</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-dp" title="Planned target ([3.6 GA] Coordinate multi-modality input and output through llm-d orchestration.) — not shipped">DP</span>    </td>
+</tr>
+<tr id="dra-fine-grained-gpu"
+    class="band-4 show-epic-label"
+    data-name="Fine-grained GPU allocation via Dynamic Resource Allocation (DRA)" data-category="Distributed Training" data-statuses="TP"
+    data-risk-colors="amber" data-group="Distributed Training">
+  <td class="epic-cell is-fallback">Distributed Training</td>
+  <td class="feature-name"><span class="cat">Distributed Training</span>Fine-grained GPU allocation via Dynamic Resource Allocation (DRA)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 / 1H 2027] DRA support for fine-grained GPU allocation and for the workload APIs (targeted TP).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="kuberay"
-    class="band-3 show-epic-label"
+    class="band-4"
     data-name="KubeRay (CodeFlare Operator successor)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed"
     data-risk-colors="amber" data-group="Distributed Training">
   <td class="epic-cell is-fallback">Distributed Training</td>
@@ -556,9 +935,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="KubeRay remains the successor component. Live source conflict: 3.5 release notes say the operator was upgraded to 1.6.x, while the current Supported Configurations matrix lists KubeRay 1.4.2 (GA x86_64/Arm, TP Power, unavailable Z). Use the matrix for formal supported-version statements until reconciled.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="kueue"
-    class="band-3"
+    class="band-4"
     data-name="Kueue (embedded component -&gt; Red Hat build of Kueue Operator)" data-category="Distributed Training" data-statuses="Deprecated,GA,Removed"
     data-risk-colors="green" data-group="Distributed Training">
   <td class="epic-cell is-fallback">Distributed Training</td>
@@ -580,9 +961,37 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="New at 3.5 GA: administrators can self-manage ClusterQueues/LocalQueues via a boolean flag on the Kueue component spec, disabled by default, so the Operator skips automatic queue creation for GitOps-managed environments.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 / 1H 2027] Kueue integration for KServe workload preemption (GPU-as-a-Service item). • [3.6 / 1H 2027] Kueue UI: org-to-team quota tree. • [3.6 / 1H 2027] Kueue Topology Aware Scheduling. • [3.6 / 1H 2027] Per-tenant GPU usage export to enable showback. • [1H 2027] Deeper Kueue integration across the platform (explicitly marked &#39;uncommitted&#39; in the deck), with better visibility for users and admins: quota hierarchy visualisation, queue and workload visibility for data scientists. • [1H 2027] Smarter placement: topology-aware scheduling with Kueue to co-locate distributed jobs on well-connected hardware (marked &#39;uncommitted&#39;).) — not shipped">GA</span>    </td>
+</tr>
+<tr id="training-as-a-service"
+    class="band-4"
+    data-name="Training as a Service" data-category="Distributed Training" data-statuses="DP"
+    data-risk-colors="amber" data-group="Distributed Training">
+  <td class="epic-cell is-fallback">Distributed Training</td>
+  <td class="feature-name"><span class="cat">Distributed Training</span>Training as a Service</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-dp" title="Planned target ([3.6 / 1H 2027] Training as a Service (targeted DP), plus an amortized conversational experience for building SLMs (deck header groups both under RHAI 3.6 / 1H 2027).) — not shipped">DP</span>    </td>
 </tr>
 <tr id="automated-red-teaming"
-    class="band-4 show-epic-label"
+    class="band-5 show-epic-label"
     data-name="Automated Red Teaming (powered by Garak)" data-category="Evaluation" data-statuses="GA"
     data-risk-colors="green" data-group="Evaluation (EvalHub)">
   <td class="epic-cell is-epic">Evaluation (EvalHub)</td>
@@ -604,9 +1013,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Reaches GA: OpenAI Responses API endpoint support, multilingual red-teaming via LLM-based translation, multiclass judge safety evaluation, parallelized execution, disconnected/air-gapped support, runnable via EvalHub or standalone Kubeflow Pipelines.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="evalhub"
-    class="band-4"
+    class="band-5"
     data-name="Evaluation Stack -&gt; EvalHub" data-category="Evaluation" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="Evaluation (EvalHub)">
   <td class="epic-cell is-epic">Evaluation (EvalHub)</td>
@@ -628,9 +1039,11 @@
 <span class="badge status-tp" title="Evaluation Stack UI: Technology Preview, guided dashboard requiring EvalHub deployed on the cluster (LM Evaluation Harness, RAGAS, Garak, GuideLLM). Underlying REST orchestration control plane: Developer Preview.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="3.5 GA release notes state EvalHub is generally available with a documented API-versioning scheme, breaking-change policy, must-gather tooling, and full Red Hat support (SDK/CLI, EvalCard, per-tenant deployment). The current Supported Configurations matrix instead lists EvalHub 0.3.0 as Technology Preview on x86_64, unavailable on Arm/Power/Z. This registry follows the matrix for formal support commitments and records the release-note GA statement as a source conflict. Automated Red Teaming (Garak) separately reaches GA (see automated-red-teaming). Dashboard comparison, MCP server, thresholds, and Kueue-routed scheduling remain TP.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([Q4 2026] New GA EvalHub UI with an Evaluation Gallery; creation/customization of evaluations in the UI; import of collections from git repos. • [Q4 2026] GA adapters: Inspect AI, Garak, LightEval, RAGAS, GuideLLM, IBM CLEAR. • [Q4 2026] Sandboxing of adversarial AI evaluations. • [Q4 2026] Native support for the ATIF Agent Trajectory format (Harbor format) and Harbor Hub benchmarks via Inspect AI (inspect-harbor). • [Q4 2026] Deprecate LMEvalJob in favor of a native LM-Eval-Harness EvalHub adapter.) — not shipped">GA</span>    </td>
 </tr>
 <tr id="external-metering-maas"
-    class="band-5 show-epic-label"
+    class="band-0 show-epic-label"
     data-name="External metering integration for MaaS" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="External metering">
   <td class="epic-cell is-epic">External metering</td>
@@ -652,9 +1065,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Separate MaaS-specific BBR plugins for post-inference usage webhook and pre-inference credit checking; invoice/rate calculation remains external.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="external-metering-general"
-    class="band-5"
+    class="band-0"
     data-name="External metering: per-user token usage and cost" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="External metering">
   <td class="epic-cell is-epic">External metering</td>
@@ -676,10 +1091,12 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Inference Gateway IPP plugin plus PostgreSQL-backed metering service; balance checks, provider token extraction, CloudEvents, admin dashboard, REST API.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-dp" title="Planned target ([Q4 2026] Token tracking, usage, rate limiting, and advanced metrics move into the Praxis AI Gateway data plane (per-user token usage and cost attribution).) — not shipped">DP</span>    </td>
 </tr>
 <tr id="automl"
-    class="band-0 show-epic-label"
-    data-name="AutoML" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP"
+    class="band-1 show-epic-label"
+    data-name="AutoML" data-category="Feature Store / AutoML / AutoRAG" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="Feature Store / AutoML / AutoRAG">
   <td class="epic-cell is-fallback">Feature Store / AutoML / AutoRAG</td>
   <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoML</td>
@@ -700,10 +1117,12 @@
 <span class="badge status-tp" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Remains TP. Current matrix: TP on x86_64 and IBM Power, unavailable on Arm and IBM Z. Adds model-insight curves/backtesting, experiment transparency, TP AutoGluon serving runtime; no GA promotion.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] AutoML promoted TP -&gt; GA targeted for RHAI 3.6 (roadmap summary: &#39;AutoML (GA)&#39;). • [1H 2027] AutoML integration with MLflow (1H 2027 target). • [1H 2027] Expose AutoML models as MCP tools for agentic workflows (1H 2027 target).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="autorag"
-    class="band-0"
-    data-name="AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP"
+    class="band-1"
+    data-name="AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="Feature Store / AutoML / AutoRAG">
   <td class="epic-cell is-fallback">Feature Store / AutoML / AutoRAG</td>
   <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>AutoRAG</td>
@@ -724,9 +1143,11 @@
 <span class="badge status-tp" title="Technology Preview (EA2 also used Developer Preview wording).">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Remains TP on x86_64 in the current matrix; unavailable on Arm/Power/Z. Adds CPU-only deployment, multilingual support, structural contextualization, visual experiment-pipeline representation. EA2 release notes claim Power extension, but the current matrix does not list it there -- treated as an unresolved source conflict.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] AutoRAG promoted TP -&gt; GA targeted for RHAI 3.6 (roadmap summary: &#39;AutoRAG (GA)&#39;). • [1H 2027] AutoRAG integration into the Gen AI Studio playground (1H 2027 target).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="feature-store"
-    class="band-0"
+    class="band-1"
     data-name="Feature Store (Feast-based)" data-category="Feature Store / AutoML / AutoRAG" data-statuses="GA"
     data-risk-colors="amber" data-group="Feature Store / AutoML / AutoRAG">
   <td class="epic-cell is-fallback">Feature Store / AutoML / AutoRAG</td>
@@ -748,9 +1169,63 @@
 <span class="badge status-ga" title="Core GA on x86_64/Arm, TP on IBM Power, unavailable on IBM Z.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Adds SparkApplication batch materialization engine (batch_engine.type: spark_application, feature transformations on Kubeflow-Spark-Operator-managed Spark clusters; supports enterprise RAG pipelines via batch document embedding to offline/online stores including Milvus) and bidirectional workbench/Feature Store visibility. These additions do not promote the Power implementation beyond TP.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="graph-autorag"
+    class="band-1"
+    data-name="Graph AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP"
+    data-risk-colors="amber" data-group="Feature Store / AutoML / AutoRAG">
+  <td class="epic-cell is-fallback">Feature Store / AutoML / AutoRAG</td>
+  <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>Graph AutoRAG</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Graph AutoRAG targeted TP.) — not shipped">TP</span>    </td>
+</tr>
+<tr id="multimodal-autorag"
+    class="band-1"
+    data-name="Multimodal (Audio) AutoRAG" data-category="Feature Store / AutoML / AutoRAG" data-statuses="TP"
+    data-risk-colors="amber" data-group="Feature Store / AutoML / AutoRAG">
+  <td class="epic-cell is-fallback">Feature Store / AutoML / AutoRAG</td>
+  <td class="feature-name"><span class="cat">Feature Store / AutoML / AutoRAG</span>Multimodal (Audio) AutoRAG</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Multimodal Audio AutoRAG targeted TP.) — not shipped">TP</span>    </td>
 </tr>
 <tr id="platform-oidc-gateway"
-    class="band-1 show-epic-label"
+    class="band-2 show-epic-label"
     data-name="Platform-wide direct OIDC authentication (GatewayConfig CR)" data-category="MaaS" data-statuses="Change,GA"
     data-risk-colors="green" data-group="Gateway API &amp; Authentication">
   <td class="epic-cell is-epic">Gateway API &amp; Authentication</td>
@@ -772,9 +1247,37 @@
 <span class="badge status-ga" title="Direct authentication with an external OIDC provider through the Gateway API, configured via the GatewayConfig CR, reaches GA. This is a platform authentication feature, not MaaS-specific, though MaaS traffic flows through the same Gateway -- easy to conflate with MaaS-specific external OIDC, but distinct.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="No maturity change; unchanged platform capability. (Distinct sub-feature: MaaS-specific external OIDC user authentication moved TP-&gt;GA in 3.5 -- see maas-external-oidc.)">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="ai-gateway-praxis"
+    class="band-2"
+    data-name="AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway)" data-category="Platform" data-statuses="Planned"
+    data-risk-colors="red" data-group="Gateway API &amp; Authentication">
+  <td class="epic-cell is-epic">Gateway API &amp; Authentication</td>
+  <td class="feature-name"><span class="cat">Platform</span>AI Gateway - Praxis data plane (replacing the Envoy-based MaaS gateway)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([Q4 2026] The Praxis-based AI Gateway becomes the data plane for the MaaS control plane (Subscriptions, API Keys, AITenant, Gen AI Studio stay), replacing the fragmented Envoy + IPP + shim stacks with one governed hop: same RBAC and quotas (Kuadrant/RHCL), body-based routing, provider API translation, credential injection, GenAI observability, and a path to GA without maintaining two gateway implementations. • [Q4 2026] Token tracking, usage, rate limiting, and advanced metrics; content filters, guardrails, and runtime safety filters; AI abstraction layer; content-based and model-aware routing.) — not shipped">Planned</span>    </td>
 </tr>
 <tr id="gateway-api-rhcl"
-    class="band-1"
+    class="band-2"
     data-name="Gateway API and Red Hat Connectivity Link (RHCL)" data-category="Platform" data-statuses="Change,GA"
     data-risk-colors="amber" data-group="Gateway API &amp; Authentication">
   <td class="epic-cell is-epic">Gateway API &amp; Authentication</td>
@@ -796,10 +1299,38 @@
 <span class="badge status-ga" title="Direct OIDC auth via GatewayConfig CR reaches GA. RHCL included in Red Hat AI SKUs for MaaS use cases only starting 3.4; for all other components RHCL is not included -- when MaaS is enabled, RHCL is deployed via the Kuadrant Operator.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="New known issue on RHCL 1.4.0/1.4.1: rate limiting silently stops working on batch gateway deployments (RHOAIENG-76586), plus an OOMKill risk from the 1.4 wasm plugin&#39;s higher compile-time memory requirement -- recommend RHCL 1.3.5 for batch gateway deployments. Also new at 3.5 EA2: OAuth proxy sidecar CPU/memory customizable via spec.components.kserve.oauthProxy.resources instead of an unmanaged ConfigMap edit.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="ai-safety-operator"
+    class="band-3 show-epic-label"
+    data-name="AI Safety Operator (TrustyAI Operator rename)" data-category="Guardrails" data-statuses="GA"
+    data-risk-colors="red" data-group="Guardrails">
+  <td class="epic-cell is-fallback">Guardrails</td>
+  <td class="feature-name"><span class="cat">Guardrails</span>AI Safety Operator (TrustyAI Operator rename)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([Q4 2026] Renaming TrustyAI Operator to AI Safety Operator, plus refactoring the TrustyAI Service from Java to Python (both targeted Q4 2026).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="fms-guardrails"
-    class="band-2 show-epic-label"
-    data-name="FMS-Guardrails Orchestrator (via TrustyAI)" data-category="Guardrails" data-statuses="Deprecated,GA,TP"
+    class="band-3"
+    data-name="FMS-Guardrails Orchestrator (via TrustyAI)" data-category="Guardrails" data-statuses="Deprecated,GA,Removed,TP"
     data-risk-colors="red" data-group="Guardrails">
   <td class="epic-cell is-epic">Guardrails</td>
   <td class="feature-name"><span class="cat">Guardrails</span>FMS-Guardrails Orchestrator (via TrustyAI)</td>
@@ -820,9 +1351,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-deprecated" title="Directly confirmed in the 3.5 release notes Chapter 5, Support Removals: deprecated, remains functional in 3.5, will be removed in a future release (undated). NeMo Guardrails is now the single recommended framework for all LLM safety guardrailing. The trustyai_fms external-provider path continues to work with OGX.">Deprecated</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-removed" title="Planned target ([Q4 2026] Removal of FMS Guardrails targeted for Q4 2026 (RHAI 3.6). NeMo Guardrails is the default guardrail service going forward.) — not shipped">Removed</span>    </td>
 </tr>
 <tr id="nemo-guardrails"
-    class="band-2"
+    class="band-3"
     data-name="NeMo Guardrails" data-category="Guardrails" data-statuses="GA,TP"
     data-risk-colors="green" data-group="Guardrails">
   <td class="epic-cell is-epic">Guardrails</td>
@@ -844,9 +1377,11 @@
 <span class="badge status-ga" title="Fully supported. Adds standalone /v1/guardrails/checks endpoint, OpenAI-compatible /v1/models/ endpoint, regex-based rails, multi-replica scaling, OpenTelemetry support, Gen AI Playground surfacing. No additional NVIDIA licensing required.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Gen AI Studio playground guardrails experience rebuilt on NeMo Guardrails (independently toggled input/output rails). Core NeMo Guardrails remains GA on x86_64 and IBM Power. Release notes announce IBM Z support, but the current Supported Configurations matrix does not list NeMo Guardrails on s390x -- treat Z support as unresolved for formal commitments.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] Guardrails integration with the AI Gateway / MaaS (Model Gateway &#39;What&#39;s Next&#39; item). • [Q4 2026] Support for Responses and Messages APIs in guardrails. • [Q4 2026] Support guardrails for MCP servers. • [Q4 2026] Source-app based guardrail selection and enforcement. • [Q4 2026] Stand-alone guardrail runtime with template rails and a built-in rails catalog.) — not shipped">GA</span>    </td>
 </tr>
 <tr id="nemo-mcp-gateway-integration"
-    class="band-2"
+    class="band-3"
     data-name="NeMo Guardrails integration with MCP Gateway" data-category="Guardrails" data-statuses="TP"
     data-risk-colors="amber" data-group="Guardrails">
   <td class="epic-cell is-epic">Guardrails</td>
@@ -868,9 +1403,37 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Introduced 3.5 EA2, retained TP in current 3.5 docs. Enforces guardrails on agent tool calls at the MCP Gateway layer; requires the MCP Gateway Operator as an external prerequisite. Distinct from OGX model-response guardrails and from core NeMo Guardrails GA status.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="policy-mapper"
+    class="band-3"
+    data-name="Policy-Mapper (AI policy documents to structured risk lists)" data-category="Guardrails" data-statuses="DP"
+    data-risk-colors="amber" data-group="Guardrails">
+  <td class="epic-cell is-fallback">Guardrails</td>
+  <td class="feature-name"><span class="cat">Guardrails</span>Policy-Mapper (AI policy documents to structured risk lists)</td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+<span class="badge status-dp" title="UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists &#39;Policy-Mapper (DP)&#39; (asago AI Safety and Governance Orchestration: converts AI policy documents into structured risk lists, alongside MiDojo, Scenario Generator, Artifact Generator) under RHAI 3.5 What&#39;s New, but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="kubeflow-trainer-v2"
-    class="band-3 show-epic-label"
+    class="band-4 show-epic-label"
     data-name="Kubeflow Trainer v2 (replacing Kubeflow Training Operator v1)" data-category="Distributed Training" data-statuses="Deprecated,GA,TP"
     data-risk-colors="green" data-group="Kubeflow Training">
   <td class="epic-cell is-epic">Kubeflow Training</td>
@@ -892,9 +1455,11 @@
 <span class="badge status-ga" title="Supported Configurations matrix lists Kubeflow Trainer v2 2.1.0 as GA on x86_64/Arm; unavailable on IBM Power/Z. Cumulative release-note text can retain older TP wording -- the matrix governs production status.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Remains GA on x86_64/Arm. Training Hub fine-tuning algorithms (SFT, OSFT, LoRA, GRPO) can run on Ray clusters; universal workbench images include RLVR/GRPO dependencies; automated prompt optimization added for agentic systems. KubeRay version/status has a live source conflict (see kuberay feature).">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="kubeflow-training-operator-v1"
-    class="band-3"
+    class="band-4"
     data-name="Kubeflow Training Operator v1 (KFTOv1)" data-category="Distributed Training" data-statuses="Deprecated"
     data-risk-colors="red" data-group="Kubeflow Training">
   <td class="epic-cell is-epic">Kubeflow Training</td>
@@ -916,9 +1481,11 @@
 <span class="badge status-deprecated" title="Specific v1 training images deprecated again at 3.4.">Deprecated</span>    </td>
     <td class="status-cell ">
 <span class="badge status-deprecated" title="Current support matrix lists Kubeflow Training Operator v1 1.9.0 as Deprecated on x86_64/Arm/Power, with a component-level EUS exception: supported only through 3.5 Full Support, EOL when Full Support ends 27 March 2027. Migrate to Kubeflow Trainer v2 before that date.">Deprecated</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="kserve-serverless"
-    class="band-4 show-epic-label"
+    class="band-5 show-epic-label"
     data-name="KServe Serverless deployment mode" data-category="Model Serving" data-statuses="Change,Deprecated,Removed"
     data-risk-colors="red" data-group="Legacy serving migration (KServe RawDeployment)">
   <td class="epic-cell is-epic">Legacy serving migration (KServe RawDeployment)</td>
@@ -940,9 +1507,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-removed" title="Retired from the supported 3.x serving architecture. All Serverless workloads must be migrated to KServe RawDeployment before moving to 3.x. New at 3.5 GA: canary rollout support for KServe RawDeployment InferenceServices ships GA (progressive traffic splitting via OpenShift Route alternateBackends or Gateway API HTTPRoute weighted backends; fixed replica count, no HPA/KEDA autoscaling for canary specifically).">Removed</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="modelmesh"
-    class="band-4"
+    class="band-5"
     data-name="Multi-model serving platform (ModelMesh)" data-category="Model Serving" data-statuses="Change,Deprecated,Removed"
     data-risk-colors="red" data-group="Legacy serving migration (KServe RawDeployment)">
   <td class="epic-cell is-epic">Legacy serving migration (KServe RawDeployment)</td>
@@ -964,10 +1533,12 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-removed" title="Retired from the supported 3.x serving architecture. Persistence of legacy objects is not equivalent to product support.">Removed</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="mcp-catalog-tier-labeling"
-    class="band-5 show-epic-label"
-    data-name="MCP Catalog support-tier labeling" data-category="Agents/MCP" data-statuses="TP"
+    class="band-0 show-epic-label"
+    data-name="MCP Catalog support-tier labeling" data-category="Agents/MCP" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="MCP platform">
   <td class="epic-cell is-epic">MCP platform</td>
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP Catalog support-tier labeling</td>
@@ -988,10 +1559,12 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Badges distinguish Red Hat Supported, Partner Supported, and Community Supported MCP server entries.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] MCP Catalog promoted DP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Catalog (GA)&#39;; includes support-tier labeling).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="mcp-lifecycle-operator"
-    class="band-5"
-    data-name="MCP Lifecycle Operator" data-category="Agents/MCP" data-statuses="TP"
+    class="band-0"
+    data-name="MCP Lifecycle Operator" data-category="Agents/MCP" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="MCP platform">
   <td class="epic-cell is-epic">MCP platform</td>
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP Lifecycle Operator</td>
@@ -1012,10 +1585,38 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Kubernetes-native operator for deploying/managing MCP servers. Current 3.5 implementation guide: mcplifecycleoperator defaults to Removed in DataScienceCluster and must be explicitly set to Managed; mcpCatalog dashboard flag must also be enabled for catalog deployment. This procedural guidance supersedes ambiguous release-note wording suggesting it is automatically active.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] MCP Lifecycle promoted TP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Lifecycle (GA)&#39;).) — not shipped">GA</span>    </td>
+</tr>
+<tr id="mcp-registry"
+    class="band-0"
+    data-name="MCP Registry" data-category="Agents/MCP" data-statuses="GA,TP"
+    data-risk-colors="amber" data-group="MCP platform">
+  <td class="epic-cell is-epic">MCP platform</td>
+  <td class="feature-name"><span class="cat">Agents/MCP</span>MCP Registry</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] MCP Registry targeted TP -&gt; GA within RHAI 3.6 (&#39;MCP Registry (TP -&gt; GA)&#39;), with registered MCP consumption in Gen AI Studio. • [1H 2027] Trust tiers, approvals, and signed provenance (targeted TP in 1H 2027).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="mcp-gateway-operator"
-    class="band-5"
-    data-name="MCP gateway Operator" data-category="Agents/MCP" data-statuses="TP"
+    class="band-0"
+    data-name="MCP gateway Operator" data-category="Agents/MCP" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="MCP platform">
   <td class="epic-cell is-epic">MCP platform</td>
   <td class="feature-name"><span class="cat">Agents/MCP</span>MCP gateway Operator</td>
@@ -1036,10 +1637,12 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Optional external dependency, installed/upgraded independently of the OpenShift AI Operator. Cluster administrators own its lifecycle; used for governed MCP management and tool-call routing.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] MCP Gateway promoted TP -&gt; GA targeted in RHAI 3.6 (&#39;MCP Gateway has made it to Tech Preview w/ GA targeted in RHAI 3.6&#39;; &#39;MCP Management: MCP Gateway (GA)&#39;).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="mcp-catalog-admin-ui"
-    class="band-5"
-    data-name="MCP Catalog administrative interface" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
+    class="band-0"
+    data-name="MCP Catalog administrative interface" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP,GA"
     data-risk-colors="amber" data-group="MCP platform">
   <td class="epic-cell is-epic">MCP platform</td>
   <td class="feature-name"><span class="cat">Agents/MCP (Developer Preview surface)</span>MCP Catalog administrative interface</td>
@@ -1060,9 +1663,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Administrator-only YAML add/edit/remove for MCP Catalog sources from Settings, replacing manual ConfigMap editing.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] MCP Catalog administrative interface part of the &#39;MCP Catalog (GA)&#39; target for RHAI 3.6.) — not shipped">GA</span>    </td>
 </tr>
 <tr id="mlflow"
-    class="band-0 show-epic-label"
+    class="band-1 show-epic-label"
     data-name="MLflow experiment tracking / MLOps integration" data-category="MLOps" data-statuses="DP,GA,TP"
     data-risk-colors="green" data-group="MLOps">
   <td class="epic-cell is-fallback">MLOps</td>
@@ -1084,9 +1689,37 @@
 <span class="badge status-ga" title="Fully supported. MLflow Operator became a managed component in the DataScienceCluster CR. SDK pre-installed in datascience/TensorFlow/PyTorch/codeserver images. Workbenches auto-configure MLflow connectivity via the opendatahub.io/mlflow-instance annotation.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Scope substantially widened: embedded directly into AI Pipelines, workbenches, the Kubeflow SDK, Kubeflow Trainer, and AI Hub. Training jobs run through a pipeline or SDK are tracked by a dedicated per-project MLflow server -- closes the previously documented MLflow-to-Kubeflow-Trainer gap. Adds age-based trace archival to S3-compatible storage with searchable PostgreSQL metadata, EvalCard generation for EvalHub runs, a shared Gen AI Studio prompt-registry namespace, and SDG Hub MLflow-compatible agent connectors.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([1H 2027] MLflow integration with the inference and AI gateways; Agent Registry and Skills registry integration (1H 2027 targets).) — not shipped">GA</span>    </td>
+</tr>
+<tr id="maas-embedding-models"
+    class="band-2 show-epic-label"
+    data-name="Embedding model support (MaaS)" data-category="MaaS" data-statuses="TP"
+    data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
+  <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
+  <td class="feature-name"><span class="cat">MaaS</span>Embedding model support (MaaS)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Embedding model support through the Model Gateway (targeted TP).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="maas-loki-showback"
-    class="band-1 show-epic-label"
+    class="band-2"
     data-name="Loki-based showback and user-scoped usage dashboards (MaaS)" data-category="MaaS" data-statuses="TP"
     data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1108,9 +1741,37 @@
 <span class="badge status-tp" title="TP precursor: usage/showback observability dashboard.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Expanded: Loki-based structured log pipeline with 30-day object-storage retention for monthly billing, plus read-only, data-isolated per-user usage dashboards.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="maas-consumer-portal"
+    class="band-2"
+    data-name="MaaS consumer portal" data-category="MaaS" data-statuses="TP"
+    data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
+  <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
+  <td class="feature-name"><span class="cat">MaaS</span>MaaS consumer portal</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Consumer portal for MaaS (targeted TP).) — not shipped">TP</span>    </td>
 </tr>
 <tr id="maas-llmd-routing"
-    class="band-1"
+    class="band-2"
     data-name="MaaS deployment/routing path for Distributed Inference with llm-d" data-category="MaaS" data-statuses="TP"
     data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1132,10 +1793,12 @@
 <span class="badge status-tp" title="Preview integration.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Unchanged Technology Preview. Its status does not change the GA status of core llm-d or core MaaS.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="maas-multitenancy"
-    class="band-1"
-    data-name="MaaS multi-tenancy with per-tenant gateway and identity isolation" data-category="MaaS" data-statuses="TP"
+    class="band-2"
+    data-name="MaaS multi-tenancy with per-tenant gateway and identity isolation" data-category="MaaS" data-statuses="GA,TP"
     data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
   <td class="feature-name"><span class="cat">MaaS</span>MaaS multi-tenancy with per-tenant gateway and identity isolation</td>
@@ -1156,9 +1819,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="New in 3.5 GA. A single CR provisions a tenant namespace, per-tenant API service, and auth/rate-limit policy; gateway and identity provider are external prerequisites. Supports long-lived tenant-scoped API keys, Bring-Your-Own-Identity-Provider, per-tenant subscriptions, and an access-grant mechanism for shared foundation models across tenants.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] MaaS/AI Gateway multi-tenancy promoted TP -&gt; GA (targeted): per-tenant gateway and identity isolation officially supported. • [1H 2027] Further multi-tenancy improvements listed under &#39;What&#39;s Next (RHAI 3.6, 1H 2027)&#39; on the Model Gateway slide (deck does not itemize them).) — not shipped">GA</span>    </td>
 </tr>
 <tr id="maas-external-oidc"
-    class="band-1"
+    class="band-2"
     data-name="MaaS-specific external OIDC user authentication" data-category="MaaS" data-statuses="GA,TP"
     data-risk-colors="green" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1180,9 +1845,11 @@
 <span class="badge status-tp" title="Technology Preview. Distinct from the platform-wide Gateway OIDC capability.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="TP -&gt; GA in 3.5. Administrators integrate an external OIDC identity provider, map OIDC group claims to MaaS subscriptions, and issue API keys scoped to OIDC group memberships -- without requiring OpenShift accounts.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="maas-core"
-    class="band-1"
+    class="band-2"
     data-name="Models-as-a-Service (MaaS) core: access model and token mechanism" data-category="MaaS" data-statuses="GA,TP"
     data-risk-colors="green" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1204,9 +1871,11 @@
 <span class="badge status-ga" title="Reached GA. Tiers replaced by subscriptions and dedicated CRs (MaaSSubscription, MaaSAuthPolicy, MaaSModelRef). Authentication changed to subscription-bound API keys with the sk-oai- prefix (one-hour temporary or managed with expiration/revocation). Credential/policy/storage/governance NOT backward compatible with 3.3 -- amber TP-to-GA migration break, not a red regression of an already-GA service.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="GA core expanded: external OIDC authentication for MaaS reaches GA (map OIDC group claims to subscriptions, issue API keys without requiring OpenShift accounts, coexists with OpenShift-group auth). OpenAI-compatible body-based model routing reaches GA (drop-in with openai/LangChain/LlamaIndex/OpenWebUI; legacy path-based routing still supported). Subscriptions + Authorization policy pages merge into one MaaS governance page (Settings -&gt; MaaS governance).">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="maas-multiprovider-passthrough"
-    class="band-1"
+    class="band-2"
     data-name="Multi-provider API passthrough for external models (MaaS)" data-category="MaaS" data-statuses="TP"
     data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1228,9 +1897,11 @@
 <span class="badge status-tp" title="TP precursor: integration for routing to external model providers such as OpenAI or Anthropic.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Expanded: native-provider passthrough through the MaaS gateway using Anthropic Messages API (/v1/messages) or OpenAI Responses API (/v1/responses), without format translation, preserving provider-specific features such as prompt caching and extended thinking.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="maas-vllm-deployment"
-    class="band-1"
+    class="band-2"
     data-name="vLLM model deployment directly through MaaS" data-category="MaaS" data-statuses="TP"
     data-risk-colors="amber" data-group="MaaS (Models-as-a-Service)">
   <td class="epic-cell is-epic">MaaS (Models-as-a-Service)</td>
@@ -1252,9 +1923,11 @@
 <span class="badge status-tp" title="Technology Preview vLLM deployment path through MaaS.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Remains Technology Preview. The current OdhDashboardConfig documentation explicitly marks vLLMDeploymentOnMaaS as Technology Preview; flag defaults to false.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="model-registry-default-group-creation"
-    class="band-2 show-epic-label"
+    class="band-3 show-epic-label"
     data-name="Automatic default group creation for model registry" data-category="Model Registry" data-statuses="Deprecated"
     data-risk-colors="amber" data-group="Model Registry">
   <td class="epic-cell is-epic">Model Registry</td>
@@ -1276,9 +1949,11 @@
 <span class="badge status-deprecated" title="Deprecated starting 3.4 itself (definitionally confirmed, since 3.4 is the version in which the deprecation was first announced). No 3.5 removal confirmed.">Deprecated</span>    </td>
     <td class="status-cell ">
 &mdash;    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="model-registry-catalog"
-    class="band-2"
+    class="band-3"
     data-name="Model registry and model catalog" data-category="Model Registry" data-statuses="GA"
     data-risk-colors="green" data-group="Model Registry">
   <td class="epic-cell is-epic">Model Registry</td>
@@ -1300,9 +1975,37 @@
 <span class="badge status-ga" title="New capability: OCI-compliant storage layer, converting registered models to ModelCar OCI images for KServe ModelCar deployment.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Catalog enrichment: Safety and Security Insights tab (security scan results by category -- prompt injection, jailbreak resistance, harmful content generation). Cold-start load time and minimum vRAM metrics per GPU configuration in the Performance Insights tab. Validated tool-calling arguments panel.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="inference-time-scaling"
+    class="band-4 show-epic-label"
+    data-name="Inference Time Scaling (ITS) across the platform" data-category="Model Serving" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Model Serving">
+  <td class="epic-cell is-fallback">Model Serving</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>Inference Time Scaling (ITS) across the platform</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Integration with the Red Hat AI Gateway to make ITS capabilities easily accessible across the platform. Baseline: 3.5 shipped Smarter Self-Consistency (adaptive/beta methods that let easy queries stop early) per the roadmap deck - deck-documented, no explicit status label and absent from the 3.5 release notes extract.) — not shipped">Planned</span>    </td>
 </tr>
 <tr id="ogx-agentic-api-surface"
-    class="band-3 show-epic-label"
+    class="band-5 show-epic-label"
     data-name="OGX-native agentic API surface (Tool Runtime, Responses, Conversations)" data-category="Agents/MCP" data-statuses="TP"
     data-risk-colors="amber" data-group="OGX (Open GenAI Stack)">
   <td class="epic-cell is-epic">OGX (Open GenAI Stack)</td>
@@ -1324,9 +2027,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-tp" title="Mixed GA/TP/DP: Tool Runtime API and model-context-protocol tool-runtime provider are DP; Responses API is GA; Conversations API is TP. See ogx_provider_table for full per-endpoint/provider detail.">TP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="ogx-file-processors-api"
-    class="band-3"
+    class="band-5"
     data-name="OGX File Processors API" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="OGX (Open GenAI Stack)">
   <td class="epic-cell is-epic">OGX (Open GenAI Stack)</td>
@@ -1348,9 +2053,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="inline::auto/docling/markitdown/pypdf and remote::docling-serve providers; some require dependency-specific custom configuration.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="ogx-anthropic-gemini-providers"
-    class="band-3"
+    class="band-5"
     data-name="OGX remote::anthropic and remote::gemini providers" data-category="Agents/MCP (Developer Preview surface)" data-statuses="DP"
     data-risk-colors="amber" data-group="OGX (Open GenAI Stack)">
   <td class="epic-cell is-epic">OGX (Open GenAI Stack)</td>
@@ -1372,9 +2079,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-dp" title="Provider-specific OGX inference integrations enabled by ANTHROPIC_API_KEY and ENABLE_GEMINI.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="ogx-core"
-    class="band-3"
+    class="band-5"
     data-name="Llama Stack / OGX (Open GenAI Stack) core: RAG, agentic workflows, vector DB integration" data-category="OGX" data-statuses="Change,GA,TP"
     data-risk-colors="amber" data-group="OGX (Open GenAI Stack)">
   <td class="epic-cell is-epic">OGX (Open GenAI Stack)</td>
@@ -1396,9 +2105,11 @@
 <span class="badge status-tp" title="Llama Stack Operator remains Technology Preview in the formal 3.4 support matrix (0.9.0, TP on x86_64/Arm/Power, unavailable on IBM Z). Responses API alignment, connectors, Conversations API, and FAISS additions do not promote the operator itself to GA.">TP</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Renamed to OGX at 3.5 EA1 (breaking manual migration: remove Llama Stack Operator, create new OGXServer resources; API group llamastack.io-&gt;ogx.io; v1alpha1-&gt;v1beta1; kind LlamaStackDistribution-&gt;OGXServer; activation field spec.components.llamastackoperator.managementState-&gt;spec.components.ogx.managementState). At 3.5 GA: Supported Configurations lists OGX Operator 0.11.0 / OGX 1.1.2 as GA on x86_64, Arm, IBM Power, while the current OGX product guide labels the OpenShift AI integration Technology Preview, and individual APIs/providers range GA/TP/DP (Responses API is GA; most others TP/DP). State component, integration, and per-API/provider maturity as separate layers -- never collapse into one label.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="ogx-sqlite-metadata-store"
-    class="band-3"
+    class="band-5"
     data-name="SQLite as Llama Stack / OGX metadata store" data-category="OGX" data-statuses="Deprecated,GA"
     data-risk-colors="amber" data-group="OGX (Open GenAI Stack)">
   <td class="epic-cell is-epic">OGX (Open GenAI Stack)</td>
@@ -1420,9 +2131,245 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-deprecated" title="Unchanged through 3.5 GA: SQLite remains available only for local dev/testing and must be explicitly configured; PostgreSQL required for production-grade OGX deployments.">Deprecated</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="ai-powered-observability"
+    class="band-0 show-epic-label"
+    data-name="AI-powered observability and troubleshooting" data-category="Platform" data-statuses="TP"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>AI-powered observability and troubleshooting</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] AI-powered observability and troubleshooting with backend correlation (targeted TP), on top of a Day 0 observability stack.) — not shipped">TP</span>    </td>
+</tr>
+<tr id="workbench-arm-builds"
+    class="band-0"
+    data-name="ARM (aarch64) workbench images (multi-arch parity)" data-category="Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>ARM (aarch64) workbench images (multi-arch parity)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Native aarch64 builds of supported out-of-the-box workbenches for multi-arch parity.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="dashboard-as-code"
+    class="band-0"
+    data-name="Dashboard as Code (DaC) platform support" data-category="Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>Dashboard as Code (DaC) platform support</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Dashboard as Code platform support for observability dashboards.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="genai-semantic-conventions"
+    class="band-0"
+    data-name="GenAI Semantic Conventions compliant traces/metrics/logs" data-category="Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>GenAI Semantic Conventions compliant traces/metrics/logs</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] GenAI Semantic Conventions compliant traces, metrics, and logs for the inference stack.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="nvidia-vera-rubin"
+    class="band-0"
+    data-name="NVIDIA Vera Rubin accelerator enablement" data-category="Platform" data-statuses="GA"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>NVIDIA Vera Rubin accelerator enablement</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] NVIDIA Vera Rubin listed under RHAI 3.6 &#39;AI Accelerator enablement&#39;.) — not shipped">GA</span>    </td>
+</tr>
+<tr id="notebooks-2.0"
+    class="band-0"
+    data-name="Notebooks 2.0 (WorkspaceKind-based next-gen workbench model)" data-category="Platform" data-statuses="DP,TP"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>Notebooks 2.0 (WorkspaceKind-based next-gen workbench model)</td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+<span class="badge status-dp" title="UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists &#39;Notebooks 2.0 (DP)&#39; - a next-gen workbench model built around WorkspaceKinds with configurable templates for IDE type, resources, images, secrets, and storage - under RHAI 3.5 What&#39;s New, but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 GA] Notebooks 2.0 Tech Preview: trial the new WorkspaceKind-based model while a migration path from Notebooks 1.x is defined.) — not shipped">TP</span>    </td>
+</tr>
+<tr id="workbench-coding-assistance"
+    class="band-0"
+    data-name="OOTB coding assistance in workbenches (code-server, Jupyter IDEs)" data-category="Platform" data-statuses="Planned"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>OOTB coding assistance in workbenches (code-server, Jupyter IDEs)</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Self-hosted AI coding assistance into RHOAI workbenches so users do not need GitHub Copilot, Cursor, or manual setup.) — not shipped">Planned</span>    </td>
+</tr>
+<tr id="hcp-virtualization-multitenancy"
+    class="band-0"
+    data-name="RHOAI on Hosted Control Planes (OpenShift Virtualization) multi-tenancy" data-category="Platform" data-statuses="GA"
+    data-risk-colors="green" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>RHOAI on Hosted Control Planes (OpenShift Virtualization) multi-tenancy</td>
+  <td class="status-cell"><span class="badge status-ga">GA</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+<span class="badge status-ga" title="Officially supported configuration for deploying OpenShift AI on Hosted Control Planes (HCP) running on OpenShift Virtualization; worker nodes automatically provisioned as VMs via HyperShift + KubeVirt, enabling a multi-tenant architecture with dedicated per-tenant control planes.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([1H 2027] Fractional GPU sharing (NVIDIA vGPU / MIG) on HCP-on-Virtualization tenant clusters; scale validation to 5+ concurrent tenant clusters sharing one management cluster; per-tenant GPU usage/metering reference architecture (all explicitly marked &#39;uncommitted&#39;).) — not shipped">GA</span>    </td>
+</tr>
+<tr id="workflow-navigator"
+    class="band-0"
+    data-name="Workflow Navigator (cluster-aware agentic orchestration)" data-category="Platform" data-statuses="DP,GA"
+    data-risk-colors="amber" data-group="Platform">
+  <td class="epic-cell is-fallback">Platform</td>
+  <td class="feature-name"><span class="cat">Platform</span>Workflow Navigator (cluster-aware agentic orchestration)</td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+<span class="badge status-dp" title="UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists Workflow Navigator under RHAI 3.5 What&#39;s New (intelligent model recommendation (DP), optimized vLLM model deployment (DP), role-based access control (DP)), but no DP entry exists in the 3.5 release notes or product docs. Deck-sourced only, subject to change. (The deck&#39;s summary slide labels it TP while its detail slide lists DP items - the more specific DP detail is used here.)">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] Workflow Navigator Tech Preview and General Availability targeted for 3.6: optimized llm-d model deployment, troubleshooting of common observability issues, and security/trust/safety/governance coverage.) — not shipped">GA</span>    </td>
 </tr>
 <tr id="vllm-llminferenceservice"
-    class="band-4 show-epic-label"
+    class="band-1 show-epic-label"
     data-name="LLMInferenceService / LLMInferenceServiceConfig (llm-d-native)" data-category="Model Serving" data-statuses="GA"
     data-risk-colors="amber" data-group="vLLM serving surfaces">
   <td class="epic-cell is-epic">vLLM serving surfaces</td>
@@ -1444,9 +2391,11 @@
 <span class="badge status-ga" title="GA with llm-d. Newer CRD path for Distributed Inference with llm-d.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Maturity follows llm-d: GA on OpenShift/AKS/CKS, TP on EKS as of 3.5.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
 </tr>
 <tr id="vllm-fast-release-images"
-    class="band-4"
+    class="band-1"
     data-name="Red Hat AI Inference fast-release images as custom ServingRuntime" data-category="Model Serving" data-statuses="GA"
     data-risk-colors="green" data-group="vLLM serving surfaces">
   <td class="epic-cell is-epic">vLLM serving surfaces</td>
@@ -1468,9 +2417,11 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="New in 3.5: deploy Red Hat AI Inference fast release container images as custom serving runtimes on an existing OpenShift AI installation without upgrading OpenShift AI -- access to newer vLLM versions/model support between stable releases. Create a ServingRuntime + LLMInferenceServiceConfig referencing the fast container image; fast images from the next version cycle are validated against the current stable release.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([1H 2027] Model Runtime Library to deliver vLLM outside of z-stream releases (1H 2027 target), extending today&#39;s fast-release ServingRuntime mechanism.) — not shipped">GA</span>    </td>
 </tr>
 <tr id="vllm-cpu-arch-restriction"
-    class="band-4"
+    class="band-1"
     data-name="vLLM CPU ServingRuntime on IBM Z / Power" data-category="Model Serving" data-statuses="GA"
     data-risk-colors="amber" data-group="vLLM serving surfaces">
   <td class="epic-cell is-epic">vLLM serving surfaces</td>
@@ -1492,9 +2443,63 @@
 <span class="badge status-ga" title="Standard deployment mode only -- a permanent, architecture-specific restriction regardless of overall vLLM maturity.">GA</span>    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Unchanged: standard mode only.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="vllm-omni"
+    class="band-1"
+    data-name="vLLM Omni (any-to-any multimodal serving)" data-category="Model Serving" data-statuses="DP,TP"
+    data-risk-colors="amber" data-group="vLLM serving surfaces">
+  <td class="epic-cell is-epic">vLLM serving surfaces</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>vLLM Omni (any-to-any multimodal serving)</td>
+  <td class="status-cell"><span class="badge status-dp">DP</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+<span class="badge status-dp" title="UNCORROBORATED BASELINE: the Q3 2026 roadmap deck lists &#39;vLLM Omni (DP)&#39; under RHAI 3.5 What&#39;s New, but no DP entry exists in the 3.5 release notes or product docs - deck-sourced only, subject to change.">DP</span>    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-tp" title="Planned target ([3.6 Fast 1] Omni TP on RHOAI ServingRuntime with real-time voice intelligence (~200ms E2E latency conversations): one container for any modality, language detection, tool-calling across modalities, WebSocket streaming and long-audio chunking.) — not shipped">TP</span>    </td>
+</tr>
+<tr id="vllm-rust-frontend"
+    class="band-1"
+    data-name="vLLM Rust front-end for high-throughput low-latency inference" data-category="Model Serving" data-statuses="Planned"
+    data-risk-colors="amber" data-group="vLLM serving surfaces">
+  <td class="epic-cell is-epic">vLLM serving surfaces</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>vLLM Rust front-end for high-throughput low-latency inference</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 GA] Rust-based vLLM front-end targeted for RHAI 3.6.) — not shipped">Planned</span>    </td>
 </tr>
 <tr id="vllm-kserve-runtime"
-    class="band-4"
+    class="band-1"
     data-name="vLLM ServingRuntime for KServe" data-category="Model Serving" data-statuses="GA"
     data-risk-colors="green" data-group="vLLM serving surfaces">
   <td class="epic-cell is-epic">vLLM serving surfaces</td>
@@ -1516,6 +2521,60 @@
 &mdash;    </td>
     <td class="status-cell ">
 <span class="badge status-ga" title="Remains GA. Foundational vLLM GA status does not extend to every vLLM-adjacent delivery path -- see the other vllm-* feature entries.">GA</span>    </td>
+    <td class="status-cell  planned-col">
+&mdash;    </td>
+</tr>
+<tr id="vllm-watermarking"
+    class="band-1"
+    data-name="vLLM Watermarking for AI-generated context" data-category="Model Serving" data-statuses="GA"
+    data-risk-colors="amber" data-group="vLLM serving surfaces">
+  <td class="epic-cell is-epic">vLLM serving surfaces</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>vLLM Watermarking for AI-generated context</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned status-ga" title="Planned target ([3.6 GA] vLLM Watermarking for AI-generated context (deck marks it &#39;(3.6 GA)&#39;).) — not shipped">GA</span>    </td>
+</tr>
+<tr id="vllm-granular-cache-accounting"
+    class="band-1"
+    data-name="vLLM granular cache accounting for cache usage tracking" data-category="Model Serving" data-statuses="Planned"
+    data-risk-colors="amber" data-group="vLLM serving surfaces">
+  <td class="epic-cell is-epic">vLLM serving surfaces</td>
+  <td class="feature-name"><span class="cat">Model Serving</span>vLLM granular cache accounting for cache usage tracking</td>
+  <td class="status-cell"><span class="badge neutral">Planned</span></td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell legacy-col">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell ">
+&mdash;    </td>
+    <td class="status-cell  planned-col">
+<span class="badge planned neutral" title="Planned target ([3.6 Fast 1] Granular cache accounting in vLLM for cache usage tracking, landing in the RHAI 3.6 Fast 1 fast-release vLLM (vLLM 0.26.0).) — not shipped">Planned</span>    </td>
 </tr>
 </tbody>
 </table>
@@ -1523,7 +2582,8 @@
 <script src="assets/app.js"></script>
 </main>
 <footer class="site-footer">
-  Built from official Red Hat OpenShift AI release notes and the live
+  Built from official Red Hat OpenShift AI release notes, the quarterly Red Hat AI
+  What's New &amp; What's Next roadmap deck, and the live
   <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
   Not an official Red Hat resource. See <a href="conflicts.html">Source Conflicts</a> for open disagreements between sources.
 </footer>

@@ -19,6 +19,7 @@
   <nav class="site-nav">
     <a href="{{ root_prefix }}index.html">Dashboard</a>
     <a href="{{ root_prefix }}matrix.html">Feature Matrix</a>
+    <a href="{{ root_prefix }}roadmap.html">Roadmap{% if headline_planned %} ({{ headline_planned }}){% endif %}</a>
     <a href="{{ root_prefix }}migration.html">Migration Checklist</a>
     <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a>
     {% for v in version_pages %}<a href="{{ root_prefix }}versions/{{ v }}.html">{{ v }}</a>{% endfor %}
@@ -33,7 +34,8 @@
 {% block content %}{% endblock %}
 </main>
 <footer class="site-footer">
-  Built from official Red Hat OpenShift AI release notes and the live
+  Built from official Red Hat OpenShift AI release notes, the quarterly Red Hat AI
+  What's New &amp; What's Next roadmap deck, and the live
   <a href="https://access.redhat.com/articles/rhoai-supported-configs-3.x">Supported Configurations for 3.x</a> matrix.
   Not an official Red Hat resource. See <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a> for open disagreements between sources.
 </footer>

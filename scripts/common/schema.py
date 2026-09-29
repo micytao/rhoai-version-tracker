@@ -32,7 +32,13 @@ from pydantic import BaseModel, Field
 
 class Status(str, Enum):
     """Feature/API lifecycle labels, as defined in the reference document's
-    'How to read the lifecycle labels' section."""
+    'How to read the lifecycle labels' section.
+
+    "Planned" is a roadmap-only label: it marks a feature announced in a
+    Red Hat AI roadmap deck but not yet shipped in any tracked release. It
+    must never appear inside a `timeline[]` row (shipped history) -- planned
+    work lives in `FeatureEntry.planned[]` / `VersionMeta.ga_date_is_target`.
+    """
 
     GA = "GA"
     TP = "TP"  # Technology Preview
@@ -40,6 +46,7 @@ class Status(str, Enum):
     DEPRECATED = "Deprecated"
     REMOVED = "Removed"
     CHANGE = "Change"  # non-status-changing but structurally significant change
+    PLANNED = "Planned"  # roadmap-only: announced, not yet shipped
 
 
 class RiskColor(str, Enum):
@@ -180,6 +187,33 @@ class TimelineEntry(BaseModel):
     confidence: ConfidenceBand = ConfidenceBand.DIRECTLY_SOURCED
 
 
+class RoadmapTarget(BaseModel):
+    """A forward-looking status target from a Red Hat AI roadmap deck.
+
+    Roadmap work lives here, NOT in `timeline[]`, so a feature's shipped
+    status history and `current_status` always reflect what has actually
+    shipped. When the release for a target ships and the release notes
+    confirm it, the confirming row is appended to `timeline[]` and the
+    (now historical) target stays in `planned[]` as the forecast-vs-actual
+    record.
+
+    `window` is free text straight from the deck's own cadence language:
+    "3.6 Fast 1", "3.6 EA1", "3.6 EA2", "3.6 GA", "Q4 2026", "1H 2027",
+    "3.7", "uncommitted". Targets with a window beyond the deck's headline
+    version (1H 2027 / 3.7) are carried too, clearly separated on the site.
+    """
+
+    version: str  # the targeted release, e.g. "3.6" (or "3.7" for later)
+    target_status: Status
+    window: str  # deck cadence language, e.g. "3.6 GA", "1H 2027"
+    detail: str
+    source: str  # e.g. "roadmap_deck:Q3-2026-Whats-New-Whats-Next"
+    confidence: ConfidenceBand = ConfidenceBand.DIRECTLY_SOURCED
+    milestone: Optional[Milestone] = None
+    breaking: bool = False
+    migration_note: Optional[str] = None  # required when breaking=True
+
+
 class FeatureEntry(BaseModel):
     feature_id: str  # stable slug, e.g. "maas-core", "ogx-core", "llm-d-core"
     name: str
@@ -189,6 +223,10 @@ class FeatureEntry(BaseModel):
     timeline: list[TimelineEntry] = Field(default_factory=list)
     source_conflicts: list[SourceConflict] = Field(default_factory=list)
     aliases: list[str] = Field(default_factory=list)  # prior names, e.g. "Llama Stack"
+
+    # Forward-looking roadmap targets (see RoadmapTarget). Never a substitute
+    # for timeline[]: a feature with only planned[] entries has not shipped.
+    planned: list[RoadmapTarget] = Field(default_factory=list)
 
     # Optional umbrella grouping that cuts *across* category boundaries, used
     # by the Feature Lifecycle Matrix to visually merge rows that a reader
@@ -249,6 +287,13 @@ class VersionMeta(BaseModel):
     ga_date: Optional[date] = None
     is_eus: bool = False
 
+    # True when ga_date is a roadmap target (e.g. RHAI 3.6 targeted for
+    # November 2026 per the Q3 2026 What's New & What's Next deck) rather
+    # than a shipped fact. Targeted versions are excluded from the
+    # dashboard's "latest tracked release" logic and the real-time lifecycle
+    # calendar, and their GA date renders as "targeted".
+    ga_date_is_target: bool = False
+
     # Official Red Hat OpenShift AI Self-Managed Life Cycle overlay, sourced
     # from https://access.redhat.com/support/policy/updates/rhoai-sm/lifecycle
     # (the Life Cycle Dates table, backed by the public product-life-cycles
@@ -262,10 +307,23 @@ class VersionMeta(BaseModel):
     lifecycle_note: Optional[str] = None
 
 
+class RoadmapMeta(BaseModel):
+    """Provenance + disclaimer for the roadmap layer, per the deck it was
+    captured from. The deck is forward-looking Red Hat Product Management
+    material ("any forward-looking statements are subject to change"), so
+    every planned[] target inherits this framing on the site."""
+
+    source_deck: str  # e.g. "Red Hat AI - Q3 2026 - What's New & What's Next"
+    quarter: str  # e.g. "Q3 2026"
+    captured_at: datetime
+    disclaimer: str
+    versions_covered: list[str] = Field(default_factory=list)  # e.g. ["3.6", "3.7"]
+
+
 class FeatureRegistry(BaseModel):
     """The single cumulative file the whole site is rendered from."""
 
-    schema_version: str = "1.0"
+    schema_version: str = "1.1"
     generated_at: datetime
     versions: list[VersionMeta] = Field(default_factory=list)
     features: list[FeatureEntry] = Field(default_factory=list)
@@ -274,6 +332,7 @@ class FeatureRegistry(BaseModel):
     operational_notes: list[OperationalNote] = Field(default_factory=list)
     ogx_provider_table: list[OgxProviderEntry] = Field(default_factory=list)
     source_conflicts: list[SourceConflict] = Field(default_factory=list)
+    roadmap_meta: Optional[RoadmapMeta] = None
 
 
 # ---------------------------------------------------------------------------

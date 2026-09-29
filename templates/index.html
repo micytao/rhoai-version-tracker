@@ -32,6 +32,7 @@
   <div class="stat-card red"><div class="num">{{ stats.red }}</div><div class="label">Red features</div></div>
   <div class="stat-card"><div class="num">{{ stats.conflicts }}</div><div class="label">Open source conflicts</div></div>
   <div class="stat-card"><div class="num">{{ stats.deprecations }}</div><div class="label">Deprecation-timeline entries</div></div>
+  <div class="stat-card"><div class="num">{{ stats.planned }}</div><div class="label">Planned roadmap targets</div></div>
 </div>
 
 <h2>Release timeline</h2>
@@ -52,7 +53,7 @@
     <div class="v">{{ v.version }}</div>
     <span class="badge {{ v.lifecycle.phase_class }}">{{ v.lifecycle.phase }}</span>
     {% if v.milestones %}<div class="milestones">{{ v.milestones | join(' &rarr; ') | safe }}</div>{% endif %}
-    {% if v.ga_date %}<div class="milestones">GA {{ v.ga_date }}</div>{% endif %}
+    {% if v.ga_date %}<div class="milestones">{% if v.ga_date_is_target %}GA targeted {{ v.ga_date }}{% else %}GA {{ v.ga_date }}{% endif %}</div>{% endif %}
     {% if v.lifecycle.until %}
     <div class="milestones">{{ 'Full Support until' if v.lifecycle.phase == 'Full Support' else ('EUS until' if v.lifecycle.phase == 'Extended Update Support' else 'Ended') }} {{ v.lifecycle.until }}</div>
     {% endif %}
@@ -68,7 +69,8 @@
   visible directly. Dashed red line = today ({{ release_calendar.today }}).
   {% if release_calendar.excluded %}
   {{ release_calendar.excluded | join(', ') }} {{ 'has' if release_calendar.excluded | length == 1 else 'have' }}
-  no official Life Cycle GA date on their own and aren't placed on this axis (see the cards above).
+  no published Life Cycle dates of their own (pre-table legacy releases, micro releases without a GA date, or
+  targeted roadmap versions) and aren't placed on this axis (see the cards above).
   {% endif %}
 </p>
 <div class="legend">
@@ -134,9 +136,29 @@
 </div>
 {% endif %}
 
+{% if roadmap_highlights %}
+<h2>What's next in {{ headline_planned }} (roadmap)</h2>
+<p class="section-note">
+  Planned targets from Red Hat Product Management's
+  {% if roadmap_meta %}<em>{{ roadmap_meta.source_deck }}</em>{% else %}quarterly roadmap deck{% endif %} &mdash;
+  forward-looking and <strong>subject to change</strong>; not shipped fact. Full list on the
+  <a href="roadmap.html">Roadmap</a> page; shipped statuses live in the Feature Matrix.
+</p>
+<div class="card-grid">
+  {% for h in roadmap_highlights %}
+  <div class="item-card roadmap-card">
+    <span class="tag">{{ h.category }}{% if h.windows %} &middot; {{ h.windows | join(', ') }}{% endif %}</span>
+    <h4><a href="matrix.html#{{ h.feature_id }}">{{ h.name }}</a> <span class="badge planned {{ h.status_class }}">{{ h.status }}</span></h4>
+    <p>{{ h.detail | truncate(220) }}</p>
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
 <h2>Explore</h2>
 <div class="card-grid">
   <div class="item-card"><h4><a href="matrix.html">Feature Lifecycle Matrix</a></h4><p>Every tracked feature/component across every version, color-coded.</p></div>
+  <div class="item-card"><h4><a href="roadmap.html">Roadmap ({{ headline_planned }} and beyond)</a></h4><p>Forward-looking targets from the quarterly What's New &amp; What's Next deck, clearly separated from shipped history.</p></div>
   <div class="item-card"><h4><a href="migration.html">Upgrade Path / Migration Checklist</a></h4><p>Every deprecation, removal, and breaking change in one actionable list.</p></div>
   <div class="item-card"><h4><a href="conflicts.html">Source Conflicts</a></h4><p>Where the release notes and the Supported Configurations matrix disagree.</p></div>
   {% for v in version_pages %}

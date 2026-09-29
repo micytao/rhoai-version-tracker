@@ -1,0 +1,89 @@
+{% extends "base.html" %}
+{% block title %}Roadmap — RHOAI Version Tracker{% endblock %}
+{% block content %}
+<h1>Roadmap{% if headline_planned %} — {{ headline_planned }} and beyond{% endif %}</h1>
+<div class="roadmap-disclaimer">
+  <strong>Forward-looking roadmap targets, subject to change.</strong>
+  {% if roadmap_meta %}Everything on this page is derived from
+  <em>{{ roadmap_meta.source_deck }}</em> ({{ roadmap_meta.quarter }} edition).{% endif %}
+  These are targets, not commitments: the deck states that any forward-looking
+  statements are subject to change, and no production SLA applies until a
+  feature ships in a tracked release and its status is confirmed by official
+  release notes. Statuses here use the deck's own labels
+  (GA&nbsp;/&nbsp;TP&nbsp;/&nbsp;DP) as <em>targets</em>, and windows use the
+  deck's cadence language (Fast&nbsp;1, EA1/EA2, GA, Q4&nbsp;2026, 1H&nbsp;2027,
+  3.7, &ldquo;uncommitted&rdquo;). Shipped status history lives in the
+  <a href="{{ root_prefix }}matrix.html">Feature Matrix</a>.
+</div>
+
+{% if headline_planned %}
+<h2>{{ headline_planned }} targets</h2>
+<p class="section-note">Planned for the {{ headline_planned }} cycle (including the {{ headline_planned }} Fast&nbsp;1 fast-release and Q4&nbsp;2026 windows). Auto-derived from every feature with a planned target in this cycle.</p>
+<div class="legend">
+  <span class="chip status-ga">GA target</span>
+  <span class="chip status-tp">TP target</span>
+  <span class="chip status-dp">DP target</span>
+  <span class="chip status-planned">Planned (no label)</span>
+  <span class="chip red">&#9888;&#65039; breaking change planned</span>
+</div>
+<div class="card-grid">
+  {% for r in roadmap_rows if r.cycle == '3.6' %}
+  <div class="item-card roadmap-card{{ ' roadmap-breaking' if r.breaking else '' }}">
+    <span class="tag">{{ r.category }} &middot; {{ r.window }}</span>
+    <h4><a href="{{ root_prefix }}matrix.html#{{ r.feature_id }}">{{ r.name }}</a>
+        <span class="badge {{ r.status_class }}">{{ r.status }}</span>
+        {% if r.breaking %}<span class="badge red">&#9888;&#65039; breaking</span>{% endif %}
+    </h4>
+    <p>{{ r.detail | truncate(240) }}</p>
+    {% if r.migration_note %}<p class="migration-note"><b>Migration action:</b> {{ r.migration_note | truncate(200) }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+{% set beyond = roadmap_rows | selectattr('cycle', 'equalto', 'beyond') | list %}
+{% if beyond %}
+<h2>Beyond {{ headline_planned }} — 1H 2027 / 3.7 targets</h2>
+<p class="section-note">Items the deck points at 1H 2027 or 3.7. Even less certain than the {{ headline_planned }} targets; listed for the full forward picture.</p>
+<div class="card-grid">
+  {% for r in beyond %}
+  <div class="item-card roadmap-card{{ ' roadmap-breaking' if r.breaking else '' }}">
+    <span class="tag">{{ r.category }} &middot; {{ r.window }}</span>
+    <h4><a href="{{ root_prefix }}matrix.html#{{ r.feature_id }}">{{ r.name }}</a>
+        <span class="badge {{ r.status_class }}">{{ r.status }}</span>
+        {% if r.breaking %}<span class="badge red">&#9888;&#65039; breaking</span>{% endif %}
+    </h4>
+    <p>{{ r.detail | truncate(240) }}</p>
+    {% if r.migration_note %}<p class="migration-note"><b>Migration action:</b> {{ r.migration_note | truncate(200) }}</p>{% endif %}
+  </div>
+  {% endfor %}
+</div>
+{% endif %}
+
+<h2>How this page relates to the rest of the tracker</h2>
+<div class="card-grid">
+  <div class="item-card">
+    <h4>Not in the shipped timeline</h4>
+    <p>Planned targets live in a separate roadmap layer. A feature's status
+    history and current status only change when a release actually ships and
+    the release notes confirm it &mdash; so the
+    <a href="{{ root_prefix }}matrix.html">Feature Matrix</a> shows planned
+    cells as dashed marks, never as shipped fact.</p>
+  </div>
+  <div class="item-card">
+    <h4>Planned breaking changes</h4>
+    <p>Breaking changes the deck announces ahead of time (removals, renames,
+    deprecations) are also listed on the
+    <a href="{{ root_prefix }}migration.html">Migration Checklist</a> as
+    &ldquo;planned changes&rdquo; with actionable migration notes.</p>
+  </div>
+  <div class="item-card">
+    <h4>Source precedence</h4>
+    <p>Roadmap decks sit below release notes, product guides, and the
+    Supported Configurations matrix. Where the deck's &ldquo;What's
+    New&rdquo; claims disagree with tracked sources, it is recorded on
+    <a href="{{ root_prefix }}conflicts.html">Source Conflicts</a>, not
+    silently resolved.</p>
+  </div>
+</div>
+{% endblock %}

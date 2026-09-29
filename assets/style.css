@@ -157,6 +157,39 @@ p.lede { color: var(--muted); max-width: 780px; }
 .chip.status-removed,    .badge.status-removed    { background: var(--red-bg);        color: var(--red-fg);        border-color: var(--red-border); }
 .chip.status-change,     .badge.status-change     { background: var(--bg-alt);        color: var(--muted);         border-color: var(--border); }
 
+/* Roadmap-only "Planned" status (announced, not shipped) and the dashed
+   planned cells/columns in the Feature Matrix. The dashed border is the
+   visual contract: anything dashed is a roadmap target, never shipped fact.
+   Planned badges keep the target-status hue (status-ga/tp/dp) and only
+   override the border to dashed. */
+.chip.status-planned { background: var(--bg-alt); color: var(--muted); border: 1px dashed var(--muted); }
+.badge.planned { border-style: dashed; }
+table.matrix thead th.planned-col { font-style: italic; }
+.planned-flag {
+  display: inline-block;
+  font-size: 0.62rem;
+  font-style: italic;
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+/* Roadmap page + dashboard roadmap cards */
+.roadmap-disclaimer {
+  border: 1px dashed var(--amber-border);
+  background: var(--amber-bg);
+  border-radius: var(--radius);
+  padding: 12px 16px;
+  font-size: 0.86rem;
+  line-height: 1.5;
+  margin: 4px 0 22px;
+  color: var(--ink);
+}
+.roadmap-disclaimer strong { color: var(--amber-fg); }
+.roadmap-card { border-style: dashed; }
+.roadmap-card.roadmap-breaking { border-style: solid; border-color: var(--red-border); }
+.roadmap-card .migration-note { margin-top: 6px; font-size: 0.8rem; color: var(--ink); }
+
 /* Release-timeline lifecycle-phase badges, overlaid from the official RHOAI
    Self-Managed Life Cycle page and recomputed at build time. */
 .chip.lifecycle-full-support, .badge.lifecycle-full-support { background: var(--green-bg); color: var(--green-fg); border-color: var(--green-border); }
