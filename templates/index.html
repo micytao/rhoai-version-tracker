@@ -52,10 +52,16 @@
   <div class="version-card {{ v.lifecycle.phase_class }}">
     <div class="v">{{ v.version }}</div>
     <span class="badge {{ v.lifecycle.phase_class }}">{{ v.lifecycle.phase }}</span>
+    {% if v.is_eus and v.lifecycle.phase == 'Full Support' %}
+    <span class="badge lifecycle-eus">Extended Update Support</span>
+    {% endif %}
     {% if v.milestones %}<div class="milestones">{{ v.milestones | join(' &rarr; ') | safe }}</div>{% endif %}
     {% if v.ga_date %}<div class="milestones">{% if v.ga_date_is_target %}GA targeted {{ v.ga_date }}{% else %}GA {{ v.ga_date }}{% endif %}</div>{% endif %}
     {% if v.lifecycle.until %}
     <div class="milestones">{{ 'Full Support until' if v.lifecycle.phase == 'Full Support' else ('EUS until' if v.lifecycle.phase == 'Extended Update Support' else 'Ended') }} {{ v.lifecycle.until }}</div>
+    {% endif %}
+    {% if v.is_eus and v.lifecycle.phase == 'Full Support' and v.eus_end %}
+    <div class="milestones">EUS until {{ v.eus_end }}</div>
     {% endif %}
     {% if v.lifecycle_note %}<div class="milestones" title="{{ v.lifecycle_note }}">&#9432; details</div>{% endif %}
   </div>
