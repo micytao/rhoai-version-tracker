@@ -57,7 +57,6 @@
     {% if v.lifecycle.until %}
     <div class="milestones">{{ 'Full Support until' if v.lifecycle.phase == 'Full Support' else ('EUS until' if v.lifecycle.phase == 'Extended Update Support' else 'Ended') }} {{ v.lifecycle.until }}</div>
     {% endif %}
-    {% if v.lifecycle_note %}<div class="milestones" title="{{ v.lifecycle_note }}">&#9432; details</div>{% endif %}
   </div>
   {% endfor %}
 </div>
